@@ -20,9 +20,14 @@
     <!-- Set `__static` path to static files in production -->
 
     <% if (!require('process').browser) { %>
-      <script>
+      <% if (process.env.NODE_ENV !== 'production') { %>
+        <script>
+          if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+        </script>
+      <% } %>
+      <!-- <script>
         if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
-      </script>
+      </script> -->
     <% } %>
 
     <!-- webpack builds are automatically injected -->

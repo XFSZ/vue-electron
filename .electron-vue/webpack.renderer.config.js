@@ -120,6 +120,9 @@ let rendererConfig = {
     __filename: process.env.NODE_ENV !== 'production'
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      VUE_ELECTRON: 'vue-electron'
+    }),  //因 fs 问题 修改添加
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({filename: 'styles.css'}),
     new HtmlWebpackPlugin({

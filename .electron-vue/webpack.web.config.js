@@ -110,6 +110,7 @@ let webConfig = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
+ // node:{ fs:'empty'},
   output: {
     filename: '[name].js',
     path: path.join(__dirname, '../dist/web')
@@ -119,6 +120,7 @@ let webConfig = {
       '@': path.join(__dirname, '../src/renderer'),
       'vue$': 'vue/dist/vue.esm.js'
     },
+    
     extensions: ['.js', '.vue', '.json', '.css']
   },
   target: 'web'

@@ -10,7 +10,8 @@ module.exports = {
   },
   extends: 'standard',
   globals: {
-    __static: true
+    __static: true,
+    VUE_ELECTRON: true  //因 fs 问题添加
   },
   plugins: [
     'html'

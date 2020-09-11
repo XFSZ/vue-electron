@@ -7,6 +7,7 @@
           Welcome to your new project!
         </span>
         <system-information></system-information>
+        <echarts-test/>
       </div>
 
       <div class="right-side">
@@ -31,13 +32,18 @@
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
+  import EchartsTest from './EchartsTest/EchartsTestPage'
 
   export default {
     name: 'landing-page',
-    components: { SystemInformation },
+    components: {
+      SystemInformation,
+      EchartsTest
+    },
     methods: {
       open (link) {
-        this.$electron.shell.openExternal(link)
+      //  this.$electron.shell.openExternal(link) //非build: web 环境下打开
+        window.location.href = link // build: web 环境下打开
       }
     }
   }
