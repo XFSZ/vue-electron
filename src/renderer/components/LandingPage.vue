@@ -42,8 +42,9 @@
     },
     methods: {
       open (link) {
-      //  this.$electron.shell.openExternal(link) //非build: web 环境下打开
-        window.location.href = link // build: web 环境下打开
+        process.env.IS_WEB ? window.location.href = link : this.$electron.shell.openExternal(link)
+        //  this.$electron.shell.openExternal(link) //非build: web 环境下打开
+        // window.location.href = link // build: web 环境下打开
       }
     }
   }
