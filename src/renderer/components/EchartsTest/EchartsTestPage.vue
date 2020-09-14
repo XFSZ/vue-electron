@@ -5,18 +5,18 @@
 <script>
 export default {
   name: 'hello',
-  data () {
+  data() {
     return {
       msg: 'Welcome to Your Vue.js App'
-    }
+    };
   },
-  mounted () {
-    this.drawLine()
+  mounted() {
+    this.drawLine();
   },
   methods: {
-    drawLine () {
+    drawLine() {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById('myChart'))
+      let myChart = this.$echarts.init(document.getElementById('myChart'));
       // 绘制图表
       myChart.setOption({
         title: { text: '在Vue中使用echarts' },
@@ -30,8 +30,8 @@ export default {
           type: 'bar',
           data: [5, 20, 36, 10, 10, 20]
         }]
-      })
+      });
     }
   }
-}
+};
 </script>

@@ -8,7 +8,7 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  extends: 'elemefe',
   globals: {
     __static: true,
     VUE_ELECTRON: true  //因 fs 问题添加
@@ -16,6 +16,9 @@ module.exports = {
   plugins: [
     'html'
   ],
+  // extends: ['plugin:vue/essential', 'plugin:prettier/recommended'],
+
+  // plugins: ['vue', 'prettier','html'],
   'rules': {
     // allow paren-less arrow functions
     'arrow-parens': 0,

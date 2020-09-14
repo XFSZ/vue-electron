@@ -6,8 +6,13 @@
         <span class="title">
           Welcome to your new project!
         </span>
-        <system-information></system-information>
-        <echarts-test/>
+         <div>
+          <p>This number does move-y things. <loding-page :value="myValue"></loding-page></p>
+          <p>You can change the tweened number here: <input type="text" v-model="myValue"/></p>
+          <!-- It transitions like magic! Magic with a bunch of code behind it, that is. -->
+         </div>
+       
+        
       </div>
 
       <div class="right-side">
@@ -31,23 +36,31 @@
 </template>
 
 <script>
-  import SystemInformation from './LandingPage/SystemInformation'
-  import EchartsTest from './EchartsTest/EchartsTestPage'
+  import SystemInformation from './LandingPage/SystemInformation';
+  import EchartsTest from './EchartsTest/EchartsTestPage';
+  import LodingPage from './LodingPage';
 
   export default {
     name: 'landing-page',
+    data() {
+      return {
+        myValue: 100
+      };
+    },
     components: {
       SystemInformation,
-      EchartsTest
+      EchartsTest,
+      LodingPage
     },
+  
     methods: {
-      open (link) {
-        process.env.IS_WEB ? window.location.href = link : this.$electron.shell.openExternal(link)
+      open(link) {
+        process.env.IS_WEB ? window.location.href = link : this.$electron.shell.openExternal(link);
         //  this.$electron.shell.openExternal(link) //非build: web 环境下打开
         // window.location.href = link // build: web 环境下打开
       }
     }
-  }
+  };
 </script>
 
 <style>

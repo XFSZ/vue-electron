@@ -7,7 +7,7 @@
 <script>
   export default {
     name: 'allplam'
-  }
+  };
 </script>
 
 <style>
