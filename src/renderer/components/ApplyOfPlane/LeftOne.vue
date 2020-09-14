@@ -15,28 +15,25 @@
       <div class="circle-title">
         <div
           id="myChart_c1"
-          :style="{ width: '120px', height: '120px', marginTop: '2px' }"
+          :style="{ width: '110px', height: '110px', marginTop: '2px' }"
         ></div>
-        <p class="p-title">完好数15784具</p>
-        <p class="p-title">总数18713具</p>
+        <title-moudle-bottom/>
         <div></div>
       </div>
       <div class="circle-title">
         <div
           id="myChart_c2"
-          :style="{ width: '120px', height: '120px', marginTop: '2px' }"
+          :style="{ width: '110px', height: '110px', marginTop: '2px' }"
         ></div>
-        <p class="p-title">完好数15784具</p>
-        <p class="p-title">总数18713具</p>
+        <title-moudle-bottom/>
         <div></div>
       </div>
       <div class="circle-title">
         <div
           id="myChart_c3"
-          :style="{ width: '120px', height: '120px', marginTop: '2px' }"
+          :style="{ width: '110px', height: '110px', marginTop: '2px' }"
         ></div>
-        <p class="p-title">完好数15784具</p>
-        <p class="p-title">总数18713具</p>
+        <title-moudle-bottom/>
         <div></div>
       </div>
     </div>
@@ -46,19 +43,27 @@
 <script>
 // import { TweenLite } from 'gsap';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
+import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 export default {
   name: 'hello',
   components: {
-    TitleMoudle
+    TitleMoudle,
+    TitleMoudleBottom
   },
   data() {
-    return {};
+    return {
+
+    };
   },
-  computed: {},
+  computed: {
+
+  },
   mounted() {
     this.drawLine();
+
   },
   methods: {
+
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
       let myChart = this.$echarts.init(document.getElementById('myChart'));
@@ -306,6 +311,7 @@ export default {
       // 绘制图表
       myChart_c3.setOption({
         tooltip: {
+
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
@@ -364,7 +370,7 @@ export default {
 };
 </script>
 <style>
-.main .el-divider {
+/* .main .el-divider {
   background-color: #dcdfe6;
   position: relative;
 }
@@ -384,7 +390,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
+} */
 </style>
 <style scoped>
 .circle-title {

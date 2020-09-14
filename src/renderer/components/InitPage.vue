@@ -13,8 +13,8 @@
     </div>
     <div class="main">
       <div class="main-left">
-        <left-one style="flex:1"/>
-        <left-two style="flex:1"/>
+        <left-one />
+        <left-two class="left-two-style" />
       </div>
       <div class="main-content">
         <p>cccc</p>
@@ -43,6 +43,7 @@
 
       <div class="footer-right">
         <p>右侧</p>
+        <!-- <el-button> -->
       </div>
     </div>
   </div>
@@ -77,6 +78,9 @@ body {
   height: 100%;
   min-height: 100%;
   /* background-color: rgb(0, 0, 105); */
+}
+.left-two-style{
+  margin-left: 10px;
 }
 .wapper {
   /* min-height: 100vh; */
@@ -114,7 +118,7 @@ body {
   flex: 1;
 }
 .main-right {
-  flex: 1;
+  /* flex: 1; */
 }
 .headinfo {
   /* height: 100px;  */
@@ -127,6 +131,7 @@ body {
 .footer {
   width: 100%;
   /* height: 100px; */
+  margin-top: -32px;
   flex: 0;
   display: flex;
   flex-direction: row;
