@@ -3,19 +3,19 @@
     <title-moudle />
     <div
       id="myChart"
-      :style="{ width: '300px', height: '250px', marginTop: '-38px' }"
+      :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
     ></div>
     <title-moudle />
     <div
       id="myChart1"
-      :style="{ width: '300px', height: '250px', marginTop: '-38px' }"
+      :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
     ></div>
     <title-moudle />
     <div class="threecircle">
       <div class="circle-title">
         <div
           id="myChart_c1"
-          :style="{ width: '110px', height: '110px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
         <title-moudle-bottom/>
         <div></div>
@@ -23,7 +23,7 @@
       <div class="circle-title">
         <div
           id="myChart_c2"
-          :style="{ width: '110px', height: '110px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
         <title-moudle-bottom/>
         <div></div>
@@ -31,7 +31,7 @@
       <div class="circle-title">
         <div
           id="myChart_c3"
-          :style="{ width: '110px', height: '110px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
         <title-moudle-bottom/>
         <div></div>
@@ -209,7 +209,7 @@ export default {
                 show: true,
                 position: 'center',
                 color: 'red',
-                fontSize: 18,
+                fontSize: 10,
                 fontWeight: 'bold',
                 formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
               }
@@ -270,7 +270,7 @@ export default {
                 show: true,
                 position: 'center',
                 color: 'red',
-                fontSize: 18,
+                fontSize: 10,
                 fontWeight: 'bold',
                 formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
               }
@@ -332,7 +332,7 @@ export default {
                 show: true,
                 position: 'center',
                 color: '#ccc',
-                fontSize: 18,
+                fontSize: 10,
                 fontWeight: 'bold',
                 formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
               }
@@ -417,11 +417,13 @@ export default {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  height: 90%;
-  width: 90%;
-  border: 1px solid darkslategray;
+  height: 88%;
+  margin-top: 15px;
+  width: 280px;
+  /* width: 90%; */
+  /* border: 1px solid darkslategray;
   border-radius: 10px;
-  box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset;
+  box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset; */
 }
 .table-head {
   display: flex;

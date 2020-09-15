@@ -84,7 +84,7 @@ export default {
 };
 </script>
 <style scoped>
-.titlemain .el-divider {
+/* .titlemain .el-divider {
     background-color: #DCDFE6;
     position: relative;
 }
@@ -96,7 +96,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin:auto;
-}
+} */
 .deom_hr{width:90%; height:1px; background:rgba(0, 0, 0, 0.3);}
 .hr{
   height: 0.5px;
@@ -118,7 +118,7 @@ export default {
   flex-direction: column;
   /* align-items: center; */
   /* height: 90%; */
-  width: 100%;
+  width: 240px;
   /* border: 1px solid darkslategray;
   border-radius: 10px; */
 }
@@ -141,6 +141,7 @@ export default {
 .table-head-title {
   flex: 1;
   text-align: center;
+  font-size: 8px;
 }
 .table-head-value {
   flex: 1;
@@ -158,5 +159,7 @@ export default {
 .table-head-strvalue {
   text-align: center;
   justify-content: flex-end;
+  font-size: 10px;
+  margin-top: 4px;
 }
 </style>

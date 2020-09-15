@@ -37,8 +37,9 @@
     <div
       id="myChart_rose1"
       :style="{
-        width: '300px',
-        height: '300px',
+        width: '220px',
+        height: '220px',
+        marginLeft:'40px'
       }"
     ></div>
     <div class="text-table">
@@ -51,10 +52,10 @@
           <hr />
         </div>
       </div>
-     
+
       <div class="right-text-table-one">
         <p>当日试飞总架次</p>
-        <p>{{changeTotalNumberOfModels}}</p>
+        <p>{{ changeTotalNumberOfModels }}</p>
       </div>
       <div><right-child-moudle /></div>
     </div>
@@ -145,7 +146,7 @@ export default {
           {
             name: '访问来源',
             type: 'pie',
-            radius: '55%',
+            radius: '42%',
             center: ['50%', '50%'],
             data: [
               { value: 127, name: '作战备战' },
@@ -196,11 +197,13 @@ export default {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  height: 90%;
-  width: 350px;
-  border: 1px solid darkslategray;
+  height: 88%;
+  width: 280px;
+  margin-top: 15px;
+  margin-right: 10px;
+  /* border: 1px solid darkslategray;
   border-radius: 10px;
-  box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset;
+  box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset; */
 }
 .deom_hr {
   width: 90%;
@@ -252,6 +255,7 @@ export default {
 .table-head-title {
   flex: 1;
   text-align: center;
+  font-size: 10px;
 }
 .table-head-value {
   flex: 1;
@@ -269,5 +273,7 @@ export default {
 .table-head-strvalue {
   text-align: center;
   justify-content: flex-end;
+  font-size: 12px;
+  margin-top: 2px;
 }
 </style>

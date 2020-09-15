@@ -3,12 +3,12 @@
     <title-moudle />
     <div
       id="myChart_bar1"
-      :style="{ width: '300px', height: '218px', marginTop: '-38px' }"
+      :style="{ width: '220px', height: '218px', marginTop: '-38px' }"
     ></div>
     <title-moudle />
     <div
       id="myChart_bar2"
-      :style="{ width: '300px', height: '218px', marginTop: '-38px' }"
+      :style="{ width: '220px', height: '218px', marginTop: '-38px' }"
     ></div>
     <div class="threecircle">
       <p class="titlename">飞机</p>
@@ -47,7 +47,7 @@
         <div class="circle-title">
           <div
             id="myChart_tc1"
-            :style="{ width: '350px', height: '120px', marginTop: '45px',    marginLeft: '-90px' }"
+            :style="{ width: '160px', height: '90px', marginTop: '20px' ,    marginLeft: '8px' }"
           ></div>
         </div>
       </div>
@@ -59,6 +59,7 @@
 import { TweenLite } from 'gsap';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
 import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
+import bg from '../../assets/pie-label.png';
 export default {
   name: 'lefttwo',
   components: {
@@ -249,10 +250,10 @@ export default {
 
           // 图例
           orient: 'vertical', // 图例的布局，vertical竖直    horizontal为水平
-          //   x: 'right', // 图例显示在右边
-          right: 15,
-          top: 8,
-          bottom: 10,
+          // x: 'right', // 图例显示在右边
+          right: 0.01,
+          // top: 0.1,
+          // bottom: 10,
           //   left: 5,
           //   position: [180, 10],
           data: ['一等值班', '二等值班', '三等值班'],
@@ -282,11 +283,12 @@ export default {
             rich: {
               a: {
                 color: 'red',
-                lineHeight: 10
+                lineHeight: 8,
+                fontSize: 8 // 文字大小
               },
               b: {
                 color: '#333', // 文字颜色
-                fontSize: 12 // 文字大小
+                fontSize: 6 // 文字大小
               }
 
             }
@@ -297,7 +299,7 @@ export default {
             name: '值班兵力',
             type: 'pie', // 环形图的type和饼图相同
             // radius: ['50%', '70%'], // 饼图的半径，第一个为内半径，第二个为外半径
-            center: ['50%', '50%'], // 饼图的圆心坐标
+            center: ['30%', '40%'], // 饼图的圆心坐标
             radius: ['70%', '80%'],
             avoidLabelOverlap: false,
             hoverAnimation: false,
@@ -305,6 +307,38 @@ export default {
             label: {
               normal: {
                 // 正常的样式
+                // formatter: '{img1|}',
+                // rich: {
+                //   // 这里设置您的图片引用名称
+                //   height: 10,
+
+                //   img1: {
+                //     // 引入图片
+                //     backgroundColor: '#D1FBEF'
+                //     // backgroundColor: {
+
+                //     //   image: '../assets/left-bottom-backgourd2.png'
+                //     // }
+                //   }
+                // },
+                rich: {
+                  img1: {
+                    // height: '20px',
+                    height: 30,
+                    width: 30,
+                    backgroundColor: {
+                      image: bg
+
+                    }
+                  }
+                },
+                // formatter: function(param) {
+                //   var res = '';
+                //   res += param.value +
+                // '\n {img1|}';
+                //   return res;
+                // },
+                formatter: '{img1|}',
                 show: true,
                 position: 'center'
                 // formatter: '{d}%\n{b}'
@@ -312,7 +346,7 @@ export default {
               emphasis: { // 选中时候的样式
                 show: true,
                 textStyle: {
-                  fontSize: '20',
+                  fontSize: '10',
                   fontWeight: 'bold'
                 }
               }
@@ -343,7 +377,8 @@ export default {
 }
 .hr {
   height: 0.5px;
-  width: 100%;
+  /* width: 100%; */
+  width: 280px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -354,7 +389,7 @@ export default {
   flex-direction: column;
   /* align-items: center; */
   /* height: 90%; */
-  width: 100%;
+  /* width: 100%; */
   /* border: 1px solid darkslategray;
   border-radius: 10px; */
 }
@@ -365,6 +400,7 @@ export default {
 .table-bottom{
   display: flex;
   flex-direction: row;
+
 }
 .circle-title {
   display: flex;
@@ -374,7 +410,7 @@ export default {
   /* align-self: end; */
 }
 .threecircle {
-  width: 350px;
+  /* width: 350px; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -392,31 +428,34 @@ export default {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  height: 90%;
-  width: 90%;
-  border: 1px solid darkslategray;
+  /* height: 90%;
+  width: 90%; */
+  height: 88%;
+  margin-top: 15px;
+  /* border: 1px solid darkslategray;
   border-radius: 10px;
-  box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset;
+  box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset; */
 }
 .table-head {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  /* margin-left: 2px; */
 }
 .table-head-context {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
 }
 .table-head-title {
-  flex: 1;
+  /* flex: 1; */
   text-align: center;
-  height: 5px;
+  /* height: 5px; */
+  font-size: 10px;
 }
 .table-head-value {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -432,5 +471,6 @@ export default {
 .table-head-strvalue {
   text-align: center;
   justify-content: flex-end;
+  font-size: 12px;
 }
 </style>
