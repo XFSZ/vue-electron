@@ -7,6 +7,7 @@ import App from './App';
 import router from './router';
 import store from './store';
 
+import './assets/font/stheitisc.css';
 // if (!process.env.IS_WEB) Vue.use(require('vue-electron')) //源
 if (!process.env.IS_WEB) Vue.use(VUE_ELECTRON); // 改
 Vue.http = Vue.prototype.$http = axios;

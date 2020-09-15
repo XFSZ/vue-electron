@@ -1,0 +1,13 @@
+ @font-face {
+  	font-family: 'Zhongheijian';     /* 这个名字可以自己定义 */
+	src: url('./Zhongheijian.ttf'); /* IE9 Compat Modes */      /*这里以及下面的src后面的地址填的都是自己本地的相对地址*/
+
+
+    font-family: 'OPPOSans';     /* 这个名字可以自己定义 */
+	src: url('./OPPOSans-R.ttf'); /* IE9 Compat Modes */      /*这里以及下面的src后面的地址填的都是自己本地的相对地址*/
+
+    
+    font-family: 'DINPro';     /* 这个名字可以自己定义 */
+	src: url('./DINPro-Bold.otf'); /* IE9 Compat Modes */      /*这里以及下面的src后面的地址填的都是自己本地的相对地址*/
+
+ }

@@ -1,15 +1,23 @@
 <template>
   <div class="titlemain">
-    <p class="titlename">飞机</p>
+    <div class="title-left">
+      <img :src="blockImg" class="block-img" />
+      <p class="titlename">{{ leftTitle }}</p>
+    </div>
     <div class="hr">
       <hr />
       <!-- <el-divider></el-divider> -->
-    <div class="deom_hr"></div>
+      <div class="deom_hr"></div>
       <hr />
     </div>
-    <div  class="table-head">
+    <div class="table-head">
       <div class="table-head-context">
-        <p class="table-head-title">型号总数</p>
+        <div class="title-table-head-main">
+          <img :src="blankUrl" class="blank-img left-img" />
+          <p class="table-head-title">型号总数</p>
+          <img :src="blankUrl" class="blank-img right-img" />
+        </div>
+
         <div class="table-head-value">
           <span class="table-head-numvalue">{{
             changeTotalNumberOfModels
@@ -18,14 +26,22 @@
         </div>
       </div>
       <div class="table-head-context">
-        <p class="table-head-title">数量总数</p>
+        <div class="title-table-head-main">
+          <img :src="blankUrl" class="blank-img left-img" />
+          <p class="table-head-title">数量总数</p>
+          <img :src="blankUrl" class="blank-img right-img" />
+        </div>
         <div class="table-head-value">
           <span class="table-head-numvalue">{{ changeTotalNumber }}</span>
           <span class="table-head-strvalue">架</span>
         </div>
       </div>
       <div class="table-head-context">
+         <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-img" />
         <p class="table-head-title">完好总数</p>
+            <img :src="blankUrl" class="blank-img right-img" />
+        </div>
         <div class="table-head-value">
           <span class="table-head-numvalue">{{ changeStandNumber }}</span>
           <span class="table-head-strvalue">架</span>
@@ -37,23 +53,27 @@
 
 <script>
 import { TweenLite } from 'gsap';
+import BlankImg from '../../../assets/block.png';
 export default {
   name: 'titlemoudle',
   data() {
     return {
+      // leftTitle: '飞机',
+      blankUrl: BlankImg,
       fromNum: [
-        {name: 'totalNumberOfModels', value: 0},
-        {name: 'totalNumber', value: 0},
-        {name: 'standNumber', value: 0}
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
       ],
 
       toNum: [
-        {name: 'toTotalNumberOfModels', value: 157},
-        {name: 'toTotalNumber', value: 132461},
-        {name: 'toStandNumber', value: 111574}
+        { name: 'toTotalNumberOfModels', value: 157 },
+        { name: 'toTotalNumber', value: 132461 },
+        { name: 'toStandNumber', value: 111574 }
       ]
     };
   },
+  props: ['leftTitle', 'blockImg'],
   computed: {
     changeTotalNumberOfModels() {
       return this.fromNum[0].value.toFixed(0);
@@ -70,19 +90,24 @@ export default {
   },
   methods: {
     set() {
-      for (let i = 0;i < this.toNum.length ;i++) {
+      for (let i = 0; i < this.toNum.length; i++) {
         this.setLite(this.fromNum[i], this.toNum[i].value);
       }
     },
     setLite(obj, val) {
       TweenLite.to(obj, 2, {
         value: val
-      },
-      );
+      });
     }
   }
 };
 </script>
+<style scoped>
+@font-face {
+  font-family: "opposans"; /* 这个名字可以自己定义 */
+  src: url("../../../assets/font/OPPOSans-R.ttf");
+}
+</style>>
 <style scoped>
 /* .titlemain .el-divider {
     background-color: #DCDFE6;
@@ -97,8 +122,17 @@ export default {
   align-items: center;
   margin:auto;
 } */
-.deom_hr{width:90%; height:1px; background:rgba(0, 0, 0, 0.3);}
-.hr{
+@font-face {
+  font-family: "dinPro"; /* 这个名字可以自己定义 */
+  src: url("../../../assets/font/DINPro-Bold.otf");
+}
+
+.deom_hr {
+  width: 90%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.hr {
   height: 0.5px;
   width: 100%;
   display: flex;
@@ -106,12 +140,42 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+.block-img {
+  height: 14px;
+  margin-top: 18px;
+  margin-left: 15px;
+}
 </style>
-<style  scoped>
+<style scoped>
+@font-face {
+  font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
+  src: url("../../../assets/font/Zhongheijian.ttf");
+}
+.blank-img {
+  width: 4px;
+  height: 4px;
 
-.titlename{
-  height: 6px;
+  margin-top: 10px;
+}
+.left-img {
+  margin-left: 22px;
+}
+/* .right-img{
+
+ } */
+.title-table-head-main {
+  display: flex;
+  flex-direction: row;
+}
+.title-left {
+  display: flex;
+  flex-direction: row;
+}
+.titlename {
+  font-family: "Zhongheijian";
+  height: 8px;
+  margin-left: 4px;
+  color: white;
 }
 .titlemain {
   display: flex;
@@ -138,8 +202,11 @@ export default {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  background-color:#061d3f
 }
 .table-head-title {
+  font-family: "Zhongheijian";
+  color: whitesmoke;
   flex: 1;
   text-align: center;
   font-size: 8px;
@@ -153,15 +220,20 @@ export default {
   justify-content: center;
 }
 .table-head-numvalue {
+  font-family: 'dinPro';
+  color: aqua;
   flex: 1;
   text-align: center;
   justify-content: center;
   margin-left: 20px;
+  background-color:rgb(34, 50, 75)
 }
 .table-head-strvalue {
+  font-family: 'opposans';
+  color: whitesmoke;
   text-align: center;
   justify-content: flex-end;
   font-size: 10px;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 </style>

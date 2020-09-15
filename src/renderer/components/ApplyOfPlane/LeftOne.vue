@@ -1,16 +1,16 @@
 <template>
   <div class="main">
-    <title-moudle />
+    <title-moudle  :blockImg='flyUrl' :leftTitle='leftTitle1'/>
     <div
       id="myChart"
       :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
     ></div>
-    <title-moudle />
+    <title-moudle  :blockImg='logisticsUrl' :leftTitle='leftTitle2' />
     <div
       id="myChart1"
       :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
     ></div>
-    <title-moudle />
+    <title-moudle :blockImg='flyUrl' :leftTitle='leftTitle3' />
     <div class="threecircle">
       <div class="circle-title">
         <div
@@ -44,6 +44,8 @@
 // import { TweenLite } from 'gsap';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
 import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
+import FlyImg from '../../assets/fly.png';
+import LogisticsImg from '../../assets/logistics.png';
 export default {
   name: 'hello',
   components: {
@@ -52,6 +54,11 @@ export default {
   },
   data() {
     return {
+      leftTitle1: '飞机',
+      leftTitle2: '弹药',
+      leftTitle3: '吊舱',
+      flyUrl: FlyImg,
+      logisticsUrl: LogisticsImg
 
     };
   },
@@ -112,6 +119,14 @@ export default {
               }
             },
             showBackground: true,
+            itemStyle: {
+              normal: {
+                color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                  { offset: 0, color: '#000' },
+                  { offset: 0.3, color: '#888' },
+                  { offset: 1, color: '#ddd' }
+                ])
+              }},
             backgroundStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
                 { offset: 0, color: '#000' },
@@ -192,10 +207,10 @@ export default {
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
-        color: ['red', '#ccc'],
+        color: ['#00b3ff', '#ccc'],
         series: [
           {
-            name: 'XXX站点超标率',
+            name: '军械',
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
             radius: ['70%', '80%'],
@@ -208,7 +223,7 @@ export default {
                 // normal 是图形在默认状态下的样式
                 show: true,
                 position: 'center',
-                color: 'red',
+                color: 'white',
                 fontSize: 10,
                 fontWeight: 'bold',
                 formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
@@ -221,8 +236,8 @@ export default {
             },
             data: [
               {
-                value: 40,
-                name: '超标',
+                value: 75,
+                name: '完好率',
                 label: {
                   normal: {
                     show: true
@@ -230,7 +245,7 @@ export default {
                 }
               },
               {
-                value: 60,
+                value: 25,
                 name: '正常',
                 label: {
                   normal: {
@@ -253,10 +268,10 @@ export default {
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
-        color: ['red', '#ccc'],
+        color: ['#00b3ff', '#ccc'],
         series: [
           {
-            name: 'XXX站点超标率',
+            name: '电子侦察',
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
             radius: ['70%', '80%'],
@@ -269,7 +284,7 @@ export default {
                 // normal 是图形在默认状态下的样式
                 show: true,
                 position: 'center',
-                color: 'red',
+                color: 'white',
                 fontSize: 10,
                 fontWeight: 'bold',
                 formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
@@ -282,8 +297,8 @@ export default {
             },
             data: [
               {
-                value: 40,
-                name: '超标',
+                value: 74,
+                name: '完好率',
                 label: {
                   normal: {
                     show: true
@@ -291,7 +306,7 @@ export default {
                 }
               },
               {
-                value: 60,
+                value: 26,
                 name: '正常',
                 label: {
                   normal: {
@@ -315,7 +330,7 @@ export default {
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
-        color: ['blue', '#ccc'],
+        color: ['#00b3ff', '#ccc'],
         series: [
           {
             name: '电子干扰',
@@ -331,7 +346,7 @@ export default {
                 // normal 是图形在默认状态下的样式
                 show: true,
                 position: 'center',
-                color: '#ccc',
+                color: 'white',
                 fontSize: 10,
                 fontWeight: 'bold',
                 formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
@@ -394,6 +409,7 @@ export default {
 </style>
 <style scoped>
 .circle-title {
+ 
   display: flex;
   flex-direction: column;
   text-align: center;

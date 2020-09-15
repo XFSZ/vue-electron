@@ -1,6 +1,6 @@
 <template>
   <div class="circle-title">
-    <p class="p-title">完好数{{changeTotalNumberOfModels}}具</p>
+    <p class="p-title">完好数<span class="span-num">{{changeTotalNumberOfModels}}</span>具</p>
     <p class="p-title">总数{{changeTotalNumber}}具</p>
   </div>
 </template>
@@ -52,9 +52,25 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: "opposans"; /* 这个名字可以自己定义 */
+  src: url("../../../assets/font/OPPOSans-R.ttf");
+}
+@font-face {
+  font-family: "dinPro"; /* 这个名字可以自己定义 */
+  src: url("../../../assets/font/DINPro-Bold.otf");
+}
 .p-title {
+  font-family: 'opposans';
+  color: aliceblue;
   font-size: 10px;
   margin-top: -8px;
+}
+.span-num{
+  font-family: 'dinPro';
+  color: #00d2fe;
+  margin-left: 2px;
+  margin-right: 1px;
 }
 .circle-title {
   display: flex;

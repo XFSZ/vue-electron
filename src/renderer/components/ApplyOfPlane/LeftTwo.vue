@@ -1,17 +1,17 @@
 <template>
   <div class="main">
-    <title-moudle />
+    <title-moudle :blockImg='flyUrl' :leftTitle='leftTitle1' />
     <div
       id="myChart_bar1"
       :style="{ width: '220px', height: '218px', marginTop: '-38px' }"
     ></div>
-    <title-moudle />
+    <title-moudle   :blockImg='logisticsUrl' :leftTitle='leftTitle2' />
     <div
       id="myChart_bar2"
       :style="{ width: '220px', height: '218px', marginTop: '-38px' }"
     ></div>
     <div class="threecircle">
-      <p class="titlename">飞机</p>
+      <p class="titlename">值班兵力</p>
       <div class="hr">
         <hr />
         <!-- <el-divider></el-divider> -->
@@ -60,6 +60,8 @@ import { TweenLite } from 'gsap';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
 import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 import bg from '../../assets/pie-label.png';
+import FlyImg from '../../assets/fly.png';
+import LogisticsImg from '../../assets/logistics.png';
 export default {
   name: 'lefttwo',
   components: {
@@ -68,6 +70,11 @@ export default {
   },
   data() {
     return {
+      leftTitle1: '地导',
+      leftTitle2: '雷达',
+      leftTitle3: '值班兵力',
+      flyUrl: FlyImg,
+      logisticsUrl: LogisticsImg,
       fromNum: [
         {name: 'totalNumberOfModels', value: 0},
         {name: 'totalNumber', value: 0},

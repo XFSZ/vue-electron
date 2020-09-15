@@ -1,14 +1,16 @@
 <template>
   <div class="wapper">
     <div class="headinfo">
-      <div class="headinfo-left">
-        <p>作战时间 2019年12月30日 12时34分10秒</p>
+      <div class="headinfo-left ">
+        <p class="head-strstyle head-strstyle-lr">作战时间 2019年12月30日 12时34分10秒</p>
       </div>
       <div class="headinfo-content">
-        <p>空军作战部队指挥系统</p>
+        <img :src="titleLeftUrl" class="title-img-left" />
+        <p class="head-strstyle head-strstyle-mid">空军作战部队指挥系统</p>
+        <img :src="titleRightUrl" class="title-img-left" />
       </div>
       <div class="headinfo-right">
-        <p>天文时间 2019年12月30日 12时34分10秒 天气14C 湿度65% 风力7级</p>
+        <p class="head-strstyle head-strstyle-lr">天文时间 2019年12月30日 12时34分10秒 天气14C 湿度65% 风力7级</p>
       </div>
     </div>
     <div class="main">
@@ -81,6 +83,8 @@ import EquipmentImg from '../assets/equipment.png';
 import ReportImg from '../assets/report.png';
 import SplitLineImg from '../assets/split-line.png';
 import SearchImg from '../assets/search.png';
+import TitleLeftImg from '../assets/title-left.png';
+import TitleRightImg from '../assets/title-right.png';
 // import MainLeftBtnImg from '../assets/main-left-btn.png';
 export default {
   name: 'init-page',
@@ -98,6 +102,8 @@ export default {
       reportUrl: ReportImg,
       splitLineUrl: SplitLineImg,
       searchIUrl: SearchImg,
+      titleLeftUrl: TitleLeftImg,
+      titleRightUrl: TitleRightImg,
       // mainLeftBtnUrl: MainLeftBtnImg,
       search_text: ''
     };
@@ -113,12 +119,41 @@ export default {
 };
 </script>
 <style>
+ @font-face {
+  font-family: 'Zhongheijian';     /* 这个名字可以自己定义 */
+	src: url('../assets/font/Zhongheijian.ttf'); 
+ }
+ .title-img-left{
+
+   width: 80px;
+   height: 8px;
+   margin-top: 60px;
+ }
+.head-strstyle{
+  font-family:"Zhongheijian" ;
+}
+.head-strstyle-lr{
+  color:whitesmoke;
+  font-size: 20px;
+}
+.head-strstyle-mid{
+
+  /* color: transparent; */
+  background:linear-gradient(to right, rgba(0,0,0,1) -50%, rgba(255, 255, 255, 1) 50%, rgba(0,0,0,1) 150%);
+  /* background: linear-gradient(to right, rgba(0,0,0,.1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0,0,0,.1) 100%); */
+  font-size: 40px;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+}
 .left-img{
   width: 110px;
   /* height: 150px; */
   background-image: url('../assets/main-left-btn.png');
   background-repeat: no-repeat;
   background-size: 80% 80%;
+  /* border: solid 1px rgb(141, 141, 141); */
 }
 .mid-img{
   width: 110px;
@@ -148,8 +183,8 @@ export default {
   background-color: #fff;
 } */
 .footer-content .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus,
-.el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
-.el-menu--horizontal > .el-submenu .el-submenu__title:hover {
+.footer-content .el-menu--horizontal >  .el-menu-item:not(.is-disabled):hover,
+.footer-content .el-menu--horizontal >   .el-submenu .el-submenu__title:hover {
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -200,8 +235,8 @@ export default {
   margin-top: -3px;
 }
 .el-menu--horizontal .el-menu .el-menu-item,
-.el-menu--horizontal .el-menu .el-submenu__title {
-  background-color: #fff;
+.footer-content .el-menu--horizontal .el-menu .el-submenu__title {
+  background-color:  rgba(255, 255, 255, 0);
   float: none;
   height: 36px;
   line-height: 36px;
@@ -264,7 +299,7 @@ export default {
 .el-menu-item:focus,
 .el-menu-item:hover {
   outline: 0;
-  background-color: #ecf5ff;
+  background-color: rgba(0, 0, 0, 0);
 }
 .el-menu-item.is-disabled {
   opacity: 0.25;
@@ -298,7 +333,7 @@ export default {
 .el-submenu__title:focus,
 .el-submenu__title:hover {
   outline: 0;
-  background-color: #ecf5ff;
+  background-color:rgba(0, 0, 0, 0);
 }
 .el-submenu__title.is-disabled {
   opacity: 0.25;
@@ -306,7 +341,7 @@ export default {
   background: 0 0 !important;
 }
 .el-submenu__title:hover {
-  background-color: #ecf5ff;
+  background-color: rgba(0, 0, 0, 0);;
 }
 .el-submenu.is-active .el-submenu__title {
   border-bottom-color: #409eff;
@@ -367,6 +402,9 @@ htmt,
 body {
   height: 100%;
   min-height: 100%;
+  background-image: url("../assets/dt.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   /* background-color: rgb(16, 16, 102); */
 }
 .footer-left-one {
@@ -435,6 +473,8 @@ body {
 .headinfo-content {
   flex: 1;
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 .headinfo-left {
   flex: 1;
