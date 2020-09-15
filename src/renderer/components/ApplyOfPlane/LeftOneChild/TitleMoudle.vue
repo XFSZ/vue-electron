@@ -116,6 +116,7 @@ export default {
 .titlemain {
   display: flex;
   flex-direction: column;
+  margin-left: 12px;
   /* align-items: center; */
   /* height: 90%; */
   width: 240px;
@@ -144,6 +145,7 @@ export default {
   font-size: 8px;
 }
 .table-head-value {
+  margin-top: -8px;
   flex: 1;
   display: flex;
   flex-direction: row;

@@ -411,6 +411,7 @@ export default {
 }
 .threecircle {
   /* width: 350px; */
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;

@@ -398,6 +398,7 @@ export default {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  margin-bottom: 8px
 }
 .threecircle {
   display: flex;
