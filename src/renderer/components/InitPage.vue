@@ -74,7 +74,9 @@
       </div>
 
       <div class="footer-right">
-        <p class="back-button">返回</p>
+        <div class="back-button">
+          <p class="back-button-text">返回</p>
+        </div>
 
         <!-- <el-button round  >返回</el-button> -->
       </div>
@@ -93,6 +95,7 @@ import SearchImg from '../assets/search.png';
 import TitleLeftImg from '../assets/title-left.png';
 import TitleRightImg from '../assets/title-right.png';
 import BlankImg from '../assets/block.png';
+// import BackGourdImg from '../assetsback'
 // import MainLeftBtnImg from '../assets/main-left-btn.png';
 export default {
   name: 'init-page',
@@ -177,7 +180,7 @@ export default {
   /* height: 150px; */
   background-image: url("../assets/main-left-btn.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
   /* border: solid 1px rgb(141, 141, 141); */
 }
 .left-img:focus {
@@ -186,7 +189,7 @@ export default {
   /* height: 150px; */
   background-image: url("../assets/main-left-btn-active.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
   /* border: solid 1px rgb(141, 141, 141); */
 }
 .left-img:hover {
@@ -195,61 +198,51 @@ export default {
   /* height: 150px; */
   background-image: url("../assets/main-left-btn-active.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
   /* border: solid 1px rgb(141, 141, 141); */
 }
-/* .left-img.is-active {
-  font-family: "Zhongheijian";
-  width: 110px; */
-  /* color: #ffffff; */
-  /* height: 150px; */
-  /* background-image: url("../assets/main-right-btn.png");
-  background-repeat: no-repeat;
-  background-size: 80% 80%; */
-  /* border: solid 1px rgb(141, 141, 141); */
-/* } */
 
 .mid-img {
   font-family: "Zhongheijian";
   width: 110px;
   background-image: url("../assets/main-mid-btn.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
 }
 .mid-img:hover {
   font-family: "Zhongheijian";
   width: 110px;
   background-image: url("../assets/main-mid-btn-active.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
 }
 .mid-img:focus {
   font-family: "Zhongheijian";
   width: 110px;
   background-image: url("../assets/main-mid-btn-active.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
 }
 .right-img {
   font-family: "Zhongheijian";
   width: 110px;
   background-image: url("../assets/main-right-btn.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
 }
-.right-img:hover  {
+.right-img:hover {
   /* 激活使用is-active */
   width: 110px;
   background-image: url("../assets/main-right-btn-active.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
 }
 .right-img:focus {
   /* 激活使用is-active */
   width: 110px;
   background-image: url("../assets/main-right-btn-active.png");
   background-repeat: no-repeat;
-  background-size: 80% 80%;
+  background-size: 96% 100%;
 }
 /* .footer-content .el-menu {
   border-right: solid 1px #e6e6e6;
@@ -324,15 +317,17 @@ export default {
 .el-menu--horizontal .el-menu .el-submenu.is-active > .el-submenu__title {
   color: #ffffff;
 }
-.el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
-.el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+.footer-content .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
+.footer-content .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
   outline: 0;
-  color: #303133;
+  color: whitesmoke;
+  /* color: #303133; */
 }
 .footer-content .el-menu--horizontal > .el-menu-item.is-active {
   /* 激活状态 */
   border-bottom: 2px solid rgba(255, 255, 255, 0);
-  color: #303133;
+  /* color: #303133; */
+  color: whitesmoke;
 }
 .el-menu--collapse {
   width: 64px;
@@ -359,10 +354,12 @@ export default {
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
-.el-menu-item {
-  font-size: 14px;
-  color: #303133;
-  padding: 0 20px;
+.footer-content .el-menu-item {
+  font-size: 27px;
+  width: 300px;
+  color: whitesmoke;
+  /* color: #303133; */
+  padding: 0 90px;
   cursor: pointer;
   -webkit-transition: border-color 0.3s, background-color 0.3s, color 0.3s;
   transition: border-color 0.3s, background-color 0.3s, color 0.3s;
@@ -510,15 +507,39 @@ html {
   margin-top: 7px;
 }
 .back-button {
-  font-size: 10px;
-  margin-right: 13px;
-  display: inline;
+  width: 100px;
+  height: 50px;
+  margin-right: 140px;
+  display: inline-block;
+  background-image: url("../assets/back-btn.png");
+  background-size: 100% 100%;
 }
+.back-button:hover {
+  width: 100px;
+  height: 50px;
+  margin-right: 140px;
+  display: inline-block;
+  background-image: url("../assets/back-btn-active.png");
+  background-size: 100% 100%;
+}
+.back-button-text {
+  user-select: none;
+  font-family: "Zhongheijian";
+  color: azure;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-right: 30px;
+  /* margin-right: 140px; */
+  display: inline-block;
+}
+
 .footer-content .el-menu {
   border-right: solid 1px rgba(255, 255, 255, 0);
   list-style: none;
+  user-select: none;
   position: relative;
-  margin: 0;
+  /* margin: 0; */
+  margin-left: 5px;
   padding-left: 0;
   display: flex;
   justify-content: center;
