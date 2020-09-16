@@ -42,8 +42,8 @@
     <div
       id="myChart_rose1"
       :style="{
-        width: '220px',
-        height: '220px',
+        width: '540px',
+        height: '468px',
         marginLeft: '40px',
       }"
     ></div>
@@ -227,6 +227,7 @@ export default {
 .title-table-head-main {
   display: flex;
   flex-direction: row;
+  align-items: center
   /* margin-left: 50px; */
   /* background-color: rgb(34, 50, 75); */
 }
@@ -234,7 +235,7 @@ export default {
   width: 4px;
   height: 4px;
 
-  margin-top: 12px;
+  /* margin-top: 12px; */
 }
 .left-img {
   margin-left: 22px;
@@ -252,6 +253,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 60px;
   justify-content: space-evenly;
   background-color: #061d3f;
 }
@@ -259,10 +261,10 @@ export default {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  height: 88%;
-  width: 280px;
+  height: 100%;
+  /* width: 280px; */
   margin-top: 15px;
-  margin-right: 10px;
+  margin-right: 148px;
   /* border: 1px solid darkslategray;
   border-radius: 10px;
   box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset; */
@@ -282,16 +284,19 @@ export default {
 }
 .title-child {
   font-family: "Zhongheijian";
-  font-size: 9px;
+  font-size: 12px;
   height: 6px;
   margin-left: 4px;
   color: white;
+  margin-right: 4px;
+  margin-top: 4px;
 }
 .title-child-num {
   font-family: "dinPro";
+  font-size: 30px;
   color: aqua;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   /* flex: 1; */
   /* text-align: center; */
   /* justify-content: center; */
@@ -307,6 +312,8 @@ export default {
 .text-table {
   display: flex;
   flex-direction: column;
+  margin-left: 26px;
+  margin-right: 24px;
 }
 .titlemain {
   display: flex;

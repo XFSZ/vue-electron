@@ -147,7 +147,7 @@ export default {
   width: 4px;
   height: 4px;
 
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 .left-img {
   /* margin-left: 22px; */
@@ -159,6 +159,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 .title-left {
   display: flex;
@@ -175,6 +176,7 @@ export default {
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 20px
   /* align-items: center; */
   /* height: 90%; */
   /* width: 240px; */
@@ -192,6 +194,7 @@ export default {
   margin-top: 6px;
   margin-left: 14px;
   margin-right: 14px;
+  
 }
 .table-head-context {
   flex: 1;
@@ -199,14 +202,15 @@ export default {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  background-color:#061d3f
+  background-color:#061d3f;
+  padding-right: 10px;
 }
 .table-head-title {
   font-family: "Zhongheijian";
   color: whitesmoke;
   /* flex: 1; */
   text-align: center;
-  font-size: 8px;
+  font-size: 12px;
   margin-left: 4px;
   margin-right: 4px;
 }
@@ -222,9 +226,12 @@ export default {
   font-family: 'dinPro';
   color: aqua;
   flex: 1;
+  font-size: 30px;
+  margin-bottom: 10px;
   text-align: center;
   justify-content: center;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 4px;
   background-color:rgb(34, 50, 75)
 }
 .table-head-strvalue {
@@ -232,7 +239,8 @@ export default {
   color: whitesmoke;
   text-align: center;
   justify-content: flex-end;
-  font-size: 10px;
+  align-self: center;
+  font-size: 12px;
   margin-top: 5px;
 }
 </style>

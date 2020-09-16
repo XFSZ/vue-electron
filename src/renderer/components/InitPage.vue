@@ -1,8 +1,10 @@
 <template>
   <div class="wapper">
     <div class="headinfo">
-      <div class="headinfo-left ">
-        <p class="head-strstyle head-strstyle-lr">作战时间 2019年12月30日 12时34分10秒</p>
+      <div class="headinfo-left">
+        <p class="head-strstyle head-strstyle-lr">
+          作战时间 2019年12月30日 12时34分10秒
+        </p>
       </div>
       <div class="headinfo-content">
         <img :src="titleLeftUrl" class="title-img-left" />
@@ -10,7 +12,9 @@
         <img :src="titleRightUrl" class="title-img-left" />
       </div>
       <div class="headinfo-right">
-        <p class="head-strstyle head-strstyle-lr">天文时间 2019年12月30日 12时34分10秒 天气14C 湿度65% 风力7级</p>
+        <p class="head-strstyle head-strstyle-lr">
+          天文时间 2019年12月30日 12时34分10秒 天气14C 湿度65% 风力7级
+        </p>
       </div>
     </div>
     <div class="main">
@@ -28,7 +32,9 @@
     <div class="footer">
       <div class="footer-left">
         <div class="footer-left-one">
-          <p class="footer-left-one-span">【演习-2019】空115团完好率低于70%，可用飞机不足。</p>
+          <p class="footer-left-one-span">
+            【演习-2019】空115团完好率低于70%，可用飞机不足。
+          </p>
           <img :src="blackUrl" class="black-img-text" />
         </div>
         <div class="footer-left-task">
@@ -122,68 +128,87 @@ export default {
 };
 </script>
 <style>
- @font-face {
-  font-family: 'Zhongheijian';     /* 这个名字可以自己定义 */
-	src: url('../assets/font/Zhongheijian.ttf'); 
- }
- input{
-   color: aliceblue;
- }
- .title-img-left{
+@font-face {
+  font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
+  src: url("../assets/font/Zhongheijian.ttf");
+}
+.footer-left-search {
+  width: 230px;
+  height: 43px;
+}
 
-   width: 80px;
-   height: 8px;
-   margin-top: 60px;
- }
-.head-strstyle{
-  font-family:"Zhongheijian" ;
+.title-img-left {
+  width: 80px;
+  height: 8px;
+  /* margin-top: 60px; */
 }
-.head-strstyle-lr{
-  color:whitesmoke;
-  font-size: 20px;
+.head-strstyle {
+  font-family: "Zhongheijian";
 }
-.black-img-text{
-    height: 4px;
-    width: 4px;
-    position: absolute;
-    margin-top: -32px;
-    margin-left: 8px;
+.head-strstyle-lr {
+  color: whitesmoke;
+  font-size: 24px;
 }
-.head-strstyle-mid{
-
+.black-img-text {
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  margin-top: -60px;
+  margin-left: 8px;
+}
+.head-strstyle-mid {
   /* color: transparent; */
-  background:linear-gradient(to right, rgba(0,0,0,1) -50%, rgba(255, 255, 255, 1) 50%, rgba(0,0,0,1) 150%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) -50%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 150%
+  );
   /* background: linear-gradient(to right, rgba(0,0,0,.1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0,0,0,.1) 100%); */
-  font-size: 40px;
+  font-size: 44px;
   -webkit-background-clip: text;
   color: transparent;
   /* -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
 }
-.left-img{
+.left-img {
+  font-family: "Zhongheijian";
   width: 110px;
   /* height: 150px; */
-  background-image: url('../assets/main-left-btn.png');
+  background-image: url("../assets/main-left-btn.png");
   background-repeat: no-repeat;
   background-size: 80% 80%;
   /* border: solid 1px rgb(141, 141, 141); */
 }
-.mid-img{
+.left-img.is-active {
+  font-family: "Zhongheijian";
   width: 110px;
-  background-image: url('../assets/main-mid-btn.png');
+  /* color: #ffffff; */
+  /* height: 150px; */
+  background-image: url("../assets/main-left-btn.png");
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  /* border: solid 1px rgb(141, 141, 141); */
+}
+
+.mid-img {
+  font-family: "Zhongheijian";
+  width: 110px;
+  background-image: url("../assets/main-mid-btn.png");
   background-repeat: no-repeat;
   background-size: 80% 80%;
 }
-.right-img{
+.right-img {
+  font-family: "Zhongheijian";
   width: 110px;
-  background-image: url('../assets/main-right-btn.png');
+  background-image: url("../assets/main-right-btn.png");
   background-repeat: no-repeat;
   background-size: 80% 80%;
 }
-.right-img:hover{
+.right-img:hover {
   /* 激活使用is-active */
   width: 110px;
-  background-image: url('../assets/main-left-btn.png');
+  background-image: url("../assets/main-left-btn.png");
   background-repeat: no-repeat;
   background-size: 80% 80%;
 }
@@ -196,8 +221,8 @@ export default {
   background-color: #fff;
 } */
 .footer-content .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus,
-.footer-content .el-menu--horizontal >  .el-menu-item:not(.is-disabled):hover,
-.footer-content .el-menu--horizontal >   .el-submenu .el-submenu__title:hover {
+.footer-content .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
+.footer-content .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -247,9 +272,9 @@ export default {
   margin-left: 8px;
   margin-top: -3px;
 }
-.el-menu--horizontal .el-menu .el-menu-item,
-.footer-content .el-menu--horizontal .el-menu .el-submenu__title {
-  background-color:  rgba(255, 255, 255, 0);
+.footer-content .el-menu--horizontal .el-menu .el-menu-item,
+.el-menu--horizontal .el-menu .el-submenu__title {
+  background-color: rgba(255, 255, 255, 0);
   float: none;
   height: 36px;
   line-height: 36px;
@@ -258,14 +283,14 @@ export default {
 }
 .el-menu--horizontal .el-menu .el-menu-item.is-active,
 .el-menu--horizontal .el-menu .el-submenu.is-active > .el-submenu__title {
-  color: #303133;
+  color: #ffffff;
 }
 .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
 .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
   outline: 0;
   color: #303133;
 }
-.footer-content  .el-menu--horizontal > .el-menu-item.is-active {   
+.footer-content .el-menu--horizontal > .el-menu-item.is-active {
   /* 激活状态 */
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   color: #303133;
@@ -346,7 +371,7 @@ export default {
 .el-submenu__title:focus,
 .el-submenu__title:hover {
   outline: 0;
-  background-color:rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 .el-submenu__title.is-disabled {
   opacity: 0.25;
@@ -354,7 +379,7 @@ export default {
   background: 0 0 !important;
 }
 .el-submenu__title:hover {
-  background-color: rgba(0, 0, 0, 0);;
+  background-color: rgba(0, 0, 0, 0);
 }
 .el-submenu.is-active .el-submenu__title {
   border-bottom-color: #409eff;
@@ -367,19 +392,20 @@ export default {
 }
 
 .search-img {
-  height: 20px;
-  width: 20px;
+  height: 26px;
+  width: 26px;
   position: absolute;
-  margin-top: -24px;
-  margin-left: 74px;
+  margin-top: -32px;
+  margin-left: 202px;
 }
 .input-box {
+  color: aliceblue;
   display: inline-block;
-  width: 100px;
+  width: 230px;
   border-radius: 7px;
-  height: 22px;
+  height: 38px;
   text-indent: 4px;
-  margin-top: 9px;
+  /* margin-top: 9px; */
   border: 1px solid;
   background-color: #031119;
   box-shadow: #012c40 0px 0px 20px 1px;
@@ -390,22 +416,25 @@ export default {
   width: 2px;
 }
 .left-bottom-p-num {
-  font-family:"Zhongheijian" ;
+  font-family: "Zhongheijian";
   color: whitesmoke;
   font-size: 20px;
   margin-top: 10px;
+  margin-left: 12px;
+  margin-right: 28px;
 }
 .img-style {
-  height: 46px;
-  width: 46px;
-  margin-top: -10px;
+  height: 64px;
+  width: 64px;
+  margin-top: -8px;
 }
 .left-bottom-p {
-  font-family:"Zhongheijian" ;
+  font-family: "Zhongheijian";
   color: whitesmoke;
   text-align: center;
   font-size: 12px;
-  margin-top: -10px;
+  margin-top: -18px;
+  margin-left: 4px;
 }
 .left-bottom-split {
   margin-left: 3px;
@@ -415,8 +444,8 @@ export default {
   display: flex;
   flex-direction: column;
 }
-html,
-body {
+
+html {
   /* height: 100%; */
   height: 1620px;
   width: 4320px;
@@ -427,17 +456,17 @@ body {
   /* background-color: rgb(16, 16, 102); */
 }
 .footer-left-one {
-  width: 166px;
-  height: 35px;
+  width: 388px;
+  height: 66px;
   background-image: url("../assets/left-bottom-backgroud.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .footer-left-one-span {
-  font-family:"Zhongheijian" ;
+  font-family: "Zhongheijian";
   /* color: whitesmoke; */
   color: azure;
-  font-size: 10px;
+  font-size: 20px;
   margin-left: 12px;
   margin-top: 7px;
 }
@@ -458,19 +487,19 @@ body {
 }
 
 .left-two-style {
-  /* margin-left: 16px; */
-  background-image: url("../assets/main-context-backgroud.png");
+  margin-left: 20px;
+  background-image: url("../assets/echarts-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .left-one-style {
   margin-left: 10px;
-  background-image: url("../assets/main-context-backgroud.png");
+  background-image: url("../assets/echarts-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .right-style {
-  background-image: url("../assets/main-context-backgroud.png");
+  background-image: url("../assets/echarts-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -496,9 +525,12 @@ body {
   text-align: center;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .headinfo-left {
   flex: 1;
+  margin-left: 120px;
   /* width: 300px;     */
 }
 .headinfo-right {
@@ -510,6 +542,7 @@ body {
   /* flex: 1; */
   display: flex;
   flex-direction: row;
+  margin-left: 120px;
 }
 .main-content {
   text-align: center;
@@ -524,27 +557,34 @@ body {
   flex: 0;
   display: flex;
   flex-direction: row;
+  background-image: url("../assets/main-top.png");
   /* justify-content:center; */
 }
 .footer {
   width: 100%;
   height: 100px;
+  margin-top: 70px;
   /* margin-top: -32px; */
   /* flex: 0; */
   display: flex;
   flex-direction: row;
-  background-image: url("../assets/main-bottom.png");
+  background-image: url("../assets/main-bottom1.png");
   background-repeat: no-repeat;
-  background-size: 100% 70%;
+  background-size: 100% 100%;
 }
 .footer-left {
   flex: 1;
   display: flex;
   flex-direction: row;
+  margin-left: 140px;
+  margin-top: 36px;
 }
 .footer-content {
-  margin-top: -10px;
+  /* margin-top: -10px; */
+  margin-left: -140px;
   flex: 1;
+  /* width: 1180px; */
+  /* height: 74px; */
 }
 .footer-right {
   width: 100%;

@@ -3,12 +3,12 @@
     <title-moudle :blockImg="flyUrl" :leftTitle="leftTitle1" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar1"
-      :style="{ width: '220px', height: '218px', marginTop: '-38px' }"
+      :style="{ width: '600px', height: '368px' ,marginTop: '-38px' }"
     ></div>
     <title-moudle :blockImg="logisticsUrl" :leftTitle="leftTitle2" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar2"
-      :style="{ width: '220px', height: '218px', marginTop: '-38px' }"
+      :style="{ width: '600px', height: '368px',marginTop: '-38px' }"
     ></div>
     <div class="threecircle">
       <div class="title-left">
@@ -460,7 +460,7 @@ export default {
 .blank-img {
   width: 4px;
   height: 4px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   /* margin-left: 20px; */
   /* margin-top: 10px; */
 }
@@ -468,6 +468,7 @@ export default {
   display: flex;
   flex-direction: row;
   margin-left: 10px;
+  align-items: center;
 }
 .block-img {
   height: 14px;
@@ -479,14 +480,14 @@ export default {
   flex-direction: row;
 }
 .deom_hr {
-  width: 90%;
+  width: 100%;
   height: 1px;
   background: rgba(255, 255, 255, 0.3);
 }
 .hr {
   height: 0.5px;
   /* width: 100%; */
-  width: 280px;
+  /* width: 280px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -513,6 +514,7 @@ export default {
 }
 .circle-title {
   display: flex;
+  flex: 3;
   flex-direction: column;
   text-align: center;
   justify-content: center;
@@ -520,7 +522,9 @@ export default {
 }
 .threecircle {
   /* width: 350px; */
-  margin-left: 10px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-top: 21px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -540,7 +544,7 @@ export default {
   /* align-items: center; */
   /* height: 90%;
   width: 90%; */
-  height: 88%;
+  /* height: 88%; */
   margin-top: 15px;
   /* border: 1px solid darkslategray;
   border-radius: 10px;
@@ -549,7 +553,7 @@ export default {
 .table-head {
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
+    margin-top: 4px;
     /* align-items: center; */
     flex: 1;
     margin-left: 16px;
@@ -569,7 +573,7 @@ export default {
   /* flex: 1; */
   margin-left: 6px;
   text-align: center;
-  font-size: 8px;
+  font-size: 14px;
 }
 .table-head-value {
   /* flex: 1; */
@@ -578,8 +582,9 @@ export default {
   flex-direction: row;
   text-align: center;
   justify-content: center;
-  height: 20px;
-  margin-top: -4px;
+  /* height: 20px; */
+      /* margin-top: -14px */
+  margin-top: -14px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 5px;
@@ -588,6 +593,7 @@ export default {
   font-family: "dinPro";
   color: aqua;
   flex: 1;
+  font-size: 30px;
   text-align: center;
   justify-content: center;
   /* margin-left: 20px; */
@@ -598,7 +604,8 @@ export default {
   color: whitesmoke;
   text-align: center;
   justify-content: flex-end;
-  font-size: 10px;
-  margin-top: 5px;
+  align-self: flex-end;
+  font-size: 12px;
+  /* margin-top: 5px; */
 }
 </style>

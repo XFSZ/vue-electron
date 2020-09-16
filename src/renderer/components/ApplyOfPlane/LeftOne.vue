@@ -8,7 +8,7 @@
     />
     <div
       id="myChart"
-      :style="{ width: '420px', height: '250px', marginTop: '-38px' }"
+      :style="{ width: '600px', height: '368px', marginTop: '-38px' }"
     ></div>
     <title-moudle
       :blockImg="logisticsUrl"
@@ -18,7 +18,7 @@
     />
     <div
       id="myChart1"
-      :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
+      :style="{ width: '600px', height: '368px', marginTop: '-38px' }"
     ></div>
     <title-moudle
       :blockImg="flyUrl"
@@ -30,7 +30,7 @@
       <div class="circle-title">
         <div
           id="myChart_c1"
-          :style="{ width: '70px', height: '110px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '120px', marginTop: '2px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber1"
@@ -41,7 +41,7 @@
       <div class="circle-title">
         <div
           id="myChart_c2"
-          :style="{ width: '70px', height: '110px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '120px', marginTop: '2px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber2"
@@ -52,7 +52,7 @@
       <div class="circle-title">
         <div
           id="myChart_c3"
-          :style="{ width: '70px', height: '110px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '120px', marginTop: '2px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
@@ -491,7 +491,7 @@ export default {
   display: flex;
   flex-direction: row;
   text-align: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .chart {
   width: "300px";
