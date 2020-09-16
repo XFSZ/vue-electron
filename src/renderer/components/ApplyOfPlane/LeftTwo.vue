@@ -3,12 +3,12 @@
     <title-moudle :blockImg="flyUrl" :leftTitle="leftTitle1" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar1"
-      :style="{ width: '600px', height: '368px' ,marginTop: '-38px' }"
+      :style="{ width: '500px', height: '368px' ,marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px' }"
     ></div>
     <title-moudle :blockImg="logisticsUrl" :leftTitle="leftTitle2" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar2"
-      :style="{ width: '600px', height: '368px',marginTop: '-38px' }"
+      :style="{ width: '500px', height: '368px',marginTop: '-38px',    marginLeft: '30px',marginRight: '60px' }"
     ></div>
     <div class="threecircle">
       <div class="title-left">
@@ -61,10 +61,10 @@
           <div
             id="myChart_tc1"
             :style="{
-              width: '160px',
-              height: '90px',
+              width: '180px',
+              height: '180px',
               marginTop: '20px',
-              marginLeft: '8px',
+              marginLeft: '40px',
             }"
           ></div>
         </div>
@@ -161,11 +161,23 @@ export default {
           min: 0,
           maxInterval: 100,
           minInterval: 0,
-          interval: 20
+          interval: 20,
+          splitLine: { // 网格线
+            'show': false
+          }
         },
         yAxis: {
           type: 'category',
-          data: ['弹炮系统', '四代', '三代', '二代', '一代']
+          data: ['弹炮系统', '四代', '三代', '二代', '一代'],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#ffffff'
+            }
+          },
+          axisTick: { // y轴刻度线
+            'show': false
+          }
         },
         series: [
           {
@@ -174,11 +186,11 @@ export default {
             type: 'bar',
             label: {
               show: true, // 开启显示
-              position: [180, 10],
+              position: [360, 10],
               formatter: '完好率:{c}%', // 显示百分号
               textStyle: {
                 // 数值样式
-                color: 'black', // 字体颜色
+                color: 'white', // 字体颜色
                 fontSize: 10 // 字体大小
               }
             },
@@ -251,11 +263,23 @@ export default {
           max: 100,
           min: 0,
           interval: 20,
-          boundaryGap: [0, 0.01]
+          boundaryGap: [0, 0.01],
+          splitLine: { // 网格线
+            'show': false
+          }
         },
         yAxis: {
           type: 'category',
-          data: ['四代', '三代', '二代', '一代']
+          data: ['四代', '三代', '二代', '一代'],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#ffffff'
+            }
+          },
+          axisTick: { // y轴刻度线
+            'show': false
+          }
         },
         series: [
           {
@@ -264,11 +288,11 @@ export default {
             type: 'bar',
             label: {
               show: true, // 开启显示
-              position: [180, 10],
+              position: [380, 10],
               formatter: '完好率:{c}%', // 显示百分号
               textStyle: {
                 // 数值样式
-                color: 'black', // 字体颜色
+                color: 'white', // 字体颜色
                 fontSize: 10 // 字体大小
               }
             },
@@ -471,7 +495,7 @@ export default {
   align-items: center;
 }
 .block-img {
-  height: 14px;
+  height: 20px;
   margin-top: 18px;
   margin-left: 15px;
 }
@@ -504,6 +528,7 @@ export default {
 }
 .titlename {
   font-family: "Zhongheijian";
+  font-size: 18px;
   height: 8px;
   margin-left: 4px;
   color: white;

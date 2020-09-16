@@ -44,7 +44,7 @@
       :style="{
         width: '540px',
         height: '468px',
-        marginLeft: '40px',
+       
       }"
     ></div>
     <div class="text-table">
@@ -178,7 +178,7 @@ export default {
           {
             name: '访问来源',
             type: 'pie',
-            radius: '42%',
+            radius: '40%',
             center: ['50%', '50%'],
             data: [
               { value: 127, name: '作战备战' },
@@ -241,7 +241,7 @@ export default {
   margin-left: 22px;
 }
 .block-img {
-  height: 14px;
+  height: 20px;
   margin-top: 18px;
   margin-left: 15px;
 }
@@ -305,6 +305,7 @@ export default {
 }
 .titlename {
   font-family: "Zhongheijian";
+  font-size: 18px;
   height: 8px;
   margin-left: 4px;
   color: white;

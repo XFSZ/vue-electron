@@ -27,7 +27,7 @@
     <div class="right-child-three">
       <div
         id="myChart_rc4"
-        :style="{ width: '72px', height: '72px', marginTop: '14px' }"
+        :style="{ width: '100px', height: '100px', marginTop: '14px' }"
       ></div>
     </div>
   </div>
@@ -97,7 +97,7 @@ export default {
             name: '电子干扰',
             type: 'pie',
             center: ['40%', '40%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
+            radius: ['74%', '80%'],
             avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
@@ -158,10 +158,10 @@ export default {
 .p-style-str {
   font-family: "Zhongheijian";
   color: whitesmoke;
-  font-size: 8px;
+  font-size: 12px;
   height: 1px;
 }
-.p-style-num{
+.p-style-num {
   font-family: "dinPro";
   color: aqua;
   /* flex: 1; */
@@ -169,12 +169,16 @@ export default {
   text-align: center;
   justify-content: center;
   margin-left: 20px;
-  font-size: 6px;
+  margin-top: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 11px;
   background-color: rgb(34, 50, 75);
 }
 .title-table-head-main {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .blank-img {
   width: 4px;
@@ -187,10 +191,14 @@ export default {
   margin-left: -30px;
 }
 .right-child-main {
+  margin-top: 6px;
   display: flex;
   flex-direction: row;
-  width: 280px;
+  /* width: 280px; */
   justify-content: space-evenly;
+  border-style: solid; 
+  border-width: 1px;
+  border-color: #1a2639;
 }
 .right-child-one {
   display: flex;
@@ -198,6 +206,7 @@ export default {
 }
 .right-child-two {
   display: flex;
+  margin-top: 11px;
   flex-direction: column;
   margin-left: -30px;
 }

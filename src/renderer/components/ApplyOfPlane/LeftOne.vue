@@ -8,7 +8,7 @@
     />
     <div
       id="myChart"
-      :style="{ width: '600px', height: '368px', marginTop: '-38px' }"
+      :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px' ,marginRight: '60px'}"
     ></div>
     <title-moudle
       :blockImg="logisticsUrl"
@@ -18,7 +18,7 @@
     />
     <div
       id="myChart1"
-      :style="{ width: '600px', height: '368px', marginTop: '-38px' }"
+      :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px'}"
     ></div>
     <title-moudle
       :blockImg="flyUrl"
@@ -30,7 +30,7 @@
       <div class="circle-title">
         <div
           id="myChart_c1"
-          :style="{ width: '70px', height: '120px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber1"
@@ -41,7 +41,7 @@
       <div class="circle-title">
         <div
           id="myChart_c2"
-          :style="{ width: '70px', height: '120px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber2"
@@ -52,7 +52,7 @@
       <div class="circle-title">
         <div
           id="myChart_c3"
-          :style="{ width: '70px', height: '120px', marginTop: '2px' }"
+          :style="{ width: '70px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
@@ -114,12 +114,12 @@ export default {
       // 绘制图表
       myChart.resize;
       myChart.setOption({
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
-        },
+        // tooltip: {
+        //   trigger: 'axis',
+        //   axisPointer: {
+        //     type: 'shadow'
+        //   }
+        // },
 
         grid: {
           left: '3%',
@@ -134,11 +134,25 @@ export default {
           min: 0,
           maxInterval: 100,
           minInterval: 0,
-          interval: 20
+          interval: 20,
+          splitLine: { // 网格线
+            'show': false
+          }
         },
         yAxis: {
           type: 'category',
-          data: ['歼击机', '轰炸机', '运输机', '无人机', '特种级']
+
+          data: ['歼击机', '轰炸机', '运输机', '无人机', '特种级'],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#ffffff'
+            }
+          },
+          axisTick: { // y轴刻度线
+            'show': false
+          }
+
         },
         series: [
           {
@@ -147,7 +161,7 @@ export default {
             type: 'bar',
             label: {
               show: true, // 开启显示
-              position: [180, 10],
+              position: [380, 10],
               formatter: '完好率:{c}%', // 显示百分号
               textStyle: {
                 // 数值样式
@@ -230,11 +244,23 @@ export default {
           max: 100,
           min: 0,
           interval: 20,
-          boundaryGap: [0, 0.01]
+          boundaryGap: [0, 0.01],
+          splitLine: { // 网格线
+            'show': false
+          }
         },
         yAxis: {
           type: 'category',
-          data: ['空空导弹', '空地导弹', '知道炸弹', '普通炸弹']
+          data: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹'],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#ffffff'
+            }
+          },
+          axisTick: { // y轴刻度线
+            'show': false
+          }
         },
         series: [
           {
@@ -243,11 +269,11 @@ export default {
             type: 'bar',
             label: {
               show: true, // 开启显示
-              position: [180, 10],
+              position: [360, 10],
               formatter: '完好率:{c}%', // 显示百分号
               textStyle: {
                 // 数值样式
-                color: 'black', // 字体颜色
+                color: 'white', // 字体颜色
                 fontSize: 10 // 字体大小
               }
             },
@@ -485,7 +511,7 @@ export default {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 .threecircle {
   display: flex;

@@ -133,7 +133,7 @@ export default {
   align-items: center;
 }
 .block-img {
-  height: 14px;
+  height: 20px;
   margin-top: 18px;
   margin-left: 15px;
 }
@@ -167,6 +167,7 @@ export default {
 }
 .titlename {
   font-family: "Zhongheijian";
+  font-size: 18px;
   height: 8px;
   margin-left: 4px;
   color: white;
