@@ -191,18 +191,18 @@ export default {
             }),
             roseType: 'radius',
             label: {
-              color: 'rgba(1, 1, 1, 1)'
+              color: 'rgba(255, 255, 255, 1)'
             },
             labelLine: {
               lineStyle: {
-                color: 'rgba(1, 1, 1, 0.3)'
+                color: 'rgba(255, 255, 255, 0.3)'
               },
               smooth: 0.2,
               length: 10,
               length2: 20
             },
             itemStyle: {
-              color: '#372882',
+              color: '#001234',
               shadowBlur: 200,
               shadowColor: 'rgba(0, 0, 0, 0.5)'
             },

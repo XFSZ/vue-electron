@@ -529,7 +529,7 @@ body {
 .footer {
   width: 100%;
   height: 100px;
-  margin-top: -32px;
+  /* margin-top: -32px; */
   /* flex: 0; */
   display: flex;
   flex-direction: row;

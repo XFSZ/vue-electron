@@ -27,33 +27,33 @@
           <div class="table-head-context">
             <div class="title-table-head-main">
               <img :src="blankUrl" class="blank-img left-blank-img" />
-              <p class="table-head-title">型号总数</p>
+              <p class="table-head-title">飞机值班总数</p>
             </div>
             <div class="table-head-value">
               <span class="table-head-numvalue">{{
                 changeTotalNumberOfModels
               }}</span>
-              <span class="table-head-strvalue">型</span>
+              <span class="table-head-strvalue">次</span>
             </div>
           </div>
           <div class="table-head-context">
                <div class="title-table-head-main">
               <img :src="blankUrl" class="blank-img left-blank-img" />
-            <p class="table-head-title">数量总数</p>
+            <p class="table-head-title">地导营值班总数</p>
              </div>
             <div class="table-head-value">
               <span class="table-head-numvalue">{{ changeTotalNumber }}</span>
-              <span class="table-head-strvalue">架</span>
+              <span class="table-head-strvalue">次</span>
             </div>
           </div>
           <div class="table-head-context">
                <div class="title-table-head-main">
               <img :src="blankUrl" class="blank-img left-blank-img" />
-            <p class="table-head-title">完好总数</p>
+            <p class="table-head-title">雷达值班总数</p>
              </div>
             <div class="table-head-value">
               <span class="table-head-numvalue">{{ changeStandNumber }}</span>
-              <span class="table-head-strvalue">架</span>
+              <span class="table-head-strvalue">次</span>
             </div>
           </div>
         </div>
@@ -136,6 +136,7 @@ export default {
     },
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
+      var that = this;
       let myChart = this.$echarts.init(document.getElementById('myChart_bar1'));
       // 绘制图表
       myChart.resize;
@@ -164,7 +165,7 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ['歼击机', '轰炸机', '运输机', '无人机', '特种级']
+          data: ['弹炮系统', '四代', '三代', '二代', '一代']
         },
         series: [
           {
@@ -179,6 +180,35 @@ export default {
                 // 数值样式
                 color: 'black', // 字体颜色
                 fontSize: 10 // 字体大小
+              }
+            },
+            itemStyle: {
+              normal: {
+                // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                color: function(params) {
+                  // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
+                  var colorList = [
+
+                    ['#e0a607', '#675316', '#262821'],
+                    ['#d02e08', '#5b1b17', '#26131d'],
+
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941']
+                  ];
+
+                  var index = params.dataIndex;
+                  if (params.dataIndex >= colorList.length) {
+                    index = params.dataIndex - colorList.length;
+                  }
+                  var colors = new that.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                    { offset: 0, color: colorList[index][0] },
+                    { offset: 0.5, color: colorList[index][1] },
+                    { offset: 1, color: colorList[index][2] }
+                  ]);
+                  return colors;
+                }
+                // barBorderRadius: 5 // 柱状角成椭圆形
               }
             },
             showBackground: true,
@@ -225,7 +255,7 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ['空空导弹', '空地导弹', '知道炸弹', '普通炸弹']
+          data: ['四代', '三代', '二代', '一代']
         },
         series: [
           {
@@ -240,6 +270,35 @@ export default {
                 // 数值样式
                 color: 'black', // 字体颜色
                 fontSize: 10 // 字体大小
+              }
+            },
+            itemStyle: {
+              normal: {
+                // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                color: function(params) {
+                  // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
+                  var colorList = [
+
+                    ['#e0a607', '#675316', '#262821'],
+                    ['#d02e08', '#5b1b17', '#26131d'],
+
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941']
+                  ];
+
+                  var index = params.dataIndex;
+                  if (params.dataIndex >= colorList.length) {
+                    index = params.dataIndex - colorList.length;
+                  }
+                  var colors = new that.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                    { offset: 0, color: colorList[index][0] },
+                    { offset: 0.5, color: colorList[index][1] },
+                    { offset: 1, color: colorList[index][2] }
+                  ]);
+                  return colors;
+                }
+                // barBorderRadius: 5 // 柱状角成椭圆形
               }
             },
             showBackground: true,
@@ -306,12 +365,13 @@ export default {
           textStyle: {
             rich: {
               a: {
-                color: 'red',
+                color: 'white',
                 lineHeight: 8,
                 fontSize: 8 // 文字大小
               },
               b: {
-                color: '#333', // 文字颜色
+                color: '#878b91', // 文字颜色
+                lineHeight: 8,
                 fontSize: 6 // 文字大小
               }
             }
@@ -326,7 +386,7 @@ export default {
             radius: ['70%', '80%'],
             avoidLabelOverlap: false,
             hoverAnimation: false,
-            color: ['#D1FBEF', '#F9D858', '#4CD0DD'],
+            color: ['#7d7d7d', '#00cfff', '#ffffff'],
             label: {
               normal: {
                 // 正常的样式

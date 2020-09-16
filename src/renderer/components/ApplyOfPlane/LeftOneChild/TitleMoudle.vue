@@ -124,7 +124,9 @@ export default {
 }
 .hr {
   height: 0.5px;
-  width: 100%;
+  /* width: 100%; */
+  margin-left: 15px;
+  margin-right: 15px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -148,7 +150,7 @@ export default {
   margin-top: 10px;
 }
 .left-img {
-  margin-left: 22px;
+  /* margin-left: 22px; */
 }
 /* .right-img{
 
@@ -156,6 +158,7 @@ export default {
 .title-table-head-main {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .title-left {
   display: flex;
@@ -171,9 +174,10 @@ export default {
   display: flex;
   flex-direction: column;
   margin-left: 12px;
+  margin-right: 12px;
   /* align-items: center; */
   /* height: 90%; */
-  width: 240px;
+  /* width: 240px; */
   /* border: 1px solid darkslategray;
   border-radius: 10px; */
 }
@@ -186,6 +190,8 @@ export default {
   display: flex;
   flex-direction: row;
   margin-top: 6px;
+  margin-left: 14px;
+  margin-right: 14px;
 }
 .table-head-context {
   flex: 1;
@@ -198,9 +204,11 @@ export default {
 .table-head-title {
   font-family: "Zhongheijian";
   color: whitesmoke;
-  flex: 1;
+  /* flex: 1; */
   text-align: center;
   font-size: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 .table-head-value {
   margin-top: -8px;

@@ -1,23 +1,41 @@
 <template>
   <div class="main">
-    <title-moudle  :blockImg='flyUrl' :leftTitle='leftTitle1' :fromNum='fromNum' :toNum='toNum'/>
+    <title-moudle
+      :blockImg="flyUrl"
+      :leftTitle="leftTitle1"
+      :fromNum="fromNum"
+      :toNum="toNum"
+    />
     <div
       id="myChart"
-      :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
+      :style="{ width: '420px', height: '250px', marginTop: '-38px' }"
     ></div>
-    <title-moudle  :blockImg='logisticsUrl' :leftTitle='leftTitle2'  :fromNum='fromNum' :toNum='toNum' />
+    <title-moudle
+      :blockImg="logisticsUrl"
+      :leftTitle="leftTitle2"
+      :fromNum="fromNum"
+      :toNum="toNum"
+    />
     <div
       id="myChart1"
       :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
     ></div>
-    <title-moudle :blockImg='flyUrl' :leftTitle='leftTitle3'   :fromNum='fromNum' :toNum='toNum'/>
+    <title-moudle
+      :blockImg="flyUrl"
+      :leftTitle="leftTitle3"
+      :fromNum="fromNum"
+      :toNum="toNum"
+    />
     <div class="threecircle">
       <div class="circle-title">
         <div
           id="myChart_c1"
           :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
-        <title-moudle-bottom :goodNumber='googNumber1' :totalNumber='totalNumber1'/>
+        <title-moudle-bottom
+          :goodNumber="googNumber1"
+          :totalNumber="totalNumber1"
+        />
         <div></div>
       </div>
       <div class="circle-title">
@@ -25,7 +43,10 @@
           id="myChart_c2"
           :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
-        <title-moudle-bottom :goodNumber='googNumber2' :totalNumber='totalNumber2'/>
+        <title-moudle-bottom
+          :goodNumber="googNumber2"
+          :totalNumber="totalNumber2"
+        />
         <div></div>
       </div>
       <div class="circle-title">
@@ -33,7 +54,10 @@
           id="myChart_c3"
           :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
-        <title-moudle-bottom :goodNumber='googNumber3' :totalNumber='totalNumber3'/>
+        <title-moudle-bottom
+          :goodNumber="googNumber3"
+          :totalNumber="totalNumber3"
+        />
         <div></div>
       </div>
     </div>
@@ -78,16 +102,13 @@ export default {
       ]
     };
   },
-  computed: {
-
-  },
+  computed: {},
   mounted() {
     this.drawLine();
-
   },
   methods: {
-
     drawLine() {
+      var that = this;
       // 基于准备好的dom，初始化echarts实例
       let myChart = this.$echarts.init(document.getElementById('myChart'));
       // 绘制图表
@@ -130,24 +151,53 @@ export default {
               formatter: '完好率:{c}%', // 显示百分号
               textStyle: {
                 // 数值样式
-                color: 'black', // 字体颜色
+                color: 'white', // 字体颜色
                 fontSize: 10 // 字体大小
               }
             },
             showBackground: true,
+            // itemStyle: {
+            //   normal: {
+            //     color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+            //       { offset: 0, color: '#000' },
+            //       { offset: 0.3, color: '#888' },
+            //       { offset: 1, color: '#ddd' }
+            //     ])
+            //   }},
             itemStyle: {
               normal: {
-                color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                  { offset: 0, color: '#000' },
-                  { offset: 0.3, color: '#888' },
-                  { offset: 1, color: '#ddd' }
-                ])
-              }},
+                // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                color: function(params) {
+                  // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
+                  var colorList = [
+
+                    ['#e0a607', '#675316', '#262821'],
+                    ['#d02e08', '#5b1b17', '#26131d'],
+
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941']
+                  ];
+
+                  var index = params.dataIndex;
+                  if (params.dataIndex >= colorList.length) {
+                    index = params.dataIndex - colorList.length;
+                  }
+                  var colors = new that.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                    { offset: 0, color: colorList[index][0] },
+                    { offset: 0.5, color: colorList[index][1] },
+                    { offset: 1, color: colorList[index][2] }
+                  ]);
+                  return colors;
+                }
+                // barBorderRadius: 5 // 柱状角成椭圆形
+              }
+            },
             backgroundStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                { offset: 0, color: '#000' },
+                { offset: 1, color: '#ddd' },
                 { offset: 0.3, color: '#888' },
-                { offset: 1, color: '#ddd' }
+                { offset: 0, color: '#000' }
               ])
               // color: 'rgba(0, 220, 220, 0.8)'
               // shadowOffsetX: 50,
@@ -199,6 +249,35 @@ export default {
                 // 数值样式
                 color: 'black', // 字体颜色
                 fontSize: 10 // 字体大小
+              }
+            },
+            itemStyle: {
+              normal: {
+                // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                color: function(params) {
+                  // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
+                  var colorList = [
+
+                    ['#e0a607', '#675316', '#262821'],
+                    ['#d02e08', '#5b1b17', '#26131d'],
+
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941']
+                  ];
+
+                  var index = params.dataIndex;
+                  if (params.dataIndex >= colorList.length) {
+                    index = params.dataIndex - colorList.length;
+                  }
+                  var colors = new that.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                    { offset: 0, color: colorList[index][0] },
+                    { offset: 0.5, color: colorList[index][1] },
+                    { offset: 1, color: colorList[index][2] }
+                  ]);
+                  return colors;
+                }
+                // barBorderRadius: 5 // 柱状角成椭圆形
               }
             },
             showBackground: true,
@@ -342,7 +421,6 @@ export default {
       // 绘制图表
       myChart_c3.setOption({
         tooltip: {
-
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
@@ -400,37 +478,14 @@ export default {
   }
 };
 </script>
-<style>
-/* .main .el-divider {
-  background-color: #dcdfe6;
-  position: relative;
-}
-.main .el-divider--horizontal {
-  height: 1px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-.hr {
-  height: 1px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-} */
-</style>
+
 <style scoped>
 .circle-title {
- 
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  margin-bottom: 8px
+  margin-bottom: 8px;
 }
 .threecircle {
   display: flex;
@@ -450,9 +505,9 @@ export default {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  height: 88%;
+  /* height: 88%; */
   margin-top: 15px;
-  width: 280px;
+  /* width: 280px; */
   /* width: 90%; */
   /* border: 1px solid darkslategray;
   border-radius: 10px;
