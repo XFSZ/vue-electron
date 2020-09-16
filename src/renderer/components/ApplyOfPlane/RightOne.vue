@@ -208,6 +208,7 @@ export default {
             },
 
             animationType: 'scale',
+            hoverAnimation: false,
             animationEasing: 'elasticOut',
             animationDelay: function(idx) {
               return Math.random() * 200;

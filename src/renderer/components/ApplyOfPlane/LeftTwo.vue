@@ -61,10 +61,10 @@
           <div
             id="myChart_tc1"
             :style="{
-              width: '180px',
+              width: '300px',
               height: '180px',
               marginTop: '20px',
-              marginLeft: '40px',
+             
             }"
           ></div>
         </div>
@@ -358,8 +358,8 @@ export default {
           // 图例
           orient: 'vertical', // 图例的布局，vertical竖直    horizontal为水平
           // x: 'right', // 图例显示在右边
-          right: 0.01,
-          // top: 0.1,
+          right: 3,
+          top: 2,
           // bottom: 10,
           //   left: 5,
           //   position: [180, 10],
@@ -406,8 +406,8 @@ export default {
             name: '值班兵力',
             type: 'pie', // 环形图的type和饼图相同
             // radius: ['50%', '70%'], // 饼图的半径，第一个为内半径，第二个为外半径
-            center: ['30%', '40%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
+            center: ['40%', '50%'], // 饼图的圆心坐标
+            radius: ['74%', '80%'],
             avoidLabelOverlap: false,
             hoverAnimation: false,
             color: ['#7d7d7d', '#00cfff', '#ffffff'],
@@ -431,8 +431,8 @@ export default {
                 rich: {
                   img1: {
                     // height: '20px',
-                    height: 30,
-                    width: 30,
+                    height: 60,
+                    width: 60,
                     backgroundColor: {
                       image: bg
                     }
