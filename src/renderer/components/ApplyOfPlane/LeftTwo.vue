@@ -1,17 +1,21 @@
 <template>
   <div class="main">
-    <title-moudle :blockImg='flyUrl' :leftTitle='leftTitle1' />
+    <title-moudle :blockImg="flyUrl" :leftTitle="leftTitle1" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar1"
       :style="{ width: '220px', height: '218px', marginTop: '-38px' }"
     ></div>
-    <title-moudle   :blockImg='logisticsUrl' :leftTitle='leftTitle2' />
+    <title-moudle :blockImg="logisticsUrl" :leftTitle="leftTitle2" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar2"
       :style="{ width: '220px', height: '218px', marginTop: '-38px' }"
     ></div>
     <div class="threecircle">
-      <p class="titlename">值班兵力</p>
+      <div class="title-left">
+        <img :src="flyUrl" class="block-img" />
+        <p class="titlename">值班兵力</p>
+      </div>
+      <!-- <p class="titlename">值班兵力</p> -->
       <div class="hr">
         <hr />
         <!-- <el-divider></el-divider> -->
@@ -21,7 +25,10 @@
       <div class="table-bottom">
         <div class="table-head">
           <div class="table-head-context">
-            <p class="table-head-title">型号总数</p>
+            <div class="title-table-head-main">
+              <img :src="blankUrl" class="blank-img left-blank-img" />
+              <p class="table-head-title">型号总数</p>
+            </div>
             <div class="table-head-value">
               <span class="table-head-numvalue">{{
                 changeTotalNumberOfModels
@@ -30,14 +37,20 @@
             </div>
           </div>
           <div class="table-head-context">
+               <div class="title-table-head-main">
+              <img :src="blankUrl" class="blank-img left-blank-img" />
             <p class="table-head-title">数量总数</p>
+             </div>
             <div class="table-head-value">
               <span class="table-head-numvalue">{{ changeTotalNumber }}</span>
               <span class="table-head-strvalue">架</span>
             </div>
           </div>
           <div class="table-head-context">
+               <div class="title-table-head-main">
+              <img :src="blankUrl" class="blank-img left-blank-img" />
             <p class="table-head-title">完好总数</p>
+             </div>
             <div class="table-head-value">
               <span class="table-head-numvalue">{{ changeStandNumber }}</span>
               <span class="table-head-strvalue">架</span>
@@ -47,7 +60,12 @@
         <div class="circle-title">
           <div
             id="myChart_tc1"
-            :style="{ width: '160px', height: '90px', marginTop: '20px' ,    marginLeft: '8px' }"
+            :style="{
+              width: '160px',
+              height: '90px',
+              marginTop: '20px',
+              marginLeft: '8px',
+            }"
           ></div>
         </div>
       </div>
@@ -62,6 +80,7 @@ import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 import bg from '../../assets/pie-label.png';
 import FlyImg from '../../assets/fly.png';
 import LogisticsImg from '../../assets/logistics.png';
+import BlankImg from '../../assets/block.png';
 export default {
   name: 'lefttwo',
   components: {
@@ -75,16 +94,17 @@ export default {
       leftTitle3: '值班兵力',
       flyUrl: FlyImg,
       logisticsUrl: LogisticsImg,
+      blankUrl: BlankImg,
       fromNum: [
-        {name: 'totalNumberOfModels', value: 0},
-        {name: 'totalNumber', value: 0},
-        {name: 'standNumber', value: 0}
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
       ],
 
       toNum: [
-        {name: 'toTotalNumberOfModels', value: 157},
-        {name: 'toTotalNumber', value: 132461},
-        {name: 'toStandNumber', value: 111574}
+        { name: 'toTotalNumberOfModels', value: 157 },
+        { name: 'toTotalNumber', value: 132461 },
+        { name: 'toStandNumber', value: 111574 }
       ]
     };
   },
@@ -100,21 +120,19 @@ export default {
     }
   },
   mounted() {
-
     this.drawLine();
     this.set();
   },
   methods: {
     set() {
-      for (let i = 0;i < this.toNum.length ;i++) {
+      for (let i = 0; i < this.toNum.length; i++) {
         this.setLite(this.fromNum[i], this.toNum[i].value);
       }
     },
     setLite(obj, val) {
       TweenLite.to(obj, 2, {
         value: val
-      },
-      );
+      });
     },
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
@@ -254,7 +272,6 @@ export default {
           }
         },
         legend: {
-
           // 图例
           orient: 'vertical', // 图例的布局，vertical竖直    horizontal为水平
           // x: 'right', // 图例显示在右边
@@ -271,7 +288,7 @@ export default {
           //   }
           formatter: function(name) {
             let seriesObj;
-            for (let i = 0;i < datas.length;i++) {
+            for (let i = 0; i < datas.length; i++) {
               if (datas[i] === name) {
                 seriesObj = datas[i];
                 break;
@@ -297,7 +314,6 @@ export default {
                 color: '#333', // 文字颜色
                 fontSize: 6 // 文字大小
               }
-
             }
           }
         },
@@ -335,7 +351,6 @@ export default {
                     width: 30,
                     backgroundColor: {
                       image: bg
-
                     }
                   }
                 },
@@ -350,7 +365,8 @@ export default {
                 position: 'center'
                 // formatter: '{d}%\n{b}'
               },
-              emphasis: { // 选中时候的样式
+              emphasis: {
+                // 选中时候的样式
                 show: true,
                 textStyle: {
                   fontSize: '10',
@@ -377,10 +393,35 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
+  src: url("../../assets/font/Zhongheijian.ttf");
+}
+.blank-img {
+  width: 4px;
+  height: 4px;
+  margin-top: 10px;
+  /* margin-left: 20px; */
+  /* margin-top: 10px; */
+}
+.title-table-head-main {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+}
+.block-img {
+  height: 14px;
+  margin-top: 18px;
+  margin-left: 15px;
+}
+.title-left {
+  display: flex;
+  flex-direction: row;
+}
 .deom_hr {
   width: 90%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 .hr {
   height: 0.5px;
@@ -401,13 +442,14 @@ export default {
   border-radius: 10px; */
 }
 .titlename {
-  height: 6px;
-  align-self: start;
+  font-family: "Zhongheijian";
+  height: 8px;
+  margin-left: 4px;
+  color: white;
 }
-.table-bottom{
+.table-bottom {
   display: flex;
   flex-direction: row;
-
 }
 .circle-title {
   display: flex;
@@ -445,8 +487,12 @@ export default {
   box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset; */
 }
 .table-head {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    /* align-items: center; */
+    flex: 1;
+    margin-left: 16px;
   /* margin-left: 2px; */
 }
 .table-head-context {
@@ -455,30 +501,44 @@ export default {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  background-color:#061d3f;
 }
 .table-head-title {
+  font-family: "Zhongheijian";
+  color: whitesmoke;
   /* flex: 1; */
+  margin-left: 6px;
   text-align: center;
-  /* height: 5px; */
-  font-size: 10px;
+  font-size: 8px;
 }
 .table-head-value {
   /* flex: 1; */
+
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: center;
-  height: 10px;
+  height: 20px;
+  margin-top: -4px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 .table-head-numvalue {
+  font-family: "dinPro";
+  color: aqua;
   flex: 1;
   text-align: center;
   justify-content: center;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  background-color: rgb(34, 50, 75);
 }
 .table-head-strvalue {
+  font-family: "opposans";
+  color: whitesmoke;
   text-align: center;
   justify-content: flex-end;
-  font-size: 12px;
+  font-size: 10px;
+  margin-top: 5px;
 }
 </style>

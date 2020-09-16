@@ -28,7 +28,8 @@
     <div class="footer">
       <div class="footer-left">
         <div class="footer-left-one">
-          <span class="footer-left-one-span">左侧</span>
+          <p class="footer-left-one-span">【演习-2019】空115团完好率低于70%，可用飞机不足。</p>
+          <img :src="blackUrl" class="black-img-text" />
         </div>
         <div class="footer-left-task">
           <img :src="taskUrl" class="img-style" />
@@ -85,6 +86,7 @@ import SplitLineImg from '../assets/split-line.png';
 import SearchImg from '../assets/search.png';
 import TitleLeftImg from '../assets/title-left.png';
 import TitleRightImg from '../assets/title-right.png';
+import BlankImg from '../assets/block.png';
 // import MainLeftBtnImg from '../assets/main-left-btn.png';
 export default {
   name: 'init-page',
@@ -104,6 +106,7 @@ export default {
       searchIUrl: SearchImg,
       titleLeftUrl: TitleLeftImg,
       titleRightUrl: TitleRightImg,
+      blackUrl: BlankImg,
       // mainLeftBtnUrl: MainLeftBtnImg,
       search_text: ''
     };
@@ -123,6 +126,9 @@ export default {
   font-family: 'Zhongheijian';     /* 这个名字可以自己定义 */
 	src: url('../assets/font/Zhongheijian.ttf'); 
  }
+ input{
+   color: aliceblue;
+ }
  .title-img-left{
 
    width: 80px;
@@ -135,6 +141,13 @@ export default {
 .head-strstyle-lr{
   color:whitesmoke;
   font-size: 20px;
+}
+.black-img-text{
+    height: 4px;
+    width: 4px;
+    position: absolute;
+    margin-top: -32px;
+    margin-left: 8px;
 }
 .head-strstyle-mid{
 
@@ -368,8 +381,8 @@ export default {
   text-indent: 4px;
   margin-top: 9px;
   border: 1px solid;
-  background-color: rgba(63, 50, 185, 1);
-  box-shadow: rgb(50, 185, 79) 0px 0px 20px 1px;
+  background-color: #031119;
+  box-shadow: #012c40 0px 0px 20px 1px;
 }
 .split-line {
   margin-left: 18px;
@@ -377,6 +390,8 @@ export default {
   width: 2px;
 }
 .left-bottom-p-num {
+  font-family:"Zhongheijian" ;
+  color: whitesmoke;
   font-size: 20px;
   margin-top: 10px;
 }
@@ -386,6 +401,8 @@ export default {
   margin-top: -10px;
 }
 .left-bottom-p {
+  font-family:"Zhongheijian" ;
+  color: whitesmoke;
   text-align: center;
   font-size: 12px;
   margin-top: -10px;
@@ -398,10 +415,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-htmt,
+html,
 body {
-  height: 100%;
-  min-height: 100%;
+  /* height: 100%; */
+  height: 1620px;
+  width: 4320px;
+  /* min-height: 100%; */
   background-image: url("../assets/dt.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -410,11 +429,13 @@ body {
 .footer-left-one {
   width: 166px;
   height: 35px;
-  background-image: url("../assets/left-bottom-backgourd2.png");
+  background-image: url("../assets/left-bottom-backgroud.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .footer-left-one-span {
+  font-family:"Zhongheijian" ;
+  /* color: whitesmoke; */
   color: azure;
   font-size: 10px;
   margin-left: 12px;
@@ -507,7 +528,7 @@ body {
 }
 .footer {
   width: 100%;
-  /* height: 100px; */
+  height: 100px;
   margin-top: -32px;
   /* flex: 0; */
   display: flex;

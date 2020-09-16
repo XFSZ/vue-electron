@@ -1,16 +1,28 @@
 <template>
   <div class="right-child-main">
     <div class="right-child-one">
-      <p class="p-style">任务编号</p>
-      <p class="p-style">任务总试飞架次</p>
-      <p class="p-style">当日试飞架次</p>
-      <p class="p-style">剩余架次</p>
+      <div class="title-table-head-main">
+        <img :src="blankUrl" class="blank-img left-img" />
+        <p class="p-style-str">任务编号</p>
+      </div>
+      <div class="title-table-head-main">
+        <img :src="blankUrl" class="blank-img left-img" />
+        <p class="p-style-str">任务总试飞架次</p>
+      </div>
+      <div class="title-table-head-main">
+        <img :src="blankUrl" class="blank-img left-img" />
+        <p class="p-style-str">当日试飞架次</p>
+      </div>
+      <div class="title-table-head-main">
+        <img :src="blankUrl" class="blank-img left-img" />
+        <p class="p-style-str">剩余架次</p>
+      </div>
     </div>
     <div class="right-child-two">
-      <p class="p-style">B-0187B</p>
-      <p class="p-style">{{changeTotalNumberOfModels}}</p>
-      <p class="p-style">{{changeTotalNumber}}</p>
-      <p class="p-style">{{changeStandNumber}}</p>
+      <p class="p-style-num">B-0187B</p>
+      <p class="p-style-num">{{ changeTotalNumberOfModels }}</p>
+      <p class="p-style-num">{{ changeTotalNumber }}</p>
+      <p class="p-style-num">{{ changeStandNumber }}</p>
     </div>
     <div class="right-child-three">
       <div
@@ -23,20 +35,22 @@
 
 <script>
 import { TweenLite } from 'gsap';
+import BlankImg from '../../../assets/block.png';
 export default {
   name: 'rightchildmoudle',
   data() {
     return {
+      blankUrl: BlankImg,
       fromNum: [
-        {name: 'totalNumberOfModels', value: 0},
-        {name: 'totalNumber', value: 0},
-        {name: 'standNumber', value: 0}
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
       ],
 
       toNum: [
-        {name: 'toTotalNumberOfModels', value: 156},
-        {name: 'toTotalNumber', value: 15},
-        {name: 'toStandNumber', value: 39}
+        { name: 'toTotalNumberOfModels', value: 156 },
+        { name: 'toTotalNumber', value: 15 },
+        { name: 'toStandNumber', value: 39 }
       ]
     };
   },
@@ -57,15 +71,14 @@ export default {
   },
   methods: {
     set() {
-      for (let i = 0;i < this.toNum.length ;i++) {
+      for (let i = 0; i < this.toNum.length; i++) {
         this.setLite(this.fromNum[i], this.toNum[i].value);
       }
     },
     setLite(obj, val) {
       TweenLite.to(obj, 2, {
         value: val
-      },
-      );
+      });
     },
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
@@ -78,7 +91,7 @@ export default {
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
-        color: ['blue', '#ccc'],
+        color: ['#00b3ff', '#ccc'],
         series: [
           {
             name: '电子干扰',
@@ -134,11 +147,43 @@ export default {
 </script>
 
 <style scoped>
-.p-style{
-    font-size: 8px;
-    height: 1px;
+@font-face {
+  font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
+  src: url("../../../assets/font/Zhongheijian.ttf");
 }
-.right-child-three{
+@font-face {
+  font-family: "dinPro"; /* 这个名字可以自己定义 */
+  src: url("../../../assets/font/DINPro-Bold.otf");
+}
+.p-style-str {
+  font-family: "Zhongheijian";
+  color: whitesmoke;
+  font-size: 8px;
+  height: 1px;
+}
+.p-style-num{
+  font-family: "dinPro";
+  color: aqua;
+  /* flex: 1; */
+  /* height: 1px; */
+  text-align: center;
+  justify-content: center;
+  margin-left: 20px;
+  font-size: 6px;
+  background-color: rgb(34, 50, 75);
+}
+.title-table-head-main {
+  display: flex;
+  flex-direction: row;
+}
+.blank-img {
+  width: 4px;
+  height: 4px;
+
+  margin-top: 10px;
+  margin-right: 4px;
+}
+.right-child-three {
   margin-left: -30px;
 }
 .right-child-main {
@@ -155,6 +200,5 @@ export default {
   display: flex;
   flex-direction: column;
   margin-left: -30px;
-  
 }
 </style>

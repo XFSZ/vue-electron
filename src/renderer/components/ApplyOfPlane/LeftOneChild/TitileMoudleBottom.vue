@@ -9,7 +9,7 @@
 import { TweenLite } from 'gsap';
 export default {
   name: 'titilemoudlebottom',
-
+  props: ['goodNumber', 'totalNumber'],
   data() {
     return {
       fromNum: [
@@ -18,10 +18,15 @@ export default {
       ],
 
       toNum: [
-        {name: 'toTotalNumberOfModels', value: 15784},
-        {name: 'toTotalNumber', value: 18713}
+        {name: 'toTotalNumberOfModels', value: this.goodNumber},
+        {name: 'toTotalNumber', value: this.totalNumber}
       ]
     };
+  },
+  created() {
+    this.toNum[0].value = this.goodNumber;
+    this.toNum[1].value = this.totalNumber;
+    // console.log('this is father', this.goodNumber, this.totalNumber);
   },
   computed: {
     changeTotalNumberOfModels() {

@@ -1,10 +1,15 @@
 <template>
   <div class="mainr">
     <div class="titlemain">
-      <p class="titlename">飞机</p>
+      <title-moudle
+        :blockImg="flyUrl"
+        :leftTitle="leftTitle1"
+        :fromNum="fromNum"
+        :toNum="toNum"
+      />
+      <!-- <p class="titlename">飞机</p>
       <div class="hr">
         <hr />
-        <!-- <el-divider></el-divider> -->
         <div class="deom_hr"></div>
         <hr />
       </div>
@@ -32,19 +37,24 @@
             <span class="table-head-strvalue">架</span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div
       id="myChart_rose1"
       :style="{
         width: '220px',
         height: '220px',
-        marginLeft:'40px'
+        marginLeft: '40px',
       }"
     ></div>
     <div class="text-table">
       <div>
-        <p class="titlename">科研试飞</p>
+        <div class="title-left">
+          <img :src="logisticsUrl" class="block-img" />
+          <p class="titlename">科研试飞</p>
+          <!-- <p class="titlename">{{ leftTitle }}</p> -->
+        </div>
+
         <div class="hr">
           <hr />
           <!-- <el-divider></el-divider> -->
@@ -54,8 +64,13 @@
       </div>
 
       <div class="right-text-table-one">
-        <p>当日试飞总架次</p>
-        <p>{{ changeTotalNumberOfModels }}</p>
+        <div class="title-table-head-main">
+          <img :src="blankUrl" class="blank-img left-img" />
+          <p class="title-child">当日试飞总架次</p>
+          <img :src="blankUrl" class="blank-img right-img" />
+        </div>
+
+        <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
       </div>
       <div><right-child-moudle /></div>
     </div>
@@ -64,14 +79,31 @@
 
 <script>
 import { TweenLite } from 'gsap';
+import BlankImg from '../../assets/block.png';
+import TitleMoudle from './LeftOneChild/TitleMoudle';
+import FlyImg from '../../assets/fly.png';
+import LogisticsImg from '../../assets/logistics.png';
 import RightChildMoudle from './RightChild/RightChildMoudle';
 export default {
   name: 'rightlabel',
   components: {
-    RightChildMoudle
+    RightChildMoudle,
+    TitleMoudle
   },
   data() {
     return {
+      leftTitle1: '动用使用',
+      leftTitle2: '弹药',
+      leftTitle3: '吊舱',
+      flyUrl: FlyImg,
+      logisticsUrl: LogisticsImg,
+      blankUrl: BlankImg,
+      googNumber1: 15784,
+      googNumber2: 4713,
+      googNumber3: 1713,
+      totalNumber1: 18713,
+      totalNumber2: 4971,
+      totalNumber3: 1987,
       fromNum: [
         { name: 'totalNumberOfModels', value: 0 },
         { name: 'totalNumber', value: 0 },
@@ -188,10 +220,40 @@ export default {
 };
 </script>
 <style scoped>
+@font-face {
+  font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
+  src: url("../../assets/font/Zhongheijian.ttf");
+}
+.title-table-head-main {
+  display: flex;
+  flex-direction: row;
+  /* margin-left: 50px; */
+  /* background-color: rgb(34, 50, 75); */
+}
+.blank-img {
+  width: 4px;
+  height: 4px;
+
+  margin-top: 12px;
+}
+.left-img {
+  margin-left: 22px;
+}
+.block-img {
+  height: 14px;
+  margin-top: 18px;
+  margin-left: 15px;
+}
+.title-left {
+  display: flex;
+  flex-direction: row;
+}
 .right-text-table-one {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-evenly;
+  background-color: #061d3f;
 }
 .mainr {
   display: flex;
@@ -206,9 +268,9 @@ export default {
   box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset; */
 }
 .deom_hr {
-  width: 90%;
+  width: 96%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 .hr {
   height: 0.5px;
@@ -218,9 +280,29 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.titlename {
+.title-child {
+  font-family: "Zhongheijian";
+  font-size: 9px;
   height: 6px;
-  margin-left: 8px;
+  margin-left: 4px;
+  color: white;
+}
+.title-child-num {
+  font-family: "dinPro";
+  color: aqua;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* flex: 1; */
+  /* text-align: center; */
+  /* justify-content: center; */
+  /* margin-left: 20px; */
+  background-color: rgb(34, 50, 75);
+}
+.titlename {
+  font-family: "Zhongheijian";
+  height: 8px;
+  margin-left: 4px;
+  color: white;
 }
 .text-table {
   display: flex;

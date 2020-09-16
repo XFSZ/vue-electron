@@ -1,23 +1,23 @@
 <template>
   <div class="main">
-    <title-moudle  :blockImg='flyUrl' :leftTitle='leftTitle1'/>
+    <title-moudle  :blockImg='flyUrl' :leftTitle='leftTitle1' :fromNum='fromNum' :toNum='toNum'/>
     <div
       id="myChart"
       :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
     ></div>
-    <title-moudle  :blockImg='logisticsUrl' :leftTitle='leftTitle2' />
+    <title-moudle  :blockImg='logisticsUrl' :leftTitle='leftTitle2'  :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart1"
       :style="{ width: '220px', height: '250px', marginTop: '-38px' }"
     ></div>
-    <title-moudle :blockImg='flyUrl' :leftTitle='leftTitle3' />
+    <title-moudle :blockImg='flyUrl' :leftTitle='leftTitle3'   :fromNum='fromNum' :toNum='toNum'/>
     <div class="threecircle">
       <div class="circle-title">
         <div
           id="myChart_c1"
           :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
-        <title-moudle-bottom/>
+        <title-moudle-bottom :goodNumber='googNumber1' :totalNumber='totalNumber1'/>
         <div></div>
       </div>
       <div class="circle-title">
@@ -25,7 +25,7 @@
           id="myChart_c2"
           :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
-        <title-moudle-bottom/>
+        <title-moudle-bottom :goodNumber='googNumber2' :totalNumber='totalNumber2'/>
         <div></div>
       </div>
       <div class="circle-title">
@@ -33,7 +33,7 @@
           id="myChart_c3"
           :style="{ width: '70px', height: '110px', marginTop: '2px' }"
         ></div>
-        <title-moudle-bottom/>
+        <title-moudle-bottom :goodNumber='googNumber3' :totalNumber='totalNumber3'/>
         <div></div>
       </div>
     </div>
@@ -58,8 +58,24 @@ export default {
       leftTitle2: '弹药',
       leftTitle3: '吊舱',
       flyUrl: FlyImg,
-      logisticsUrl: LogisticsImg
+      logisticsUrl: LogisticsImg,
+      googNumber1: 15784,
+      googNumber2: 4713,
+      googNumber3: 1713,
+      totalNumber1: 18713,
+      totalNumber2: 4971,
+      totalNumber3: 1987,
+      fromNum: [
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
+      ],
 
+      toNum: [
+        { name: 'toTotalNumberOfModels', value: 157 },
+        { name: 'toTotalNumber', value: 132461 },
+        { name: 'toStandNumber', value: 111574 }
+      ]
     };
   },
   computed: {

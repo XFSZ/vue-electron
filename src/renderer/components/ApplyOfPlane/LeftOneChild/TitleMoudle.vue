@@ -59,21 +59,11 @@ export default {
   data() {
     return {
       // leftTitle: '飞机',
-      blankUrl: BlankImg,
-      fromNum: [
-        { name: 'totalNumberOfModels', value: 0 },
-        { name: 'totalNumber', value: 0 },
-        { name: 'standNumber', value: 0 }
-      ],
+      blankUrl: BlankImg
 
-      toNum: [
-        { name: 'toTotalNumberOfModels', value: 157 },
-        { name: 'toTotalNumber', value: 132461 },
-        { name: 'toStandNumber', value: 111574 }
-      ]
     };
   },
-  props: ['leftTitle', 'blockImg'],
+  props: ['leftTitle', 'blockImg', 'fromNum', 'toNum'],
   computed: {
     changeTotalNumberOfModels() {
       return this.fromNum[0].value.toFixed(0);
@@ -128,7 +118,7 @@ export default {
 }
 
 .deom_hr {
-  width: 90%;
+  width: 100%;
   height: 1px;
   background: rgba(255, 255, 255, 0.3);
 }
@@ -195,6 +185,7 @@ export default {
 .table-head {
   display: flex;
   flex-direction: row;
+  margin-top: 6px;
 }
 .table-head-context {
   flex: 1;
