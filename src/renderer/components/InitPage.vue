@@ -457,7 +457,7 @@ export default {
   font-size: 20px;
   margin-top: 10px;
   margin-left: 12px;
-  margin-right: 28px;
+  margin-right: 60px;
 }
 .img-style {
   height: 64px;

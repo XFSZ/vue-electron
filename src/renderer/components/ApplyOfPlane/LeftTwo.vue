@@ -61,7 +61,7 @@
           <div
             id="myChart_tc1"
             :style="{
-              width: '300px',
+              width: '380px',
               height: '180px',
               marginTop: '20px',
              
@@ -187,7 +187,7 @@ export default {
             label: {
               show: true, // 开启显示
               position: [360, 10],
-              formatter: '完好率:{c}%', // 显示百分号
+              formatter: '完好率  {c}%', // 显示百分号
               textStyle: {
                 // 数值样式
                 color: 'white', // 字体颜色
@@ -289,7 +289,7 @@ export default {
             label: {
               show: true, // 开启显示
               position: [380, 10],
-              formatter: '完好率:{c}%', // 显示百分号
+              formatter: '完好率  {c}%', // 显示百分号
               textStyle: {
                 // 数值样式
                 color: 'white', // 字体颜色
@@ -358,9 +358,9 @@ export default {
           // 图例
           orient: 'vertical', // 图例的布局，vertical竖直    horizontal为水平
           // x: 'right', // 图例显示在右边
-          right: 3,
-          top: 2,
-          // bottom: 10,
+          right: 4,
+          // top: 8,
+          bottom: 4,
           //   left: 5,
           //   position: [180, 10],
           data: ['一等值班', '二等值班', '三等值班'],
@@ -390,13 +390,17 @@ export default {
             rich: {
               a: {
                 color: 'white',
-                lineHeight: 8,
-                fontSize: 8 // 文字大小
+                lineHeight: 20,
+                height: 18,
+                fontSize: 14, // 文字大小
+                fontFamily: 'Zhongheijian'
               },
               b: {
+                height: 12,
                 color: '#878b91', // 文字颜色
-                lineHeight: 8,
-                fontSize: 6 // 文字大小
+                lineHeight: 20,
+                fontSize: 12, // 文字大小
+                fontFamily: 'Zhongheijian'
               }
             }
           }
@@ -548,7 +552,7 @@ export default {
 .threecircle {
   /* width: 350px; */
   margin-left: 30px;
-  margin-right: 20px;
+  margin-right: 30px;
   margin-top: 21px;
   display: flex;
   flex-direction: column;

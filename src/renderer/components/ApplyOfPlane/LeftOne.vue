@@ -161,8 +161,8 @@ export default {
             type: 'bar',
             label: {
               show: true, // 开启显示
-              position: [380, 10],
-              formatter: '完好率:{c}%', // 显示百分号
+              position: [370, 10],
+              formatter: '完好率  {c}%', // 显示百分号
               textStyle: {
                 // 数值样式
                 color: 'white', // 字体颜色
@@ -270,7 +270,7 @@ export default {
             label: {
               show: true, // 开启显示
               position: [360, 10],
-              formatter: '完好率:{c}%', // 显示百分号
+              formatter: '完好率  {c}%', // 显示百分号
               textStyle: {
                 // 数值样式
                 color: 'white', // 字体颜色
