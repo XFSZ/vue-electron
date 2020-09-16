@@ -180,21 +180,53 @@ export default {
   background-size: 80% 80%;
   /* border: solid 1px rgb(141, 141, 141); */
 }
-.left-img.is-active {
+.left-img:focus {
   font-family: "Zhongheijian";
   width: 110px;
-  /* color: #ffffff; */
   /* height: 150px; */
-  background-image: url("../assets/main-left-btn.png");
+  background-image: url("../assets/main-left-btn-active.png");
   background-repeat: no-repeat;
   background-size: 80% 80%;
   /* border: solid 1px rgb(141, 141, 141); */
 }
+.left-img:hover {
+  font-family: "Zhongheijian";
+  width: 110px;
+  /* height: 150px; */
+  background-image: url("../assets/main-left-btn-active.png");
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  /* border: solid 1px rgb(141, 141, 141); */
+}
+/* .left-img.is-active {
+  font-family: "Zhongheijian";
+  width: 110px; */
+  /* color: #ffffff; */
+  /* height: 150px; */
+  /* background-image: url("../assets/main-right-btn.png");
+  background-repeat: no-repeat;
+  background-size: 80% 80%; */
+  /* border: solid 1px rgb(141, 141, 141); */
+/* } */
 
 .mid-img {
   font-family: "Zhongheijian";
   width: 110px;
   background-image: url("../assets/main-mid-btn.png");
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+}
+.mid-img:hover {
+  font-family: "Zhongheijian";
+  width: 110px;
+  background-image: url("../assets/main-mid-btn-active.png");
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+}
+.mid-img:focus {
+  font-family: "Zhongheijian";
+  width: 110px;
+  background-image: url("../assets/main-mid-btn-active.png");
   background-repeat: no-repeat;
   background-size: 80% 80%;
 }
@@ -205,10 +237,17 @@ export default {
   background-repeat: no-repeat;
   background-size: 80% 80%;
 }
-.right-img:hover {
+.right-img:hover  {
   /* 激活使用is-active */
   width: 110px;
-  background-image: url("../assets/main-left-btn.png");
+  background-image: url("../assets/main-right-btn-active.png");
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+}
+.right-img:focus {
+  /* 激活使用is-active */
+  width: 110px;
+  background-image: url("../assets/main-right-btn-active.png");
   background-repeat: no-repeat;
   background-size: 80% 80%;
 }
