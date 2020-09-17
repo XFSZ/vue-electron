@@ -79,7 +79,15 @@ export default {
     TitleMoudleBottom
   },
   created() {
-
+    axios.get('http://127.0.0.1:3000/mock/admin', { // 还可以直接把参数拼接在url后边
+      params: {
+        title: '眼镜'
+      }
+    }).then(function(res) {
+      this.goodsList = res.data;
+    }).catch(function(error) {
+      console.log(error);
+    });
   },
   data() {
     return {

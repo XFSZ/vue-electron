@@ -43,11 +43,11 @@
           @select="handleSelect"
         >
           <el-menu-item index="/" class="left-img">综合态势</el-menu-item>
-          <el-menu-item index="/testpage" class="mid-img"
+          <el-menu-item index="/" class="mid-img"
             >动用使用</el-menu-item
           >
-          <el-menu-item index="3" class="mid-img">质量维修</el-menu-item>
-          <el-menu-item index="4" class="right-img">供应保障</el-menu-item>
+          <el-menu-item index="/" class="mid-img">质量维修</el-menu-item>
+          <el-menu-item index="/" class="right-img">供应保障</el-menu-item>
         </el-menu>
       </div>
 
@@ -86,7 +86,7 @@ export default {
     return {
       // activeIndex: '1',
       // activeIndex2: '1',
-      activeIndex: '/testpage',
+      activeIndex: '/',
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
       reportUrl: ReportImg,
@@ -233,45 +233,7 @@ export default {
   border-bottom: solid 1px rgba(255, 255, 255, 0);
 }
 
-.el-menu--horizontal > .el-menu-item {
-  float: left;
-  height: 60px;
-  line-height: 60px;
-  margin: 0;
-  border-bottom: 2px solid transparent;
-  color: #909399;
-}
-.el-menu--horizontal > .el-menu-item a,
-.el-menu--horizontal > .el-menu-item a:hover {
-  color: inherit;
-}
-.el-menu--horizontal > .el-submenu {
-  float: left;
-}
-.el-menu--horizontal > .el-submenu:focus,
-.el-menu--horizontal > .el-submenu:hover {
-  outline: 0;
-}
-.el-menu--horizontal > .el-submenu:focus .el-submenu__title,
-.el-menu--horizontal > .el-submenu:hover .el-submenu__title {
-  color: #303133;
-}
-.el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
-  border-bottom: 2px solid #409eff;
-  color: #303133;
-}
-.el-menu--horizontal > .el-submenu .el-submenu__title {
-  height: 60px;
-  line-height: 60px;
-  border-bottom: 2px solid transparent;
-  color: #909399;
-}
-.el-menu--horizontal > .el-submenu .el-submenu__icon-arrow {
-  position: static;
-  vertical-align: middle;
-  margin-left: 8px;
-  margin-top: -3px;
-}
+
 .footer-content .el-menu--horizontal .el-menu .el-menu-item,
 .el-menu--horizontal .el-menu .el-submenu__title {
   background-color: rgba(255, 255, 255, 0);
@@ -281,10 +243,7 @@ export default {
   padding: 0 10px;
   color: #909399;
 }
-.el-menu--horizontal .el-menu .el-menu-item.is-active,
-.el-menu--horizontal .el-menu .el-submenu.is-active > .el-submenu__title {
-  color: #ffffff;
-}
+
 .footer-content .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
 .footer-content .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
   outline: 0;
@@ -297,30 +256,10 @@ export default {
   /* color: #303133; */
   color: whitesmoke;
 }
-.el-menu--collapse {
-  width: 64px;
-}
 
-.el-menu--collapse .el-submenu .el-menu {
-  position: absolute;
-  margin-left: 5px;
-  top: 0;
-  left: 100%;
-  z-index: 10;
-  border: 1px solid #e4e7ed;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-}
 
-.el-menu--popup {
-  z-index: 100;
-  border: none;
-  padding: 5px 0;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-}
+
+
 
 .footer-content .el-menu-item {
   font-size: 27px;
