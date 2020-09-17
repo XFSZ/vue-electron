@@ -1,7 +1,34 @@
 <template>
   <div class="wapper">
-
-
+    <div class="headinfo">
+      <div class="headinfo-left">
+        <p class="head-strstyle head-strstyle-lr">
+          作战时间 2019年12月30日 12时34分10秒
+        </p>
+      </div>
+      <div class="headinfo-content">
+        <img :src="titleLeftUrl" class="title-img-left" />
+        <p class="head-strstyle head-strstyle-mid">空军作战部队指挥系统</p>
+        <img :src="titleRightUrl" class="title-img-left" />
+      </div>
+      <div class="headinfo-right">
+        <p class="head-strstyle head-strstyle-lr">
+          天文时间 2019年12月30日 12时34分10秒 天气14C 湿度65% 风力7级
+        </p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="main-left">
+        <left-one class="left-one-style" />
+        <left-two class="left-two-style" />
+      </div>
+      <div class="main-content">
+        <p>cccc</p>
+      </div>
+      <div class="main-right">
+        <right-one class="right-style" />
+      </div>
+    </div>
     <div class="footer">
       <div class="footer-left">
         <div class="footer-left-one">
@@ -132,8 +159,18 @@ export default {
   height: 43px;
 }
 
-
-
+.title-img-left {
+  width: 80px;
+  height: 8px;
+  /* margin-top: 60px; */
+}
+.head-strstyle {
+  font-family: "Zhongheijian";
+}
+.head-strstyle-lr {
+  color: whitesmoke;
+  font-size: 24px;
+}
 .black-img-text {
   height: 8px;
   width: 8px;
@@ -141,7 +178,21 @@ export default {
   margin-top: -60px;
   margin-left: 8px;
 }
-
+.head-strstyle-mid {
+  /* color: transparent; */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) -50%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 150%
+  );
+  /* background: linear-gradient(to right, rgba(0,0,0,.1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0,0,0,.1) 100%); */
+  font-size: 44px;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+}
 .left-img {
   font-family: "Zhongheijian";
   width: 110px;
@@ -514,7 +565,23 @@ html {
   background-color: rgba(255, 255, 255, 0);
 }
 
-
+.left-two-style {
+  margin-left: 20px;
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.left-one-style {
+  margin-left: 10px;
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.right-style {
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 .wapper {
   /* min-height: 100vh; */
   display: flex;
@@ -524,10 +591,54 @@ html {
   background-repeat:no-repeat;
   background-size:100% 90%; */
 }
-
-
-
-
+.main {
+  width: 100%;
+  flex: 1;
+  -ms-flex: 1 1 auto; /*降级处理兼容ie, 如果设置 -ms-flex:1不起作用,会让footer覆盖在main上面*/
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+.headinfo-content {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.headinfo-left {
+  flex: 1;
+  margin-left: 120px;
+  /* width: 300px;     */
+}
+.headinfo-right {
+  flex: 1;
+  text-align: right;
+  /* width: 300px;     */
+}
+.main-left {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: row;
+  margin-left: 120px;
+}
+.main-content {
+  text-align: center;
+  flex: 1;
+}
+.main-right {
+  /* flex: 1; */
+}
+.headinfo {
+  /* height: 100px;  */
+  width: 100%;
+  flex: 0;
+  display: flex;
+  flex-direction: row;
+  background-image: url("../assets/main-top.png");
+  /* justify-content:center; */
+}
 .footer {
   width: 100%;
   height: 100px;

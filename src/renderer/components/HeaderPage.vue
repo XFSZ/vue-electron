@@ -1,62 +1,20 @@
 <template>
-  <div class="wapper">
-
-
-    <div class="footer">
-      <div class="footer-left">
-        <div class="footer-left-one">
-          <p class="footer-left-one-span">
-            【演习-2019】空115团完好率低于70%，可用飞机不足。
-          </p>
-          <img :src="blackUrl" class="black-img-text" />
-        </div>
-        <div class="footer-left-task">
-          <img :src="taskUrl" class="img-style" />
-          <p class="left-bottom-p">任务</p>
-        </div>
-        <p class="left-bottom-p-num">03</p>
-        <img :src="splitLineUrl" class="split-line" />
-        <div class="footer-left-equipment left-bottom-split">
-          <img :src="equipmentUrl" class="img-style" />
-          <p class="left-bottom-p">装备</p>
-        </div>
-        <p class="left-bottom-p-num">02</p>
-        <img :src="splitLineUrl" class="split-line" />
-        <div class="footer-left-report left-bottom-split">
-          <img :src="reportUrl" class="img-style" />
-          <p class="left-bottom-p">报告</p>
-        </div>
-        <p class="left-bottom-p-num">01</p>
-        <div class="footer-left-search left-bottom-split">
-          <input class="input-box" v-model="search_text" />
-          <img :src="searchIUrl" class="search-img" />
-        </div>
+  <div class="wapperhead">
+    <div class="headinfo">
+      <div class="headinfo-left">
+        <p class="head-strstyle head-strstyle-lr">
+          作战时间 2019年12月30日 12时34分10秒
+        </p>
       </div>
-      <div class="footer-content">
-        <!-- :default-active="activeIndex" -->
-        <!-- :default-active="$route.path" -->
-        <el-menu
-          :default-active="activeIndex"
-          class="el-menu-demo"
-          mode="horizontal"
-          router
-          @select="handleSelect"
-        >
-          <el-menu-item index="/" class="left-img">综合态势</el-menu-item>
-          <el-menu-item index="/testpage" class="mid-img"
-            >动用使用</el-menu-item
-          >
-          <el-menu-item index="3" class="mid-img">质量维修</el-menu-item>
-          <el-menu-item index="4" class="right-img">供应保障</el-menu-item>
-        </el-menu>
+      <div class="headinfo-content">
+        <img :src="titleLeftUrl" class="title-img-left" />
+        <p class="head-strstyle head-strstyle-mid">空军作战部队指挥系统</p>
+        <img :src="titleRightUrl" class="title-img-left" />
       </div>
-
-      <div class="footer-right">
-        <div class="back-button">
-          <p class="back-button-text">返回</p>
-        </div>
-
-        <!-- <el-button round  >返回</el-button> -->
+      <div class="headinfo-right">
+        <p class="head-strstyle head-strstyle-lr">
+          天文时间 2019年12月30日 12时34分10秒 天气14C 湿度65% 风力7级
+        </p>
       </div>
     </div>
   </div>
@@ -122,7 +80,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 @font-face {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../assets/font/Zhongheijian.ttf");
@@ -132,8 +90,18 @@ export default {
   height: 43px;
 }
 
-
-
+.title-img-left {
+  width: 80px;
+  height: 8px;
+  /* margin-top: 60px; */
+}
+.head-strstyle {
+  font-family: "Zhongheijian";
+}
+.head-strstyle-lr {
+  color: whitesmoke;
+  font-size: 24px;
+}
 .black-img-text {
   height: 8px;
   width: 8px;
@@ -141,7 +109,21 @@ export default {
   margin-top: -60px;
   margin-left: 8px;
 }
-
+.head-strstyle-mid {
+  /* color: transparent; */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) -50%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 150%
+  );
+  /* background: linear-gradient(to right, rgba(0,0,0,.1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(0,0,0,.1) 100%); */
+  font-size: 44px;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+}
 .left-img {
   font-family: "Zhongheijian";
   width: 110px;
@@ -449,7 +431,7 @@ export default {
   flex-direction: column;
 }
 
-html {
+.oohtml {
   /* height: 100%; */
   height: 1620px;
   width: 4320px;
@@ -514,20 +496,89 @@ html {
   background-color: rgba(255, 255, 255, 0);
 }
 
-
-.wapper {
+.left-two-style {
+  margin-left: 20px;
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.left-one-style {
+  margin-left: 10px;
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.right-style {
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.wapperhead {
   /* min-height: 100vh; */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  height: 150px;
+  width: 4320px;
   /* background-image:url('../assets/main-backgroud.png');
   background-repeat:no-repeat;
   background-size:100% 90%; */
 }
+.main {
+  width: 100%;
+  flex: 1;
+  -ms-flex: 1 1 auto; /*降级处理兼容ie, 如果设置 -ms-flex:1不起作用,会让footer覆盖在main上面*/
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+.headinfo-content {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.headinfo-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 120px;
+  /* width: 300px;     */
+}
+.headinfo-right {
+  flex: 1;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-
-
-
+  /* width: 300px;     */
+}
+.main-left {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: row;
+  margin-left: 120px;
+}
+.main-content {
+  text-align: center;
+  flex: 1;
+}
+.main-right {
+  /* flex: 1; */
+}
+.headinfo {
+  /* height: 100px;  */
+  height: 100%;
+  width: 100%;
+  /* flex: 0; */
+  display: flex;
+  flex-direction: row;
+  background-image: url("../assets/main-top.png");
+  /* justify-content:center; */
+}
 .footer {
   width: 100%;
   height: 100px;

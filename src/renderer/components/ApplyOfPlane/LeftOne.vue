@@ -70,11 +70,16 @@ import TitleMoudle from './LeftOneChild/TitleMoudle';
 import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 import FlyImg from '../../assets/fly.png';
 import LogisticsImg from '../../assets/logistics.png';
+import axios from 'axios';
+
 export default {
   name: 'hello',
   components: {
     TitleMoudle,
     TitleMoudleBottom
+  },
+  created() {
+
   },
   data() {
     return {
@@ -525,7 +530,7 @@ export default {
 }
 .p-title {
   font-size: 10px;
-  margin-top: -8px;
+  /* margin-top: -8px; */
 }
 .main {
   display: flex;

@@ -3,12 +3,12 @@
     <title-moudle :blockImg="flyUrl" :leftTitle="leftTitle1" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar1"
-      :style="{ width: '500px', height: '368px' ,marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px' }"
+      :style="{ width: '500px', height: '364px' ,marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px' }"
     ></div>
     <title-moudle :blockImg="logisticsUrl" :leftTitle="leftTitle2" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar2"
-      :style="{ width: '500px', height: '368px',marginTop: '-38px',    marginLeft: '30px',marginRight: '60px' }"
+      :style="{ width: '500px', height: '364px',marginTop: '-38px',    marginLeft: '30px',marginRight: '60px' }"
     ></div>
     <div class="threecircle">
       <div class="title-left">
@@ -501,10 +501,11 @@ export default {
 .block-img {
   height: 20px;
   margin-top: 18px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 .title-left {
   display: flex;
+  align-items: center;
   flex-direction: row;
 }
 .deom_hr {
@@ -613,10 +614,10 @@ export default {
   justify-content: center;
   /* height: 20px; */
       /* margin-top: -14px */
-  margin-top: -14px;
+  /* margin-top: -14px; */
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .table-head-numvalue {
   font-family: "dinPro";

@@ -1,66 +1,18 @@
 <template>
-  <div class="wapper">
-
-
-    <div class="footer">
-      <div class="footer-left">
-        <div class="footer-left-one">
-          <p class="footer-left-one-span">
-            【演习-2019】空115团完好率低于70%，可用飞机不足。
-          </p>
-          <img :src="blackUrl" class="black-img-text" />
-        </div>
-        <div class="footer-left-task">
-          <img :src="taskUrl" class="img-style" />
-          <p class="left-bottom-p">任务</p>
-        </div>
-        <p class="left-bottom-p-num">03</p>
-        <img :src="splitLineUrl" class="split-line" />
-        <div class="footer-left-equipment left-bottom-split">
-          <img :src="equipmentUrl" class="img-style" />
-          <p class="left-bottom-p">装备</p>
-        </div>
-        <p class="left-bottom-p-num">02</p>
-        <img :src="splitLineUrl" class="split-line" />
-        <div class="footer-left-report left-bottom-split">
-          <img :src="reportUrl" class="img-style" />
-          <p class="left-bottom-p">报告</p>
-        </div>
-        <p class="left-bottom-p-num">01</p>
-        <div class="footer-left-search left-bottom-split">
-          <input class="input-box" v-model="search_text" />
-          <img :src="searchIUrl" class="search-img" />
-        </div>
+      <div class="main-context">
+      <div class="main-left">
+        <left-one class="left-one-style" />
+        <left-two class="left-two-style" />
       </div>
-      <div class="footer-content">
-        <!-- :default-active="activeIndex" -->
-        <!-- :default-active="$route.path" -->
-        <el-menu
-          :default-active="activeIndex"
-          class="el-menu-demo"
-          mode="horizontal"
-          router
-          @select="handleSelect"
-        >
-          <el-menu-item index="/" class="left-img">综合态势</el-menu-item>
-          <el-menu-item index="/testpage" class="mid-img"
-            >动用使用</el-menu-item
-          >
-          <el-menu-item index="3" class="mid-img">质量维修</el-menu-item>
-          <el-menu-item index="4" class="right-img">供应保障</el-menu-item>
-        </el-menu>
+      <div class="main-content">
+        <p>cccc</p>
       </div>
-
-      <div class="footer-right">
-        <div class="back-button">
-          <p class="back-button-text">返回</p>
-        </div>
-
-        <!-- <el-button round  >返回</el-button> -->
+      <div class="main-right">
+        <right-one class="right-style" />
       </div>
     </div>
-  </div>
 </template>
+
 <script>
 import LeftOne from './ApplyOfPlane/LeftOne';
 import LeftTwo from './ApplyOfPlane/LeftTwo';
@@ -122,7 +74,8 @@ export default {
   }
 };
 </script>
-<style>
+
+<style scoped>
 @font-face {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../assets/font/Zhongheijian.ttf");
@@ -514,7 +467,23 @@ html {
   background-color: rgba(255, 255, 255, 0);
 }
 
-
+.left-two-style {
+  margin-left: 20px;
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.left-one-style {
+  margin-left: 10px;
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.right-style {
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 .wapper {
   /* min-height: 100vh; */
   display: flex;
@@ -524,9 +493,30 @@ html {
   background-repeat:no-repeat;
   background-size:100% 90%; */
 }
+.main-context {
+  height: 1260px;
+  /* height: 100%; */
+  width: 100%;
+  flex: 1;
+  -ms-flex: 1 1 auto; /*降级处理兼容ie, 如果设置 -ms-flex:1不起作用,会让footer覆盖在main上面*/
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
 
-
-
+.main-left {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: row;
+  margin-left: 120px;
+}
+.main-content {
+  text-align: center;
+  flex: 1;
+}
+.main-right {
+  /* flex: 1; */
+}
 
 .footer {
   width: 100%;
@@ -562,3 +552,4 @@ html {
   text-align: right;
 }
 </style>
+

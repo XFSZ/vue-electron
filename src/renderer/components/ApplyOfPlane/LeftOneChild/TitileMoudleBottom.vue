@@ -69,7 +69,7 @@ export default {
   font-family: 'opposans';
   color: aliceblue;
   font-size: 10px;
-  margin-top: -8px;
+  /* margin-top: -8px; */
 }
 .span-num{
   font-family: 'dinPro';

@@ -127,6 +127,7 @@ export default {
   /* width: 100%; */
   margin-left: 15px;
   margin-right: 15px;
+  margin-bottom: 1px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -157,6 +158,7 @@ export default {
  } */
 .title-table-head-main {
   display: flex;
+  margin-top: 8px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -164,6 +166,10 @@ export default {
 .title-left {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+  margin-bottom: 4px;
+
 }
 .titlename {
   font-family: "Zhongheijian";
@@ -216,7 +222,7 @@ export default {
   margin-right: 4px;
 }
 .table-head-value {
-  margin-top: -8px;
+  margin-top: 8px;
   flex: 1;
   display: flex;
   flex-direction: row;
