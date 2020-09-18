@@ -204,7 +204,7 @@ export default {
             type: 'bar',
             label: {
               show: true, // 开启显示
-              position: [370, 10],
+              position: [360, 10],
               formatter: '完好率  {c}%', // 显示百分号
               textStyle: {
                 // 数值样式
@@ -315,7 +315,7 @@ export default {
             type: 'bar',
             label: {
               show: true, // 开启显示
-              position: [360, 10],
+              position: [340, 10],
               formatter: '完好率  {c}%', // 显示百分号
               textStyle: {
                 // 数值样式
