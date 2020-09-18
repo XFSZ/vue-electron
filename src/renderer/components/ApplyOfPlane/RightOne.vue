@@ -209,10 +209,15 @@ export default {
 
             animationType: 'scale',
             hoverAnimation: false,
-            animationEasing: 'elasticOut',
-            animationDelay: function(idx) {
-              return Math.random() * 200;
-            }
+            // animationEasing: 'elasticOut',
+            // animationDelay: function(idx) {
+            //   return idx * 100;
+            // },
+            animationDuration: 2000
+            // animationDuration: function(idx) {
+            //   // 越往后的数据延迟越大
+            //   return idx * 100;
+            // }
           }
         ]
       });

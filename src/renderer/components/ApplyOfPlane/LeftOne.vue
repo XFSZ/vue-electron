@@ -3,8 +3,8 @@
     <title-moudle
       :blockImg="flyUrl"
       :leftTitle="leftTitle1"
-      :fromNum="fromNum"
-      :toNum="toNum"
+      :fromNum="fromNum1"
+      :toNum="toNum1"
     />
     <div
       id="myChart"
@@ -13,8 +13,8 @@
     <title-moudle
       :blockImg="logisticsUrl"
       :leftTitle="leftTitle2"
-      :fromNum="fromNum"
-      :toNum="toNum"
+      :fromNum="fromNum2"
+      :toNum="toNum2"
     />
     <div
       id="myChart1"
@@ -23,8 +23,8 @@
     <title-moudle
       :blockImg="flyUrl"
       :leftTitle="leftTitle3"
-      :fromNum="fromNum"
-      :toNum="toNum"
+      :fromNum="fromNum3"
+      :toNum="toNum3"
     />
     <div class="threecircle">
       <div class="circle-title">
@@ -79,12 +79,13 @@ export default {
     TitleMoudleBottom
   },
   created() {
-    axios.get('http://127.0.0.1:3000/mock/admin', { // 还可以直接把参数拼接在url后边
+    axios.get('http://127.0.0.1:3000/mock/test', { // 还可以直接把参数拼接在url后边
       params: {
         title: '眼镜'
       }
     }).then(function(res) {
-      this.goodsList = res.data;
+      res.data;
+      console.log(res.data);
     }).catch(function(error) {
       console.log(error);
     });
@@ -102,17 +103,44 @@ export default {
       totalNumber1: 18713,
       totalNumber2: 4971,
       totalNumber3: 1987,
-      fromNum: [
+      fromNum1: [
         { name: 'totalNumberOfModels', value: 0 },
         { name: 'totalNumber', value: 0 },
         { name: 'standNumber', value: 0 }
       ],
-
-      toNum: [
-        { name: 'toTotalNumberOfModels', value: 157 },
+      fromNum2: [
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
+      ],
+      fromNum3: [
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
+      ],
+      toNum1: [ { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
-        { name: 'toStandNumber', value: 111574 }
-      ]
+        { name: 'toStandNumber', value: 111574 }],
+      toNum2: [ { name: 'toTotalNumberOfModels', value: 157 },
+        { name: 'toTotalNumber', value: 132461 },
+        { name: 'toStandNumber', value: 111574 }],
+      toNum3: [ { name: 'toTotalNumberOfModels', value: 157 },
+        { name: 'toTotalNumber', value: 132461 },
+        { name: 'toStandNumber', value: 111574 }],
+      echarts1: {xdata: [], ydata: []},
+      echarts2: {xdata: [], ydata: []},
+      echarts3: {xdata: [], ydata: []}
+      // fromNum: [
+      //   { name: 'totalNumberOfModels', value: 0 },
+      //   { name: 'totalNumber', value: 0 },
+      //   { name: 'standNumber', value: 0 }
+      // ],
+
+      // toNum: [
+      //   { name: 'toTotalNumberOfModels', value: 157 },
+      //   { name: 'toTotalNumber', value: 132461 },
+      //   { name: 'toStandNumber', value: 111574 }
+      // ]
     };
   },
   computed: {},
