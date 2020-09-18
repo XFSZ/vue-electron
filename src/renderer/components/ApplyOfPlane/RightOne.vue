@@ -202,6 +202,7 @@ export default {
             label: {
               // color: 'rgba(255, 255, 255, 1)',
               // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} \n {per|{d}%}  ',  //label 的内容
+              padding: [-4, -80],
               formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + 'haode' + '：}{c} \n {per|{d}%}  ',
               rich: {// 定义不同地方的文字的字体大小和颜色
                 a: {
@@ -235,9 +236,9 @@ export default {
               lineStyle: {
                 color: 'rgba(255, 255, 255, 0.3)'
               },
-              smooth: 0.2,
-              length: 10,
-              length2: 20
+              // smooth: 0.2,
+              length: 20,
+              length2: 80
             },
             itemStyle: {
               color: '#001234',

@@ -77,7 +77,7 @@
 import { TweenLite } from 'gsap';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
 import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
-import bg from '../../assets/pie-label.png';
+import BG from '../../assets/pie-label.png';
 import FlyImg from '../../assets/fly.png';
 import LogisticsImg from '../../assets/logistics.png';
 import BlankImg from '../../assets/block.png';
@@ -411,6 +411,20 @@ export default {
             }
           }
         },
+        graphic: {
+          elements: [ { // 将图片定位到最下方的中间：
+            type: 'image',
+            // left: 'center', // 水平定位到中间
+            left: '28.5%',
+            top: '28%',
+            // bottom: '10%', // 定位到距离下边界 10% 处
+            // position: [110, 0],
+            style: {
+              image: BG,
+              width: 60,
+              height: 60
+            }
+          }]},
         series: [
           {
             name: '值班兵力',
