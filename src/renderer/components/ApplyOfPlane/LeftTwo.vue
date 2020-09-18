@@ -549,6 +549,7 @@ export default {
   height: 20px;
   margin-top: 18px;
   margin-left: 10px;
+  margin-bottom: 5px;
 }
 .title-left {
   display: flex;
@@ -650,7 +651,7 @@ export default {
   /* flex: 1; */
   margin-left: 6px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 .table-head-value {
   /* flex: 1; */

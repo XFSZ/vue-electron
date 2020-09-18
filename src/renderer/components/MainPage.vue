@@ -443,16 +443,16 @@ html {
   margin-top: 7px;
 }
 .main-middle-button {
-  width: 100px;
-  height: 50px;
+  width: 140px;
+  height: 70px;
   margin-right: 140px;
   display: inline-block;
   background-image: url("../assets/main-content-btn.png");
   background-size: 100% 100%;
 }
 .main-middle-button:hover {
-  width: 100px;
-  height: 50px;
+  width: 140px;
+  height: 70px;
   margin-right: 140px;
   display: inline-block;
   background-image: url("../assets/main-content-btn-active.png");
@@ -463,7 +463,7 @@ html {
   font-family: "Zhongheijian";
   color: whitesmoke;
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 24px;
   /* margin-right: 30px; */
   /* margin-right: 140px; */
   display: inline-block;

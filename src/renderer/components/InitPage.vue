@@ -132,7 +132,7 @@ export default {
   height: 8px;
   width: 8px;
   position: absolute;
-  margin-top: -60px;
+  margin-top: -40px;
   margin-left: 8px;
 }
 
@@ -403,16 +403,17 @@ html {
   margin-top: 7px;
 }
 .back-button {
-  width: 100px;
-  height: 50px;
+  margin-top: 20px;
+  width: 120px;
+  height: 44px;
   margin-right: 140px;
   display: inline-block;
   background-image: url("../assets/back-btn.png");
   background-size: 100% 100%;
 }
 .back-button:hover {
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 44px;
   margin-right: 140px;
   display: inline-block;
   background-image: url("../assets/back-btn-active.png");
@@ -423,8 +424,8 @@ html {
   font-family: "Zhongheijian";
   color: azure;
   font-size: 18px;
-  margin-top: 15px;
-  margin-right: 30px;
+  margin-top: 10px;
+  margin-right: 40px;
   /* margin-right: 140px; */
   display: inline-block;
 }

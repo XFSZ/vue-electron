@@ -158,8 +158,8 @@ export default {
 .p-style-str {
   font-family: "Zhongheijian";
   color: whitesmoke;
-  font-size: 12px;
-  height: 1px;
+  font-size: 16px;
+  /* height: 1px; */
 }
 .p-style-num {
   font-family: "dinPro";
@@ -172,7 +172,7 @@ export default {
   margin-top: 1px;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 11px;
+  font-size: 16px;
   background-color: rgb(34, 50, 75);
 }
 .title-table-head-main {
@@ -184,7 +184,7 @@ export default {
   width: 4px;
   height: 4px;
 
-  margin-top: 10px;
+  /* margin-top: 10px; */
   margin-right: 4px;
 }
 .right-child-three {
@@ -203,11 +203,13 @@ export default {
 .right-child-one {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .right-child-two {
   display: flex;
-  margin-top: 11px;
+  /* margin-top: 11px; */
   flex-direction: column;
+  justify-content: center;
   margin-left: -30px;
 }
 </style>

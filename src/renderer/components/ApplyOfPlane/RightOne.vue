@@ -65,9 +65,9 @@
 
       <div class="right-text-table-one">
         <div class="title-table-head-main">
-          <img :src="blankUrl" class="blank-img left-img" />
+          <img :src="blankUrl" class="blank-img left-blank-img" />
           <p class="title-child">当日试飞总架次</p>
-          <img :src="blankUrl" class="blank-img right-img" />
+          <img :src="blankUrl" class="blank-img right-blank-img" />
         </div>
 
         <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
@@ -273,8 +273,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center
-  /* margin-left: 50px; */
-  /* background-color: rgb(34, 50, 75); */
+
 }
 .blank-img {
   width: 4px;
@@ -289,10 +288,12 @@ export default {
   height: 20px;
   margin-top: 18px;
   margin-left: 15px;
+  margin-bottom: 5px;
 }
 .title-left {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .right-text-table-one {
   display: flex;
@@ -329,16 +330,16 @@ export default {
 }
 .title-child {
   font-family: "Zhongheijian";
-  font-size: 12px;
-  height: 6px;
+  font-size: 18px;
+  /* height: 6px; */
   margin-left: 4px;
   color: white;
   margin-right: 4px;
-  margin-top: 4px;
+  /* margin-top: 4px; */
 }
 .title-child-num {
   font-family: "dinPro";
-  font-size: 30px;
+  font-size: 34px;
   color: aqua;
   padding-left: 30px;
   padding-right: 30px;

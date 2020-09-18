@@ -137,6 +137,7 @@ export default {
   height: 20px;
   margin-top: 18px;
   margin-left: 15px;
+  margin-bottom: 4px;
 }
 </style>
 <style scoped>
@@ -217,7 +218,7 @@ export default {
   color: whitesmoke;
   /* flex: 1; */
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
   margin-left: 4px;
   margin-right: 4px;
 }
@@ -233,7 +234,7 @@ export default {
   font-family: 'dinPro';
   color: aqua;
   flex: 1;
-  font-size: 30px;
+  font-size: 36px;
   margin-bottom: 10px;
   text-align: center;
   justify-content: center;

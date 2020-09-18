@@ -30,7 +30,7 @@
       <div class="circle-title">
         <div
           id="myChart_c1"
-          :style="{ width: '70px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber1"
@@ -41,7 +41,7 @@
       <div class="circle-title">
         <div
           id="myChart_c2"
-          :style="{ width: '70px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber2"
@@ -52,7 +52,7 @@
       <div class="circle-title">
         <div
           id="myChart_c3"
-          :style="{ width: '70px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
