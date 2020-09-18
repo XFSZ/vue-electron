@@ -1,7 +1,5 @@
 <template>
   <div class="wapper">
-
-
     <div class="footer">
       <div class="footer-left">
         <div class="footer-left-one">
@@ -43,9 +41,7 @@
           @select="handleSelect"
         >
           <el-menu-item index="/" class="left-img">综合态势</el-menu-item>
-          <el-menu-item index="/" class="mid-img"
-            >动用使用</el-menu-item
-          >
+          <el-menu-item index="/" class="mid-img">动用使用</el-menu-item>
           <el-menu-item index="/" class="mid-img">质量维修</el-menu-item>
           <el-menu-item index="/" class="right-img">供应保障</el-menu-item>
         </el-menu>
@@ -131,8 +127,6 @@ export default {
   width: 230px;
   height: 43px;
 }
-
-
 
 .black-img-text {
   height: 8px;
@@ -233,7 +227,6 @@ export default {
   border-bottom: solid 1px rgba(255, 255, 255, 0);
 }
 
-
 .footer-content .el-menu--horizontal .el-menu .el-menu-item,
 .el-menu--horizontal .el-menu .el-submenu__title {
   background-color: rgba(255, 255, 255, 0);
@@ -256,10 +249,6 @@ export default {
   /* color: #303133; */
   color: whitesmoke;
 }
-
-
-
-
 
 .footer-content .el-menu-item {
   font-size: 27px;
@@ -453,7 +442,6 @@ html {
   background-color: rgba(255, 255, 255, 0);
 }
 
-
 .wapper {
   /* min-height: 100vh; */
   display: flex;
@@ -464,13 +452,10 @@ html {
   background-size:100% 90%; */
 }
 
-
-
-
 .footer {
   width: 100%;
   height: 100px;
-  margin-top: 70px;
+  /* margin-top: 70px; */
   /* margin-top: -32px; */
   /* flex: 0; */
   display: flex;

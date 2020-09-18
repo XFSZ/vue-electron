@@ -3,12 +3,12 @@
     <title-moudle :blockImg="flyUrl" :leftTitle="leftTitle1" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar1"
-      :style="{ width: '500px', height: '364px' ,marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px' }"
+      :style="{ width: '500px', height: '368px' ,marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px' }"
     ></div>
     <title-moudle :blockImg="logisticsUrl" :leftTitle="leftTitle2" :fromNum='fromNum' :toNum='toNum' />
     <div
       id="myChart_bar2"
-      :style="{ width: '500px', height: '364px',marginTop: '-38px',    marginLeft: '30px',marginRight: '60px' }"
+      :style="{ width: '500px', height: '368px',marginTop: '-38px',    marginLeft: '30px',marginRight: '60px' }"
     ></div>
     <div class="threecircle">
       <div class="title-left">
@@ -601,7 +601,7 @@ export default {
   /* width: 350px; */
   margin-left: 30px;
   margin-right: 30px;
-  margin-top: 21px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   text-align: center;

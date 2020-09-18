@@ -79,7 +79,7 @@ export default {
     TitleMoudleBottom
   },
   created() {
-    axios.get('http://127.0.0.1:3000/mock/test', { // 还可以直接把参数拼接在url后边
+    axios.get('https://www.easy-mock.com/mock/5f64526ed75a98083f4991c3/example/dpService/getFjslsjFj', { // 还可以直接把参数拼接在url后边
       params: {
         title: '眼镜'
       }

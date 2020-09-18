@@ -1,16 +1,33 @@
 <template>
-      <div class="main-context">
-      <div class="main-left">
-        <left-one class="left-one-style" />
-        <left-two class="left-two-style" />
+  <div class="main-context">
+    <div class="main-left">
+      <left-one class="left-one-style" />
+      <left-two class="left-two-style" />
+    </div>
+    <div class="main-middle-content">
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">全国</p>
       </div>
-      <div class="main-content">
-        <p>cccc</p>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">东部</p>
       </div>
-      <div class="main-right">
-        <right-one class="right-style" />
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">南部</p>
+      </div>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">西部</p>
+      </div>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">北部</p>
+      </div>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">中部</p>
       </div>
     </div>
+    <div class="main-right">
+      <right-one class="right-style" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -84,8 +101,6 @@ export default {
   width: 230px;
   height: 43px;
 }
-
-
 
 .black-img-text {
   height: 8px;
@@ -427,7 +442,7 @@ html {
   margin-left: 12px;
   margin-top: 7px;
 }
-.back-button {
+.main-middle-button {
   width: 100px;
   height: 50px;
   margin-right: 140px;
@@ -435,7 +450,7 @@ html {
   background-image: url("../assets/back-btn.png");
   background-size: 100% 100%;
 }
-.back-button:hover {
+.main-middle-button:hover {
   width: 100px;
   height: 50px;
   margin-right: 140px;
@@ -443,13 +458,13 @@ html {
   background-image: url("../assets/back-btn-active.png");
   background-size: 100% 100%;
 }
-.back-button-text {
+.main-middle-button-text {
   user-select: none;
   font-family: "Zhongheijian";
-  color: azure;
+  color: whitesmoke;
   font-size: 18px;
   margin-top: 15px;
-  margin-right: 30px;
+  /* margin-right: 30px; */
   /* margin-right: 140px; */
   display: inline-block;
 }
@@ -494,13 +509,14 @@ html {
   background-size:100% 90%; */
 }
 .main-context {
-  height: 1260px;
+  height: 1360px;
   /* height: 100%; */
   width: 100%;
   flex: 1;
   -ms-flex: 1 1 auto; /*降级处理兼容ie, 如果设置 -ms-flex:1不起作用,会让footer覆盖在main上面*/
   display: flex;
   flex-direction: row;
+
   /* justify-content: center; */
 }
 
@@ -510,9 +526,14 @@ html {
   flex-direction: row;
   margin-left: 120px;
 }
-.main-content {
+.main-middle-content {
   text-align: center;
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 60px;
 }
 .main-right {
   /* flex: 1; */
@@ -544,6 +565,7 @@ html {
   /* width: 1180px; */
   /* height: 74px; */
 }
+
 .footer-right {
   width: 100%;
   flex: 1;
@@ -552,4 +574,3 @@ html {
   text-align: right;
 }
 </style>
-
