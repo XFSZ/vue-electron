@@ -71,6 +71,7 @@ import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 import FlyImg from '../../assets/fly.png';
 import LogisticsImg from '../../assets/logistics.png';
 import axios from 'axios';
+// const baseurl = 'http://192.168.37.130:7300/mock/5f6473cac01e510020e2f086/example/';
 
 export default {
   name: 'hello',
@@ -79,7 +80,7 @@ export default {
     TitleMoudleBottom
   },
   created() {
-    axios.get('https://www.easy-mock.com/mock/5f64526ed75a98083f4991c3/example/dpService/getFjslsjFj', { // 还可以直接把参数拼接在url后边
+    axios.get(this.$commonvalue.baseurl + 'dpService/getFjslsjFj', { // 还可以直接把参数拼接在url后边
       params: {
         title: '眼镜'
       }
@@ -89,6 +90,7 @@ export default {
     }).catch(function(error) {
       console.log(error);
     });
+
   },
   data() {
     return {

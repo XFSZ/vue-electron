@@ -9,7 +9,7 @@
 </template>
 
 <script>
-
+// console.log(this.common, 'sss');
 import InitPage from './components/InitPage';
 import HeaderPage from './components/HeaderPage';
 import MainPage from './components/MainPage';
