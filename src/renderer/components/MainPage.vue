@@ -447,7 +447,7 @@ html {
   height: 50px;
   margin-right: 140px;
   display: inline-block;
-  background-image: url("../assets/back-btn.png");
+  background-image: url("../assets/main-content-btn.png");
   background-size: 100% 100%;
 }
 .main-middle-button:hover {
@@ -455,7 +455,7 @@ html {
   height: 50px;
   margin-right: 140px;
   display: inline-block;
-  background-image: url("../assets/back-btn-active.png");
+  background-image: url("../assets/main-content-btn-active.png");
   background-size: 100% 100%;
 }
 .main-middle-button-text {
