@@ -172,7 +172,9 @@ export default {
           axisLabel: {
             show: true,
             textStyle: {
-              color: '#ffffff'
+              color: '#ffffff',
+              fontSize: 17,
+              fontFamily: 'Zhongheijian'
             }
           },
           axisTick: { // y轴刻度线
@@ -191,7 +193,8 @@ export default {
               textStyle: {
                 // 数值样式
                 color: 'white', // 字体颜色
-                fontSize: 10 // 字体大小
+                fontSize: 10, // 字体大小
+                fontFamily: 'opposans'
               }
             },
             itemStyle: {
@@ -274,7 +277,9 @@ export default {
           axisLabel: {
             show: true,
             textStyle: {
-              color: '#ffffff'
+              color: '#ffffff',
+              fontSize: 17,
+              fontFamily: 'Zhongheijian'
             }
           },
           axisTick: { // y轴刻度线
@@ -293,7 +298,8 @@ export default {
               textStyle: {
                 // 数值样式
                 color: 'white', // 字体颜色
-                fontSize: 10 // 字体大小
+                fontSize: 10, // 字体大小
+                fontFamily: 'opposans'
               }
             },
             itemStyle: {
@@ -410,67 +416,94 @@ export default {
             name: '值班兵力',
             type: 'pie', // 环形图的type和饼图相同
             // radius: ['50%', '70%'], // 饼图的半径，第一个为内半径，第二个为外半径
-            center: ['40%', '50%'], // 饼图的圆心坐标
+            center: ['36%', '44%'], // 饼图的圆心坐标
             radius: ['74%', '80%'],
             avoidLabelOverlap: false,
             hoverAnimation: false,
             color: ['#7d7d7d', '#00cfff', '#ffffff'],
+            //           label: {
+            //   normal: {
+            //     // 正常的样式
+            //     // formatter: '{img1|}',
+            //     // rich: {
+            //     //   // 这里设置您的图片引用名称
+            //     //   height: 10,
+
+            //     //   img1: {
+            //     //     // 引入图片
+            //     //     backgroundColor: '#D1FBEF'
+            //     //     // backgroundColor: {
+
+            //     //     //   image: '../assets/left-bottom-backgourd2.png'
+            //     //     // }
+            //     //   }
+            //     // },
+            //     rich: {
+            //       img1: {
+            //         // height: '20px',
+            //         height: 60,
+            //         width: 60,
+            //         backgroundColor: {
+            //           image: bg
+            //         }
+            //       }
+            //     },
+            //     // formatter: function(param) {
+            //     //   var res = '';
+            //     //   res += param.value +
+            //     // '\n {img1|}';
+            //     //   return res;
+            //     // },
+            //     formatter: '{img1|}',
+            //     show: true,
+            //     position: 'center'
+            //     // formatter: '{d}%\n{b}'
+            //   },
+            //   emphasis: {
+            //     // 选中时候的样式
+            //     show: true,
+            //     textStyle: {
+            //       fontSize: '10',
+            //       fontWeight: 'bold'
+            //     }
+            //   }
+            // }, // 提示文字
             label: {
-              normal: {
-                // 正常的样式
-                // formatter: '{img1|}',
-                // rich: {
-                //   // 这里设置您的图片引用名称
-                //   height: 10,
+              show: true, // 开启显示
+              // position: [380, 10],
+              formatter: '完好率\n {c}%', // 显示百分号
+              textStyle: {
+                // 数值样式
+                align: 'center',
+                width: '45%',
+                color: 'white', // 字体颜色
+                fontSize: 10, // 字体大小
+                fontFamily: 'opposans',
+                padding: [0, -30]
 
-                //   img1: {
-                //     // 引入图片
-                //     backgroundColor: '#D1FBEF'
-                //     // backgroundColor: {
-
-                //     //   image: '../assets/left-bottom-backgourd2.png'
-                //     // }
-                //   }
-                // },
-                rich: {
-                  img1: {
-                    // height: '20px',
-                    height: 60,
-                    width: 60,
-                    backgroundColor: {
-                      image: bg
-                    }
-                  }
-                },
-                // formatter: function(param) {
-                //   var res = '';
-                //   res += param.value +
-                // '\n {img1|}';
-                //   return res;
-                // },
-                formatter: '{img1|}',
-                show: true,
-                position: 'center'
-                // formatter: '{d}%\n{b}'
-              },
-              emphasis: {
-                // 选中时候的样式
-                show: true,
-                textStyle: {
-                  fontSize: '10',
-                  fontWeight: 'bold'
-                }
               }
-            }, // 提示文字
+            },
             labelLine: {
               normal: {
                 show: false
               }
             },
+            itemStyle: {
+              normal: {
+              // 具体决定了饼状图每一份的颜色显示
+              // color: '#FFA07A',
+              // 饼状图阴影，值越大阴影亮度越高
+                shadowBlur: 20,
+                shadowOffsetX: -50,
+                shadowOffsetY: 50,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              // shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            },
             data: [
-              { value: 335, name: '一等值班' },
-              { value: 310, name: '二等值班' },
-              { value: 234, name: '三等值班' }
+              { value: 40, name: '一等值班' },
+              { value: 36, name: '二等值班' },
+              { value: 24, name: '三等值班' }
             ]
           }
         ]

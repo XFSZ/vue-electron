@@ -187,7 +187,9 @@ export default {
           axisLabel: {
             show: true,
             textStyle: {
-              color: '#ffffff'
+              color: '#ffffff',
+              fontSize: 17,
+              fontFamily: 'Zhongheijian'
             }
           },
           axisTick: { // y轴刻度线
@@ -207,7 +209,8 @@ export default {
               textStyle: {
                 // 数值样式
                 color: 'white', // 字体颜色
-                fontSize: 10 // 字体大小
+                fontSize: 10, // 字体大小
+                fontFamily: 'opposans'
               }
             },
             showBackground: true,
@@ -296,7 +299,9 @@ export default {
           axisLabel: {
             show: true,
             textStyle: {
-              color: '#ffffff'
+              color: '#ffffff',
+              fontSize: 17,
+              fontFamily: 'Zhongheijian'
             }
           },
           axisTick: { // y轴刻度线
@@ -315,7 +320,8 @@ export default {
               textStyle: {
                 // 数值样式
                 color: 'white', // 字体颜色
-                fontSize: 10 // 字体大小
+                fontSize: 10, // 字体大小
+                fontFamily: 'opposans'
               }
             },
             itemStyle: {
