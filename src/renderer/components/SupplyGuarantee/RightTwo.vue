@@ -50,51 +50,15 @@
           <span class="title-child-num">{{ changeTotalNumberOfModels }}</span>
           <span class="table-head-strvalue">架</span>
         </div>
-        <!-- <p class="title-child-num">{{ changeTotalNumberOfModels }}</p> -->
       </div>
     </div>
-    <div class="right-one-bottom-charts">
-      <div class="threecircle">
-        <div class="circle-title">
-          <div
-            id="right-two_c1"
-            :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
-          ></div>
-          <title-moudle-bottom
-            :goodNumber="googNumber1"
-            :totalNumber="totalNumber1"
-          />
-        </div>
-        <div class="circle-title">
-          <div
-            id="right-two_c2"
-            :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
-          ></div>
-          <title-moudle-bottom
-            :goodNumber="googNumber2"
-            :totalNumber="totalNumber2"
-          />
-        </div>
-        <div class="circle-title">
-          <div
-            id="right-two_c3"
-            :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
-          ></div>
-          <title-moudle-bottom
-            :goodNumber="googNumber3"
-            :totalNumber="totalNumber3"
-          />
-        </div>
-      </div>
-      <div
-        id="right-two_tc4"
-        :style="{
-          width: '380px',
-          height: '180px',
-          marginTop: '20px',
-        }"
-      ></div>
-    </div>
+    <div
+      id="right-two-chart_3"
+      :style="{
+        width: '540px',
+        height: '276px',
+      }"
+    ></div>
   </div>
 </template>
 
@@ -360,321 +324,69 @@ export default {
         ]
       });
 
-      // 基于准备好的dom，初始化echarts实例
-      let myChart_c1 = this.$echarts.init(
-        document.getElementById('right-two_c1')
+      let myChart3 = this.$echarts.init(
+        document.getElementById('right-two-chart_3')
       );
       // 绘制图表
-      myChart_c1.setOption({
-        tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b}: {c} ({d}%)'
+      myChart3.setOption({
+        title: {
+          text: '折线图堆叠'
         },
-        color: ['#00b3ff', '#ccc'],
-        series: [
-          {
-            name: '军械',
-            type: 'pie',
-            center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
-            hoverAnimation: false,
-            label: {
-              //  饼图图形上的文本标签
-
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
-              }
-            },
-            labelLine: {
-              normal: {
-                show: false
-              }
-            },
-            data: [
-              {
-                value: 75,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 25,
-                name: '正常',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      });
-
-      // 基于准备好的dom，初始化echarts实例
-      let myChart_c2 = this.$echarts.init(
-        document.getElementById('right-two_c2')
-      );
-      // 绘制图表
-      myChart_c2.setOption({
         tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b}: {c} ({d}%)'
-        },
-        color: ['#00b3ff', '#ccc'],
-        series: [
-          {
-            name: '电子侦察',
-            type: 'pie',
-            center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
-            hoverAnimation: false,
-            label: {
-              //  饼图图形上的文本标签
-
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
-              }
-            },
-            labelLine: {
-              normal: {
-                show: false
-              }
-            },
-            data: [
-              {
-                value: 74,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 26,
-                name: '正常',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      });
-
-      // 基于准备好的dom，初始化echarts实例
-      let myChart_c3 = this.$echarts.init(
-        document.getElementById('right-two_c3')
-      );
-      // 绘制图表
-      myChart_c3.setOption({
-        tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b}: {c} ({d}%)'
-        },
-        color: ['#00b3ff', '#ccc'],
-        series: [
-          {
-            name: '电子干扰',
-            type: 'pie',
-            center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
-            hoverAnimation: false,
-            label: {
-              //  饼图图形上的文本标签
-
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
-              }
-            },
-            labelLine: {
-              normal: {
-                show: false
-              }
-            },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      });
-      // 基于准备好的dom，初始化echarts实例
-      let myChart_c4 = this.$echarts.init(
-        document.getElementById('right-two_tc4')
-      );
-      let datas = ['一等值班', '二等值班', '三等值班'];
-      // 绘制图表
-      myChart_c4.setOption({
-        tooltip: {
-          // 提示框，可以在全局也可以在
-          trigger: 'item', // 提示框的样式
-          formatter: '{a} <br/>{b}: {c} ({d}%)',
-          color: '#000', // 提示框的背景色
-          textStyle: {
-            // 提示的字体样式
-            color: 'black'
-          }
+          trigger: 'axis'
         },
         legend: {
-          // 图例
-          orient: 'vertical', // 图例的布局，vertical竖直    horizontal为水平
-          // x: 'right', // 图例显示在右边
-          right: 4,
-          // top: 8,
-          bottom: 4,
-          //   left: 5,
-          //   position: [180, 10],
-          data: ['一等值班', '二等值班', '三等值班'],
-          //   textStyle: {
-          //     // 图例文字的样式
-          //     // color: '#333', // 文字颜色
-          //     fontSize: 12 // 文字大小
-          //   }
-          formatter: function(name) {
-            let seriesObj;
-            for (let i = 0; i < datas.length; i++) {
-              if (datas[i] === name) {
-                seriesObj = datas[i];
-                break;
-              }
-            }
-            var arr = [
-              '{a|' + name + '}' + '\n {b|' + '次数   ' + '100' + '次' + '}'
-            ];
-            return arr;
-          },
-          //   formatter: [
-          //     '{a|}',
-          //     '{b|这段文本采用样式b}这段用默认样式{x|这段用样式x}'
-          //   ].join('\n'),
-          textStyle: {
-            rich: {
-              a: {
-                color: 'white',
-                lineHeight: 20,
-                height: 18,
-                fontSize: 14, // 文字大小
-                fontFamily: 'Zhongheijian'
-              },
-              b: {
-                height: 12,
-                color: '#878b91', // 文字颜色
-                lineHeight: 20,
-                fontSize: 12, // 文字大小
-                fontFamily: 'Zhongheijian'
-              }
-            }
+          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {}
           }
         },
-        graphic: {
-          elements: [
-            {
-              // 将图片定位到最下方的中间：
-              type: 'image',
-              // left: 'center', // 水平定位到中间
-              left: '28.5%',
-              top: '28%',
-              // bottom: '10%', // 定位到距离下边界 10% 处
-              // position: [110, 0],
-              style: {
-                image: BG,
-                width: 60,
-                height: 60
-              }
-            }
-          ]
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+          type: 'value'
         },
         series: [
           {
-            name: '值班兵力',
-            type: 'pie', // 环形图的type和饼图相同
-            // radius: ['50%', '70%'], // 饼图的半径，第一个为内半径，第二个为外半径
-            center: ['36%', '44%'], // 饼图的圆心坐标
-            radius: ['74%', '80%'],
-            avoidLabelOverlap: false,
-            hoverAnimation: false,
-            color: ['#7d7d7d', '#00cfff', '#ffffff'],
-
-            label: {
-              show: true, // 开启显示
-              // position: [380, 10],
-              formatter: '完好率\n {c}%', // 显示百分号
-              textStyle: {
-                // 数值样式
-                align: 'center',
-                width: '45%',
-                color: 'white', // 字体颜色
-                fontSize: 10, // 字体大小
-                fontFamily: 'opposans',
-                padding: [0, -30]
-              }
-            },
-            labelLine: {
-              normal: {
-                show: false
-              }
-            },
-            itemStyle: {
-              normal: {
-                // 具体决定了饼状图每一份的颜色显示
-                // color: '#FFA07A',
-                // 饼状图阴影，值越大阴影亮度越高
-                shadowBlur: 20,
-                shadowOffsetX: -50,
-                shadowOffsetY: 50,
-                shadowColor: 'rgba(0, 0, 0, 0.5)'
-                // shadowColor: 'rgba(0, 0, 0, 0.5)'
-              }
-            },
-            data: [
-              { value: 40, name: '一等值班' },
-              { value: 36, name: '二等值班' },
-              { value: 24, name: '三等值班' }
-            ]
+            name: '邮件营销',
+            type: 'line',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
           }
         ]
       });

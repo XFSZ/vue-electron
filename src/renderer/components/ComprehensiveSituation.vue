@@ -2,42 +2,38 @@
   <div class="main-context">
     <div class="main-left">
       <left-one class="left-one-style" />
-      <!-- <left-two class="left-two-style" /> -->
+      <left-two class="left-two-style" />
     </div>
     <div class="main-middle-content">
-
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">全国</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">东部</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">南部</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">西部</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">北部</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">中部</p>
-          </div>
- 
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">全国</p>
+      </div>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">东部</p>
+      </div>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">南部</p>
+      </div>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">西部</p>
+      </div>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">北部</p>
+      </div>
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">中部</p>
+      </div>
     </div>
     <div class="main-right">
       <right-one class="right-style" />
-      <right-two class="right-two-style" />
     </div>
   </div>
 </template>
 
 <script>
-import LeftOne from './SupplyGuarantee/LeftOne';
-import LeftTwo from './SupplyGuarantee/LeftTwo';
-import RightOne from './SupplyGuarantee/RightOne';
-import RightTwo from './SupplyGuarantee/RightTwo';
+import LeftOne from './ComprehensiveSituation/LeftOne';
+import LeftTwo from './ComprehensiveSituation/LeftTwo';
+import RightOne from './ComprehensiveSituation/RightOne';
 import TaskImg from '../assets/task.png';
 import EquipmentImg from '../assets/equipment.png';
 import ReportImg from '../assets/report.png';
@@ -49,18 +45,17 @@ import BlankImg from '../assets/block.png';
 // import BackGourdImg from '../assetsback'
 // import MainLeftBtnImg from '../assets/main-left-btn.png';
 export default {
-  name: 'supply-guarantee',
+  name: 'init-page',
   components: {
     LeftOne,
     LeftTwo,
-    RightOne,
-    RightTwo
+    RightOne
   },
   data() {
     return {
       // activeIndex: '1',
       // activeIndex2: '1',
-      //   activeIndex: '/testpage',
+      activeIndex: '/testpage',
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
       reportUrl: ReportImg,
@@ -73,18 +68,27 @@ export default {
       search_text: ''
     };
   },
-  mounted() {
-    // this.drawLine();
-    // this.pic.taskUrl = TaskImg;
+  // 检测路由变化
+  watch: {
+    // $route() {
+    //   this.setCurrentRoute();
+    // }
   },
   methods: {
-
+    // setCurrentRoute() {
+    //   this.activeIndex = this.$route.path; // 通过他就可以监听到当前路由状态并激活当前菜单
+    // },
+    // handleSelect(key, keyPath) {
+    //   this.$router.push();
+    //   console.log(key, keyPath);
+    // }
   },
   created() {
     //  this.setCurrentRoute();
-
+  },
+  mounted() {
+    // this.pic.taskUrl = TaskImg;
   }
-
 };
 </script>
 
@@ -97,7 +101,10 @@ export default {
   width: 230px;
   height: 43px;
 }
-
+.main-buttom {
+  display: flex;
+  flex-direction: column;
+}
 .black-img-text {
   height: 8px;
   width: 8px;
@@ -485,19 +492,12 @@ html {
   background-size: 100% 100%;
 }
 .left-one-style {
-  width: 600px;
   margin-left: 10px;
   background-image: url("../assets/echarts-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .right-style {
-  margin-right: 20px;
-  background-image: url("../assets/echarts-bg.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-.right-two-style {
   background-image: url("../assets/echarts-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -533,7 +533,6 @@ html {
   text-align: center;
   flex: 1;
   display: flex;
-  /* margin-right: 600px; */
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
@@ -541,10 +540,6 @@ html {
 }
 .main-right {
   flex: 1;
-  display: flex;
-  flex-direction: row;
-  margin-right: 140px;
-  /* margin-left: 120px; */
 }
 
 .footer {

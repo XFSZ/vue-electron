@@ -1,79 +1,65 @@
 <template>
   <div class="mainr">
-    <div class="titlemain">
-      <title-moudle
-        :blockImg="flyUrl"
-        :leftTitle="leftTitle1"
-        :fromNum="fromNum"
-        :toNum="toNum"
-      />
-      <!-- <p class="titlename">飞机</p>
-      <div class="hr">
-        <hr />
-        <div class="deom_hr"></div>
-        <hr />
-      </div>
-      <div class="table-head">
-        <div class="table-head-context">
-          <p class="table-head-title">型号总数</p>
-          <div class="table-head-value">
-            <span class="table-head-numvalue">{{
+    <top-title :imgUrl="logisticsUrl" :titleName="toptitleName0" />
+
+    <div class="right-text-table-main-top">
+      <div class="right-text-table-top-one">
+        <div class="title-table-head-main">
+          <img :src="blankUrl" class="blank-img left-blank-img" />
+          <p class="title-child">弹药不良好数</p>
+          <img :src="blankUrl" class="blank-img right-blank-img" />
+        </div>
+        <div class="right-text-table-top-two">
+          <div class="table-head-top-value">
+            <span class="table-head-top-numvalue">{{
               changeTotalNumberOfModels
             }}</span>
-            <span class="table-head-strvalue">型</span>
+            <span class="table-head-top-strvalue">型</span>
           </div>
-        </div>
-        <div class="table-head-context">
-          <p class="table-head-title">数量总数</p>
-          <div class="table-head-value">
-            <span class="table-head-numvalue">{{ changeTotalNumber }}</span>
-            <span class="table-head-strvalue">架</span>
+          <div class="table-head-top-value">
+            <span class="table-head-top-numvalue">{{
+              changeTotalNumberOfModels
+            }}</span>
+            <span class="table-head-top-strvalue">架</span>
           </div>
-        </div>
-        <div class="table-head-context">
-          <p class="table-head-title">完好总数</p>
-          <div class="table-head-value">
-            <span class="table-head-numvalue">{{ changeStandNumber }}</span>
-            <span class="table-head-strvalue">架</span>
-          </div>
-        </div>
-      </div> -->
-    </div>
-    <div
-      id="myChart_rose1"
-      :style="{
-        width: '540px',
-        height: '468px',
-       
-      }"
-    ></div>
-    <div class="text-table">
-      <div>
-        <div class="title-left">
-          <img :src="logisticsUrl" class="block-img" />
-          <p class="titlename">科研试飞</p>
-          <!-- <p class="titlename">{{ leftTitle }}</p> -->
-        </div>
-
-        <div class="hr">
-          <hr />
-          <!-- <el-divider></el-divider> -->
-          <div class="deom_hr"></div>
-          <hr />
         </div>
       </div>
-
+    </div>
+    <div
+      id="right-one-chart_1"
+      :style="{
+        width: '540px',
+        height: '276px',
+      }"
+    ></div>
+    <div
+      id="right-one-chart_2"
+      :style="{
+        width: '540px',
+        height: '276px',
+      }"
+    ></div>
+    <top-title :imgUrl="flyUrl" :titleName="toptitleName1" />
+    <div class="text-table">
       <div class="right-text-table-one">
         <div class="title-table-head-main">
           <img :src="blankUrl" class="blank-img left-blank-img" />
-          <p class="title-child">当日试飞总架次</p>
+          <p class="title-child">吊舱不完好数</p>
           <img :src="blankUrl" class="blank-img right-blank-img" />
         </div>
-
-        <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
+        <div class="table-head-top-value">
+          <span class="title-child-num">{{ changeTotalNumberOfModels }}</span>
+          <span class="table-head-strvalue">架</span>
+        </div>
       </div>
-      <div><right-child-moudle /></div>
     </div>
+    <div
+      id="right-one-chart_3"
+      :style="{
+        width: '540px',
+        height: '276px',
+      }"
+    ></div>
   </div>
 </template>
 
@@ -82,18 +68,20 @@ import { TweenLite } from 'gsap';
 import BlankImg from '../../assets/block.png';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
 import FlyImg from '../../assets/fly.png';
+import TopTitle from './TopTitle/TopTitle';
 import LogisticsImg from '../../assets/logistics.png';
 import RightChildMoudle from './RightChild/RightChildMoudle';
 export default {
   name: 'rightlabel',
   components: {
     RightChildMoudle,
-    TitleMoudle
+    TitleMoudle,
+    TopTitle
   },
   data() {
     return {
-      leftTitle1: '动用使用',
-      leftTitle2: '弹药',
+      toptitleName0: '弹药供应',
+      toptitleName1: '发动机供应',
       leftTitle3: '吊舱',
       flyUrl: FlyImg,
       logisticsUrl: LogisticsImg,
@@ -144,119 +132,257 @@ export default {
       });
     },
     drawLine() {
-      // 基于准备好的dom，初始化echarts实例
-      let myChart6 = this.$echarts.init(
-        document.getElementById('myChart_rose1')
+      var that = this;
+      let myChart1 = this.$echarts.init(
+        document.getElementById('right-one-chart_1')
       );
-      let datas = [
-        { value: 127, name: '作战备战' },
-        { value: 59, name: '非战争军事行动' },
-        { value: 67, name: '演练演习' },
-        { value: 87, name: '激动转场' },
-        { value: 111, name: '日常训练' }
-      ].sort(function(a, b) {
-        return a.value - b.value;
-      });
       // 绘制图表
-      myChart6.setOption({
-        // backgroundColor: '#2c343c',
-
-        // title: {
-        //   text: 'Customized Pie',
-        //   left: 'center',
-        //   top: 20,
-        //   textStyle: {
-        //     color: '#ccc'
-        //   }
-        // },
-
+      myChart1.setOption({
+        title: {
+          show: true,
+          text: '到寿飞机类别分布',
+          left: 'center', // 主副标题的水平位置
+          // top: 'center', // 主副标题的垂直位置
+          padding: 44, // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 14
+          }
+        },
         tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b} : {c} ({d}%)'
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
+          }
         },
 
-        visualMap: {
-          show: false,
-          //   min: 80,
-          //   max: 600,
-          inRange: {
-            colorLightness: [0, 1]
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: {
+          type: 'value',
+          max: 100,
+          min: 0,
+          interval: 20,
+          boundaryGap: [0, 0.01],
+          splitLine: {
+            // 网格线
+            show: false
+          }
+        },
+        yAxis: {
+          type: 'category',
+          data: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹'],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#ffffff',
+              fontSize: 17,
+              fontFamily: 'Zhongheijian'
+            }
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
           }
         },
         series: [
           {
-            name: '访问来源',
-            type: 'pie',
-            radius: '40%',
-            center: ['50%', '50%'],
-            data: [
-              { value: 127, name: '作战备战' },
-              { value: 59, name: '非战争军事行动' },
-              { value: 67, name: '演练演习' },
-              { value: 87, name: '激动转场' },
-              { value: 111, name: '日常训练' }
-            ].sort(function(a, b) {
-              return a.value - b.value;
-            }),
-            roseType: 'radius',
+            name: '完好率',
+            barWidth: 8,
+            type: 'bar',
             label: {
-              // color: 'rgba(255, 255, 255, 1)',
-              // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} \n {per|{d}%}  ',  //label 的内容
-              padding: [-4, -80],
-              formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + 'haode' + '：}{c} \n {per|{d}%}  ',
-              rich: {// 定义不同地方的文字的字体大小和颜色
-                a: {
-                  color: '#999',
-                  lineHeight: 22,
-                  align: 'left',
-                  padding: [2, 4]
-                },
-                hr: {
-                  borderColor: '#aaa',
-                  width: '100%',
-                  borderWidth: 0.5,
-                  height: 0
-                },
-                b: {
-                  fontSize: 14,
-                  lineHeight: 20
-                },
-                per: {
-                  align: 'center',
-                  width: '45%'
-                  // color: '#eee',
-                  // backgroundColor: '#334455',
-                  // padding: [2, -20]
-                  // borderRadius: 2
-                }
+              show: true, // 开启显示
+              position: [340, 10],
+              formatter: '完好率  {c}%', // 显示百分号
+              textStyle: {
+                // 数值样式
+                color: 'white', // 字体颜色
+                fontSize: 10, // 字体大小
+                fontFamily: 'opposans'
               }
-
-            },
-            labelLine: {
-              lineStyle: {
-                color: 'rgba(255, 255, 255, 0.3)'
-              },
-              // smooth: 0.2,
-              length: 20,
-              length2: 80
             },
             itemStyle: {
-              color: '#001234',
-              shadowBlur: 200,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
-            },
+              normal: {
+                // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                color: function(params) {
+                  // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
+                  var colorList = [
+                    ['#e0a607', '#675316', '#262821'],
+                    ['#d02e08', '#5b1b17', '#26131d'],
 
-            animationType: 'scale',
-            hoverAnimation: false,
-            // animationEasing: 'elasticOut',
-            // animationDelay: function(idx) {
-            //   return idx * 100;
-            // },
-            animationDuration: 2000
-            // animationDuration: function(idx) {
-            //   // 越往后的数据延迟越大
-            //   return idx * 100;
-            // }
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941'],
+                    ['#00bbe4', '#005d7c', '#002941']
+                  ];
+
+                  var index = params.dataIndex;
+                  if (params.dataIndex >= colorList.length) {
+                    index = params.dataIndex - colorList.length;
+                  }
+                  var colors = new that.$echarts.graphic.LinearGradient(
+                    1,
+                    0,
+                    0,
+                    0,
+                    [
+                      { offset: 0, color: colorList[index][0] },
+                      { offset: 0.5, color: colorList[index][1] },
+                      { offset: 1, color: colorList[index][2] }
+                    ]
+                  );
+                  return colors;
+                }
+                // barBorderRadius: 5 // 柱状角成椭圆形
+              }
+            },
+            showBackground: true,
+            backgroundStyle: {
+              color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                { offset: 0, color: '#000' },
+                { offset: 0.3, color: '#888' },
+                { offset: 1, color: '#ddd' }
+              ])
+            },
+            data: [55.1, 62.7, 17.2, 39.8]
+          }
+        ]
+      });
+
+      let myChart2 = this.$echarts.init(
+        document.getElementById('right-one-chart_2')
+      );
+      // 绘制图表
+      myChart2.setOption({
+        title: {
+          text: '折线图堆叠'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {}
+          }
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            name: '邮件营销',
+            type: 'line',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      });
+
+      let myChart3 = this.$echarts.init(
+        document.getElementById('right-one-chart_3')
+      );
+      // 绘制图表
+      myChart3.setOption({
+        title: {
+          text: '折线图堆叠'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {}
+          }
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            name: '邮件营销',
+            type: 'line',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
           }
         ]
       });
@@ -269,11 +395,65 @@ export default {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../../assets/font/Zhongheijian.ttf");
 }
+.text-table {
+  display: flex;
+  flex-direction: column;
+  margin-left: 26px;
+  margin-right: 24px;
+}
+.table-head-top-strvalue {
+  font-family: "opposans";
+  color: whitesmoke;
+  text-align: center;
+  justify-content: flex-end;
+  align-self: center;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+.table-head-top-numvalue {
+  font-family: "dinPro";
+  color: aqua;
+  flex: 1;
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+  margin-left: 34px;
+  margin-right: 4px;
+  width: 120px;
+  background-color: rgb(34, 50, 75);
+}
+.table-head-top-value {
+  margin-top: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+.right-text-table-top-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.right-text-table-top-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80px;
+  justify-content: space-evenly;
+  background-color: #061d3f;
+}
+.right-text-table-main-top {
+  margin-left: 28px;
+  margin-right: 28px;
+  margin-top: 6px;
+}
 .title-table-head-main {
   display: flex;
   flex-direction: row;
-  align-items: center
-
+  align-items: center;
 }
 .blank-img {
   width: 4px;
@@ -296,10 +476,11 @@ export default {
   align-items: center;
 }
 .right-text-table-one {
+  margin-top: 6px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  height: 60px;
+  height: 80px;
   justify-content: space-evenly;
   background-color: #061d3f;
 }
@@ -343,10 +524,12 @@ export default {
   color: aqua;
   padding-left: 30px;
   padding-right: 30px;
+  margin-bottom: 5px;
   /* flex: 1; */
   /* text-align: center; */
-  /* justify-content: center; */
-  /* margin-left: 20px; */
+  justify-content: center;
+  margin-left: 46px;
+  margin-right: 10px;
   background-color: rgb(34, 50, 75);
 }
 .titlename {
@@ -356,12 +539,7 @@ export default {
   margin-left: 4px;
   color: white;
 }
-.text-table {
-  display: flex;
-  flex-direction: column;
-  margin-left: 26px;
-  margin-right: 24px;
-}
+
 .titlemain {
   display: flex;
   flex-direction: column;
@@ -407,9 +585,13 @@ export default {
   margin-left: 20px;
 }
 .table-head-strvalue {
+  font-family: "opposans";
+  color: whitesmoke;
   text-align: center;
   justify-content: flex-end;
+  align-self: center;
   font-size: 12px;
-  margin-top: 2px;
+  margin-top: 10px;
+  margin-right: 20px;
 }
 </style>

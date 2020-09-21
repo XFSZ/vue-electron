@@ -25,16 +25,10 @@
       <p class="p-style-num">{{ changeStandNumber }}</p>
     </div>
     <div class="right-child-three">
-      <!-- 
-        <div
+      <div
         id="myChart_rc4"
         :style="{ width: '100px', height: '100px', marginTop: '14px' }"
-      ></div> 
-      -->
-        <div
-        :id="`list_chart_${indexkey}`"
-        :style="{ width: '100px', height: '100px', marginTop: '14px' }"
-      ></div> 
+      ></div>
     </div>
   </div>
 </template>
@@ -44,7 +38,6 @@ import { TweenLite } from 'gsap';
 import BlankImg from '../../../assets/block.png';
 export default {
   name: 'rightchildmoudle',
-  props: ['indexkey'],
   data() {
     return {
       blankUrl: BlankImg,
@@ -90,7 +83,7 @@ export default {
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
       let myChart_c3 = this.$echarts.init(
-        document.getElementById(`list_chart_${this.indexkey}`)
+        document.getElementById('myChart_rc4')
       );
       // 绘制图表
       myChart_c3.setOption({

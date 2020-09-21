@@ -4,7 +4,7 @@
         <div class="right-text-table-top-one">
           <div class="title-table-head-main">
             <img :src="blankUrl" class="blank-img left-blank-img" />
-            <p class="title-child">发动机型号总数</p>
+            <p class="title-child">当日接装飞机总数</p>
             <img :src="blankUrl" class="blank-img right-blank-img" />
           </div>
           <div class="right-text-table-top-two">
@@ -12,11 +12,52 @@
               <span class="table-head-top-numvalue">{{
                 changeTotalNumberOfModels
               }}</span>
-              <span class="table-head-top-strvalue">型</span>
+              <span class="table-head-top-strvalue">架</span>
             </div>
           </div>
         </div>
-    <div class="table-col"><right-child-moudle /></div>
+    <div class="table-col">
+      <right-child-moudle :indexkey="1" />
+      </div>
+    <div class="table-col"><right-child-moudle :indexkey="2" /></div>
+
+        <top-title :imgUrl="flyUrl" :titleName="toptitlename2" />
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">当日接装地导总数</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">营套</span>
+            </div>
+          </div>
+        </div>
+    <div class="table-col"><right-child-moudle :indexkey="3" /></div>
+    <div class="table-col"><right-child-moudle :indexkey="4"/></div>
+
+        <top-title :imgUrl="flyUrl" :titleName="toptitlename3" />
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">当日接装地导总数</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">部</span>
+            </div>
+          </div>
+        </div>
+    <div class="table-col"><right-child-moudle :indexkey="5"/></div>
+    <div class="table-col"><right-child-moudle :indexkey="6"/></div>
   </div>
 </template>
 
@@ -70,8 +111,8 @@ export default {
   data() {
     return {
       toptitlename1: '飞机接装',
-      leftTitle2: '弹药',
-      leftTitle3: '吊舱',
+      toptitlename2: '地导调配',
+      toptitlename3: '雷达调配',
       flyUrl: FlyImg,
       blankUrl: BlankImg,
       logisticsUrl: LogisticsImg,
@@ -134,7 +175,7 @@ export default {
   },
   methods: {
     set() {
-      for (let i = 0; i < this.toNum.length; i++) {
+      for (let i = 0; i < this.toNum1.length; i++) {
         this.setLite(this.fromNum1[i], this.toNum1[i].value);
       }
     },
