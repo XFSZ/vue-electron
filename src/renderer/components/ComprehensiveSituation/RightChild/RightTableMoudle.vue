@@ -1,32 +1,26 @@
 <template>
   <div class="right-child-main">
+      <p> 标题<p>
     <div class="right-child-one">
       <div class="title-table-head-main">
         <img :src="blankUrl" class="blank-img left-img" />
-        <p class="p-style-str">任务编号</p>
+        <p class="p-style-str">供应数</p>
+        <img :src="blankUrl" class="blank-img left-img" />
+        <p class="p-style-num" >1357</p>
+        <span class="table-head-strvalue">型</span>
       </div>
       <div class="title-table-head-main">
         <img :src="blankUrl" class="blank-img left-img" />
-        <p class="p-style-str">任务总试飞架次</p>
-      </div>
-      <div class="title-table-head-main">
+        <p class="p-style-str">完好数</p>
         <img :src="blankUrl" class="blank-img left-img" />
-        <p class="p-style-str">当日试飞架次</p>
-      </div>
-      <div class="title-table-head-main">
-        <img :src="blankUrl" class="blank-img left-img" />
-        <p class="p-style-str">剩余架次</p>
+        <p class="p-style-num" >1357</p>
+        <span class="table-head-strvalue">型</span>
       </div>
     </div>
-    <div class="right-child-two">
-      <p class="p-style-num">B-0187B</p>
-      <p class="p-style-num">{{ changeTotalNumberOfModels }}</p>
-      <p class="p-style-num">{{ changeTotalNumber }}</p>
-      <p class="p-style-num">{{ changeStandNumber }}</p>
-    </div>
+
     <div class="right-child-three">
       <div
-        id="myChart_rc4"
+        :id="`list_chart_${indexkey}`"
         :style="{ width: '100px', height: '100px', marginTop: '14px' }"
       ></div>
     </div>
@@ -38,7 +32,7 @@ import { TweenLite } from 'gsap';
 import BlankImg from '../../../assets/block.png';
 export default {
   name: 'rightchildmoudle',
-
+  props: ['indexkey'],
   data() {
     return {
       blankUrl: BlankImg,
@@ -84,7 +78,7 @@ export default {
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
       let myChart_c3 = this.$echarts.init(
-        document.getElementById('myChart_rc4')
+        document.getElementById(`list_chart_${this.indexkey}`)
       );
       // 绘制图表
       myChart_c3.setOption({
@@ -156,6 +150,16 @@ export default {
   font-family: "dinPro"; /* 这个名字可以自己定义 */
   src: url("../../../assets/font/DINPro-Bold.otf");
 }
+.table-head-strvalue {
+  font-family: 'opposans';
+  color: whitesmoke;
+  text-align: center;
+  justify-content: flex-end;
+  align-self: center;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-right: 20px;
+}
 .p-style-str {
   font-family: "Zhongheijian";
   color: whitesmoke;
@@ -180,6 +184,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color:#061d3f;
 }
 .blank-img {
   width: 4px;
@@ -187,6 +192,7 @@ export default {
 
   /* margin-top: 10px; */
   margin-right: 4px;
+  margin-left: 4px;
 }
 .right-child-three {
   margin-left: -30px;
@@ -197,7 +203,9 @@ export default {
   flex-direction: row;
   /* width: 280px; */
   justify-content: space-evenly;
-  border-style: solid; 
+  border-style: solid;
+  margin-left: 30px;
+  margin-right: 30px;
   border-width: 1px;
   border-color: #1a2639;
 }

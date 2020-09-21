@@ -540,7 +540,7 @@ html {
   margin-bottom: 60px;
 }
 .main-right {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   flex-direction: row;
   margin-right: 140px;

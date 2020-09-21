@@ -502,6 +502,7 @@ html {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
 .wapper {
   /* min-height: 100vh; */
   display: flex;

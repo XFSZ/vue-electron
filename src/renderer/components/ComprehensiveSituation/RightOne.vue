@@ -10,19 +10,18 @@
       id="right_chart_one_l1"
       :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px' ,marginRight: '60px'}"
     ></div>
-    <title-moudle
-      :blockImg="logisticsUrl"
-      :leftTitle="leftTitle2"
-      :fromNum="fromNum2"
-      :toNum="toNum2"
-    />
-   
+   <top-title :imgUrl="flyUrl" :titleName="toptitleName1"/>
+   <right-table-moudle :indexkey="m1"/>
+   <right-table-moudle :indexkey="m2"/>
+   <right-table-moudle :indexkey="m3"/>
   </div>
 </template>
 
 <script>
 // import { TweenLite } from 'gsap';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
+import RightTableMoudle from './RightChild/RightTableMoudle';
+import TopTitle from './TopTitle/TopTitle';
 import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 import FlyImg from '../../assets/fly.png';
 import LogisticsImg from '../../assets/logistics.png';
@@ -33,7 +32,9 @@ export default {
   name: 'hello',
   components: {
     TitleMoudle,
-    TitleMoudleBottom
+    TitleMoudleBottom,
+    TopTitle,
+    RightTableMoudle
   },
   created() {
     axios.get(this.$commonvalue.baseurl + 'dpService/getFjslsjFj', { // 还可以直接把参数拼接在url后边
@@ -50,7 +51,11 @@ export default {
   },
   data() {
     return {
+      toptitleName1: '维修资源',
       leftTitle1: '飞机',
+      m1: 'm1',
+      m2: 'm2',
+      m3: 'm3',
       leftTitle2: '地导',
       leftTitle3: '雷达',
       flyUrl: FlyImg,

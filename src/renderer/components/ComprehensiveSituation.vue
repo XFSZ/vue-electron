@@ -26,6 +26,7 @@
     </div>
     <div class="main-right">
       <right-one class="right-style" />
+       <right-two class="right-two-style" />
     </div>
   </div>
 </template>
@@ -34,6 +35,7 @@
 import LeftOne from './ComprehensiveSituation/LeftOne';
 import LeftTwo from './ComprehensiveSituation/LeftTwo';
 import RightOne from './ComprehensiveSituation/RightOne';
+import RightTwo from './ComprehensiveSituation/RightTwo';
 import TaskImg from '../assets/task.png';
 import EquipmentImg from '../assets/equipment.png';
 import ReportImg from '../assets/report.png';
@@ -49,7 +51,8 @@ export default {
   components: {
     LeftOne,
     LeftTwo,
-    RightOne
+    RightOne,
+    RightTwo
   },
   data() {
     return {
@@ -96,6 +99,11 @@ export default {
 @font-face {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../assets/font/Zhongheijian.ttf");
+}
+.right-two-style {
+  background-image: url("../assets/echarts-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .footer-left-search {
   width: 230px;
@@ -539,7 +547,11 @@ html {
   margin-bottom: 60px;
 }
 .main-right {
-  flex: 1;
+  /* flex: 1; */
+  display: flex;
+  flex-direction: row;
+  margin-right: 140px;
+  /* margin-left: 120px; */
 }
 
 .footer {
