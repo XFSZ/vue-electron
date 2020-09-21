@@ -40,7 +40,7 @@
           router
           
         >
-          <el-menu-item index="/" class="left-img">综合态势</el-menu-item>
+          <el-menu-item index="/comprehensivesituation" class="left-img">综合态势</el-menu-item>
           <el-menu-item index="/" class="mid-img">动用使用</el-menu-item>
           <el-menu-item index="/qualitymaintenance" class="mid-img">质量维修</el-menu-item>
           <el-menu-item index="/supplyguarantee" class="right-img">供应保障</el-menu-item>

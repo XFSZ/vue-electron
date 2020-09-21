@@ -16,10 +16,63 @@
       :fromNum="fromNum2"
       :toNum="toNum2"
     />
-    <div
-      id="myChart1"
-      :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px'}"
-    ></div>
+   <div class="threecircle">
+      <div class="circle-title">
+        <div
+          id="left1_chart_one_c1"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+        ></div>
+        <title-moudle-bottom
+          :goodNumber="googNumber1"
+          :totalNumber="totalNumber1"
+        />
+
+      </div>
+      <div class="circle-title">
+        <div
+          id="left1_chart_one_c2"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+        ></div>
+        <title-moudle-bottom
+          :goodNumber="googNumber2"
+          :totalNumber="totalNumber2"
+        />
+   
+      </div>
+      <div class="circle-title">
+        <div
+          id="left1_chart_one_c3"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+        ></div>
+        <title-moudle-bottom
+          :goodNumber="googNumber3"
+          :totalNumber="totalNumber3"
+        />
+  
+      </div>
+            <div class="circle-title">
+        <div
+          id="left1_chart_one_c4"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+        ></div>
+        <title-moudle-bottom
+          :goodNumber="googNumber3"
+          :totalNumber="totalNumber3"
+        />
+
+      </div>
+            <div class="circle-title">
+        <div
+          id="left1_chart_one_c5"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+        ></div>
+        <title-moudle-bottom
+          :goodNumber="googNumber3"
+          :totalNumber="totalNumber3"
+        />
+       
+      </div>
+    </div>
     <title-moudle
       :blockImg="flyUrl"
       :leftTitle="leftTitle3"
@@ -29,36 +82,47 @@
     <div class="threecircle">
       <div class="circle-title">
         <div
-          id="myChart_c1"
+          id="left1_chart_two_c1"
           :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber1"
           :totalNumber="totalNumber1"
         />
-        <div></div>
+       
       </div>
       <div class="circle-title">
         <div
-          id="myChart_c2"
+          id="left1_chart_two_c2"
           :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber2"
           :totalNumber="totalNumber2"
         />
-        <div></div>
+        
       </div>
       <div class="circle-title">
         <div
-          id="myChart_c3"
+          id="left1_chart_two_c3"
           :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
           :totalNumber="totalNumber3"
         />
-        <div></div>
+       
+      </div>
+            <div class="circle-title">
+        <div
+          id="left1_chart_two_c4"
+          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+        ></div>
+        <title-moudle-bottom
+          :goodNumber="googNumber3"
+          :totalNumber="totalNumber3"
+        />
+        
       </div>
     </div>
   </div>
@@ -267,109 +331,10 @@ export default {
           }
         ]
       });
-      // TweenLite.fromTo('#myChart', 3, {width: '50px'}, {width: '100px'});
-      // 基于准备好的dom，初始化echarts实例
-      let myChart1 = this.$echarts.init(document.getElementById('myChart1'));
-      // 绘制图表
-      myChart1.setOption({
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
-        },
 
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        xAxis: {
-          type: 'value',
-          max: 100,
-          min: 0,
-          interval: 20,
-          boundaryGap: [0, 0.01],
-          splitLine: { // 网格线
-            'show': false
-          }
-        },
-        yAxis: {
-          type: 'category',
-          data: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹'],
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: '#ffffff',
-              fontSize: 17,
-              fontFamily: 'Zhongheijian'
-            }
-          },
-          axisTick: { // y轴刻度线
-            'show': false
-          }
-        },
-        series: [
-          {
-            name: '完好率',
-            barWidth: 8,
-            type: 'bar',
-            label: {
-              show: true, // 开启显示
-              position: [340, 10],
-              formatter: '完好率  {c}%', // 显示百分号
-              textStyle: {
-                // 数值样式
-                color: 'white', // 字体颜色
-                fontSize: 10, // 字体大小
-                fontFamily: 'opposans'
-              }
-            },
-            itemStyle: {
-              normal: {
-                // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
-                color: function(params) {
-                  // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
-                  var colorList = [
-
-                    ['#e0a607', '#675316', '#262821'],
-                    ['#d02e08', '#5b1b17', '#26131d'],
-
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941']
-                  ];
-
-                  var index = params.dataIndex;
-                  if (params.dataIndex >= colorList.length) {
-                    index = params.dataIndex - colorList.length;
-                  }
-                  var colors = new that.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                    { offset: 0, color: colorList[index][0] },
-                    { offset: 0.5, color: colorList[index][1] },
-                    { offset: 1, color: colorList[index][2] }
-                  ]);
-                  return colors;
-                }
-                // barBorderRadius: 5 // 柱状角成椭圆形
-              }
-            },
-            showBackground: true,
-            backgroundStyle: {
-              color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                { offset: 0, color: '#000' },
-                { offset: 0.3, color: '#888' },
-                { offset: 1, color: '#ddd' }
-              ])
-            },
-            data: [55.1, 62.7, 17.2, 39.8]
-          }
-        ]
-      });
       // 基于准备好的dom，初始化echarts实例
       let myChart_c1 = this.$echarts.init(
-        document.getElementById('myChart_c1')
+        document.getElementById('left1_chart_one_c1')
       );
       // 绘制图表
       myChart_c1.setOption({
@@ -430,7 +395,7 @@ export default {
 
       // 基于准备好的dom，初始化echarts实例
       let myChart_c2 = this.$echarts.init(
-        document.getElementById('myChart_c2')
+        document.getElementById('left1_chart_one_c2')
       );
       // 绘制图表
       myChart_c2.setOption({
@@ -491,10 +456,375 @@ export default {
 
       // 基于准备好的dom，初始化echarts实例
       let myChart_c3 = this.$echarts.init(
-        document.getElementById('myChart_c3')
+        document.getElementById('left1_chart_one_c3')
       );
       // 绘制图表
       myChart_c3.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        color: ['#00b3ff', '#ccc'],
+        series: [
+          {
+            name: '电子干扰',
+            type: 'pie',
+            center: ['50%', '50%'], // 饼图的圆心坐标
+            radius: ['70%', '80%'],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            label: {
+              //  饼图图形上的文本标签
+
+              normal: {
+                // normal 是图形在默认状态下的样式
+                show: true,
+                position: 'center',
+                color: 'white',
+                fontSize: 10,
+                fontWeight: 'bold',
+                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            data: [
+              {
+                value: 86,
+                name: '完好率',
+                label: {
+                  normal: {
+                    show: true
+                  }
+                }
+              },
+              {
+                value: 14,
+                name: '损坏率',
+                label: {
+                  normal: {
+                    show: false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      });
+
+      // 基于准备好的dom，初始化echarts实例
+      let left1_chart_one_c4 = this.$echarts.init(
+        document.getElementById('left1_chart_one_c4')
+      );
+      // 绘制图表
+      left1_chart_one_c4.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        color: ['#00b3ff', '#ccc'],
+        series: [
+          {
+            name: '电子干扰',
+            type: 'pie',
+            center: ['50%', '50%'], // 饼图的圆心坐标
+            radius: ['70%', '80%'],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            label: {
+              //  饼图图形上的文本标签
+
+              normal: {
+                // normal 是图形在默认状态下的样式
+                show: true,
+                position: 'center',
+                color: 'white',
+                fontSize: 10,
+                fontWeight: 'bold',
+                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            data: [
+              {
+                value: 86,
+                name: '完好率',
+                label: {
+                  normal: {
+                    show: true
+                  }
+                }
+              },
+              {
+                value: 14,
+                name: '损坏率',
+                label: {
+                  normal: {
+                    show: false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      });
+
+      // 基于准备好的dom，初始化echarts实例
+      let left1_chart_one_c5 = this.$echarts.init(
+        document.getElementById('left1_chart_one_c5')
+      );
+      // 绘制图表
+      left1_chart_one_c5.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        color: ['#00b3ff', '#ccc'],
+        series: [
+          {
+            name: '电子干扰',
+            type: 'pie',
+            center: ['50%', '50%'], // 饼图的圆心坐标
+            radius: ['70%', '80%'],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            label: {
+              //  饼图图形上的文本标签
+
+              normal: {
+                // normal 是图形在默认状态下的样式
+                show: true,
+                position: 'center',
+                color: 'white',
+                fontSize: 10,
+                fontWeight: 'bold',
+                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            data: [
+              {
+                value: 86,
+                name: '完好率',
+                label: {
+                  normal: {
+                    show: true
+                  }
+                }
+              },
+              {
+                value: 14,
+                name: '损坏率',
+                label: {
+                  normal: {
+                    show: false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      });
+
+      // 基于准备好的dom，初始化echarts实例
+      let left1_chart_two_c1 = this.$echarts.init(
+        document.getElementById('left1_chart_two_c1')
+      );
+      // 绘制图表
+      left1_chart_two_c1.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        color: ['#00b3ff', '#ccc'],
+        series: [
+          {
+            name: '电子干扰',
+            type: 'pie',
+            center: ['50%', '50%'], // 饼图的圆心坐标
+            radius: ['70%', '80%'],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            label: {
+              //  饼图图形上的文本标签
+
+              normal: {
+                // normal 是图形在默认状态下的样式
+                show: true,
+                position: 'center',
+                color: 'white',
+                fontSize: 10,
+                fontWeight: 'bold',
+                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            data: [
+              {
+                value: 86,
+                name: '完好率',
+                label: {
+                  normal: {
+                    show: true
+                  }
+                }
+              },
+              {
+                value: 14,
+                name: '损坏率',
+                label: {
+                  normal: {
+                    show: false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      });
+
+      // 基于准备好的dom，初始化echarts实例
+      let left1_chart_two_c2 = this.$echarts.init(
+        document.getElementById('left1_chart_two_c2')
+      );
+      // 绘制图表
+      left1_chart_two_c2.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        color: ['#00b3ff', '#ccc'],
+        series: [
+          {
+            name: '电子干扰',
+            type: 'pie',
+            center: ['50%', '50%'], // 饼图的圆心坐标
+            radius: ['70%', '80%'],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            label: {
+              //  饼图图形上的文本标签
+
+              normal: {
+                // normal 是图形在默认状态下的样式
+                show: true,
+                position: 'center',
+                color: 'white',
+                fontSize: 10,
+                fontWeight: 'bold',
+                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            data: [
+              {
+                value: 86,
+                name: '完好率',
+                label: {
+                  normal: {
+                    show: true
+                  }
+                }
+              },
+              {
+                value: 14,
+                name: '损坏率',
+                label: {
+                  normal: {
+                    show: false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      });
+
+      // 基于准备好的dom，初始化echarts实例
+      let left1_chart_two_c3 = this.$echarts.init(
+        document.getElementById('left1_chart_two_c3')
+      );
+      // 绘制图表
+      left1_chart_two_c3.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        color: ['#00b3ff', '#ccc'],
+        series: [
+          {
+            name: '电子干扰',
+            type: 'pie',
+            center: ['50%', '50%'], // 饼图的圆心坐标
+            radius: ['70%', '80%'],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            label: {
+              //  饼图图形上的文本标签
+
+              normal: {
+                // normal 是图形在默认状态下的样式
+                show: true,
+                position: 'center',
+                color: 'white',
+                fontSize: 10,
+                fontWeight: 'bold',
+                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            data: [
+              {
+                value: 86,
+                name: '完好率',
+                label: {
+                  normal: {
+                    show: true
+                  }
+                }
+              },
+              {
+                value: 14,
+                name: '损坏率',
+                label: {
+                  normal: {
+                    show: false
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      });
+      // 基于准备好的dom，初始化echarts实例
+      let left1_chart_two_c4 = this.$echarts.init(
+        document.getElementById('left1_chart_two_c4')
+      );
+      // 绘制图表
+      left1_chart_two_c4.setOption({
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
