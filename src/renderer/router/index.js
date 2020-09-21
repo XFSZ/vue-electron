@@ -16,6 +16,11 @@ export default new Router({
       component: require('@/components/QualityMaintenance').default
     },
     {
+      path: '/supplyguarantee',
+      name: 'supply-guarantee',
+      component: require('@/components/SupplyGuarantee').default
+    },
+    {
       path: '/',
       name: 'main-page',
       component: require('@/components/MainPage').default
