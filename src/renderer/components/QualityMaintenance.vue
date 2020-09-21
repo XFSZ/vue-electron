@@ -31,9 +31,9 @@
 </template>
 
 <script>
-import LeftOne from './ApplyOfPlane/LeftOne';
-import LeftTwo from './ApplyOfPlane/LeftTwo';
-import RightOne from './ApplyOfPlane/RightOne';
+import LeftOne from './QualityMaintenance/LeftOne';
+import LeftTwo from './QualityMaintenance/LeftTwo';
+import RightOne from './QualityMaintenance/RightOne';
 import TaskImg from '../assets/task.png';
 import EquipmentImg from '../assets/equipment.png';
 import ReportImg from '../assets/report.png';
@@ -45,7 +45,7 @@ import BlankImg from '../assets/block.png';
 // import BackGourdImg from '../assetsback'
 // import MainLeftBtnImg from '../assets/main-left-btn.png';
 export default {
-  name: 'init-page',
+  name: 'quality-maintenance',
   components: {
     LeftOne,
     LeftTwo,
@@ -55,7 +55,7 @@ export default {
     return {
       // activeIndex: '1',
       // activeIndex2: '1',
-      activeIndex: '/testpage',
+    //   activeIndex: '/testpage',
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
       reportUrl: ReportImg,

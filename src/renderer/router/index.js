@@ -11,6 +11,11 @@ export default new Router({
       component: require('@/components/InitPage').default
     },
     {
+      path: '/qualitymaintenance',
+      name: 'quality-maintenance',
+      component: require('@/components/QualityMaintenance').default
+    },
+    {
       path: '/',
       name: 'main-page',
       component: require('@/components/MainPage').default

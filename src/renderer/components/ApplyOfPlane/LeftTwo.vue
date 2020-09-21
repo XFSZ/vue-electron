@@ -634,7 +634,7 @@ export default {
     margin-top: 4px;
     /* align-items: center; */
     flex: 1;
-    margin-left: 16px;
+    /* margin-left: 16px; */
   /* margin-left: 2px; */
 }
 .table-head-context {
