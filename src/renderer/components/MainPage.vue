@@ -84,7 +84,7 @@ export default {
     // }
   },
   created() {
-  //  this.setCurrentRoute();
+    //  this.setCurrentRoute();
   },
   mounted() {
     // this.pic.taskUrl = TaskImg;
@@ -101,7 +101,10 @@ export default {
   width: 230px;
   height: 43px;
 }
-
+.main-buttom {
+  display: flex;
+  flex-direction: column;
+}
 .black-img-text {
   height: 8px;
   width: 8px;
@@ -445,7 +448,7 @@ html {
 .main-middle-button {
   width: 140px;
   height: 70px;
-  margin-right: 140px;
+  /* margin-right: 140px; */
   display: inline-block;
   background-image: url("../assets/main-content-btn.png");
   background-size: 100% 100%;
@@ -453,7 +456,7 @@ html {
 .main-middle-button:hover {
   width: 140px;
   height: 70px;
-  margin-right: 140px;
+  /* margin-right: 140px; */
   display: inline-block;
   background-image: url("../assets/main-content-btn-active.png");
   background-size: 100% 100%;
@@ -521,7 +524,7 @@ html {
 }
 
 .main-left {
-  /* flex: 1; */
+  flex: 1;
   display: flex;
   flex-direction: row;
   margin-left: 120px;
@@ -536,7 +539,7 @@ html {
   margin-bottom: 60px;
 }
 .main-right {
-  /* flex: 1; */
+  flex: 1;
 }
 
 .footer {

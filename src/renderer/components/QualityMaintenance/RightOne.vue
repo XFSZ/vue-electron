@@ -1,62 +1,169 @@
 <template>
   <div class="mainr">
-  <top-title :imgUrl="logisticsUrl" :titleName="toptitleName0"/>
-  <div>
-        <div class="right-text-table-one">
-        <div class="title-table-head-main">
-          <img :src="blankUrl" class="blank-img left-blank-img" />
-          <p class="title-child">当日试飞总架次</p>
-          <img :src="blankUrl" class="blank-img right-blank-img" />
+    <top-title :imgUrl="logisticsUrl" :titleName="toptitleName0" />
+    <div class="right-text-table-main-col-top">
+      <div class="right-text-table-row">
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">发动机型号总数</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">型</span>
+            </div>
+          </div>
         </div>
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">数量总数</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">部</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-text-table-row">
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">完好数</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">型</span>
+            </div>
+          </div>
+        </div>
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">完好数</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">部</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
-      </div>
-      </div>
     <div
-      id="myChart_rose1"
+      id="right-one-chart_2"
       :style="{
         width: '540px',
-        height: '468px',
-       
+        height: '276px',
       }"
     ></div>
-    <top-title :imgUrl="logisticsUrl" :titleName="toptitleName1"/>
-    <div class="text-table">
-      <div class="right-text-table-one">
-        <div class="title-table-head-main">
-          <img :src="blankUrl" class="blank-img left-blank-img" />
-          <p class="title-child">当日试飞总架次</p>
-          <img :src="blankUrl" class="blank-img right-blank-img" />
+    <top-title :imgUrl="flyUrl" :titleName="toptitleName1" />
+    <div class="right-text-table-main-col-top">
+      <div class="right-text-table-row">
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">航材储备总量</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">件</span>
+            </div>
+          </div>
         </div>
 
-        <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
       </div>
-      <div><right-child-moudle /></div>
+      <div class="right-text-table-row">
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">库存航材总量</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">件</span>
+            </div>
+          </div>
+        </div>
+        <div class="right-text-table-top-one">
+          <div class="title-table-head-main">
+            <img :src="blankUrl" class="blank-img left-blank-img" />
+            <p class="title-child">周转航材总量</p>
+            <img :src="blankUrl" class="blank-img right-blank-img" />
+          </div>
+          <div class="right-text-table-top-two">
+            <div class="table-head-top-value">
+              <span class="table-head-top-numvalue">{{
+                changeTotalNumberOfModels
+              }}</span>
+              <span class="table-head-top-strvalue">件</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-one-bottom-charts">
+    <div
+      id="right-one-chart_3"
+      :style="{
+        width: '540px',
+        height: '276px',
+      }"
+    ></div>
     </div>
   </div>
 </template>
 
 <script>
 import { TweenLite } from 'gsap';
+import BG from '../../assets/pie-label.png';
 import TopTitle from './TopTitle/TopTitle';
 import BlankImg from '../../assets/block.png';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
 import FlyImg from '../../assets/fly.png';
 import LogisticsImg from '../../assets/logistics.png';
 import RightChildMoudle from './RightChild/RightChildMoudle';
+import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 export default {
-  name: 'rightlabel',
+  name: 'rightlabelone',
   components: {
     RightChildMoudle,
     TitleMoudle,
-    TopTitle
+    TopTitle,
+    TitleMoudleBottom
   },
   data() {
     return {
-      toptitleName0: '弹药质量',
+      toptitleName0: '发动机质量',
       leftTitle2: '弹药',
       leftTitle3: '吊舱',
-      toptitleName1: '吊舱质量',
+      toptitleName1: '航材质量',
       flyUrl: FlyImg,
       logisticsUrl: LogisticsImg,
       blankUrl: BlankImg,
@@ -106,122 +213,142 @@ export default {
       });
     },
     drawLine() {
-      // 基于准备好的dom，初始化echarts实例
-      let myChart6 = this.$echarts.init(
-        document.getElementById('myChart_rose1')
+      // var that = this;
+
+      let myChart1 = this.$echarts.init(
+        document.getElementById('right-one-chart_2')
       );
-      let datas = [
-        { value: 127, name: '作战备战' },
-        { value: 59, name: '非战争军事行动' },
-        { value: 67, name: '演练演习' },
-        { value: 87, name: '激动转场' },
-        { value: 111, name: '日常训练' }
-      ].sort(function(a, b) {
-        return a.value - b.value;
-      });
       // 绘制图表
-      myChart6.setOption({
-        // backgroundColor: '#2c343c',
-
-        // title: {
-        //   text: 'Customized Pie',
-        //   left: 'center',
-        //   top: 20,
-        //   textStyle: {
-        //     color: '#ccc'
-        //   }
-        // },
-
-        tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b} : {c} ({d}%)'
+      myChart1.setOption({
+        title: {
+          text: '折线图堆叠'
         },
-
-        visualMap: {
-          show: false,
-          //   min: 80,
-          //   max: 600,
-          inRange: {
-            colorLightness: [0, 1]
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {}
           }
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+          type: 'value'
         },
         series: [
           {
-            name: '访问来源',
-            type: 'pie',
-            radius: '40%',
-            center: ['50%', '50%'],
-            data: [
-              { value: 127, name: '作战备战' },
-              { value: 59, name: '非战争军事行动' },
-              { value: 67, name: '演练演习' },
-              { value: 87, name: '激动转场' },
-              { value: 111, name: '日常训练' }
-            ].sort(function(a, b) {
-              return a.value - b.value;
-            }),
-            roseType: 'radius',
-            label: {
-              // color: 'rgba(255, 255, 255, 1)',
-              // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} \n {per|{d}%}  ',  //label 的内容
-              padding: [-4, -80],
-              formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + 'haode' + '：}{c} \n {per|{d}%}  ',
-              rich: {// 定义不同地方的文字的字体大小和颜色
-                a: {
-                  color: '#999',
-                  lineHeight: 22,
-                  align: 'left',
-                  padding: [2, 4]
-                },
-                hr: {
-                  borderColor: '#aaa',
-                  width: '100%',
-                  borderWidth: 0.5,
-                  height: 0
-                },
-                b: {
-                  fontSize: 14,
-                  lineHeight: 20
-                },
-                per: {
-                  align: 'center',
-                  width: '45%'
-                  // color: '#eee',
-                  // backgroundColor: '#334455',
-                  // padding: [2, -20]
-                  // borderRadius: 2
-                }
-              }
-
-            },
-            labelLine: {
-              lineStyle: {
-                color: 'rgba(255, 255, 255, 0.3)'
-              },
-              // smooth: 0.2,
-              length: 20,
-              length2: 80
-            },
-            itemStyle: {
-              color: '#001234',
-              shadowBlur: 200,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
-            },
-
-            animationType: 'scale',
-            hoverAnimation: false,
-            // animationEasing: 'elasticOut',
-            // animationDelay: function(idx) {
-            //   return idx * 100;
-            // },
-            animationDuration: 2000
-            // animationDuration: function(idx) {
-            //   // 越往后的数据延迟越大
-            //   return idx * 100;
-            // }
+            name: '邮件营销',
+            type: 'line',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
           }
         ]
       });
+
+      let myChart2 = this.$echarts.init(
+        document.getElementById('right-one-chart_3')
+      );
+      // 绘制图表
+      myChart2.setOption({
+        title: {
+          text: '折线图堆叠'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {}
+          }
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            name: '邮件营销',
+            type: 'line',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      });
+
     }
   }
 };
@@ -231,11 +358,58 @@ export default {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../../assets/font/Zhongheijian.ttf");
 }
+.right-one-bottom-charts {
+  display: flex;
+  flex-direction: column;
+}
+.threecircle {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.right-text-table-row {
+  display: flex;
+  flex-direction: row;
+}
+.right-text-table-main-col-top {
+  margin-left: 28px;
+  margin-right: 28px;
+  margin-top: 6px;
+  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #061d3f;
+}
+.table-head-top-numvalue {
+  font-family: "dinPro";
+  color: aqua;
+  flex: 1;
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+  margin-left: 34px;
+  margin-right: 4px;
+  width: 120px;
+  background-color: rgb(34, 50, 75);
+}
+.table-head-top-strvalue {
+  font-family: "opposans";
+  color: whitesmoke;
+  text-align: center;
+  justify-content: flex-end;
+  align-self: center;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-right: 20px;
+}
 .title-table-head-main {
   display: flex;
   flex-direction: row;
-  align-items: center
-
+  align-items: center;
 }
 .blank-img {
   width: 4px;
@@ -257,11 +431,25 @@ export default {
   flex-direction: row;
   align-items: center;
 }
-.right-text-table-one {
+.right-text-table-top-two {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 60px;
+}
+.right-text-table-top-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80px;
+  justify-content: space-evenly;
+  background-color: #061d3f;
+}
+.right-text-table-one {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80px;
   justify-content: space-evenly;
   background-color: #061d3f;
 }
@@ -272,7 +460,7 @@ export default {
   height: 100%;
   /* width: 280px; */
   margin-top: 15px;
-  margin-right: 148px;
+  /* margin-right: 148px; */
   /* border: 1px solid darkslategray;
   border-radius: 10px;
   box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset; */
@@ -297,7 +485,7 @@ export default {
   margin-left: 4px;
   color: white;
   margin-right: 4px;
-  /* margin-top: 4px; */
+  margin-top: 6px;
 }
 .title-child-num {
   font-family: "dinPro";
@@ -305,10 +493,12 @@ export default {
   color: aqua;
   padding-left: 30px;
   padding-right: 30px;
+  margin-bottom: 5px;
   /* flex: 1; */
   /* text-align: center; */
-  /* justify-content: center; */
-  /* margin-left: 20px; */
+  justify-content: center;
+  margin-left: 46px;
+  margin-right: 10px;
   background-color: rgb(34, 50, 75);
 }
 .titlename {
@@ -320,7 +510,7 @@ export default {
 }
 .text-table {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-left: 26px;
   margin-right: 24px;
 }
@@ -355,6 +545,14 @@ export default {
   text-align: center;
   font-size: 10px;
 }
+.table-head-top-value {
+  margin-top: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
 .table-head-value {
   flex: 1;
   display: flex;
@@ -369,9 +567,13 @@ export default {
   margin-left: 20px;
 }
 .table-head-strvalue {
+  font-family: "opposans";
+  color: whitesmoke;
   text-align: center;
   justify-content: flex-end;
+  align-self: center;
   font-size: 12px;
-  margin-top: 2px;
+  margin-top: 10px;
+  margin-right: 20px;
 }
 </style>
