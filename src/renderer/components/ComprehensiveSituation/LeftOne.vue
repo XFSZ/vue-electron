@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="mainr">
     <title-moudle
       :blockImg="flyUrl"
       :leftTitle="leftTitle1"
@@ -906,11 +906,12 @@ export default {
   font-size: 10px;
   /* margin-top: -8px; */
 }
-.main {
+.mainr {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   /* height: 88%; */
+   height: 100%;
   margin-top: 15px;
   /* width: 280px; */
   /* width: 90%; */

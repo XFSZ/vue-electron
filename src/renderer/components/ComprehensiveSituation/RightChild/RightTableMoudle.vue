@@ -1,28 +1,35 @@
 <template>
-  <div class="right-child-main">
-      <p> 标题<p>
-    <div class="right-child-one">
-      <div class="title-table-head-main">
-        <img :src="blankUrl" class="blank-img left-img" />
-        <p class="p-style-str">供应数</p>
-        <img :src="blankUrl" class="blank-img left-img" />
-        <p class="p-style-num" >1357</p>
-        <span class="table-head-strvalue">型</span>
-      </div>
-      <div class="title-table-head-main">
-        <img :src="blankUrl" class="blank-img left-img" />
-        <p class="p-style-str">完好数</p>
-        <img :src="blankUrl" class="blank-img left-img" />
-        <p class="p-style-num" >1357</p>
-        <span class="table-head-strvalue">型</span>
-      </div>
-    </div>
+  <div class="title-moudle">
+    <p class="title-style">{{ titleName }}</p>
 
-    <div class="right-child-three">
-      <div
-        :id="`list_chart_${indexkey}`"
-        :style="{ width: '100px', height: '100px', marginTop: '14px' }"
-      ></div>
+    <div class="right-child-main">
+      <div class="right-child-one">
+        <div class="title-table-head-main">
+          <div class="title-str-value">
+            <img :src="blankUrl" class="blank-img left-img" />
+            <p class="p-style-str">供应数</p>
+            <img :src="blankUrl" class="blank-img left-img" />
+          </div>
+          <p class="p-style-num">1357</p>
+          <span class="table-head-strvalue">型</span>
+        </div>
+        <div class="title-table-head-main">
+          <div class="title-str-value">
+            <img :src="blankUrl" class="blank-img left-img" />
+            <p class="p-style-str">完好数</p>
+            <img :src="blankUrl" class="blank-img left-img" />
+          </div>
+          <p class="p-style-num">1357</p>
+          <span class="table-head-strvalue">型</span>
+        </div>
+      </div>
+
+      <div class="right-child-three">
+        <div
+          :id="`list_chart_${indexkey}`"
+          :style="{ width: '100px', height: '100px', marginTop: '38px' }"
+        ></div>
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +39,7 @@ import { TweenLite } from 'gsap';
 import BlankImg from '../../../assets/block.png';
 export default {
   name: 'rightchildmoudle',
-  props: ['indexkey'],
+  props: ['indexkey', 'titleName'],
   data() {
     return {
       blankUrl: BlankImg,
@@ -150,20 +157,49 @@ export default {
   font-family: "dinPro"; /* 这个名字可以自己定义 */
   src: url("../../../assets/font/DINPro-Bold.otf");
 }
+.right-child-three {
+  display: flex;
+  flex-direction: row;
+}
+.title-str-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.title-moudle {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 6px; */
+  margin-top: 24px
+  /* width: 280px; */
+  /* justify-content: space-evenly; */
+  /* border-style: solid;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-width: 1px;
+  border-color: #1a2639; */
+}
+.title-style {
+  font-family: "Zhongheijian";
+  color: whitesmoke;
+  font-size: 20px;
+  text-align: center;
+}
 .table-head-strvalue {
-  font-family: 'opposans';
+  font-family: "opposans";
   color: whitesmoke;
   text-align: center;
   justify-content: flex-end;
   align-self: center;
   font-size: 12px;
-  margin-top: 5px;
-  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 15px;
 }
 .p-style-str {
   font-family: "Zhongheijian";
   color: whitesmoke;
-  font-size: 16px;
+  font-size: 14px;
   /* height: 1px; */
 }
 .p-style-num {
@@ -175,39 +211,45 @@ export default {
   justify-content: center;
   margin-left: 20px;
   margin-top: 1px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 28px;
   background-color: rgb(34, 50, 75);
 }
 .title-table-head-main {
+  width: 300px;
+  margin-left: -40px;
+  margin-top: 14px;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color:#061d3f;
+  background-color: #061d3f;
 }
 .blank-img {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 
   /* margin-top: 10px; */
-  margin-right: 4px;
-  margin-left: 4px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .right-child-three {
-  margin-left: -30px;
+  /* margin-left: -30px; */
 }
 .right-child-main {
   margin-top: 6px;
   display: flex;
   flex-direction: row;
+  margin-left: 30px;
+  margin-right: 30px;
   /* width: 280px; */
   justify-content: space-evenly;
-  border-style: solid;
+  /* border-style: solid;
   margin-left: 30px;
   margin-right: 30px;
   border-width: 1px;
-  border-color: #1a2639;
+  border-color: #1a2639; */
 }
 .right-child-one {
   display: flex;

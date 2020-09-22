@@ -44,7 +44,7 @@ export default {
   flex-direction: row;
   align-items: center;
   margin-left: 20px;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
   margin-top: 20px;
 }
 .deom_hr {

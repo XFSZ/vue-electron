@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="mainr">
     <title-moudle
       :blockImg="flyUrl"
       :leftTitle="leftTitle1"
@@ -11,9 +11,9 @@
       :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px' ,marginRight: '60px'}"
     ></div>
    <top-title :imgUrl="flyUrl" :titleName="toptitleName1"/>
-   <right-table-moudle :indexkey="m1"/>
-   <right-table-moudle :indexkey="m2"/>
-   <right-table-moudle :indexkey="m3"/>
+   <right-table-moudle :indexkey="m1" :titleName="titlename1"/>
+   <right-table-moudle :indexkey="m2" :titleName="titlename2"/>
+   <right-table-moudle :indexkey="m3" :titleName="titlename3"/>
   </div>
 </template>
 
@@ -59,6 +59,9 @@ export default {
       leftTitle2: '地导',
       leftTitle3: '雷达',
       flyUrl: FlyImg,
+      titlename1: '发动机供应',
+      titlename2: '弹药供应',
+      titlename3: '吊舱供应',
       logisticsUrl: LogisticsImg,
       googNumber1: 15784,
       googNumber2: 4713,
@@ -256,11 +259,12 @@ export default {
   font-size: 10px;
   /* margin-top: -8px; */
 }
-.main {
+.mainr {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   /* height: 88%; */
+   height: 100%;
   margin-top: 15px;
   /* width: 280px; */
   /* width: 90%; */

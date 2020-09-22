@@ -11,7 +11,7 @@
     <div
       id="myChart_rose1"
       :style="{
-        width: '540px',
+        width: '580px',
         height: '468px',
        
       }"
@@ -268,7 +268,8 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 60px;
+     height: 80px;
+    margin-top: 8px;
   justify-content: space-evenly;
   background-color: #061d3f;
 }
@@ -279,7 +280,7 @@ export default {
   height: 100%;
   /* width: 280px; */
   margin-top: 15px;
-  margin-right: 148px;
+  /* margin-right: 148px; */
   /* border: 1px solid darkslategray;
   border-radius: 10px;
   box-shadow: rgb(11, 234, 235) 0px 15px 40px -15px inset; */
@@ -290,7 +291,7 @@ export default {
   background: rgba(255, 255, 255, 0.3);
 }
 .hr {
-  height: 0.5px;
+  /* height: 0.5px; */
   width: 100%;
   display: flex;
   flex-direction: row;

@@ -537,7 +537,17 @@ html {
   flex-direction: row;
   margin-left: 120px;
 }
-.main-middle-content {
+.main-middle-content{
+      position: fixed;
+    top: 0;
+    right:0;
+    left: 0;
+    bottom: 0;
+    margin-top: 1400px;
+    margin-left: 960px;
+    text-align: center;
+}
+/* .main-middle-content {
   text-align: center;
   flex: 1;
   display: flex;
@@ -545,7 +555,7 @@ html {
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 60px;
-}
+} */
 .main-right {
   /* flex: 1; */
   display: flex;
