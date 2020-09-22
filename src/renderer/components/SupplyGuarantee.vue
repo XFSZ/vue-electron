@@ -539,6 +539,7 @@ html {
   margin-bottom: 60px;
 } */
 .main-middle-content{
+   z-index: -10;
       top: 110px;
    position: absolute;
     text-align: center;

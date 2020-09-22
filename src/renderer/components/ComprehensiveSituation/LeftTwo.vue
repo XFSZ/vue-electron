@@ -117,15 +117,15 @@ export default {
       let myChart6 = this.$echarts.init(
         document.getElementById('myChart_rose1')
       );
-      let datas = [
-        { value: 127, name: '作战备战' },
-        { value: 59, name: '非战争军事行动' },
-        { value: 67, name: '演练演习' },
-        { value: 87, name: '激动转场' },
-        { value: 111, name: '日常训练' }
-      ].sort(function(a, b) {
-        return a.value - b.value;
-      });
+      // let datas = [
+      //   { value: 127, name: '作战备战' },
+      //   { value: 59, name: '非战争军事行动' },
+      //   { value: 67, name: '演练演习' },
+      //   { value: 87, name: '激动转场' },
+      //   { value: 111, name: '日常训练' }
+      // ].sort(function(a, b) {
+      //   return a.value - b.value;
+      // });
       // 绘制图表
       myChart6.setOption({
         // backgroundColor: '#2c343c',
@@ -172,7 +172,7 @@ export default {
               // color: 'rgba(255, 255, 255, 1)',
               // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} \n {per|{d}%}  ',  //label 的内容
               padding: [-4, -80],
-              formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + 'haode' + '：}{c} \n {per|{d}%}  ',
+              formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + '动用次数' + '：}{c} \n {per|' + '占比：' + '{d}%}  ',
               rich: {// 定义不同地方的文字的字体大小和颜色
                 a: {
                   color: '#999',

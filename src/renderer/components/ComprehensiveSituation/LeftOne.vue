@@ -11,7 +11,7 @@
       :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px' ,marginRight: '60px'}"
     ></div>
     <title-moudle
-      :blockImg="logisticsUrl"
+      :blockImg="flyUrl"
       :leftTitle="leftTitle2"
       :fromNum="fromNum2"
       :toNum="toNum2"
@@ -20,107 +20,117 @@
       <div class="circle-title">
         <div
           id="left1_chart_one_c1"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber1"
           :totalNumber="totalNumber1"
+          :titleName="titleNameOfCircle1"
         />
 
       </div>
       <div class="circle-title">
         <div
           id="left1_chart_one_c2"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber2"
           :totalNumber="totalNumber2"
+           :titleName="titleNameOfCircle1"
         />
    
       </div>
       <div class="circle-title">
         <div
           id="left1_chart_one_c3"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
           :totalNumber="totalNumber3"
+           :titleName="titleNameOfCircle1"
         />
   
       </div>
             <div class="circle-title">
         <div
           id="left1_chart_one_c4"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px' , marginTop: '20px'}"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
           :totalNumber="totalNumber3"
+           :titleName="titleNameOfCircle1"
         />
 
       </div>
             <div class="circle-title">
         <div
           id="left1_chart_one_c5"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px' , marginTop: '20px'}"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
           :totalNumber="totalNumber3"
+           :titleName="titleNameOfCircle1"
         />
        
       </div>
     </div>
     <title-moudle
-      :blockImg="flyUrl"
+      :blockImg="logisticsUrl"
       :leftTitle="leftTitle3"
       :fromNum="fromNum3"
       :toNum="toNum3"
+      
     />
     <div class="threecircle">
       <div class="circle-title">
         <div
           id="left1_chart_two_c1"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber1"
           :totalNumber="totalNumber1"
+           :titleName="titleNameOfCircle1"
         />
        
       </div>
       <div class="circle-title">
         <div
           id="left1_chart_two_c2"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber2"
           :totalNumber="totalNumber2"
+           :titleName="titleNameOfCircle1"
         />
         
       </div>
       <div class="circle-title">
         <div
           id="left1_chart_two_c3"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px' , marginTop: '20px'}"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
           :totalNumber="totalNumber3"
+           :titleName="titleNameOfCircle1"
         />
        
       </div>
             <div class="circle-title">
         <div
           id="left1_chart_two_c4"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '20px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
           :totalNumber="totalNumber3"
+           :titleName="titleNameOfCircle1"
         />
         
       </div>
@@ -158,6 +168,7 @@ export default {
   },
   data() {
     return {
+      titleNameOfCircle1: '一代',
       leftTitle1: '飞机',
       leftTitle2: '地导',
       leftTitle3: '雷达',

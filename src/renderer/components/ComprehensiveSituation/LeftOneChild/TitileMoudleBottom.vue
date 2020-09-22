@@ -1,7 +1,8 @@
 <template>
   <div class="circle-title">
-    <p class="p-title">完好数<span class="span-num">{{changeTotalNumberOfModels}}</span>具</p>
-    <p class="p-title">总数{{changeTotalNumber}}具</p>
+    <p class="p-titlename">{{titleName}}</p>
+    <p class="p-title-str">完好数（营套）</p>
+    <p class="p-title-num">{{changeTotalNumber}}</p>
   </div>
 </template>
 
@@ -9,7 +10,7 @@
 import { TweenLite } from 'gsap';
 export default {
   name: 'titilemoudlebottom',
-  props: ['goodNumber', 'totalNumber'],
+  props: ['goodNumber', 'totalNumber', 'titleName'],
   data() {
     return {
       fromNum: [
@@ -57,6 +58,12 @@ export default {
 </script>
 
 <style scoped>
+.p-titlename{
+  font-family: 'Zhongheijian';
+  font-size:14px;
+  color: aliceblue;
+  margin-bottom: 14px
+}
 @font-face {
   font-family: "opposans"; /* 这个名字可以自己定义 */
   src: url("../../../assets/font/OPPOSans-R.ttf");
@@ -65,13 +72,14 @@ export default {
   font-family: "dinPro"; /* 这个名字可以自己定义 */
   src: url("../../../assets/font/DINPro-Bold.otf");
 }
-.p-title {
+.p-title-str {
   font-family: 'opposans';
   color: aliceblue;
   font-size: 10px;
   /* margin-top: -8px; */
 }
-.span-num{
+
+.p-title-num{
   font-family: 'dinPro';
   color: #00d2fe;
   margin-left: 2px;

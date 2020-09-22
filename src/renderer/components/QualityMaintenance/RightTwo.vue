@@ -299,12 +299,21 @@ export default {
       // 绘制图表
       myChart2.setOption({
         title: {
-          text: '折线图堆叠'
+          show: true,
+          text: '不良好原因时间统计',
+          left: 'center', // 主副标题的水平位置
+          // padding: 44, // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 14
+          }
         },
         tooltip: {
           trigger: 'axis'
         },
         legend: {
+          padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
         grid: {
@@ -313,17 +322,36 @@ export default {
           bottom: '3%',
           containLabel: true
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {}
+        //   }
+        // },
         xAxis: {
+          splitLine: {
+            // 网格线
+            show: false
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          },
           type: 'category',
           boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         },
         yAxis: {
+          splitLine: {
+            // 网格线
+            lineStyle: {
+              type: 'dashed',
+              color: 'rgba(219,225,255,0.5)'
+            }
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          },
           type: 'value'
         },
         series: [

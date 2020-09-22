@@ -8,7 +8,7 @@
     />
     <div
       id="right_chart_one_l1"
-      :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px' ,marginRight: '60px'}"
+      :style="{ width: '500px', height: '368px', marginTop: '30px' ,   marginBottom:'20px', marginLeft: '30px' ,marginRight: '60px'}"
     ></div>
    <top-title :imgUrl="flyUrl" :titleName="toptitleName1"/>
    <right-table-moudle :indexkey="m1" :titleName="titlename1"/>
@@ -127,7 +127,17 @@ export default {
         //     type: 'shadow'
         //   }
         // },
-
+        title: {
+          show: true,
+          text: '不完好数量分布',
+          left: 'center', // 主副标题的水平位置
+          // padding: 44, // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 14
+          }
+        },
         grid: {
           left: '3%',
           right: '4%',

@@ -538,6 +538,7 @@ html {
   margin-left: 120px;
 }
 .main-middle-content{
+    z-index: -10;
         top: 110px;
    position: absolute;
     text-align: center;

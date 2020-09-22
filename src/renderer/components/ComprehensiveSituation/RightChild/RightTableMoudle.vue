@@ -171,7 +171,7 @@ export default {
   display: flex;
   flex-direction: column;
   /* margin-top: 6px; */
-  margin-top: 24px
+  margin-top: 24px;
   /* width: 280px; */
   /* justify-content: space-evenly; */
   /* border-style: solid;
@@ -220,6 +220,9 @@ export default {
   width: 300px;
   margin-left: -40px;
   margin-top: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
   justify-content: center;
   display: flex;
   flex-direction: row;
