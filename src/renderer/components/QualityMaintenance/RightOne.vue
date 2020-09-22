@@ -72,7 +72,8 @@
       id="right-one-chart_2"
       :style="{
         width: '540px',
-        height: '276px',
+        height: '400px',
+        marginTop: '40px' ,
       }"
     ></div>
     <top-title :imgUrl="flyUrl" :titleName="toptitleName1" />
@@ -133,7 +134,8 @@
       id="right-one-chart_3"
       :style="{
         width: '540px',
-        height: '276px',
+        height: '380px',
+        marginTop: '40px' 
       }"
     ></div>
     </div>
@@ -221,12 +223,22 @@ export default {
       // 绘制图表
       myChart1.setOption({
         title: {
-          text: '折线图堆叠'
+          show: true,
+          text: '发动机状态数量统计及趋势',
+          left: 'center', // 主副标题的水平位置
+          // top: 'center', // 主副标题的垂直位置
+          // padding: -10, // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 14
+          }
         },
         tooltip: {
           trigger: 'axis'
         },
         legend: {
+          padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
         grid: {
@@ -235,20 +247,47 @@ export default {
           bottom: '3%',
           containLabel: true
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {}
+        //   }
+        // },
         xAxis: {
+          axisLine: { // y轴
+            'show': false
+
+          },
+          splitLine: {
+            // 网格线
+            show: false
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          },
           type: 'category',
           boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         },
         yAxis: {
+          splitLine: {
+            // 网格线
+            lineStyle: {
+              // type: 'dashed',
+              color: 'rgba(219,225,255,0.5)'
+            }
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          },
+          axisLine: { // y轴
+            show: false
+          },
           type: 'value'
         },
         series: [
+
           {
             name: '邮件营销',
             type: 'line',
@@ -279,6 +318,7 @@ export default {
             stack: '总量',
             data: [820, 932, 901, 934, 1290, 1330, 1320]
           }
+
         ]
       });
 
@@ -288,12 +328,22 @@ export default {
       // 绘制图表
       myChart2.setOption({
         title: {
-          text: '折线图堆叠'
+          show: true,
+          text: '发动机状态数量统计及趋势',
+          left: 'center', // 主副标题的水平位置
+          // top: 'center', // 主副标题的垂直位置
+          // padding: 44, // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 14
+          }
         },
         tooltip: {
           trigger: 'axis'
         },
         legend: {
+          padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
         grid: {
@@ -302,17 +352,43 @@ export default {
           bottom: '3%',
           containLabel: true
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {}
+        //   }
+        // },
         xAxis: {
+          axisLine: { // y轴
+            'show': false
+
+          },
+          splitLine: {
+            // 网格线
+            show: false
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          },
           type: 'category',
           boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         },
         yAxis: {
+          splitLine: {
+            // 网格线
+            lineStyle: {
+              // type: 'dashed',
+              color: 'rgba(219,225,255,0.5)'
+            }
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          },
+          axisLine: { // y轴
+            show: false
+          },
           type: 'value'
         },
         series: [

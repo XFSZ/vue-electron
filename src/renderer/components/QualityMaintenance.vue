@@ -9,8 +9,8 @@
         <div
           id="right-other-chart_3"
           :style="{
-            width: '540px',
-            height: '276px',
+            width: '1276px',
+            height: '342px',
           }"
         ></div>
         <div class="main-buttom-btn">
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import BG from '../assets/pie-label.png';
 import LeftOne from './QualityMaintenance/LeftOne';
 import LeftTwo from './QualityMaintenance/LeftTwo';
 import RightOne from './QualityMaintenance/RightOne';
@@ -96,8 +97,31 @@ export default {
       // 绘制图表
       myChart2.setOption({
         title: {
-          text: '折线图堆叠'
+          show: true,
+          text: '飞机质量原因时间统计',
+          // left: 'center', // 主副标题的水平位置
+          // top: 'center', // 主副标题的垂直位置
+          padding: [0, 0, 0, 96], // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 18
+          }
         },
+        graphic: {
+          elements: [ { // 将图片定位到最下方的中间：
+            type: 'image',
+            // left: 'center', // 水平定位到中间
+            left: '60',
+            top: '-10',
+            // bottom: '10%', // 定位到距离下边界 10% 处
+            // position: [110, 0],
+            style: {
+              image: BG,
+              width: 40,
+              height: 40
+            }
+          }]},
         tooltip: {
           trigger: 'axis'
         },
@@ -110,17 +134,28 @@ export default {
           bottom: '3%',
           containLabel: true
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {}
+        //   }
+        // },
         xAxis: {
           type: 'category',
           boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         },
         yAxis: {
+          splitLine: {
+            // 网格线
+            lineStyle: {
+              // type: 'dashed',
+              color: 'rgba(219,225,255,0.5)'
+            }
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          },
           type: 'value'
         },
         series: [

@@ -29,6 +29,7 @@
       :style="{
         width: '540px',
         height: '276px',
+        marginTop: '-30px',
       }"
     ></div>
     <div
@@ -54,8 +55,11 @@
       </div>
     </div>
     <div class="right-one-bottom-charts">
+      <p class="circle-title-str">吊舱不完好情况分布</p>
       <div class="threecircle">
+         
         <div class="circle-title">
+         
           <div
             id="right-two_c1"
             :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
@@ -86,6 +90,7 @@
           />
         </div>
       </div>
+      <p class="circle-title-str">不完好原因分布</p>
       <div
         id="right-two_tc4"
         :style="{
@@ -205,10 +210,10 @@ export default {
         },
         xAxis: {
           type: 'value',
-          max: 100,
-          min: 0,
-          interval: 20,
-          boundaryGap: [0, 0.01],
+          // max: 100,
+          // min: 0,
+          // interval: 20,
+          // boundaryGap: [0, 0.01],
           splitLine: {
             // 网格线
             show: false
@@ -230,67 +235,91 @@ export default {
             show: false
           }
         },
+
         series: [
           {
-            name: '完好率',
             barWidth: 8,
+            name: '直接访问',
             type: 'bar',
-            label: {
-              show: true, // 开启显示
-              position: [340, 10],
-              formatter: '完好率  {c}%', // 显示百分号
-              textStyle: {
-                // 数值样式
-                color: 'white', // 字体颜色
-                fontSize: 10, // 字体大小
-                fontFamily: 'opposans'
-              }
-            },
+            stack: '总量',
+            // label: {
+            //   show: true,
+            //   position: 'insideRight'
+            // },
             itemStyle: {
-              normal: {
-                // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
-                color: function(params) {
-                  // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
-                  var colorList = [
-                    ['#e0a607', '#675316', '#262821'],
-                    ['#d02e08', '#5b1b17', '#26131d'],
-
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941']
-                  ];
-
-                  var index = params.dataIndex;
-                  if (params.dataIndex >= colorList.length) {
-                    index = params.dataIndex - colorList.length;
-                  }
-                  var colors = new that.$echarts.graphic.LinearGradient(
-                    1,
-                    0,
-                    0,
-                    0,
-                    [
-                      { offset: 0, color: colorList[index][0] },
-                      { offset: 0.5, color: colorList[index][1] },
-                      { offset: 1, color: colorList[index][2] }
-                    ]
-                  );
-                  return colors;
-                }
-                // barBorderRadius: 5 // 柱状角成椭圆形
+              color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                offset: 0,
+                color: '#DD352A'
+              },
+              {
+                offset: 0.7,
+                color: '#F27269'
+              },
+              {
+                offset: 1,
+                color: '#FFFFFF'
               }
-            },
-            showBackground: true,
-            backgroundStyle: {
-              color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                { offset: 0, color: '#000' },
-                { offset: 0.3, color: '#888' },
-                { offset: 1, color: '#ddd' }
+
               ])
             },
-            data: [55.1, 62.7, 17.2, 39.8]
+            data: [320, 302, 301, 334, 390, 330, 320]
+          },
+          {
+            barWidth: 8,
+            name: '邮件营销',
+            type: 'bar',
+            stack: '总量',
+            // label: {
+            //   show: true,
+            //   position: 'insideRight'
+            // },
+            itemStyle: {
+              color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                offset: 0,
+                color: '#DD352A'
+              },
+              {
+                offset: 0.7,
+                color: '#F27269'
+              },
+              {
+                offset: 1,
+                color: '#FFFFFF'
+              }
+
+              ])
+            },
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            barWidth: 8,
+            name: '联盟广告',
+            type: 'bar',
+            stack: '总量',
+            // label: {
+            //   show: true,
+            //   position: 'insideRight'
+            // },
+            itemStyle: {
+              color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                offset: 0,
+                color: '#DD352A'
+              },
+              {
+                offset: 0.7,
+                color: '#F27269'
+              },
+              {
+                offset: 1,
+                color: '#FFFFFF'
+              }
+
+              ])
+            },
+            data: [220, 182, 191, 234, 290, 330, 310]
           }
         ]
+
       });
 
       let myChart2 = this.$echarts.init(
@@ -832,7 +861,20 @@ export default {
   margin-left: 4px;
   color: white;
   margin-right: 4px;
-  /* margin-top: 4px; */
+
+ 
+}
+.circle-title-str{
+  font-family: "Zhongheijian";
+  font-size: 18px;
+  /* height: 6px; */
+  margin-left: 4px;
+  color: white;
+  margin-right: 4px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 .title-child-num {
   font-family: "dinPro";
