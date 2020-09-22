@@ -538,14 +538,14 @@ html {
   margin-left: 120px;
 }
 .main-middle-content{
-      position: fixed;
-    top: 0;
-    right:0;
-    left: 0;
-    bottom: 0;
-    margin-top: 1400px;
-    margin-left: 960px;
+        top: 110px;
+   position: absolute;
     text-align: center;
+    width: 4320px;
+    height: 1360px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 /* .main-middle-content {
   text-align: center;
