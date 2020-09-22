@@ -6,6 +6,7 @@
     </div>
     <div class="main-middle-content">
       <div class="main-buttom">
+        <div class="chart-bg">
         <div
           id="right-other-chart_3"
           :style="{
@@ -13,6 +14,7 @@
             height: '342px',
           }"
         ></div>
+        </div>
         <div class="main-buttom-btn">
           <div class="main-middle-button">
             <p class="main-middle-button-text">全国</p>
@@ -131,7 +133,8 @@ export default {
         grid: {
           left: '3%',
           right: '4%',
-          bottom: '3%',
+          bottom: '10%',
+          // top: '20%',
           containLabel: true
         },
         // toolbox: {
@@ -220,7 +223,12 @@ export default {
   width: 230px;
   height: 43px;
 }
-
+.chart-bg{
+  padding-top: 30px;
+  background-image: url("../assets/chart-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 .black-img-text {
   height: 8px;
   width: 8px;

@@ -105,7 +105,8 @@
 
 <script>
 import { TweenLite } from 'gsap';
-import BG from '../../assets/pie-label.png';
+import BG from '../../assets/chart-mid.png';
+
 import TopTitle from './TopTitle/TopTitle';
 import BlankImg from '../../assets/block.png';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
@@ -188,7 +189,7 @@ export default {
           text: '到寿飞机类别分布',
           left: 'center', // 主副标题的水平位置
           // top: 'center', // 主副标题的垂直位置
-          padding: 44, // 标题内边距
+          padding: 34, // 标题内边距
           textStyle: {
             color: '#feffff',
             fontFamily: 'Zhongheijian',
@@ -208,6 +209,18 @@ export default {
         //   bottom: '3%',
         //   containLabel: true
         // },
+        legend: {
+          right: '10%',
+          itemWidth: 20,
+          itemHeight: 8,
+          textStyle: {
+            fontFamily: 'opposans',
+            fontSize: 8,
+            color: '#ffffff'
+          },
+          padding: [54, 0, 0, 200],
+          data: ['直接访问', '邮件营销', '联盟广告']
+        },
         xAxis: {
           type: 'value',
           // max: 100,
@@ -249,15 +262,15 @@ export default {
             itemStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
                 offset: 0,
-                color: '#DD352A'
+                color: 'rgba(0,210,254,1)'
               },
               {
-                offset: 0.7,
-                color: '#F27269'
+                offset: 0.5,
+                color: 'rgba(0,210,254,0.5)'
               },
               {
                 offset: 1,
-                color: '#FFFFFF'
+                color: 'rgba(0,210,254,0)'
               }
 
               ])
@@ -276,15 +289,15 @@ export default {
             itemStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
                 offset: 0,
-                color: '#DD352A'
+                color: 'rgba(244,34,4,1)'
               },
               {
                 offset: 0.7,
-                color: '#F27269'
+                color: 'rgba(244,34,4,0.5)'
               },
               {
                 offset: 1,
-                color: '#FFFFFF'
+                color: 'rgba(244,34,4,0)'
               }
 
               ])
@@ -303,15 +316,15 @@ export default {
             itemStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
                 offset: 0,
-                color: '#DD352A'
+                color: 'rgba(248,204,4,1)'
               },
               {
                 offset: 0.7,
-                color: '#F27269'
+                color: 'rgba(248,204,4,0.5)'
               },
               {
                 offset: 1,
-                color: '#FFFFFF'
+                color: 'rgba(248,204,4,0)'
               }
 
               ])
@@ -686,7 +699,7 @@ export default {
               // bottom: '10%', // 定位到距离下边界 10% 处
               // position: [110, 0],
               style: {
-                image: LogisticsImg,
+                image: BG,
                 width: 60,
                 height: 60
               }

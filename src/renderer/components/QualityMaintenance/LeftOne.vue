@@ -208,12 +208,11 @@ export default {
                   // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
                   var colorList = [
 
-                    ['#e0a607', '#675316', '#262821'],
-                    ['#d02e08', '#5b1b17', '#26131d'],
-
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941']
+                    ['rgba(248,204,4,1)', 'rgba(248,204,4,0.5)', 'rgba(248,204,4,0.2)'],
+                    ['rgba(244,34,4,1)', 'rgba(244,34,4,0.5)', 'rgba(244,34,4,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)']
                   ];
 
                   var index = params.dataIndex;
@@ -232,9 +231,9 @@ export default {
             },
             backgroundStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                { offset: 1, color: '#ddd' },
-                { offset: 0.3, color: '#888' },
-                { offset: 0, color: '#000' }
+                { offset: 0, color: 'rgba(172,172,172,1)' },
+                { offset: 0.2, color: 'rgba(172,172,172,0.5)' },
+                { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
               // color: 'rgba(0, 220, 220, 0.8)'
               // shadowOffsetX: 50,
@@ -322,12 +321,11 @@ export default {
                   // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
                   var colorList = [
 
-                    ['#e0a607', '#675316', '#262821'],
-                    ['#d02e08', '#5b1b17', '#26131d'],
-
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941']
+                    ['rgba(248,204,4,1)', 'rgba(248,204,4,0.5)', 'rgba(248,204,4,0.2)'],
+                    ['rgba(244,34,4,1)', 'rgba(244,34,4,0.5)', 'rgba(244,34,4,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)']
                   ];
 
                   var index = params.dataIndex;
@@ -347,9 +345,9 @@ export default {
             showBackground: true,
             backgroundStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                { offset: 0, color: '#000' },
-                { offset: 0.3, color: '#888' },
-                { offset: 1, color: '#ddd' }
+                { offset: 0, color: 'rgba(172,172,172,1)' },
+                { offset: 0.2, color: 'rgba(172,172,172,0.5)' },
+                { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
             },
             data: [55.1, 62.7, 17.2, 39.8]
@@ -433,12 +431,11 @@ export default {
                   // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
                   var colorList = [
 
-                    ['#e0a607', '#675316', '#262821'],
-                    ['#d02e08', '#5b1b17', '#26131d'],
-
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941'],
-                    ['#00bbe4', '#005d7c', '#002941']
+                    ['rgba(248,204,4,1)', 'rgba(248,204,4,0.5)', 'rgba(248,204,4,0.2)'],
+                    ['rgba(244,34,4,1)', 'rgba(244,34,4,0.5)', 'rgba(244,34,4,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)'],
+                    ['rgba(0,210,254,1)', 'rgba(0,210,254,0.5)', 'rgba(0,210,254,0.2)']
                   ];
 
                   var index = params.dataIndex;
@@ -458,9 +455,9 @@ export default {
             showBackground: true,
             backgroundStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                { offset: 0, color: '#000' },
-                { offset: 0.3, color: '#888' },
-                { offset: 1, color: '#ddd' }
+                { offset: 0, color: 'rgba(172,172,172,1)' },
+                { offset: 0.2, color: 'rgba(172,172,172,0.5)' },
+                { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
             },
             data: [55.1, 62.7, 17.2, 39.8]
