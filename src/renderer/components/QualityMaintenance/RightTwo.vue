@@ -94,7 +94,7 @@
       <div
         id="right-two_tc4"
         :style="{
-          width: '380px',
+          width: '440px',
           height: '180px',
           marginTop: '20px',
         }"
@@ -201,13 +201,13 @@ export default {
             type: 'shadow'
           }
         },
-
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
+        grid: {x: '120px', width: '60%', height: '70%'},
+        // grid: {
+        //   left: '3%',
+        //   right: '4%',
+        //   bottom: '3%',
+        //   containLabel: true
+        // },
         xAxis: {
           type: 'value',
           // max: 100,
@@ -345,12 +345,13 @@ export default {
           padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
+        grid: {x: '116px', width: '60%', height: '70%'},
+        // grid: {
+        //   left: '3%',
+        //   right: '4%',
+        //   bottom: '3%',
+        //   containLabel: true
+        // },
         // toolbox: {
         //   feature: {
         //     saveAsImage: {}
@@ -620,7 +621,7 @@ export default {
           // 图例
           orient: 'vertical', // 图例的布局，vertical竖直    horizontal为水平
           // x: 'right', // 图例显示在右边
-          right: 4,
+          right: 8,
           // top: 8,
           bottom: 4,
           //   left: 5,
@@ -640,7 +641,7 @@ export default {
               }
             }
             var arr = [
-              '{a|' + name + '}' + '\n {b|' + '次数   ' + '100' + '次' + '}'
+              '{a|' + name + '}' + '\n {b|' + '数量   ' + '3158' + '具' + '}'
             ];
             return arr;
           },
@@ -657,12 +658,19 @@ export default {
                 fontSize: 14, // 文字大小
                 fontFamily: 'Zhongheijian'
               },
+              n: {
+                color: 'white',
+                lineHeight: 20,
+                height: 18,
+                fontSize: 14, // 文字大小
+                fontFamily: 'opposans'
+              },
               b: {
                 height: 12,
                 color: '#878b91', // 文字颜色
                 lineHeight: 20,
                 fontSize: 12, // 文字大小
-                fontFamily: 'Zhongheijian'
+                fontFamily: 'dinPro'
               }
             }
           }
@@ -686,6 +694,38 @@ export default {
           ]
         },
         series: [
+
+          {
+            name: '',
+            type: 'pie', // 环形图的type和饼图相同
+            // radius: ['50%', '70%'], // 饼图的半径，第一个为内半径，第二个为外半径
+            center: ['36%', '44%'], // 饼图的圆心坐标
+            radius: ['56%', '74%'],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            color: ['rgba(125,125,125,0.3)', 'rgba(0,207,255,0.3)', 'rgba(255,255,255,0.3)'],
+
+            label: {
+              show: false // 开启显示
+
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            itemStyle: {
+              normal: {
+                borderWidth: 2,
+                borderColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            },
+            data: [
+              { value: 40, name: '' },
+              { value: 36, name: '' },
+              { value: 24, name: '' }
+            ]
+          },
           {
             name: '值班兵力',
             type: 'pie', // 环形图的type和饼图相同
@@ -694,7 +734,7 @@ export default {
             radius: ['74%', '80%'],
             avoidLabelOverlap: false,
             hoverAnimation: false,
-            color: ['#7d7d7d', '#00cfff', '#ffffff'],
+            color: ['rgba(125,125,125,1)', 'rgba(0,207,255,1)', 'rgba(255,255,255,1)'],
 
             label: {
               show: true, // 开启显示
@@ -707,7 +747,7 @@ export default {
                 color: 'white', // 字体颜色
                 fontSize: 10, // 字体大小
                 fontFamily: 'opposans',
-                padding: [0, -30]
+                padding: [0, -20]
               }
             },
             labelLine: {
@@ -717,14 +757,15 @@ export default {
             },
             itemStyle: {
               normal: {
+                borderWidth: 2,
+                borderColor: 'rgba(0, 0, 0, 0.5)',
                 // 具体决定了饼状图每一份的颜色显示
                 // color: '#FFA07A',
                 // 饼状图阴影，值越大阴影亮度越高
                 shadowBlur: 20,
-                shadowOffsetX: -50,
-                shadowOffsetY: 50,
+                // shadowOffsetX: -50,
+                // shadowOffsetY: 50,
                 shadowColor: 'rgba(0, 0, 0, 0.5)'
-                // shadowColor: 'rgba(0, 0, 0, 0.5)'
               }
             },
             data: [

@@ -37,6 +37,8 @@
       :style="{
         width: '540px',
         height: '276px',
+        marginBottom: '30px',
+        marginTop: '30px'
       }"
     ></div>
     <top-title :imgUrl="flyUrl" :titleName="toptitleName1" />
@@ -58,6 +60,7 @@
       :style="{
         width: '540px',
         height: '276px',
+        marginTop: '40px'
       }"
     ></div>
   </div>
@@ -156,13 +159,13 @@ export default {
             type: 'shadow'
           }
         },
-
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
+        grid: {x: '120px', width: '60%', height: '70%'},
+        // grid: {
+        //   left: '3%',
+        //   right: '4%',
+        //   bottom: '3%',
+        //   containLabel: true
+        // },
         xAxis: {
           type: 'value',
           max: 100,
@@ -196,7 +199,7 @@ export default {
             barWidth: 8,
             type: 'bar',
             label: {
-              show: true, // 开启显示
+              show: false, // 开启显示
               position: [340, 10],
               formatter: '完好率  {c}%', // 显示百分号
               textStyle: {
@@ -259,25 +262,36 @@ export default {
       // 绘制图表
       myChart2.setOption({
         title: {
-          text: '折线图堆叠'
+          show: true,
+          text: '调配时间统计',
+          left: 'center', // 主副标题的水平位置
+          // top: 'center', // 主副标题的垂直位置
+          // padding: 44, // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 14
+          }
         },
         tooltip: {
           trigger: 'axis'
         },
         legend: {
+          padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
+        // grid: {
+        //   left: '3%',
+        //   right: '4%',
+        //   bottom: '3%',
+        //   containLabel: true
+        // },
+        grid: {x: '120px', width: '60%', height: '70%'},
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {}
+        //   }
+        // },
         xAxis: {
           type: 'category',
           boundaryGap: false,
@@ -326,31 +340,54 @@ export default {
       // 绘制图表
       myChart3.setOption({
         title: {
-          text: '折线图堆叠'
+          show: true,
+          text: '调配时间统计',
+          left: 'center', // 主副标题的水平位置
+          // top: 'center', // 主副标题的垂直位置
+          // padding: 44, // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 14
+          }
         },
         tooltip: {
           trigger: 'axis'
         },
         legend: {
+          show: false,
+          padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
+        grid: {x: '120px', width: '60%', height: '70%'},
+        // grid: {
+        //   left: '3%',
+        //   right: '4%',
+        //   bottom: '3%',
+        //   containLabel: true
+        // },
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {}
+        //   }
+        // },
         xAxis: {
           type: 'category',
           boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         },
         yAxis: {
+          splitLine: {
+            // 网格线
+            lineStyle: {
+              type: 'dashed',
+              color: 'rgba(219,225,255,0.5)'
+            }
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          },
           type: 'value'
         },
         series: [

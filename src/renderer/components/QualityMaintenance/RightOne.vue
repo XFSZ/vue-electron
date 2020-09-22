@@ -241,12 +241,13 @@ export default {
           padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
+        grid: {x: '120px', width: '60%', height: '70%'},
+        // grid: {
+        //   left: '3%',
+        //   right: '4%',
+        //   bottom: '3%',
+        //   containLabel: true
+        // },
         // toolbox: {
         //   feature: {
         //     saveAsImage: {}
@@ -346,12 +347,13 @@ export default {
           padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
+        grid: {x: '120px', width: '60%', height: '70%'},
+        // grid: {
+        //   left: '3%',
+        //   right: '4%',
+        //   bottom: '3%',
+        //   containLabel: true
+        // },
         // toolbox: {
         //   feature: {
         //     saveAsImage: {}

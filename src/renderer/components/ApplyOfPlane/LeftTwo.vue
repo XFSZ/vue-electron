@@ -427,6 +427,37 @@ export default {
           }]},
         series: [
           {
+            name: '',
+            type: 'pie', // 环形图的type和饼图相同
+            // radius: ['50%', '70%'], // 饼图的半径，第一个为内半径，第二个为外半径
+            center: ['36%', '44%'], // 饼图的圆心坐标
+            radius: ['56%', '74%'],
+            avoidLabelOverlap: false,
+            hoverAnimation: false,
+            color: ['rgba(125,125,125,0.3)', 'rgba(0,207,255,0.3)', 'rgba(255,255,255,0.3)'],
+
+            label: {
+              show: false // 开启显示
+
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            itemStyle: {
+              normal: {
+                borderWidth: 2,
+                borderColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            },
+            data: [
+              { value: 40, name: '' },
+              { value: 36, name: '' },
+              { value: 24, name: '' }
+            ]
+          },
+          {
             name: '值班兵力',
             type: 'pie', // 环形图的type和饼图相同
             // radius: ['50%', '70%'], // 饼图的半径，第一个为内半径，第二个为外半径
@@ -504,16 +535,22 @@ export default {
             },
             itemStyle: {
               normal: {
-              // 具体决定了饼状图每一份的颜色显示
-              // color: '#FFA07A',
-              // 饼状图阴影，值越大阴影亮度越高
-                shadowBlur: 20,
-                shadowOffsetX: -50,
-                shadowOffsetY: 50,
-                shadowColor: 'rgba(0, 0, 0, 0.5)'
-              // shadowColor: 'rgba(0, 0, 0, 0.5)'
+                borderWidth: 2,
+                borderColor: 'rgba(0, 0, 0, 0.5)'
               }
             },
+            // itemStyle: {
+            //   normal: {
+            //   // 具体决定了饼状图每一份的颜色显示
+            //   // color: '#FFA07A',
+            //   // 饼状图阴影，值越大阴影亮度越高
+            //     shadowBlur: 20,
+            //     shadowOffsetX: -50,
+            //     shadowOffsetY: 50,
+            //     shadowColor: 'rgba(0, 0, 0, 0.5)'
+            //   // shadowColor: 'rgba(0, 0, 0, 0.5)'
+            //   }
+            // },
             data: [
               { value: 40, name: '一等值班' },
               { value: 36, name: '二等值班' },
