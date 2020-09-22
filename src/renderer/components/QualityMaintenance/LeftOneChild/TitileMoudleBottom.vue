@@ -1,7 +1,15 @@
 <template>
-  <div class="circle-title">
-    <p class="p-title">完好数<span class="span-num">{{changeTotalNumberOfModels}}</span>具</p>
-    <p class="p-title">总数{{changeTotalNumber}}具</p>
+  <div class="circle-title-col">
+    <div class="circle-title-row">
+      <p class="p-title">完好数</p>
+      <p class="span-num">{{ changeTotalNumberOfModels }}</p>
+      <p class="p-title-str">具</p>
+    </div>
+    <div class="circle-title-row">
+      <p class="p-title">总数</p>
+      <p class="span-num">{{ changeTotalNumber }}</p>
+      <p class="p-title-str">具</p>
+    </div>
   </div>
 </template>
 
@@ -13,13 +21,13 @@ export default {
   data() {
     return {
       fromNum: [
-        {name: 'totalNumberOfModels', value: 0},
-        {name: 'totalNumber', value: 0}
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 }
       ],
 
       toNum: [
-        {name: 'toTotalNumberOfModels', value: this.goodNumber},
-        {name: 'toTotalNumber', value: this.totalNumber}
+        { name: 'toTotalNumberOfModels', value: this.goodNumber },
+        { name: 'toTotalNumber', value: this.totalNumber }
       ]
     };
   },
@@ -35,22 +43,20 @@ export default {
     changeTotalNumber() {
       return this.fromNum[1].value.toFixed(0);
     }
-
   },
   mounted() {
     this.set();
   },
   methods: {
     set() {
-      for (let i = 0;i < this.toNum.length ;i++) {
+      for (let i = 0; i < this.toNum.length; i++) {
         this.setLite(this.fromNum[i], this.toNum[i].value);
       }
     },
     setLite(obj, val) {
       TweenLite.to(obj, 2, {
         value: val
-      },
-      );
+      });
     }
   }
 };
@@ -66,21 +72,39 @@ export default {
   src: url("../../../assets/font/DINPro-Bold.otf");
 }
 .p-title {
-  font-family: 'opposans';
+  font-family: "opposans";
   color: aliceblue;
   font-size: 10px;
   /* margin-top: -8px; */
 }
-.span-num{
-  font-family: 'dinPro';
+.p-title-str{
+  font-family: "opposans";
+  color: aliceblue;
+  font-size: 8px;
+}
+.span-num {
+  font-family: "dinPro";
   color: #00d2fe;
   margin-left: 2px;
   margin-right: 1px;
 }
-.circle-title {
+.circle-title-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.circle-title-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+/* .circle-title {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-}
+} */
 </style>
