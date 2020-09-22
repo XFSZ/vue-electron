@@ -177,7 +177,7 @@ export default {
       });
     },
     drawLine() {
-      var that = this;
+      // var that = this;
       let myChart1 = this.$echarts.init(
         document.getElementById('right-two-chart_1')
       );
@@ -678,7 +678,7 @@ export default {
               // bottom: '10%', // 定位到距离下边界 10% 处
               // position: [110, 0],
               style: {
-                image: BG,
+                image: LogisticsImg,
                 width: 60,
                 height: 60
               }

@@ -21,7 +21,7 @@
       </div>
     <div class="table-col"><right-child-moudle :indexkey="2" /></div>
 
-        <top-title :imgUrl="flyUrl" :titleName="toptitlename2" />
+        <top-title :imgUrl="gmUrl" :titleName="toptitlename2" />
         <div class="right-text-table-top-one">
           <div class="title-table-head-main">
             <img :src="blankUrl" class="blank-img left-blank-img" />
@@ -40,7 +40,7 @@
     <div class="table-col"><right-child-moudle :indexkey="3" /></div>
     <div class="table-col"><right-child-moudle :indexkey="4"/></div>
 
-        <top-title :imgUrl="flyUrl" :titleName="toptitlename3" />
+        <top-title :imgUrl="radarUrl" :titleName="toptitlename3" />
         <div class="right-text-table-top-one">
           <div class="title-table-head-main">
             <img :src="blankUrl" class="blank-img left-blank-img" />
@@ -70,6 +70,9 @@ import BlankImg from '../../assets/block.png';
 import RightChildMoudle from './RightChild/RightChildMoudle';
 import FlyImg from '../../assets/fly.png';
 import LogisticsImg from '../../assets/logistics.png';
+import RaderImg from '../../assets/radar.png';
+import GMImg from '../../assets/ground-missile.png';
+
 import axios from 'axios';
 // const baseurl = 'http://192.168.37.130:7300/mock/5f6473cac01e510020e2f086/example/';
 
@@ -114,6 +117,8 @@ export default {
       toptitlename2: '地导调配',
       toptitlename3: '雷达调配',
       flyUrl: FlyImg,
+      gmUrl: GMImg,
+      radarUrl: RaderImg,
       blankUrl: BlankImg,
       logisticsUrl: LogisticsImg,
       googNumber1: 15784,
