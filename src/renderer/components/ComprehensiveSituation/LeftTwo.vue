@@ -289,8 +289,10 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-     height: 80px;
-    margin-top: 8px;
+  height: 80px;
+  margin-top: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
   justify-content: space-evenly;
   background-color: #061d3f;
 }
