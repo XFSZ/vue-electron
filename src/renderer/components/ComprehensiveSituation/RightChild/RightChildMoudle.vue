@@ -1,4 +1,7 @@
 <template>
+<div>
+<ul id="example-2">
+  <li v-for="(item, index) in listItemsData" :key="index"    >
   <div class="right-child-main">
     <div class="right-child-one">
       <div class="title-table-head-main">
@@ -26,11 +29,16 @@
     </div>
     <div class="right-child-three">
       <div
-        id="myChart_rc4"
+        :id="`listchart_${index}`"
         :style="{ width: '100px', height: '100px', marginTop: '14px' }"
       ></div>
     </div>
   </div>
+  </li>
+</ul>
+</div>
+
+ 
 </template>
 
 <script>
@@ -38,6 +46,7 @@ import { TweenLite } from 'gsap';
 import BlankImg from '../../../assets/block.png';
 export default {
   name: 'rightchildmoudle',
+  props: ['listItemsData'],
   data() {
     return {
       blankUrl: BlankImg,
@@ -82,65 +91,68 @@ export default {
     },
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
-      let myChart_c3 = this.$echarts.init(
-        document.getElementById('myChart_rc4')
-      );
-      // 绘制图表
-      myChart_c3.setOption({
-        tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b}: {c} ({d}%)'
-        },
-        color: ['#00b3ff', '#ccc'],
-        series: [
-          {
-            name: '电子干扰',
-            type: 'pie',
-            center: ['40%', '40%'], // 饼图的圆心坐标
-            radius: ['74%', '80%'],
-            avoidLabelOverlap: false,
-            hoverAnimation: false,
-            label: {
+      for (let i = 0;i < this.listItemsData.length;i++) {
+        let myChart_c3 = this.$echarts.init(
+          document.getElementById(`listchart_${i}`)
+        );
+        // 绘制图表
+        myChart_c3.setOption({
+          tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+          },
+          color: ['#00b3ff', '#ccc'],
+          series: [
+            {
+              name: '电子干扰',
+              type: 'pie',
+              center: ['40%', '40%'], // 饼图的圆心坐标
+              radius: ['74%', '80%'],
+              avoidLabelOverlap: false,
+              hoverAnimation: false,
+              label: {
               //  饼图图形上的文本标签
 
-              normal: {
+                normal: {
                 // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: '#ccc',
-                fontSize: 8,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
-              }
-            },
-            labelLine: {
-              normal: {
-                show: false
-              }
-            },
-            data: [
-              {
-                value: 86,
-                name: '试飞进度',
-                label: {
-                  normal: {
-                    show: true
-                  }
+                  show: true,
+                  position: 'center',
+                  color: '#ccc',
+                  fontSize: 8,
+                  fontWeight: 'bold',
+                  formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
                 }
               },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
+              labelLine: {
+                normal: {
+                  show: false
+                }
+              },
+              data: [
+                {
+                  value: 86,
+                  name: '试飞进度',
+                  label: {
+                    normal: {
+                      show: true
+                    }
+                  }
+                },
+                {
+                  value: 14,
+                  name: '损坏率',
+                  label: {
+                    normal: {
+                      show: false
+                    }
                   }
                 }
-              }
-            ]
-          }
-        ]
-      });
+              ]
+            }
+          ]
+        });
+      }
+
     }
   }
 };
