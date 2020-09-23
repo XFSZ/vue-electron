@@ -9,12 +9,7 @@
           <img :src="blankUrl" class="blank-img right-blank-img" />
         </div>
         <div class="right-text-table-top-two">
-          <div class="table-head-top-value">
-            <span class="table-head-top-numvalue">{{
-              changeTotalNumberOfModels
-            }}</span>
-            <span class="table-head-top-strvalue">型</span>
-          </div>
+
           <div class="table-head-top-value">
             <span class="table-head-top-numvalue">{{
               changeTotalNumberOfModels
@@ -182,6 +177,13 @@ export default {
         //   // containLabel: true
         // },
         xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           type: 'value',
           max: 100,
           min: 0,
@@ -289,6 +291,14 @@ export default {
         },
         legend: {
           // show: false,
+          right: '10%',
+          itemWidth: 20,
+          itemHeight: 8,
+          textStyle: {
+            fontFamily: 'opposans',
+            fontSize: 8,
+            color: '#ffffff'
+          },
           padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
@@ -305,11 +315,25 @@ export default {
         //   }
         // },
         xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           type: 'category',
           boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         },
         yAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           splitLine: {
             // 网格线
             lineStyle: {
@@ -395,11 +419,25 @@ export default {
         //   }
         // },
         xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           type: 'category',
           boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         },
         yAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           splitLine: {
             // 网格线
             lineStyle: {

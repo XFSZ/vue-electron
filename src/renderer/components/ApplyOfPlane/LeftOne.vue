@@ -171,6 +171,13 @@ export default {
           containLabel: true
         },
         xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           type: 'value',
           boundaryGap: [0, 0.01],
           max: 100,
@@ -285,6 +292,13 @@ export default {
           containLabel: true
         },
         xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           type: 'value',
           max: 100,
           min: 0,

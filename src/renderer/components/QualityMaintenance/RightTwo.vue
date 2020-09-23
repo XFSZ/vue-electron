@@ -218,10 +218,17 @@ export default {
             fontSize: 8,
             color: '#ffffff'
           },
-          padding: [54, 0, 0, 200],
+          padding: [54, 0, 0, 0],
           data: ['直接访问', '邮件营销', '联盟广告']
         },
         xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           type: 'value',
           // max: 100,
           // min: 0,
@@ -355,6 +362,14 @@ export default {
           trigger: 'axis'
         },
         legend: {
+          right: '10%',
+          itemWidth: 20,
+          itemHeight: 8,
+          textStyle: {
+            fontFamily: 'opposans',
+            fontSize: 8,
+            color: '#ffffff'
+          },
           padding: [40, 0, 0, 0],
           data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
         },
@@ -371,6 +386,13 @@ export default {
         //   }
         // },
         xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           splitLine: {
             // 网格线
             show: false
@@ -384,6 +406,13 @@ export default {
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         },
         yAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
           splitLine: {
             // 网格线
             lineStyle: {
