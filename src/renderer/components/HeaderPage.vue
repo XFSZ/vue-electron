@@ -2,7 +2,7 @@
   <div class="wapperhead">
     <div class="headinfo">
       <div class="headinfo-left">
-        <p class="head-strstyle head-strstyle-lr">
+        <p class="head-strstyle head-strstyle-l">
           作战时间 2019年12月30日 12时34分10秒
         </p>
       </div>
@@ -12,7 +12,7 @@
         <img :src="titleRightUrl" class="title-img-left" />
       </div>
       <div class="headinfo-right">
-        <p class="head-strstyle head-strstyle-lr">
+        <p class="head-strstyle head-strstyle-r">
           天文时间 2019年12月30日 12时34分10秒 天气14C 湿度65% 风力7级
         </p>
       </div>
@@ -98,7 +98,13 @@ export default {
 .head-strstyle {
   font-family: "Zhongheijian";
 }
-.head-strstyle-lr {
+.head-strstyle-l {
+   margin-left: 150px;
+  color: whitesmoke;
+  font-size: 24px;
+}
+.head-strstyle-r {
+   margin-right: 150px;
   color: whitesmoke;
   font-size: 24px;
 }
@@ -544,7 +550,7 @@ export default {
   flex: 1;
   display: flex;
   align-items: center;
-  margin-left: 120px;
+  /* margin-left: 120px; */
   /* width: 300px;     */
 }
 .headinfo-right {
@@ -560,7 +566,7 @@ export default {
   /* flex: 1; */
   display: flex;
   flex-direction: row;
-  margin-left: 120px;
+ 
 }
 .main-content {
   text-align: center;
