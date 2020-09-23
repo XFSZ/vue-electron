@@ -41,7 +41,7 @@
 
         <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
       </div>
-      <div><right-child-moudle :listItemsData="fromNum" /></div>
+      <div><right-child-moudle :listItemsData="fromNum8" /></div>
     </div>
   </div>
 </template>
@@ -78,7 +78,13 @@ export default {
         { name: 'totalNumber', value: 0 },
         { name: 'standNumber', value: 0 }
       ],
-
+      fromNum8: [
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
+      ],
       toNum: [
         { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },

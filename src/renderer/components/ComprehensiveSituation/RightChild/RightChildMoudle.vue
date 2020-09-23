@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="items-list scrollbar">
 <ul id="example-2">
   <li v-for="(item, index) in listItemsData" :key="index"    >
   <div class="right-child-main">
@@ -167,6 +167,44 @@ export default {
   font-family: "dinPro"; /* 这个名字可以自己定义 */
   src: url("../../../assets/font/DINPro-Bold.otf");
 }
+.items-list{
+  margin-top: 4px;
+  height: 540px;
+  overflow: auto;
+  margin-right: 10px;
+  /* overflow-y:scroll */
+  /* overflow: scroll; */
+  /* border-style: solid; 
+  border-width: 1px;
+  border-color: #1a2639; */
+}
+.scrollbar{
+
+  /* margin-top: 240px; */
+  /* height: 100%; */
+  /* padding-top: 20px; */
+  /* height: 500px; */
+}
+
+.scrollbar::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+.scrollbar::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 10px;
+         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: rgba(172,172,172,1);
+    }
+.scrollbar::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        background:rgba(172,172,172,0.2);
+
+}
+.scrollbar::-webkit-scrollbar-button{
+  height: 100px;
+}
+
 .p-style-str {
   font-family: "Zhongheijian";
   color: whitesmoke;
@@ -203,7 +241,9 @@ export default {
   margin-left: -30px;
 }
 .right-child-main {
-  margin-top: 6px;
+  margin-left: 30px;
+  margin-right: 20px;
+  /* margin-top: 6px; */
   display: flex;
   flex-direction: row;
   /* width: 280px; */
