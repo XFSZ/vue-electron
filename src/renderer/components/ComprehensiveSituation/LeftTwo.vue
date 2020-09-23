@@ -177,7 +177,8 @@ export default {
             label: {
               // color: 'rgba(255, 255, 255, 1)',
               // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} \n {per|{d}%}  ',  //label 的内容
-              padding: [-4, -80],
+              // padding: [-24, -80],
+              padding: [10, -84, 0, -84],
               formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + '动用次数' + '：} {n|{c}} \n {per|' + '占比：' + '{d}%}  ',
               rich: {// 定义不同地方的文字的字体大小和颜色
                 a: {

@@ -7,37 +7,6 @@
         :fromNum="fromNum"
         :toNum="toNum"
       />
-      <!-- <p class="titlename">飞机</p>
-      <div class="hr">
-        <hr />
-        <div class="deom_hr"></div>
-        <hr />
-      </div>
-      <div class="table-head">
-        <div class="table-head-context">
-          <p class="table-head-title">型号总数</p>
-          <div class="table-head-value">
-            <span class="table-head-numvalue">{{
-              changeTotalNumberOfModels
-            }}</span>
-            <span class="table-head-strvalue">型</span>
-          </div>
-        </div>
-        <div class="table-head-context">
-          <p class="table-head-title">数量总数</p>
-          <div class="table-head-value">
-            <span class="table-head-numvalue">{{ changeTotalNumber }}</span>
-            <span class="table-head-strvalue">架</span>
-          </div>
-        </div>
-        <div class="table-head-context">
-          <p class="table-head-title">完好总数</p>
-          <div class="table-head-value">
-            <span class="table-head-numvalue">{{ changeStandNumber }}</span>
-            <span class="table-head-strvalue">架</span>
-          </div>
-        </div>
-      </div> -->
     </div>
     <div
       id="myChart_rose1"
@@ -72,7 +41,7 @@
 
         <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
       </div>
-      <div><right-child-moudle /></div>
+      <div><right-child-moudle :listItemsData="fromNum8" /></div>
     </div>
   </div>
 </template>
@@ -109,7 +78,11 @@ export default {
         { name: 'totalNumber', value: 0 },
         { name: 'standNumber', value: 0 }
       ],
-
+      fromNum8: [
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
+      ],
       toNum: [
         { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
@@ -202,11 +175,14 @@ export default {
             label: {
               // color: 'rgba(255, 255, 255, 1)',
               // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} \n {per|{d}%}  ',  //label 的内容
-              padding: [-4, -80],
-              formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + '动用次数' + '：}{c} \n {per|{d}%}  ',
+              padding: [10, -84, 0, -84],
+              formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + '动用次数' + '：}{n|{c}} \n {per|{d}%}  ',
               rich: {// 定义不同地方的文字的字体大小和颜色
                 a: {
-                  color: '#999',
+                  color: '#ffffff',
+                  fontSize: 17,
+                  fontFamily: 'Zhongheijian',
+                  // color: '#999',
                   lineHeight: 22,
                   align: 'left',
                   padding: [2, 4]
@@ -217,11 +193,22 @@ export default {
                   borderWidth: 0.5,
                   height: 0
                 },
+                n: {
+                  color: 'aqua',
+                  fontFamily: 'opposans',
+                  fontSize: 14
+                },
                 b: {
+                  color: 'white', // 字体颜色
+                  // fontSize: 10, // 字体大小
+                  fontFamily: 'opposans',
                   fontSize: 14,
                   lineHeight: 20
                 },
                 per: {
+                  color: 'white', // 字体颜色
+                  // fontSize: 10, // 字体大小
+                  fontFamily: 'opposans',
                   align: 'center',
                   width: '45%'
                   // color: '#eee',
