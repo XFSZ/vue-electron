@@ -437,7 +437,7 @@ export default {
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
             radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
+            // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
               //  饼图图形上的文本标签
@@ -479,7 +479,7 @@ export default {
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
             radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
+            // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
               //  饼图图形上的文本标签
@@ -521,7 +521,7 @@ export default {
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
             radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
+            // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
               //  饼图图形上的文本标签

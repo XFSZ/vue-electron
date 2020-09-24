@@ -111,7 +111,7 @@ export default {
               type: 'pie',
               center: ['40%', '40%'], // 饼图的圆心坐标
               radius: ['74%', '80%'],
-              avoidLabelOverlap: false,
+              // avoidLabelOverlap: false,
               hoverAnimation: false,
               label: {
               //  饼图图形上的文本标签
@@ -150,16 +150,13 @@ export default {
   font-family: "dinPro"; /* 这个名字可以自己定义 */
   src: url("../../../assets/font/DINPro-Bold.otf");
 }
+
 .items-list{
   margin-top: 4px;
   height: 540px;
   overflow: auto;
   margin-right: 10px;
-  /* overflow-y:scroll */
-  /* overflow: scroll; */
-  /* border-style: solid; 
-  border-width: 1px;
-  border-color: #1a2639; */
+
 }
 
 .scrollbar::-webkit-scrollbar {/*滚动条整体样式*/
@@ -207,14 +204,14 @@ export default {
   align-items: center;
 }
 .blank-img {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 
   /* margin-top: 10px; */
   margin-right: 4px;
 }
 .right-child-three {
-  margin-left: -30px;
+  margin-left: 30px;
 }
 .right-child-main {
   margin-left: 30px;

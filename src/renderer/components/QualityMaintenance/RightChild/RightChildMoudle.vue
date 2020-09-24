@@ -182,8 +182,8 @@ export default {
   align-items: center;
 }
 .blank-img {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 
   /* margin-top: 10px; */
   margin-right: 4px;

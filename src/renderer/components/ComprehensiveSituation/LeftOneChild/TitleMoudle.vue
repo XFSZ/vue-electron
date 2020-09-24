@@ -146,8 +146,8 @@ export default {
   src: url("../../../assets/font/Zhongheijian.ttf");
 }
 .blank-img {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 
   /* margin-top: 10px; */
 }
