@@ -40,7 +40,7 @@
 
         <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
       </div>
-      <div><right-child-moudle :listItemsData="fromNum8" /></div>
+      <div><right-child-moudle :listItemsData="fromNum8" :circleData="circleDatas" /></div>
     </div>
   </div>
 </template>
@@ -60,6 +60,7 @@ export default {
   },
   data() {
     return {
+      circleDatas: [],
       leftTitle1: '动用使用',
       leftTitle2: '弹药',
       leftTitle3: '吊舱',
@@ -86,7 +87,16 @@ export default {
         { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
         { name: 'toStandNumber', value: 111574 }
-      ]
+      ],
+      roseData: [
+        { value: 127, name: '作战备战' },
+        { value: 59, name: '非战争军事行动' },
+        { value: 67, name: '演练演习' },
+        { value: 87, name: '激动转场' },
+        { value: 111, name: '日常训练' }
+      ].sort(function(a, b) {
+        return a.value - b.value;
+      })
     };
   },
   computed: {
@@ -120,27 +130,8 @@ export default {
       let myChart6 = this.$echarts.init(
         document.getElementById('myChart_rose1')
       );
-      let datas = [
-        { value: 127, name: '作战备战' },
-        { value: 59, name: '非战争军事行动' },
-        { value: 67, name: '演练演习' },
-        { value: 87, name: '激动转场' },
-        { value: 111, name: '日常训练' }
-      ].sort(function(a, b) {
-        return a.value - b.value;
-      });
       // 绘制图表
       myChart6.setOption({
-        // backgroundColor: '#2c343c',
-
-        // title: {
-        //   text: 'Customized Pie',
-        //   left: 'center',
-        //   top: 20,
-        //   textStyle: {
-        //     color: '#ccc'
-        //   }
-        // },
 
         tooltip: {
           trigger: 'item',
@@ -161,15 +152,7 @@ export default {
             type: 'pie',
             radius: '40%',
             center: ['50%', '50%'],
-            data: [
-              { value: 127, name: '作战备战' },
-              { value: 59, name: '非战争军事行动' },
-              { value: 67, name: '演练演习' },
-              { value: 87, name: '激动转场' },
-              { value: 111, name: '日常训练' }
-            ].sort(function(a, b) {
-              return a.value - b.value;
-            }),
+            data: this.roseData,
             roseType: 'radius',
             label: {
               // color: 'rgba(255, 255, 255, 1)',

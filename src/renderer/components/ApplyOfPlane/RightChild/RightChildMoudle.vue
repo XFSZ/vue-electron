@@ -44,9 +44,13 @@ import { TweenLite } from 'gsap';
 import BlankImg from '../../../assets/block.png';
 export default {
   name: 'rightchildmoudle',
-  props: ['listItemsData'],
+  props: ['listItemsData', 'circleData'],
+  created() {
+
+  },
   data() {
     return {
+
       blankUrl: BlankImg,
       fromNum: [
         { name: 'totalNumberOfModels', value: 0 },
@@ -73,6 +77,7 @@ export default {
     }
   },
   mounted() {
+    // this.circleData = this.circleDatas;
     this.drawLine();
     this.set();
   },
@@ -126,26 +131,7 @@ export default {
                   show: false
                 }
               },
-              data: [
-                {
-                  value: 86,
-                  name: '试飞进度',
-                  label: {
-                    normal: {
-                      show: true
-                    }
-                  }
-                },
-                {
-                  value: 14,
-                  name: '损坏率',
-                  label: {
-                    normal: {
-                      show: false
-                    }
-                  }
-                }
-              ]
+              data: this.circleData
             }
           ]
         });

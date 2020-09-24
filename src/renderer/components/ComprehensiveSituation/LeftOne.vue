@@ -204,20 +204,189 @@ export default {
       toNum3: [ { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
         { name: 'toStandNumber', value: 111574 }],
-      echarts1: {xdata: [], ydata: []},
-      echarts2: {xdata: [], ydata: []},
-      echarts3: {xdata: [], ydata: []}
-      // fromNum: [
-      //   { name: 'totalNumberOfModels', value: 0 },
-      //   { name: 'totalNumber', value: 0 },
-      //   { name: 'standNumber', value: 0 }
-      // ],
 
-      // toNum: [
-      //   { name: 'toTotalNumberOfModels', value: 157 },
-      //   { name: 'toTotalNumber', value: 132461 },
-      //   { name: 'toStandNumber', value: 111574 }
-      // ]
+      barchart: {xdata: [62.7, 30, 62.7, 17.2, 39.8], ydata: ['歼击机', '轰炸机', '运输机', '无人机', '特种级']},
+      circle_chart_one_1: [
+        {
+          value: 75,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 25,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circle_chart_one_2: [
+        {
+          value: 74,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 26,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circle_chart_one_3: [
+        {
+          value: 86,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circle_chart_one_4: [
+        {
+          value: 74,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 26,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circle_chart_one_5: [
+        {
+          value: 74,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 26,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circle_chart_two_1: [
+        {
+          value: 86,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circle_chart_two_2: [
+        {
+          value: 86,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circle_chart_two_3: [
+        {
+          value: 86,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circle_chart_two_4: [
+        {
+          value: 86,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ]
+
     };
   },
   computed: {},
@@ -232,13 +401,6 @@ export default {
       // 绘制图表
       myChart.resize;
       myChart.setOption({
-        // tooltip: {
-        //   trigger: 'axis',
-        //   axisPointer: {
-        //     type: 'shadow'
-        //   }
-        // },
-
         grid: {
           left: '3%',
           right: '4%',
@@ -267,7 +429,7 @@ export default {
         yAxis: {
           type: 'category',
 
-          data: ['歼击机', '轰炸机', '运输机', '无人机', '特种级'],
+          data: this.barchart.ydata,
           axisLabel: {
             show: true,
             textStyle: {
@@ -344,7 +506,7 @@ export default {
               // shadowOffsetX: 50,
               // shadowOffsetY: 20
             },
-            data: [62.7, 30, 62.7, 17.2, 39.8]
+            data: this.barchart.xdata
           }
         ]
       });
@@ -386,26 +548,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 75,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 25,
-                name: '正常',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_one_1
           }
         ]
       });
@@ -447,26 +590,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 74,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 26,
-                name: '正常',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_one_2
           }
         ]
       });
@@ -508,26 +632,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_one_3
           }
         ]
       });
@@ -569,26 +674,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_one_4
           }
         ]
       });
@@ -630,26 +716,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_one_5
           }
         ]
       });
@@ -691,26 +758,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_two_1
           }
         ]
       });
@@ -752,26 +800,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_two_2
           }
         ]
       });
@@ -813,26 +842,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_two_3
           }
         ]
       });
@@ -873,26 +883,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circle_chart_two_4
           }
         ]
       });
