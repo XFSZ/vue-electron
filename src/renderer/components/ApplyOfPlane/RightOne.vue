@@ -13,7 +13,6 @@
       :style="{
         width: '540px',
         height: '468px',
-       
       }"
     ></div>
     <div class="text-table">
@@ -176,8 +175,12 @@ export default {
               // color: 'rgba(255, 255, 255, 1)',
               // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} \n {per|{d}%}  ',  //label 的内容
               padding: [10, -84, 0, -84],
-              formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + '动用次数' + '：}{n|{c}} \n {per|{d}%}  ',
-              rich: {// 定义不同地方的文字的字体大小和颜色
+              formatter:
+                '{a|{b}}{abg|}\n{hr|}\n  {b|' +
+                '动用次数' +
+                '：}{n|{c}} \n {per|{d}%}  ',
+              rich: {
+                // 定义不同地方的文字的字体大小和颜色
                 a: {
                   color: '#ffffff',
                   fontSize: 17,
@@ -217,7 +220,6 @@ export default {
                   // borderRadius: 2
                 }
               }
-
             },
             labelLine: {
               lineStyle: {
@@ -259,8 +261,7 @@ export default {
 .title-table-head-main {
   display: flex;
   flex-direction: row;
-  align-items: center
-
+  align-items: center;
 }
 .blank-img {
   width: 4px;
@@ -287,6 +288,9 @@ export default {
   flex-direction: row;
   align-items: center;
   height: 60px;
+  margin-top: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
   justify-content: space-evenly;
   background-color: #061d3f;
 }

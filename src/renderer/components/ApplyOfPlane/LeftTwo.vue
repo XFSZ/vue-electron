@@ -636,6 +636,7 @@ export default {
   color: white;
 }
 .table-bottom {
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
 }
@@ -688,6 +689,7 @@ export default {
 }
 .table-head-context {
   /* flex: 1; */
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
