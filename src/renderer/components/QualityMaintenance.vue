@@ -82,7 +82,49 @@ export default {
       titleRightUrl: TitleRightImg,
       blackUrl: BlankImg,
       // mainLeftBtnUrl: MainLeftBtnImg,
-      search_text: ''
+      search_text: '',
+      right_other_chart_3: {
+        legendData: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎'],
+        xdata: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+        seriesData: [
+          {
+
+            name: '邮件营销',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      }
     };
   },
   // 检测路由变化
@@ -133,7 +175,7 @@ export default {
             fontSize: 8,
             color: '#ffffff'
           },
-          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+          data: this.right_other_chart_3.legendData
         },
         grid: {
           left: '3%',
@@ -150,7 +192,7 @@ export default {
         xAxis: {
           type: 'category',
           boundaryGap: false,
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+          data: this.right_other_chart_3.xdata
         },
         yAxis: {
           splitLine: {
@@ -166,53 +208,10 @@ export default {
           },
           type: 'value'
         },
-        series: [
-          {
-
-            name: '邮件营销',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [120, 132, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '联盟广告',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [220, 182, 191, 234, 290, 330, 310]
-          },
-          {
-            name: '视频广告',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [150, 232, 201, 154, 190, 330, 410]
-          },
-          {
-            name: '直接访问',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [320, 332, 301, 334, 390, 330, 320]
-          },
-          {
-            name: '搜索引擎',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-          }
-        ]
+        series: this.right_other_chart_3.seriesData
       });
     }
-    // setCurrentRoute() {
-    //   this.activeIndex = this.$route.path; // 通过他就可以监听到当前路由状态并激活当前菜单
-    // },
-    // handleSelect(key, keyPath) {
-    //   this.$router.push();
-    //   console.log(key, keyPath);
-    // }
+
   },
   created() {
     //  this.setCurrentRoute();

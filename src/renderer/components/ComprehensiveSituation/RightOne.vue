@@ -11,9 +11,9 @@
       :style="{ width: '500px', height: '368px', marginTop: '30px' ,   marginBottom:'20px', marginLeft: '30px' ,marginRight: '60px'}"
     ></div>
    <top-title :imgUrl="flyUrl" :titleName="toptitleName1"/>
-   <right-table-moudle :indexkey="m1" :titleName="titlename1"/>
-   <right-table-moudle :indexkey="m2" :titleName="titlename2"/>
-   <right-table-moudle :indexkey="m3" :titleName="titlename3"/>
+   <right-table-moudle :indexkey="m1" :titleName="titlename1" :circleData="circleData"/>
+   <right-table-moudle :indexkey="m2" :titleName="titlename2" :circleData="circleData"/>
+   <right-table-moudle :indexkey="m3" :titleName="titlename3" :circleData="circleData"/>
   </div>
 </template>
 
@@ -69,6 +69,26 @@ export default {
       totalNumber1: 18713,
       totalNumber2: 4971,
       totalNumber3: 1987,
+      circleData: [
+        {
+          value: 86,
+          name: '试飞进度',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '损坏率',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
       fromNum1: [
         { name: 'totalNumberOfModels', value: 0 },
         { name: 'totalNumber', value: 0 },
@@ -93,20 +113,8 @@ export default {
       toNum3: [ { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
         { name: 'toStandNumber', value: 111574 }],
-      echarts1: {xdata: [], ydata: []},
-      echarts2: {xdata: [], ydata: []},
-      echarts3: {xdata: [], ydata: []}
-      // fromNum: [
-      //   { name: 'totalNumberOfModels', value: 0 },
-      //   { name: 'totalNumber', value: 0 },
-      //   { name: 'standNumber', value: 0 }
-      // ],
+      barData: {xdata: [62.7, 30, 62.7, 17.2, 39.8], ydata: ['歼击机', '轰炸机', '运输机', '无人机', '特种级']}
 
-      // toNum: [
-      //   { name: 'toTotalNumberOfModels', value: 157 },
-      //   { name: 'toTotalNumber', value: 132461 },
-      //   { name: 'toStandNumber', value: 111574 }
-      // ]
     };
   },
   computed: {},
@@ -121,12 +129,7 @@ export default {
       // 绘制图表
       // myChart.resize;
       right_chart_one_l1.setOption({
-        // tooltip: {
-        //   trigger: 'axis',
-        //   axisPointer: {
-        //     type: 'shadow'
-        //   }
-        // },
+
         title: {
           show: true,
           text: '不完好数量分布',
@@ -166,7 +169,7 @@ export default {
         yAxis: {
           type: 'category',
 
-          data: ['歼击机', '轰炸机', '运输机', '无人机', '特种级'],
+          data: this.barData.ydata,
           axisLabel: {
             show: true,
             textStyle: {
@@ -197,14 +200,7 @@ export default {
               }
             },
             showBackground: true,
-            // itemStyle: {
-            //   normal: {
-            //     color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
-            //       { offset: 0, color: '#000' },
-            //       { offset: 0.3, color: '#888' },
-            //       { offset: 1, color: '#ddd' }
-            //     ])
-            //   }},
+
             itemStyle: {
               normal: {
                 // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
@@ -238,11 +234,9 @@ export default {
                 { offset: 0.2, color: 'rgba(172,172,172,0.5)' },
                 { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
-              // color: 'rgba(0, 220, 220, 0.8)'
-              // shadowOffsetX: 50,
-              // shadowOffsetY: 20
+
             },
-            data: [62.7, 30, 62.7, 17.2, 39.8]
+            data: this.barData.xdata
           }
         ]
       });

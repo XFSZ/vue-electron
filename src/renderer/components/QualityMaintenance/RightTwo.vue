@@ -148,124 +148,27 @@ export default {
         { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
         { name: 'toStandNumber', value: 111574 }
-      ]
-    };
-  },
-  computed: {
-    changeTotalNumberOfModels() {
-      return this.fromNum[0].value.toFixed(0);
-    },
-    changeTotalNumber() {
-      return this.fromNum[1].value.toFixed(0);
-    },
-    changeStandNumber() {
-      return this.fromNum[2].value.toFixed(0);
-    }
-  },
-  mounted() {
-    this.drawLine();
-    this.set();
-  },
-  methods: {
-    set() {
-      for (let i = 0; i < this.toNum.length; i++) {
-        this.setLite(this.fromNum[i], this.toNum[i].value);
-      }
-    },
-    setLite(obj, val) {
-      TweenLite.to(obj, 2, {
-        value: val
-      });
-    },
-    drawLine() {
-      // var that = this;
-      let myChart1 = this.$echarts.init(
-        document.getElementById('right-two-chart_1')
-      );
-      // 绘制图表
-      myChart1.setOption({
-        title: {
-          show: true,
-          text: '到寿飞机类别分布',
-          left: 'center', // 主副标题的水平位置
-          // top: 'center', // 主副标题的垂直位置
-          padding: 34, // 标题内边距
-          textStyle: {
-            color: '#feffff',
-            fontFamily: 'Zhongheijian',
-            fontSize: 14
-          }
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
-        },
-        grid: {x: '120px', width: '60%', height: '70%'},
-        // grid: {
-        //   left: '3%',
-        //   right: '4%',
-        //   bottom: '3%',
-        //   containLabel: true
-        // },
-        legend: {
-          right: '10%',
-          itemWidth: 20,
-          itemHeight: 8,
-          textStyle: {
-            fontFamily: 'opposans',
-            fontSize: 8,
-            color: '#ffffff'
-          },
-          padding: [54, 0, 0, 0],
-          data: ['直接访问', '邮件营销', '联盟广告']
-        },
-        xAxis: {
-          axisLabel: {
-            show: true,
-            textStyle: {
-              fontFamily: 'opposans',
-              color: 'rgba(170,170,170,0.5)'
-            }
-          },
-          type: 'value',
-          // max: 100,
-          // min: 0,
-          // interval: 20,
-          // boundaryGap: [0, 0.01],
-          splitLine: {
-            // 网格线
-            show: false
-          }
-        },
-        yAxis: {
-          type: 'category',
-          data: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹'],
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: '#ffffff',
-              fontSize: 17,
-              fontFamily: 'Zhongheijian'
-            }
-          },
-          axisTick: {
-            // y轴刻度线
-            show: false
-          }
-        },
-
-        series: [
+      ],
+      legendDatas: [{name: '一等值班', value: '100'}, {name: '二等值班', value: '100'}, {name: '三等值班', value: '100'}],
+      circleData1: [
+        { value: 40, name: '' },
+        { value: 36, name: '' },
+        { value: 24, name: '' }
+      ],
+      circleData2: [
+        { value: 40, name: '一等值班' },
+        { value: 36, name: '二等值班' },
+        { value: 24, name: '三等值班' }
+      ],
+      right_two_chart_1_Data: {
+        legendData: ['直接访问', '邮件营销', '联盟广告'],
+        ydata: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹'],
+        seriesData: [
           {
             barWidth: 8,
             name: '直接访问',
             type: 'bar',
             stack: '总量',
-            // label: {
-            //   show: true,
-            //   position: 'insideRight'
-            // },
             itemStyle: {
               color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
                 offset: 0,
@@ -339,6 +242,206 @@ export default {
             data: [220, 182, 191, 234, 290, 330, 310]
           }
         ]
+      },
+      right_two_chart_2_Data: {
+        legendData: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎'],
+        xdata: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+        seriesData: [
+          {
+            name: '邮件营销',
+            type: 'line',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      },
+      right_two_c1_Data: [
+        {
+          value: 75,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 25,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      right_two_c2_Data: [
+        {
+          value: 74,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 16,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      right_two_c3_Data: [
+        {
+          value: 84,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 16,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ]
+    };
+  },
+  computed: {
+    changeTotalNumberOfModels() {
+      return this.fromNum[0].value.toFixed(0);
+    },
+    changeTotalNumber() {
+      return this.fromNum[1].value.toFixed(0);
+    },
+    changeStandNumber() {
+      return this.fromNum[2].value.toFixed(0);
+    }
+  },
+  mounted() {
+    this.drawLine();
+    this.set();
+  },
+  methods: {
+    set() {
+      for (let i = 0; i < this.toNum.length; i++) {
+        this.setLite(this.fromNum[i], this.toNum[i].value);
+      }
+    },
+    setLite(obj, val) {
+      TweenLite.to(obj, 2, {
+        value: val
+      });
+    },
+    drawLine() {
+      // var that = this;
+      let myChart1 = this.$echarts.init(
+        document.getElementById('right-two-chart_1')
+      );
+      // 绘制图表
+      myChart1.setOption({
+        title: {
+          show: true,
+          text: '到寿飞机类别分布',
+          left: 'center', // 主副标题的水平位置
+          // top: 'center', // 主副标题的垂直位置
+          padding: 34, // 标题内边距
+          textStyle: {
+            color: '#feffff',
+            fontFamily: 'Zhongheijian',
+            fontSize: 14
+          }
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
+          }
+        },
+        grid: {x: '120px', width: '60%', height: '70%'},
+
+        legend: {
+          right: '10%',
+          itemWidth: 20,
+          itemHeight: 8,
+          textStyle: {
+            fontFamily: 'opposans',
+            fontSize: 8,
+            color: '#ffffff'
+          },
+          padding: [54, 0, 0, 0],
+          data: this.right_two_chart_1_Data.legendData
+        },
+        xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
+          type: 'value',
+          // max: 100,
+          // min: 0,
+          // interval: 20,
+          // boundaryGap: [0, 0.01],
+          splitLine: {
+            // 网格线
+            show: false
+          }
+        },
+        yAxis: {
+          type: 'category',
+          data: this.right_two_chart_1_Data.ydata,
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#ffffff',
+              fontSize: 17,
+              fontFamily: 'Zhongheijian'
+            }
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
+          }
+        },
+
+        series: this.right_two_chart_1_Data.seriesData
 
       });
 
@@ -371,20 +474,10 @@ export default {
             color: '#ffffff'
           },
           padding: [40, 0, 0, 0],
-          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+          data: this.right_two_chart_2_Data.legendData
         },
         grid: {x: '116px', width: '60%', height: '70%'},
-        // grid: {
-        //   left: '3%',
-        //   right: '4%',
-        //   bottom: '3%',
-        //   containLabel: true
-        // },
-        // toolbox: {
-        //   feature: {
-        //     saveAsImage: {}
-        //   }
-        // },
+
         xAxis: {
           axisLabel: {
             show: true,
@@ -403,7 +496,7 @@ export default {
           },
           type: 'category',
           boundaryGap: false,
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+          data: this.right_two_chart_2_Data.xdata
         },
         yAxis: {
           axisLabel: {
@@ -426,38 +519,7 @@ export default {
           },
           type: 'value'
         },
-        series: [
-          {
-            name: '邮件营销',
-            type: 'line',
-            stack: '总量',
-            data: [120, 132, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '联盟广告',
-            type: 'line',
-            stack: '总量',
-            data: [220, 182, 191, 234, 290, 330, 310]
-          },
-          {
-            name: '视频广告',
-            type: 'line',
-            stack: '总量',
-            data: [150, 232, 201, 154, 190, 330, 410]
-          },
-          {
-            name: '直接访问',
-            type: 'line',
-            stack: '总量',
-            data: [320, 332, 301, 334, 390, 330, 320]
-          },
-          {
-            name: '搜索引擎',
-            type: 'line',
-            stack: '总量',
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-          }
-        ]
+        series: this.right_two_chart_2_Data.seriesData
       });
 
       // 基于准备好的dom，初始化echarts实例
@@ -497,26 +559,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 75,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 25,
-                name: '正常',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.right_two_c1_Data
           }
         ]
       });
@@ -558,26 +601,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 74,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 26,
-                name: '正常',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.right_two_c2_Data
           }
         ]
       });
@@ -619,26 +643,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.right_two_c3_Data
           }
         ]
       });
@@ -647,6 +652,7 @@ export default {
         document.getElementById('right-two_tc4')
       );
       let datas = ['一等值班', '二等值班', '三等值班'];
+      let legendDatas = this.legendDatas;
       // 绘制图表
       myChart_c4.setOption({
         tooltip: {
@@ -666,31 +672,21 @@ export default {
           right: 8,
           // top: 8,
           bottom: 4,
-          //   left: 5,
-          //   position: [180, 10],
-          data: ['一等值班', '二等值班', '三等值班'],
-          //   textStyle: {
-          //     // 图例文字的样式
-          //     // color: '#333', // 文字颜色
-          //     fontSize: 12 // 文字大小
-          //   }
+
           formatter: function(name) {
             let seriesObj;
-            for (let i = 0; i < datas.length; i++) {
-              if (datas[i] === name) {
-                seriesObj = datas[i];
+            for (let i = 0; i < legendDatas.length; i++) {
+              if (legendDatas[i].name === name) {
+                seriesObj = legendDatas[i].value;
                 break;
               }
             }
             var arr = [
-              '{a|' + name + '}' + '\n {b|' + '数量   ' + '3158' + '具' + '}'
+              '{a|' + name + '}' + '\n {b|' + '数量   ' + seriesObj + '具' + '}'
             ];
             return arr;
           },
-          //   formatter: [
-          //     '{a|}',
-          //     '{b|这段文本采用样式b}这段用默认样式{x|这段用样式x}'
-          //   ].join('\n'),
+
           textStyle: {
             rich: {
               a: {
@@ -762,11 +758,7 @@ export default {
                 borderColor: 'rgba(0, 0, 0, 0.5)'
               }
             },
-            data: [
-              { value: 40, name: '' },
-              { value: 36, name: '' },
-              { value: 24, name: '' }
-            ]
+            data: this.circleData1
           },
           {
             name: '值班兵力',
@@ -810,11 +802,7 @@ export default {
                 shadowColor: 'rgba(0, 0, 0, 0.5)'
               }
             },
-            data: [
-              { value: 40, name: '一等值班' },
-              { value: 36, name: '二等值班' },
-              { value: 24, name: '三等值班' }
-            ]
+            data: this.circleData2
           }
         ]
       });

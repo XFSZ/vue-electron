@@ -105,7 +105,94 @@ export default {
         { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
         { name: 'toStandNumber', value: 111574 }
-      ]
+      ],
+      right_one_chart_1_Data: {
+        xdata: [55.1, 62.7, 17.2, 39.8],
+        ydata: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹']
+      },
+      right_one_chart_2_Data: {
+        legendData: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎'],
+        xdata: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+        seriesData: [
+          {
+            name: '邮件营销',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      },
+      right_one_chart_3_Data: {
+        legendData: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎'],
+        xdata: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+        seriesData: [
+          {
+            name: '邮件营销',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '联盟广告',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '视频广告',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '直接访问',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '搜索引擎',
+            type: 'line',
+            symbol: 'none',
+            stack: '总量',
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      }
+
     };
   },
   computed: {
@@ -160,12 +247,7 @@ export default {
           }
         },
         grid: {x: '120px', width: '60%', height: '70%'},
-        // grid: {
-        //   left: '3%',
-        //   right: '4%',
-        //   bottom: '3%',
-        //   containLabel: true
-        // },
+
         xAxis: {
           axisLabel: {
             show: true,
@@ -186,7 +268,7 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹'],
+          data: this.right_one_chart_1_Data.ydata,
           axisLabel: {
             show: true,
             textStyle: {
@@ -253,7 +335,7 @@ export default {
                 { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
             },
-            data: [55.1, 62.7, 17.2, 39.8]
+            data: this.right_one_chart_1_Data.xdata
           }
         ]
       });
@@ -288,20 +370,11 @@ export default {
             color: '#ffffff'
           },
           padding: [40, 0, 0, 0],
-          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+          data: this.right_one_chart_2_Data.legendData
         },
-        // grid: {
-        //   left: '3%',
-        //   right: '4%',
-        //   bottom: '3%',
-        //   containLabel: true
-        // },
+
         grid: {x: '120px', width: '60%', height: '70%'},
-        // toolbox: {
-        //   feature: {
-        //     saveAsImage: {}
-        //   }
-        // },
+
         xAxis: {
           axisLabel: {
             show: true,
@@ -312,7 +385,7 @@ export default {
           },
           type: 'category',
           boundaryGap: false,
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+          data: this.right_one_chart_2_Data.xdata
         },
         yAxis: {
           axisLabel: {
@@ -324,43 +397,7 @@ export default {
           },
           type: 'value'
         },
-        series: [
-          {
-            name: '邮件营销',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [120, 132, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '联盟广告',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [220, 182, 191, 234, 290, 330, 310]
-          },
-          {
-            name: '视频广告',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [150, 232, 201, 154, 190, 330, 410]
-          },
-          {
-            name: '直接访问',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [320, 332, 301, 334, 390, 330, 320]
-          },
-          {
-            name: '搜索引擎',
-            type: 'line',
-            symbol: 'none',
-            stack: '总量',
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-          }
-        ]
+        series: this.right_one_chart_2_Data.seriesData
       });
 
       let myChart3 = this.$echarts.init(
@@ -386,20 +423,10 @@ export default {
         legend: {
           show: false,
           padding: [40, 0, 0, 0],
-          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+          data: this.right_one_chart_3_Data.legendData
         },
         grid: {x: '120px', width: '60%', height: '70%'},
-        // grid: {
-        //   left: '3%',
-        //   right: '4%',
-        //   bottom: '3%',
-        //   containLabel: true
-        // },
-        // toolbox: {
-        //   feature: {
-        //     saveAsImage: {}
-        //   }
-        // },
+
         xAxis: {
           axisLabel: {
             show: true,
@@ -410,7 +437,7 @@ export default {
           },
           type: 'category',
           boundaryGap: false,
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+          data: this.right_one_chart_3_Data.xdata
         },
         yAxis: {
           axisLabel: {
@@ -433,38 +460,7 @@ export default {
           },
           type: 'value'
         },
-        series: [
-          {
-            name: '邮件营销',
-            type: 'line',
-            stack: '总量',
-            data: [120, 132, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '联盟广告',
-            type: 'line',
-            stack: '总量',
-            data: [220, 182, 191, 234, 290, 330, 310]
-          },
-          {
-            name: '视频广告',
-            type: 'line',
-            stack: '总量',
-            data: [150, 232, 201, 154, 190, 330, 410]
-          },
-          {
-            name: '直接访问',
-            type: 'line',
-            stack: '总量',
-            data: [320, 332, 301, 334, 390, 330, 320]
-          },
-          {
-            name: '搜索引擎',
-            type: 'line',
-            stack: '总量',
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
-          }
-        ]
+        series: this.right_one_chart_3_Data.seriesData
       });
     }
   }

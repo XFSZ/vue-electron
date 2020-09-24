@@ -35,7 +35,6 @@
 
 <script>
 import LeftOne from './SupplyGuarantee/LeftOne';
-import LeftTwo from './SupplyGuarantee/LeftTwo';
 import RightOne from './SupplyGuarantee/RightOne';
 import RightTwo from './SupplyGuarantee/RightTwo';
 import TaskImg from '../assets/task.png';
@@ -52,7 +51,7 @@ export default {
   name: 'supply-guarantee',
   components: {
     LeftOne,
-    LeftTwo,
+
     RightOne,
     RightTwo
   },

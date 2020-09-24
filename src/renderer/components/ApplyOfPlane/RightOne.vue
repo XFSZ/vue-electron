@@ -60,7 +60,26 @@ export default {
   },
   data() {
     return {
-      circleDatas: [],
+      circleDatas: [
+        {
+          value: 86,
+          name: '试飞进度',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '损坏率',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
       leftTitle1: '动用使用',
       leftTitle2: '弹药',
       leftTitle3: '吊舱',

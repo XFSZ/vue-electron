@@ -17,9 +17,9 @@
           </div>
         </div>
     <div class="table-col">
-      <right-child-moudle :indexkey="1" />
+      <right-child-moudle :indexkey="1" :circleData="circleData" />
       </div>
-    <div class="table-col"><right-child-moudle :indexkey="2" /></div>
+    <div class="table-col"><right-child-moudle :indexkey="2"  :circleData="circleData"/></div>
 
         <top-title :imgUrl="gmUrl" :titleName="toptitlename2" />
         <div class="right-text-table-top-one">
@@ -37,8 +37,8 @@
             </div>
           </div>
         </div>
-    <div class="table-col"><right-child-moudle :indexkey="3" /></div>
-    <div class="table-col"><right-child-moudle :indexkey="4"/></div>
+    <div class="table-col"><right-child-moudle :indexkey="3" :circleData="circleData" /></div>
+    <div class="table-col"><right-child-moudle :indexkey="4" :circleData="circleData"/></div>
 
         <top-title :imgUrl="radarUrl" :titleName="toptitlename3" />
         <div class="right-text-table-top-one">
@@ -56,8 +56,8 @@
             </div>
           </div>
         </div>
-    <div class="table-col"><right-child-moudle :indexkey="5"/></div>
-    <div class="table-col"><right-child-moudle :indexkey="6"/></div>
+    <div class="table-col"><right-child-moudle :indexkey="5" :circleData="circleData"/></div>
+    <div class="table-col"><right-child-moudle :indexkey="6" :circleData="circleData"/></div>
   </div>
 </template>
 
@@ -157,20 +157,27 @@ export default {
         { name: 'toTotalNumber', value: 132461 },
         { name: 'toStandNumber', value: 111574 }
       ],
-      echarts1: { xdata: [], ydata: [] },
-      echarts2: { xdata: [], ydata: [] },
-      echarts3: { xdata: [], ydata: [] }
-      // fromNum: [
-      //   { name: 'totalNumberOfModels', value: 0 },
-      //   { name: 'totalNumber', value: 0 },
-      //   { name: 'standNumber', value: 0 }
-      // ],
+      circleData: [
+        {
+          value: 86,
+          name: '试飞进度',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '损坏率',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ]
 
-      // toNum: [
-      //   { name: 'toTotalNumberOfModels', value: 157 },
-      //   { name: 'toTotalNumber', value: 132461 },
-      //   { name: 'toStandNumber', value: 111574 }
-      // ]
     };
   },
 

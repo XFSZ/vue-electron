@@ -44,7 +44,7 @@ import { TweenLite } from 'gsap';
 import BlankImg from '../../../assets/block.png';
 export default {
   name: 'rightchildmoudle',
-  props: ['indexkey'],
+  props: ['indexkey', 'circleData'],
   data() {
     return {
       blankUrl: BlankImg,
@@ -125,26 +125,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '试飞进度',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circleData
           }
         ]
       });
