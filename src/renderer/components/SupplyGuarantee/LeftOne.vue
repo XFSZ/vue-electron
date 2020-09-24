@@ -17,9 +17,9 @@
           </div>
         </div>
     <div class="table-col">
-      <right-child-moudle :indexkey="1" :circleData="circleData" />
+      <right-child-moudle  :indexkey="1" :listItemsData="listItemsData1" :circleData="circleData" />
       </div>
-    <div class="table-col"><right-child-moudle :indexkey="2"  :circleData="circleData"/></div>
+ 
 
         <top-title :imgUrl="gmUrl" :titleName="toptitlename2" />
         <div class="right-text-table-top-one">
@@ -37,8 +37,8 @@
             </div>
           </div>
         </div>
-    <div class="table-col"><right-child-moudle :indexkey="3" :circleData="circleData" /></div>
-    <div class="table-col"><right-child-moudle :indexkey="4" :circleData="circleData"/></div>
+    <div class="table-col"><right-child-moudle :indexkey="2" :listItemsData="listItemsData2" :circleData="circleData" /></div>
+
 
         <top-title :imgUrl="radarUrl" :titleName="toptitlename3" />
         <div class="right-text-table-top-one">
@@ -56,8 +56,8 @@
             </div>
           </div>
         </div>
-    <div class="table-col"><right-child-moudle :indexkey="5" :circleData="circleData"/></div>
-    <div class="table-col"><right-child-moudle :indexkey="6" :circleData="circleData"/></div>
+    <div class="table-col"><right-child-moudle :indexkey="3"  :listItemsData="listItemsData3" :circleData="circleData"/></div>
+   
   </div>
 </template>
 
@@ -127,6 +127,21 @@ export default {
       totalNumber1: 18713,
       totalNumber2: 4971,
       totalNumber3: 1987,
+      listItemsData1: [
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
+      ],
+      listItemsData2: [
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
+      ],
+      listItemsData3: [
+        { name: 'totalNumberOfModels', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'standNumber', value: 0 }
+      ],
       fromNum1: [
         { name: 'totalNumberOfModels', value: 0 },
         { name: 'totalNumber', value: 0 },
