@@ -105,7 +105,20 @@ export default {
         { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
         { name: 'toStandNumber', value: 111574 }
-      ]
+      ],
+      barData1: {xdata: [62.7, 30, 62.7, 17.2, 39.8], ydata: ['一代', '二代', '三代', '四代', '弹炮系统']},
+      barData2: {xdata: [55.1, 62.7, 17.2, 39.8], ydata: ['一代', '二代', '三代', '四代']},
+      circleData1: [
+        { value: 40, name: '' },
+        { value: 36, name: '' },
+        { value: 24, name: '' }
+      ],
+      circleData2: [
+        { value: 40, name: '一等值班' },
+        { value: 36, name: '二等值班' },
+        { value: 24, name: '三等值班' }
+      ],
+      legendDatas: [{name: '一等值班', value: '100'}, {name: '二等值班', value: '100'}, {name: '三等值班', value: '100'}]
     };
   },
   computed: {
@@ -175,7 +188,8 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ['弹炮系统', '四代', '三代', '二代', '一代'],
+          data: this.barData1.ydata.reverse(),
+          // inverse: true,
           axisLabel: {
             show: true,
             textStyle: {
@@ -239,15 +253,11 @@ export default {
                 { offset: 0.2, color: 'rgba(172,172,172,0.5)' },
                 { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
-              // color: 'rgba(0, 220, 220, 0.8)'
-              // shadowOffsetX: 50,
-              // shadowOffsetY: 20
             },
-            data: [62.7, 30, 62.7, 17.2, 39.8]
+            data: this.barData1.xdata
           }
         ]
       });
-      // TweenLite.fromTo('#myChart', 3, {width: '50px'}, {width: '100px'});
       // 基于准备好的dom，初始化echarts实例
       let myChart1 = this.$echarts.init(
         document.getElementById('myChart_bar2')
@@ -286,7 +296,7 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ['四代', '三代', '二代', '一代'],
+          data: this.barData2.ydata.reverse(),
           axisLabel: {
             show: true,
             textStyle: {
@@ -351,7 +361,7 @@ export default {
                 { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
             },
-            data: [55.1, 62.7, 17.2, 39.8]
+            data: this.barData2.xdata
           }
         ]
       });
@@ -359,7 +369,7 @@ export default {
       let myChart_c1 = this.$echarts.init(
         document.getElementById('myChart_tc1')
       );
-      let datas = ['一等值班', '二等值班', '三等值班'];
+      let legendDatas = this.legendDatas;
       // 绘制图表
       myChart_c1.setOption({
         tooltip: {
@@ -382,28 +392,22 @@ export default {
           //   left: 5,
           //   position: [180, 10],
           data: ['一等值班', '二等值班', '三等值班'],
-          //   textStyle: {
-          //     // 图例文字的样式
-          //     // color: '#333', // 文字颜色
-          //     fontSize: 12 // 文字大小
-          //   }
+
+          // formatter: '{a| {name} }\n {b|' + '次数   ' + '100' + '次' + '}',
           formatter: function(name) {
             let seriesObj;
-            for (let i = 0; i < datas.length; i++) {
-              if (datas[i] === name) {
-                seriesObj = datas[i];
+            for (let i = 0; i < legendDatas.length; i++) {
+              if (legendDatas[i].name === name) {
+                seriesObj = legendDatas[i].value;
                 break;
               }
             }
             var arr = [
-              '{a|' + name + '}' + '\n {b|' + '次数   ' + '100' + '次' + '}'
+              '{a|' + name + '}' + '\n {b|' + '数量   ' + seriesObj + '具' + '}'
             ];
             return arr;
           },
-          //   formatter: [
-          //     '{a|}',
-          //     '{b|这段文本采用样式b}这段用默认样式{x|这段用样式x}'
-          //   ].join('\n'),
+
           textStyle: {
             rich: {
               a: {
@@ -463,11 +467,7 @@ export default {
                 borderColor: 'rgba(0, 0, 0, 0.5)'
               }
             },
-            data: [
-              { value: 40, name: '' },
-              { value: 36, name: '' },
-              { value: 24, name: '' }
-            ]
+            data: this.circleData1
           },
           {
             name: '值班兵力',
@@ -563,11 +563,7 @@ export default {
             //   // shadowColor: 'rgba(0, 0, 0, 0.5)'
             //   }
             // },
-            data: [
-              { value: 40, name: '一等值班' },
-              { value: 36, name: '二等值班' },
-              { value: 24, name: '三等值班' }
-            ]
+            data: this.circleData2
           }
         ]
       });

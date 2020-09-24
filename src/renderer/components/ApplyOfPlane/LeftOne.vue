@@ -129,20 +129,70 @@ export default {
       toNum3: [ { name: 'toTotalNumberOfModels', value: 157 },
         { name: 'toTotalNumber', value: 132461 },
         { name: 'toStandNumber', value: 111574 }],
-      echarts1: {xdata: [], ydata: []},
-      echarts2: {xdata: [], ydata: []},
-      echarts3: {xdata: [], ydata: []}
-      // fromNum: [
-      //   { name: 'totalNumberOfModels', value: 0 },
-      //   { name: 'totalNumber', value: 0 },
-      //   { name: 'standNumber', value: 0 }
-      // ],
 
-      // toNum: [
-      //   { name: 'toTotalNumberOfModels', value: 157 },
-      //   { name: 'toTotalNumber', value: 132461 },
-      //   { name: 'toStandNumber', value: 111574 }
-      // ]
+      barData1: {xdata: [62.7, 30, 62.7, 17.2, 39.8], ydata: ['歼击机', '轰炸机', '运输机', '无人机', '特种级']},
+      barData2: {xdata: [55.1, 62.7, 17.2, 39.8], ydata: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹']},
+      circleData1: [
+        {
+          value: 75,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 25,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circleData2: [
+        {
+          value: 74,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 26,
+          name: '正常',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ],
+      circleData3: [
+        {
+          value: 86,
+          name: '完好率',
+          label: {
+            normal: {
+              show: true
+            }
+          }
+        },
+        {
+          value: 14,
+          name: '损坏率',
+          label: {
+            normal: {
+              show: false
+            }
+          }
+        }
+      ]
+
     };
   },
   computed: {},
@@ -157,12 +207,6 @@ export default {
       // 绘制图表
       myChart.resize;
       myChart.setOption({
-        // tooltip: {
-        //   trigger: 'axis',
-        //   axisPointer: {
-        //     type: 'shadow'
-        //   }
-        // },
 
         grid: {
           left: '3%',
@@ -192,7 +236,7 @@ export default {
         yAxis: {
           type: 'category',
 
-          data: ['歼击机', '轰炸机', '运输机', '无人机', '特种级'],
+          data: this.barData1.ydata,
           axisLabel: {
             show: true,
             textStyle: {
@@ -265,15 +309,13 @@ export default {
                 { offset: 0.2, color: 'rgba(172,172,172,0.5)' },
                 { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
-              // color: 'rgba(0, 220, 220, 0.8)'
-              // shadowOffsetX: 50,
-              // shadowOffsetY: 20
+
             },
-            data: [62.7, 30, 62.7, 17.2, 39.8]
+            data: this.barData1.xdata
           }
         ]
       });
-      // TweenLite.fromTo('#myChart', 3, {width: '50px'}, {width: '100px'});
+
       // 基于准备好的dom，初始化echarts实例
       let myChart1 = this.$echarts.init(document.getElementById('myChart1'));
       // 绘制图表
@@ -310,7 +352,7 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹'],
+          data: this.barData2.ydata,
           axisLabel: {
             show: true,
             textStyle: {
@@ -374,7 +416,7 @@ export default {
                 { offset: 1, color: 'rgba(0,0,0,0.5)' }
               ])
             },
-            data: [55.1, 62.7, 17.2, 39.8]
+            data: this.barData2.xdata
           }
         ]
       });
@@ -415,26 +457,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 75,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 25,
-                name: '正常',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circleData1
           }
         ]
       });
@@ -476,26 +499,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 74,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 26,
-                name: '正常',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circleData2
           }
         ]
       });
@@ -537,26 +541,7 @@ export default {
                 show: false
               }
             },
-            data: [
-              {
-                value: 86,
-                name: '完好率',
-                label: {
-                  normal: {
-                    show: true
-                  }
-                }
-              },
-              {
-                value: 14,
-                name: '损坏率',
-                label: {
-                  normal: {
-                    show: false
-                  }
-                }
-              }
-            ]
+            data: this.circleData3
           }
         ]
       });

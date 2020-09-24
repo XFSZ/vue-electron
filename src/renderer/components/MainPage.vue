@@ -2,7 +2,7 @@
   <div class="main-context">
     <div class="main-left">
       <left-one class="left-one-style" />
-      <left-two class="left-two-style" />
+      <left-two class="left-two-style" v-if="false" />
     </div>
     <div class="main-middle-content">
       <div class="main-middle-button">
