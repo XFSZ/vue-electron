@@ -44,7 +44,7 @@ import BlankImg from '../../assets/block.png';
 // import BackGourdImg from '../assetsback'
 // import MainLeftBtnImg from '../assets/main-left-btn.png';
 export default {
-  name: 'used-detail-page1',
+  name: 'used-detail-radar',
   components: {
     LeftOne,
     RightOne

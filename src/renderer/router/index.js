@@ -41,10 +41,28 @@ export default new Router({
       //   }
       // ]
     },
+    // {
+    //   path: '/useddetail/radar',
+    //   name: 'used-detail-radar',
+    //   component: require('@/components/MainPageComponents/Radar').default
+
+    // },
     {
       path: '/useddetail/radar',
-      name: 'used-detail-page1',
+      name: 'used-detail-radar',
       component: require('@/components/MainPageComponents/Radar').default
+
+    },
+    {
+      path: '/useddetail/groundmissile',
+      name: 'used-detail-groundmissile',
+      component: require('@/components/MainPageComponents/GroundMissile').default
+
+    },
+    {
+      path: '/useddetail/warplane',
+      name: 'used-detail-warplane',
+      component: require('@/components/MainPageComponents/WarPlane').default
 
     },
     {

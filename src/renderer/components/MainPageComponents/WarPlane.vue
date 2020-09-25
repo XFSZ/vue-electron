@@ -1,21 +1,15 @@
 <template>
   <div class="main-context">
-    <div class="main-middle-content">
-      <router-link :to="{ path: '/useddetail/radar' }">
-        <div class="main-middle-button">
-          <p class="main-middle-button-text">全国</p>
-        </div>
-      </router-link>
-       <router-link :to="{ path: '/useddetail/groundmissile' }">
+        <div class="main-middle-content">
+      <div class="main-middle-button">
+        <p class="main-middle-button-text">全国</p>
+      </div>
       <div class="main-middle-button">
         <p class="main-middle-button-text">东部</p>
       </div>
-       </router-link>
-         <router-link :to="{ path: '/useddetail/warplane' }">
       <div class="main-middle-button">
         <p class="main-middle-button-text">南部</p>
       </div>
-       </router-link>
       <div class="main-middle-button">
         <p class="main-middle-button-text">西部</p>
       </div>
@@ -28,7 +22,6 @@
     </div>
     <div class="main-left">
       <left-one class="left-one-style" />
-      <left-two class="left-two-style" v-if="true" />
     </div>
 
     <div class="main-right">
@@ -38,31 +31,26 @@
 </template>
 
 <script>
-import LeftOne from './ApplyOfPlane/LeftOne';
-import LeftTwo from './ApplyOfPlane/LeftTwo';
-import RightOne from './ApplyOfPlane/RightOne';
-import TaskImg from '../assets/task.png';
-import EquipmentImg from '../assets/equipment.png';
-import ReportImg from '../assets/report.png';
-import SplitLineImg from '../assets/split-line.png';
-import SearchImg from '../assets/search.png';
-import TitleLeftImg from '../assets/title-left.png';
-import TitleRightImg from '../assets/title-right.png';
-import BlankImg from '../assets/block.png';
+import LeftOne from './WarPlane/LeftOne';
+import RightOne from './WarPlane/RightOne';
+import TaskImg from '../../assets/task.png';
+import EquipmentImg from '../../assets/equipment.png';
+import ReportImg from '../../assets/report.png';
+import SplitLineImg from '../../assets/split-line.png';
+import SearchImg from '../../assets/search.png';
+import TitleLeftImg from '../../assets/title-left.png';
+import TitleRightImg from '../../assets/title-right.png';
+import BlankImg from '../../assets/block.png';
 // import BackGourdImg from '../assetsback'
 // import MainLeftBtnImg from '../assets/main-left-btn.png';
 export default {
-  name: 'init-page',
+  name: 'used-detail-warplane',
   components: {
     LeftOne,
-    LeftTwo,
     RightOne
   },
   data() {
     return {
-      // activeIndex: '1',
-      // activeIndex2: '1',
-      activeIndex: '/uesddetail/radar',
 
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
@@ -78,26 +66,16 @@ export default {
   },
   // 检测路由变化
   watch: {
-    // $route() {
-    //   this.setCurrentRoute();
-    // }
+
   },
   methods: {
-    // setCurrentRoute() {
-    //   this.activeIndex = this.$route.path; // 通过他就可以监听到当前路由状态并激活当前菜单
-    // },
-    // handleSelect(key, keyPath) {
-    //   this.$router.push();
-    //   console.log(key, keyPath);
-    // }
+
   },
   created() {
-    //  this.setCurrentRoute();
-    console.log('this is used home');
+
   },
   mounted() {
-    // this.pic.taskUrl = TaskImg;
-    console.log('this is used home');
+
   }
 };
 </script>
@@ -105,7 +83,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
-  src: url("../assets/font/Zhongheijian.ttf");
+  src: url("../../assets/font/Zhongheijian.ttf");
 }
 .footer-left-search {
   width: 230px;
@@ -127,7 +105,7 @@ export default {
   font-family: "Zhongheijian";
   width: 110px;
   /* height: 150px; */
-  background-image: url("../assets/main-left-btn.png");
+  background-image: url("../../assets/main-left-btn.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
   /* border: solid 1px rgb(141, 141, 141); */
@@ -136,7 +114,7 @@ export default {
   font-family: "Zhongheijian";
   width: 110px;
   /* height: 150px; */
-  background-image: url("../assets/main-left-btn-active.png");
+  background-image: url("../../assets/main-left-btn-active.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
   /* border: solid 1px rgb(141, 141, 141); */
@@ -145,7 +123,7 @@ export default {
   font-family: "Zhongheijian";
   width: 110px;
   /* height: 150px; */
-  background-image: url("../assets/main-left-btn-active.png");
+  background-image: url("../../assets/main-left-btn-active.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
   /* border: solid 1px rgb(141, 141, 141); */
@@ -154,42 +132,42 @@ export default {
 .mid-img {
   font-family: "Zhongheijian";
   width: 110px;
-  background-image: url("../assets/main-mid-btn.png");
+  background-image: url("../../assets/main-mid-btn.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
 }
 .mid-img:hover {
   font-family: "Zhongheijian";
   width: 110px;
-  background-image: url("../assets/main-mid-btn-active.png");
+  background-image: url("../../assets/main-mid-btn-active.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
 }
 .mid-img:focus {
   font-family: "Zhongheijian";
   width: 110px;
-  background-image: url("../assets/main-mid-btn-active.png");
+  background-image: url("../../assets/main-mid-btn-active.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
 }
 .right-img {
   font-family: "Zhongheijian";
   width: 110px;
-  background-image: url("../assets/main-right-btn.png");
+  background-image: url("../../assets/main-right-btn.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
 }
 .right-img:hover {
   /* 激活使用is-active */
   width: 110px;
-  background-image: url("../assets/main-right-btn-active.png");
+  background-image: url("../../assets/main-right-btn-active.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
 }
 .right-img:focus {
   /* 激活使用is-active */
   width: 110px;
-  background-image: url("../assets/main-right-btn-active.png");
+  background-image: url("../../assets/main-right-btn-active.png");
   background-repeat: no-repeat;
   background-size: 96% 100%;
 }
@@ -207,52 +185,12 @@ export default {
   background-color: rgba(255, 255, 255, 0);
 }
 
-.el-menu::after {
-  clear: both;
-}
+
 .footer-content .el-menu.el-menu--horizontal {
   border-bottom: solid 1px rgba(255, 255, 255, 0);
 }
 
-.el-menu--horizontal > .el-menu-item {
-  float: left;
-  height: 60px;
-  line-height: 60px;
-  margin: 0;
-  border-bottom: 2px solid transparent;
-  color: #909399;
-}
-.el-menu--horizontal > .el-menu-item a,
-.el-menu--horizontal > .el-menu-item a:hover {
-  color: inherit;
-}
-.el-menu--horizontal > .el-submenu {
-  float: left;
-}
-.el-menu--horizontal > .el-submenu:focus,
-.el-menu--horizontal > .el-submenu:hover {
-  outline: 0;
-}
-.el-menu--horizontal > .el-submenu:focus .el-submenu__title,
-.el-menu--horizontal > .el-submenu:hover .el-submenu__title {
-  color: #303133;
-}
-.el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
-  border-bottom: 2px solid #409eff;
-  color: #303133;
-}
-.el-menu--horizontal > .el-submenu .el-submenu__title {
-  height: 60px;
-  line-height: 60px;
-  border-bottom: 2px solid transparent;
-  color: #909399;
-}
-.el-menu--horizontal > .el-submenu .el-submenu__icon-arrow {
-  position: static;
-  vertical-align: middle;
-  margin-left: 8px;
-  margin-top: -3px;
-}
+
 .footer-content .el-menu--horizontal .el-menu .el-menu-item,
 .el-menu--horizontal .el-menu .el-submenu__title {
   background-color: rgba(255, 255, 255, 0);
@@ -262,10 +200,7 @@ export default {
   padding: 0 10px;
   color: #909399;
 }
-.el-menu--horizontal .el-menu .el-menu-item.is-active,
-.el-menu--horizontal .el-menu .el-submenu.is-active > .el-submenu__title {
-  color: #ffffff;
-}
+
 .footer-content .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
 .footer-content .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
   outline: 0;
@@ -278,30 +213,7 @@ export default {
   /* color: #303133; */
   color: whitesmoke;
 }
-.el-menu--collapse {
-  width: 64px;
-}
 
-.el-menu--collapse .el-submenu .el-menu {
-  position: absolute;
-  margin-left: 5px;
-  top: 0;
-  left: 100%;
-  z-index: 10;
-  border: 1px solid #e4e7ed;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-}
-
-.el-menu--popup {
-  z-index: 100;
-  border: none;
-  padding: 5px 0;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-}
 
 .footer-content .el-menu-item {
   font-size: 27px;
@@ -316,65 +228,6 @@ export default {
   box-sizing: border-box;
 }
 
-.el-menu-item i {
-  color: #909399;
-}
-.el-menu-item:focus,
-.el-menu-item:hover {
-  outline: 0;
-  background-color: rgba(0, 0, 0, 0);
-}
-.el-menu-item.is-disabled {
-  opacity: 0.25;
-  cursor: not-allowed;
-  background: 0 0 !important;
-}
-
-.el-menu-item.is-active {
-  color: #409eff;
-}
-.el-menu-item.is-active i {
-  color: inherit;
-}
-
-.el-submenu__title {
-  font-size: 14px;
-  color: #303133;
-  padding: 0 20px;
-  cursor: pointer;
-  -webkit-transition: border-color 0.3s, background-color 0.3s, color 0.3s;
-  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.el-submenu__title * {
-  vertical-align: middle;
-}
-.el-submenu__title i {
-  color: #909399;
-}
-.el-submenu__title:focus,
-.el-submenu__title:hover {
-  outline: 0;
-  background-color: rgba(0, 0, 0, 0);
-}
-.el-submenu__title.is-disabled {
-  opacity: 0.25;
-  cursor: not-allowed;
-  background: 0 0 !important;
-}
-.el-submenu__title:hover {
-  background-color: rgba(0, 0, 0, 0);
-}
-.el-submenu.is-active .el-submenu__title {
-  border-bottom-color: #409eff;
-}
-.el-menu-item-group__title {
-  padding: 7px 0 7px 20px;
-  line-height: normal;
-  font-size: 12px;
-  color: #909399;
-}
 
 .search-img {
   height: 26px;
@@ -435,7 +288,7 @@ html {
   height: 1620px;
   width: 4320px;
   /* min-height: 100%; */
-  background-image: url("../assets/dt.png");
+  background-image: url("../../assets/dt.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   /* background-color: rgb(16, 16, 102); */
@@ -443,7 +296,7 @@ html {
 .footer-left-one {
   width: 388px;
   height: 66px;
-  background-image: url("../assets/left-bottom-backgroud.png");
+  background-image: url("../../assets/left-bottom-backgroud.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -460,7 +313,7 @@ html {
   height: 70px;
   /* margin-right: 140px; */
   display: inline-block;
-  background-image: url("../assets/main-content-btn.png");
+  background-image: url("../../assets/main-content-btn.png");
   background-size: 100% 100%;
 }
 .main-middle-button:hover {
@@ -468,7 +321,7 @@ html {
   height: 70px;
   /* margin-right: 140px; */
   display: inline-block;
-  background-image: url("../assets/main-content-btn-active.png");
+  background-image: url("../../assets/main-content-btn-active.png");
   background-size: 100% 100%;
 }
 .main-middle-button-text {
@@ -495,20 +348,16 @@ html {
   background-color: rgba(255, 255, 255, 0);
 }
 
-.left-two-style {
-  margin-left: 20px;
-  background-image: url("../assets/echarts-bg.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
+
 .left-one-style {
+  /* height: 580px; */
   margin-left: 10px;
-  background-image: url("../assets/echarts-bg.png");
+  background-image: url("../../assets/echarts-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .right-style {
-  background-image: url("../assets/echarts-bg.png");
+  background-image: url("../../assets/echarts-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -540,15 +389,16 @@ html {
   flex-direction: row;
   margin-left: 120px;
 }
-.main-middle-content {
-  top: 110px;
-  position: absolute;
-  text-align: center;
-  width: 4320px;
-  height: 1360px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+.main-middle-content{
+
+    top: 110px;
+   position: absolute;
+    text-align: center;
+    width: 4320px;
+    height: 1360px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 /* .main-middle-content {
   text-align: center;
@@ -571,7 +421,7 @@ html {
   /* flex: 0; */
   display: flex;
   flex-direction: row;
-  background-image: url("../assets/main-bottom1.png");
+  background-image: url("../../assets/main-bottom1.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
