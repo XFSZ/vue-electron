@@ -27,8 +27,16 @@
       <div class="right-child-three">
         <div
           :id="`list_chart_${indexkey}`"
-          :style="{ width: '100px', height: '100px', marginTop: '38px' }"
+          :style="{ width: '100px', height: '100px', marginTop: '38px' ,paddingLeft:'14px' }"
         ></div>
+        <div>
+          <p class="right-child-three-p">
+            总数
+            <span class="right-child-three-num"
+              >18713 <span class="right-child-three-p-str">型</span></span
+            >
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -89,32 +97,53 @@ export default {
       );
       // 绘制图表
       myChart_c3.setOption({
-        tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b}: {c} ({d}%)'
-        },
+        // tooltip: {
+        //   trigger: 'item',
+        //   formatter: '{a} <br/>{b}: {c} ({d}%)'
+        // },
         color: ['#00b3ff', '#ccc'],
         series: [
           {
-            name: '电子干扰',
+            // name: '电子干扰',
             type: 'pie',
             center: ['40%', '40%'], // 饼图的圆心坐标
             radius: ['74%', '80%'],
             avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
-              //  饼图图形上的文本标签
+              position: 'center',
+              formatter: '{per|{d}%}\n {a|完好率}',
+              rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                a: {
+                  color: '#ffffff',
+                  fontSize: 14,
+                  fontFamily: 'Zhongheijian'
+                },
 
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: '#ccc',
-                fontSize: 8,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                per: {
+                  color: 'white', // 字体颜色
+                  fontSize: 16, // 字体大小
+                  fontWeight: 'bold',
+                  fontFamily: 'opposans'
+                }
               }
             },
+            // label: {
+            //   //  饼图图形上的文本标签
+
+            //   normal: {
+            //     // normal 是图形在默认状态下的样式
+            //     show: true,
+            //     position: 'center',
+            //     color: '#ccc',
+            //     fontSize: 14,
+            //     fontFamily: 'Zhongheijian',
+            //     // fontWeight: 'bold',
+            //     formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+
+            //   }
+            // },
             labelLine: {
               normal: {
                 show: false
@@ -138,9 +167,16 @@ export default {
   font-family: "dinPro"; /* 这个名字可以自己定义 */
   src: url("../../../assets/font/DINPro-Bold.otf");
 }
+.right-child-three-p{
+    font-family: "opposans";
+  color: whitesmoke;
+  font-size: 12px;
+  text-align: center;
+}
 .right-child-three {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 .title-str-value {
   display: flex;
@@ -218,9 +254,7 @@ export default {
   margin-right: 10px;
   margin-left: 10px;
 }
-.right-child-three {
-  /* margin-left: -30px; */
-}
+
 .right-child-main {
   margin-top: 6px;
   display: flex;

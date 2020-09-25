@@ -111,18 +111,46 @@ export default {
               avoidLabelOverlap: false,
               hoverAnimation: false,
               label: {
-              //  饼图图形上的文本标签
+                position: 'center',
+                formatter:
+                '{per|{d}%}\n {a|{b}}',
+                rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                  a: {
+                    color: '#ffffff',
+                    fontSize: 14,
 
-                normal: {
-                // normal 是图形在默认状态下的样式
-                  show: true,
-                  position: 'center',
-                  color: '#ccc',
-                  fontSize: 8,
-                  fontWeight: 'bold',
-                  formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                    fontFamily: 'Zhongheijian'
+                  },
+
+                  per: {
+                    color: 'white', // 字体颜色
+                    fontSize: 16, // 字体大小
+                    fontWeight: 'bold',
+                    fontFamily: 'opposans'
+
+                  }
                 }
               },
+              // label: {
+              // //  饼图图形上的文本标签
+
+              //   normal: {
+              //   // normal 是图形在默认状态下的样式
+              //     show: true,
+              //     position: 'center',
+              //     // color: '#ccc',
+              //     // fontSize: 8,
+              //     // fontWeight: 'bold',
+              //     textStyle: {
+              //       // 数值样式
+              //       color: 'white', // 字体颜色
+              //       fontSize: 14, // 字体大小
+              //       fontFamily: 'opposans'
+              //     },
+              //     formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+              //   }
+              // },
               labelLine: {
                 normal: {
                   show: false

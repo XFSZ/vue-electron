@@ -587,7 +587,7 @@ export default {
 .title-table-head-main {
   display: flex;
   flex-direction: row;
-  margin-left: 10px;
+  margin-left: 4px;
   align-items: center;
 }
 .block-img {
@@ -731,6 +731,8 @@ export default {
   justify-content: flex-end;
   align-self: flex-end;
   font-size: 12px;
+  margin-left: 8px;
+
   /* margin-top: 5px; */
 }
 </style>

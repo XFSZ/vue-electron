@@ -1,10 +1,6 @@
 <template>
   <div class="main-context">
-    <div class="main-left">
-      <left-one class="left-one-style" />
-      <left-two class="left-two-style" />
-    </div>
-    <div class="main-middle-content">
+        <div class="main-middle-content">
       <div class="main-buttom">
         <div class="chart-bg">
         <div
@@ -37,6 +33,11 @@
         </div>
       </div>
     </div>
+    <div class="main-left">
+      <left-one class="left-one-style" />
+      <left-two class="left-two-style" />
+    </div>
+
     <div class="main-right">
       <right-one class="right-style" />
       <right-two class="right-two-style" />
@@ -670,7 +671,6 @@ html {
   margin-left: 120px;
 }
 .main-middle-content{
-   z-index: -10;
       top: 110px;
     position: absolute;
     text-align: center;

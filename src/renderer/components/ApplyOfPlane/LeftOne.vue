@@ -30,7 +30,7 @@
       <div class="circle-title">
         <div
           id="myChart_c1"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '-10px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber1"
@@ -41,7 +41,7 @@
       <div class="circle-title">
         <div
           id="myChart_c2"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '-10px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber2"
@@ -52,7 +52,7 @@
       <div class="circle-title">
         <div
           id="myChart_c3"
-          :style="{ width: '90px', height: '120px', marginTop: '-20px' }"
+          :style="{ width: '90px', height: '120px', marginTop: '-10px' }"
         ></div>
         <title-moudle-bottom
           :goodNumber="googNumber3"
@@ -436,20 +436,28 @@ export default {
             name: '军械',
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
+            radius: ['80%', '88%'],
             // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
-              //  饼图图形上的文本标签
+              position: 'center',
+              formatter:
+                '{per|{d}%}\n {a|完好率}',
+              rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                a: {
+                  color: '#ffffff',
+                  fontSize: 14,
+                  fontFamily: 'Zhongheijian'
+                },
 
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                per: {
+                  color: 'white', // 字体颜色
+                  fontSize: 16, // 字体大小
+                  fontWeight: 'bold',
+                  fontFamily: 'opposans'
+
+                }
               }
             },
             labelLine: {
@@ -478,20 +486,28 @@ export default {
             name: '电子侦察',
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
+            radius: ['80%', '88%'],
             // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
-              //  饼图图形上的文本标签
+              position: 'center',
+              formatter:
+                '{per|{d}%}\n {a|完好率}',
+              rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                a: {
+                  color: '#ffffff',
+                  fontSize: 14,
+                  fontFamily: 'Zhongheijian'
+                },
 
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                per: {
+                  color: 'white', // 字体颜色
+                  fontSize: 16, // 字体大小
+                  fontWeight: 'bold',
+                  fontFamily: 'opposans'
+
+                }
               }
             },
             labelLine: {
@@ -520,20 +536,28 @@ export default {
             name: '电子干扰',
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
+            radius: ['80%', '88%'],
             // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
-              //  饼图图形上的文本标签
+              position: 'center',
+              formatter:
+                '{per|{d}%}\n {a|完好率}',
+              rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                a: {
+                  color: '#ffffff',
+                  fontSize: 14,
+                  fontFamily: 'Zhongheijian'
+                },
 
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                per: {
+                  color: 'white', // 字体颜色
+                  fontSize: 16, // 字体大小
+                  fontWeight: 'bold',
+                  fontFamily: 'opposans'
+
+                }
               }
             },
             labelLine: {

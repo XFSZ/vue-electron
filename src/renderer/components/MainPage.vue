@@ -1,10 +1,6 @@
 <template>
   <div class="main-context">
-    <div class="main-left">
-      <left-one class="left-one-style" />
-      <left-two class="left-two-style" v-if="true" />
-    </div>
-    <div class="main-middle-content">
+        <div class="main-middle-content">
       <div class="main-middle-button">
         <p class="main-middle-button-text">全国</p>
       </div>
@@ -24,6 +20,11 @@
         <p class="main-middle-button-text">中部</p>
       </div>
     </div>
+    <div class="main-left">
+      <left-one class="left-one-style" />
+      <left-two class="left-two-style" v-if="true" />
+    </div>
+
     <div class="main-right">
       <right-one class="right-style" />
     </div>
@@ -531,7 +532,7 @@ html {
   margin-left: 120px;
 }
 .main-middle-content{
-  z-index: -10;
+
     top: 110px;
    position: absolute;
     text-align: center;

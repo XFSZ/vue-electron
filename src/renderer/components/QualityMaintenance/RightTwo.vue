@@ -538,20 +538,28 @@ export default {
             name: '军械',
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
+            radius: ['80%', '88%'],
+            // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
-              //  饼图图形上的文本标签
+              position: 'center',
+              formatter:
+                '{per|{d}%}\n {a|完好率}',
+              rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                a: {
+                  color: '#ffffff',
+                  fontSize: 14,
+                  fontFamily: 'Zhongheijian'
+                },
 
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                per: {
+                  color: 'white', // 字体颜色
+                  fontSize: 16, // 字体大小
+                  fontWeight: 'bold',
+                  fontFamily: 'opposans'
+
+                }
               }
             },
             labelLine: {
@@ -580,20 +588,28 @@ export default {
             name: '电子侦察',
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
+            radius: ['80%', '88%'],
+            // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
-              //  饼图图形上的文本标签
+              position: 'center',
+              formatter:
+                '{per|{d}%}\n {a|完好率}',
+              rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                a: {
+                  color: '#ffffff',
+                  fontSize: 14,
+                  fontFamily: 'Zhongheijian'
+                },
 
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                per: {
+                  color: 'white', // 字体颜色
+                  fontSize: 16, // 字体大小
+                  fontWeight: 'bold',
+                  fontFamily: 'opposans'
+
+                }
               }
             },
             labelLine: {
@@ -622,20 +638,28 @@ export default {
             name: '电子干扰',
             type: 'pie',
             center: ['50%', '50%'], // 饼图的圆心坐标
-            radius: ['70%', '80%'],
-            avoidLabelOverlap: false,
+            radius: ['80%', '88%'],
+            // avoidLabelOverlap: false,
             hoverAnimation: false,
             label: {
-              //  饼图图形上的文本标签
+              position: 'center',
+              formatter:
+                '{per|{d}%}\n {a|完好率}',
+              rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                a: {
+                  color: '#ffffff',
+                  fontSize: 14,
+                  fontFamily: 'Zhongheijian'
+                },
 
-              normal: {
-                // normal 是图形在默认状态下的样式
-                show: true,
-                position: 'center',
-                color: 'white',
-                fontSize: 10,
-                fontWeight: 'bold',
-                formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                per: {
+                  color: 'white', // 字体颜色
+                  fontSize: 16, // 字体大小
+                  fontWeight: 'bold',
+                  fontFamily: 'opposans'
+
+                }
               }
             },
             labelLine: {
@@ -719,7 +743,7 @@ export default {
               // 将图片定位到最下方的中间：
               type: 'image',
               // left: 'center', // 水平定位到中间
-              left: '28.5%',
+              left: '29%',
               top: '28%',
               // bottom: '10%', // 定位到距离下边界 10% 处
               // position: [110, 0],

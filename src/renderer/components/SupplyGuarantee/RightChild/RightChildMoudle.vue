@@ -112,21 +112,42 @@ export default {
               type: 'pie',
               center: ['40%', '40%'], // 饼图的圆心坐标
               radius: ['74%', '80%'],
-              avoidLabelOverlap: false,
+              // avoidLabelOverlap: false,
               hoverAnimation: false,
               label: {
-              //  饼图图形上的文本标签
+                position: 'center',
+                formatter:
+                '{per|{d}%}\n {a|任务进度}',
+                rich: {
+                // 定义不同地方的文字的字体大小和颜色
+                  a: {
+                    color: '#ffffff',
+                    fontSize: 14,
+                    fontFamily: 'Zhongheijian'
+                  },
 
-                normal: {
-                // normal 是图形在默认状态下的样式
-                  show: true,
-                  position: 'center',
-                  color: '#ccc',
-                  fontSize: 8,
-                  fontWeight: 'bold',
-                  formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+                  per: {
+                    color: 'white', // 字体颜色
+                    fontSize: 16, // 字体大小
+                    fontWeight: 'bold',
+                    fontFamily: 'opposans'
+
+                  }
                 }
               },
+              // label: {
+              // //  饼图图形上的文本标签
+
+              //   normal: {
+              //   // normal 是图形在默认状态下的样式
+              //     show: true,
+              //     position: 'center',
+              //     color: '#ccc',
+              //     fontSize: 8,
+              //     fontWeight: 'bold',
+              //     formatter: '{d}%\n{b}' // {b}:数据名； {c}：数据值； {d}：百分比，可以自定义显示内容，
+              //   }
+              // },
               labelLine: {
                 normal: {
                   show: false
