@@ -29,6 +29,23 @@ export default new Router({
       path: '/',
       name: 'main-page',
       component: require('@/components/MainPage').default
+      // children: [
+      //   {
+      //     path: 'radar',
+      //     component: require('@/components/LandingPage').default
+      //   },
+      //   {
+
+      //     path: 'groundmissile',
+      //     component: require('@/components/LandingPage').default
+      //   }
+      // ]
+    },
+    {
+      path: '/useddetail/radar',
+      name: 'used-detail-page1',
+      component: require('@/components/MainPageComponents/Radar').default
+
     },
     {
       path: '*',
