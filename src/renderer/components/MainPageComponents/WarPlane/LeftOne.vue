@@ -20,53 +20,21 @@
       id="myChart1"
       :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px'}"
     ></div>
-    <title-moudle
-      :blockImg="flyUrl"
-      :leftTitle="leftTitle3"
-      :fromNum="fromNum3"
-      :toNum="toNum3"
-    />
-    <div class="threecircle">
-      <div class="circle-title">
-        <div
-          id="myChart_c1"
-          :style="{ width: '90px', height: '120px', marginTop: '-10px' }"
-        ></div>
-        <title-moudle-bottom
+  <top-title :imgUrl="flyUrl" :titleName="toptitleName1"/>
+            <title-moudle-bottom
           :goodNumber="googNumber1"
           :totalNumber="totalNumber1"
         />
-        <div></div>
-      </div>
-      <div class="circle-title">
-        <div
-          id="myChart_c2"
-          :style="{ width: '90px', height: '120px', marginTop: '-10px' }"
-        ></div>
-        <title-moudle-bottom
-          :goodNumber="googNumber2"
-          :totalNumber="totalNumber2"
-        />
-        <div></div>
-      </div>
-      <div class="circle-title">
-        <div
-          id="myChart_c3"
-          :style="{ width: '90px', height: '120px', marginTop: '-10px' }"
-        ></div>
-        <title-moudle-bottom
-          :goodNumber="googNumber3"
-          :totalNumber="totalNumber3"
-        />
-        <div></div>
-      </div>
-    </div>
+    
+ 
   </div>
 </template>
 
 <script>
 // import { TweenLite } from 'gsap';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
+import TopTitle from './TopTitle/TopTitle';
+
 import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 import FlyImg from '../../../assets/fly.png';
 import LogisticsImg from '../../../assets/logistics.png';
@@ -77,7 +45,8 @@ export default {
   name: 'hello',
   components: {
     TitleMoudle,
-    TitleMoudleBottom
+    TitleMoudleBottom,
+    TopTitle
   },
   created() {
     axios.get(this.$commonvalue.baseurl + 'dpService/getFjslsjFj', { // 还可以直接把参数拼接在url后边
@@ -96,7 +65,7 @@ export default {
     return {
       leftTitle1: '飞机',
       leftTitle2: '弹药',
-      leftTitle3: '发动机与航材',
+      toptitleName1: '发动机与航材',
       flyUrl: FlyImg,
       logisticsUrl: LogisticsImg,
       googNumber1: 15784,
