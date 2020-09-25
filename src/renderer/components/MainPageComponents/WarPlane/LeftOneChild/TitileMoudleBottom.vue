@@ -28,12 +28,12 @@
     <div class="circle-title-row">
       <p class="p-title">完好数</p>
       <p class="span-num">{{ changeTotalNumberOfModels }}</p>
-      <p class="p-title-str">具</p>
+      <p class="p-title-str">部</p>
     </div>
     <div class="circle-title-row">
-      <p class="p-title">总数</p>
+      <p class="p-title">备份数</p>
       <p class="span-num">{{ changeTotalNumber }}</p>
-      <p class="p-title-str">具</p>
+      <p class="p-title-str">部</p>
     </div>
   </div>
       </div>
@@ -139,13 +139,13 @@ export default {
 .p-title {
   font-family: "opposans";
   color: aliceblue;
-  font-size: 10px;
+  font-size: 12px;
   /* margin-top: -8px; */
 }
 .p-title-str{
   font-family: "opposans";
   color: aliceblue;
-  font-size: 8px;
+  font-size: 10px;
   margin-top: 4px;
 }
 .span-num {
@@ -153,12 +153,15 @@ export default {
   color: #00d2fe;
   margin-left: 2px;
   margin-right: 1px;
+  width: 50px;
 }
 .circle-title-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+      margin-right: 34px;
+    margin-left: 34px;
 }
 .circle-title-row {
   display: flex;
@@ -245,22 +248,7 @@ export default {
   font-size: 12px;
   margin-top: 5px;
 }
-.p-title {
-  font-family: "opposans";
-  color: aliceblue;
-  font-size: 10px;
-  /* margin-top: -8px; */
-}
-.span-num {
-  font-family: "dinPro";
-  color: #00d2fe;
-  margin-left: 2px;
-  margin-right: 1px;
-}
-.circle-title {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-}
+
+
+
 </style>
