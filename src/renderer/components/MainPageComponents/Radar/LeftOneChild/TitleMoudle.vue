@@ -148,15 +148,20 @@ export default {
 .blank-img {
   width: 6px;
   height: 6px;
-
-  /* margin-top: 10px; */
 }
-.left-img {
-  /* margin-left: 22px; */
+.main-middle-content {
+  top: 110px;
+  left: 1480px;
+  position: absolute;
+  text-align: center;
+  width: 1360px;
+  height: 1360px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
-/* .right-img{
 
- } */
+
 .title-table-head-main {
   display: flex;
   margin-top: 8px;

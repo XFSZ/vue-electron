@@ -149,14 +149,9 @@ export default {
   width: 6px;
   height: 6px;
 
-  /* margin-top: 10px; */
-}
-.left-img {
-  /* margin-left: 22px; */
-}
-/* .right-img{
 
- } */
+}
+
 .title-table-head-main {
   display: flex;
   margin-top: 8px;

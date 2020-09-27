@@ -425,9 +425,7 @@ html {
   align-items: flex-end;
   margin-bottom: 60px;
 } */
-.main-right {
-  /* flex: 1; */
-}
+
 
 .footer {
   width: 100%;

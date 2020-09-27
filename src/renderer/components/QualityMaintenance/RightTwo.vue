@@ -675,7 +675,7 @@ export default {
       let myChart_c4 = this.$echarts.init(
         document.getElementById('right-two_tc4')
       );
-      let datas = ['一等值班', '二等值班', '三等值班'];
+
       let legendDatas = this.legendDatas;
       // 绘制图表
       myChart_c4.setOption({

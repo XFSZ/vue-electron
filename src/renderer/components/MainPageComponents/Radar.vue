@@ -444,16 +444,13 @@ html {
   align-items: flex-end;
   margin-bottom: 60px;
 } */
-.main-right {
-  /* flex: 1; */
-}
+
 
 .footer {
   width: 100%;
   height: 100px;
   margin-top: 70px;
-  /* margin-top: -32px; */
-  /* flex: 0; */
+
   display: flex;
   flex-direction: row;
   background-image: url("../../assets/main-bottom1.png");

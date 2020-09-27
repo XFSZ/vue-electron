@@ -144,7 +144,7 @@
 
 <script>
 import { TweenLite } from 'gsap';
-import BG from '../../assets/pie-label.png';
+
 import TopTitle from './TopTitle/TopTitle';
 import BlankImg from '../../assets/block.png';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
