@@ -100,6 +100,8 @@ export default {
       fromNum8: [
         { name: 'totalNumberOfModels', value: 0 },
         { name: 'totalNumber', value: 0 },
+        { name: 'totalNumber', value: 0 },
+        { name: 'totalNumber', value: 0 },
         { name: 'standNumber', value: 0 }
       ],
       toNum: [
