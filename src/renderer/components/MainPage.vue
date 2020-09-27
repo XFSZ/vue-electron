@@ -2,27 +2,51 @@
   <div class="main-context">
     <div class="main-middle-content">
       <router-link :to="{ path: '/useddetail/radar' }">
-        <div class="main-middle-button" :class="{button_active:isActiveStyle=='A'}" @click="detail('A')">
-          <p class="main-middle-button-text" >全国</p>
+        <div
+          class="main-middle-button"
+          :class="{ button_active: isActiveStyle == 'A' }"
+          @click="detail('A')"
+        >
+          <p class="main-middle-button-text">全国</p>
         </div>
       </router-link>
-       <router-link :to="{ path: '/useddetail/groundmissile' }">
-      <div class="main-middle-button" :class="{button_active:isActiveStyle=='E'}" @click="detail('E')">
-        <p class="main-middle-button-text">东部</p>
-      </div>
-       </router-link>
-         <router-link :to="{ path: '/useddetail/warplane' }">
-      <div class="main-middle-button" :class="{button_active:isActiveStyle=='S'}"  @click="detail('S')">
-        <p class="main-middle-button-text">南部</p>
-      </div>
-       </router-link>
-      <div class="main-middle-button" :class="{button_active:isActiveStyle=='W'}"  @click="detail('W')">
+      <router-link :to="{ path: '/useddetail/groundmissile' }">
+        <div
+          class="main-middle-button"
+          :class="{ button_active: isActiveStyle == 'E' }"
+          @click="detail('E')"
+        >
+          <p class="main-middle-button-text">东部</p>
+        </div>
+      </router-link>
+      <router-link :to="{ path: '/useddetail/warplane' }">
+        <div
+          class="main-middle-button"
+          :class="{ button_active: isActiveStyle == 'S' }"
+          @click="detail('S')"
+        >
+          <p class="main-middle-button-text">南部</p>
+        </div>
+      </router-link>
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'W' }"
+        @click="detail('W')"
+      >
         <p class="main-middle-button-text">西部</p>
       </div>
-      <div class="main-middle-button"  :class="{button_active:isActiveStyle=='N'}"  @click="detail('N')">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'N' }"
+        @click="detail('N')"
+      >
         <p class="main-middle-button-text">北部</p>
       </div>
-      <div class="main-middle-button" :class="{button_active:isActiveStyle=='C'}"  @click="detail('C')">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'C' }"
+        @click="detail('C')"
+      >
         <p class="main-middle-button-text">中部</p>
       </div>
     </div>
@@ -476,7 +500,7 @@ html {
   background-image: url("../assets/main-content-btn-active.png");
   background-size: 100% 100%;
 }
-.button_active{
+.button_active {
   background-image: url("../assets/main-content-btn-active.png") !important;
 }
 
@@ -550,12 +574,12 @@ html {
   margin-left: 120px;
 }
 .main-middle-content {
-      top: 110px;
-    left: 1480px;
-    position: absolute;
-    text-align: center;
-    width: 1360px;
-      height: 1360px;
+  top: 110px;
+  left: 1480px;
+  position: absolute;
+  text-align: center;
+  width: 1360px;
+  height: 1360px;
   display: flex;
   justify-content: center;
   align-items: flex-end;

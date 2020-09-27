@@ -558,7 +558,17 @@ html {
   margin-left: 120px;
 }
 .main-middle-content {
-  /* z-index: -10; */
+  top: 110px;
+  left: 1480px;
+  position: absolute;
+  text-align: center;
+  width: 1360px;
+  height: 1360px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+/* .main-middle-content {
   top: 110px;
   position: absolute;
   text-align: center;
@@ -567,7 +577,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-}
+} */
 /* .main-middle-content {
   text-align: center;
   flex: 1;
