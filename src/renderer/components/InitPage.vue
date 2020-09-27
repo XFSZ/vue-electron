@@ -48,7 +48,7 @@
       </div>
 
       <div class="footer-right">
-        <div class="back-button">
+        <div class="back-button" @click="$router.go(-1)">
           <p class="back-button-text">返回</p>
         </div>
 
@@ -108,6 +108,9 @@ export default {
     handleSelect(key, keyPath) {
       this.$router.push();
       console.log(key, keyPath);
+    },
+    backbtn() {
+      this.$router.go(-1);
     }
   },
   created() {
