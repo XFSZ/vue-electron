@@ -41,7 +41,7 @@
           
         >
           <el-menu-item index="/comprehensivesituation" class="left-img">综合态势</el-menu-item>
-          <el-menu-item index="/" class="mid-img">动用使用</el-menu-item>
+          <el-menu-item index="/used" class="mid-img">动用使用</el-menu-item>
           <el-menu-item index="/qualitymaintenance" class="mid-img">质量维修</el-menu-item>
           <el-menu-item index="/supplyguarantee" class="right-img">供应保障</el-menu-item>
         </el-menu>
@@ -82,7 +82,7 @@ export default {
     return {
       // activeIndex: '1',
       // activeIndex2: '1',
-      activeIndex: '/',
+      activeIndex: '/used',
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
       reportUrl: ReportImg,
@@ -163,7 +163,15 @@ export default {
   background-size: 96% 100%;
   /* border: solid 1px rgb(141, 141, 141); */
 }
-
+.left-img.is-active {
+  font-family: "Zhongheijian";
+  width: 110px;
+  /* height: 150px; */
+  background-image: url("../assets/main-left-btn-active.png");
+  background-repeat: no-repeat;
+  background-size: 96% 100%;
+  /* border: solid 1px rgb(141, 141, 141); */
+}
 .mid-img {
   font-family: "Zhongheijian";
   width: 110px;
@@ -185,6 +193,13 @@ export default {
   background-repeat: no-repeat;
   background-size: 96% 100%;
 }
+.mid-img.is-active {
+  font-family: "Zhongheijian";
+  width: 110px;
+  background-image: url("../assets/main-mid-btn-active.png");
+  background-repeat: no-repeat;
+  background-size: 96% 100%;
+}
 .right-img {
   font-family: "Zhongheijian";
   width: 110px;
@@ -200,6 +215,13 @@ export default {
   background-size: 96% 100%;
 }
 .right-img:focus {
+  /* 激活使用is-active */
+  width: 110px;
+  background-image: url("../assets/main-right-btn-active.png");
+  background-repeat: no-repeat;
+  background-size: 96% 100%;
+}
+.right-img.is-active {
   /* 激活使用is-active */
   width: 110px;
   background-image: url("../assets/main-right-btn-active.png");
@@ -248,6 +270,9 @@ export default {
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   /* color: #303133; */
   color: whitesmoke;
+  /* background-image: url("../assets/main-left-btn-active.png");
+  background-repeat: no-repeat;
+  background-size: 96% 100%; */
 }
 
 .footer-content .el-menu-item {
@@ -350,26 +375,26 @@ export default {
 .left-bottom-p-num {
   font-family: "Zhongheijian";
   color: whitesmoke;
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 28px;
+  margin-top: 16px;
   margin-left: 12px;
   margin-right: 60px;
 }
 .img-style {
-  height: 64px;
-  width: 64px;
-  margin-top: -8px;
+  height: 80px;
+  width: 80px;
+  margin-top: -22px;
 }
 .left-bottom-p {
   font-family: "Zhongheijian";
   color: whitesmoke;
   text-align: center;
-  font-size: 12px;
-  margin-top: -18px;
+  font-size: 20px;
+  margin-top: -24px;
   margin-left: 4px;
 }
 .left-bottom-split {
-  margin-left: 3px;
+  margin-left:-8px;
 }
 
 .footer-left-task {

@@ -1,26 +1,48 @@
 <template>
   <div class="main-context">
-        <div class="main-middle-content">
-            
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">全国</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">东部</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">南部</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">西部</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">北部</p>
-          </div>
-          <div class="main-middle-button">
-            <p class="main-middle-button-text">中部</p>
-          </div>
- 
+    <div class="main-middle-content">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'A' }"
+        @click="detail('A')"
+      >
+        <p class="main-middle-button-text">全国</p>
+      </div>
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'E' }"
+        @click="detail('E')"
+      >
+        <p class="main-middle-button-text">东部</p>
+      </div>
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'S' }"
+        @click="detail('S')"
+      >
+        <p class="main-middle-button-text">南部</p>
+      </div>
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'W' }"
+        @click="detail('W')"
+      >
+        <p class="main-middle-button-text">西部</p>
+      </div>
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'N' }"
+        @click="detail('N')"
+      >
+        <p class="main-middle-button-text">北部</p>
+      </div>
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'C' }"
+        @click="detail('C')"
+      >
+        <p class="main-middle-button-text">中部</p>
+      </div>
     </div>
     <div class="main-left">
       <left-one class="left-one-style" />
@@ -61,6 +83,7 @@ export default {
       // activeIndex: '1',
       // activeIndex2: '1',
       //   activeIndex: '/testpage',
+      isActiveStyle: 'A',
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
       reportUrl: ReportImg,
@@ -78,13 +101,13 @@ export default {
     // this.pic.taskUrl = TaskImg;
   },
   methods: {
-
+    detail: function(msg) {
+      this.isActiveStyle = msg;
+    }
   },
   created() {
     //  this.setCurrentRoute();
-
   }
-
 };
 </script>
 
@@ -454,6 +477,10 @@ html {
   background-image: url("../assets/main-content-btn-active.png");
   background-size: 100% 100%;
 }
+
+.button_active{
+  background-image: url("../assets/main-content-btn-active.png") !important;
+}
 .main-middle-button-text {
   user-select: none;
   font-family: "Zhongheijian";
@@ -538,16 +565,16 @@ html {
   align-items: flex-end;
   margin-bottom: 60px;
 } */
-.main-middle-content{
-   /* z-index: -1; */
-      top: 110px;
-   position: absolute;
-    text-align: center;
-    width: 4320px;
-    height: 1360px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+.main-middle-content {
+  /* z-index: -1; */
+  top: 110px;
+  position: absolute;
+  text-align: center;
+  width: 4320px;
+  height: 1360px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .main-right {
   /* flex: 1; */

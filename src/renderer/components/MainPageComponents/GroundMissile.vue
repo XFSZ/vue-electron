@@ -1,22 +1,46 @@
 <template>
   <div class="main-context">
-        <div class="main-middle-content">
-      <div class="main-middle-button">
+ <div class="main-middle-content">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'A' }"
+        @click="detail('A')"
+      >
         <p class="main-middle-button-text">全国</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'E' }"
+        @click="detail('E')"
+      >
         <p class="main-middle-button-text">东部</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'S' }"
+        @click="detail('S')"
+      >
         <p class="main-middle-button-text">南部</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'W' }"
+        @click="detail('W')"
+      >
         <p class="main-middle-button-text">西部</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'N' }"
+        @click="detail('N')"
+      >
         <p class="main-middle-button-text">北部</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'C' }"
+        @click="detail('C')"
+      >
         <p class="main-middle-button-text">中部</p>
       </div>
     </div>
@@ -51,7 +75,7 @@ export default {
   },
   data() {
     return {
-
+      isActiveStyle: 'A',
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
       reportUrl: ReportImg,
@@ -65,18 +89,13 @@ export default {
     };
   },
   // 检测路由变化
-  watch: {
-
-  },
+  watch: {},
   methods: {
 
   },
-  created() {
 
-  },
-  mounted() {
-
-  }
+  created() {},
+  mounted() {}
 };
 </script>
 
@@ -84,6 +103,9 @@ export default {
 @font-face {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../../assets/font/Zhongheijian.ttf");
+}
+.button_active{
+  background-image: url("../../assets/main-content-btn-active.png") !important;
 }
 .footer-left-search {
   width: 230px;
@@ -185,11 +207,9 @@ export default {
   background-color: rgba(255, 255, 255, 0);
 }
 
-
 .footer-content .el-menu.el-menu--horizontal {
   border-bottom: solid 1px rgba(255, 255, 255, 0);
 }
-
 
 .footer-content .el-menu--horizontal .el-menu .el-menu-item,
 .el-menu--horizontal .el-menu .el-submenu__title {
@@ -214,7 +234,6 @@ export default {
   color: whitesmoke;
 }
 
-
 .footer-content .el-menu-item {
   font-size: 27px;
   width: 300px;
@@ -227,7 +246,6 @@ export default {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 
 .search-img {
   height: 26px;
@@ -348,7 +366,6 @@ html {
   background-color: rgba(255, 255, 255, 0);
 }
 
-
 .left-one-style {
   height: 580px;
   margin-left: 10px;
@@ -389,16 +406,15 @@ html {
   flex-direction: row;
   margin-left: 120px;
 }
-.main-middle-content{
-
-    top: 110px;
-   position: absolute;
-    text-align: center;
-    width: 4320px;
-    height: 1360px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+.main-middle-content {
+  top: 110px;
+  position: absolute;
+  text-align: center;
+  width: 4320px;
+  height: 1360px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 /* .main-middle-content {
   text-align: center;

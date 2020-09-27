@@ -230,6 +230,9 @@ export default {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../assets/font/Zhongheijian.ttf");
 }
+.button_active{
+  background-image: url("../assets/main-content-btn-active.png") !important;
+}
 .footer-left-search {
   width: 230px;
   height: 43px;

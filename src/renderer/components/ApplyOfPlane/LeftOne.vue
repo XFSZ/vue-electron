@@ -80,11 +80,13 @@ export default {
     TitleMoudleBottom
   },
   created() {
-    axios.get(this.$commonvalue.baseurl + 'dpService/getFjslsjFj', { // 还可以直接把参数拼接在url后边
-      params: {
-        title: '眼镜'
-      }
-    }).then(function(res) {
+    axios.get(this.$commonvalue.baseurl + 'dpService/getFjslsjFj',
+      {
+      // 还可以直接把参数拼接在url后边
+      // params: {
+      //   title: '眼镜'
+      // }
+      }).then(function(res) {
       res.data;
       console.log(res.data);
     }).catch(function(error) {

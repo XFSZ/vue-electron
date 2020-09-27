@@ -26,20 +26,30 @@ export default new Router({
       component: require('@/components/SupplyGuarantee').default
     },
     {
-      path: '/',
+      path: '/used',
       name: 'main-page',
-      component: require('@/components/MainPage').default
-      // children: [
-      //   {
-      //     path: 'radar',
-      //     component: require('@/components/LandingPage').default
-      //   },
-      //   {
+      component: require('@/components/MainPage').default,
+      children: [
 
-      //     path: 'groundmissile',
-      //     component: require('@/components/LandingPage').default
-      //   }
-      // ]
+        {
+          path: 'useddetail/radar',
+          name: 'used-detail-radar',
+          component: require('@/components/MainPageComponents/Radar').default
+
+        },
+        {
+          path: 'useddetail/groundmissile',
+          name: 'used-detail-groundmissile',
+          component: require('@/components/MainPageComponents/GroundMissile').default
+
+        },
+        {
+          path: 'useddetail/warplane',
+          name: 'used-detail-warplane',
+          component: require('@/components/MainPageComponents/WarPlane').default
+
+        }
+      ]
     },
     // {
     //   path: '/useddetail/radar',
@@ -47,27 +57,31 @@ export default new Router({
     //   component: require('@/components/MainPageComponents/Radar').default
 
     // },
-    {
-      path: '/useddetail/radar',
-      name: 'used-detail-radar',
-      component: require('@/components/MainPageComponents/Radar').default
+    // {
+    //   path: '/useddetail/radar',
+    //   name: 'used-detail-radar',
+    //   component: require('@/components/MainPageComponents/Radar').default
 
-    },
-    {
-      path: '/useddetail/groundmissile',
-      name: 'used-detail-groundmissile',
-      component: require('@/components/MainPageComponents/GroundMissile').default
+    // },
+    // {
+    //   path: '/useddetail/groundmissile',
+    //   name: 'used-detail-groundmissile',
+    //   component: require('@/components/MainPageComponents/GroundMissile').default
 
-    },
-    {
-      path: '/useddetail/warplane',
-      name: 'used-detail-warplane',
-      component: require('@/components/MainPageComponents/WarPlane').default
+    // },
+    // {
+    //   path: '/useddetail/warplane',
+    //   name: 'used-detail-warplane',
+    //   component: require('@/components/MainPageComponents/WarPlane').default
 
-    },
+    // },
     {
       path: '*',
       redirect: '/'
+    },
+    {
+      path: '/',
+      redirect: '/used'
     },
     {
       path: '/testpage',

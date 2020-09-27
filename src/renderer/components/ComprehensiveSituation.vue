@@ -1,22 +1,28 @@
 <template>
   <div class="main-context">
-          <div class="main-middle-content">
-      <div class="main-middle-button">
-        <p class="main-middle-button-text">全国</p>
-      </div>
-      <div class="main-middle-button">
+    <div class="main-middle-content">
+   
+        <div  class="main-middle-button" :class="{button_active:isActiveStyle=='A'}"    @click="detail('A')">
+          <p class="main-middle-button-text" >全国</p>
+        </div>
+     
+      
+      <div class="main-middle-button" :class="{button_active:isActiveStyle=='E'}" @click="detail('E')">
         <p class="main-middle-button-text">东部</p>
       </div>
-      <div class="main-middle-button">
+     
+      
+      <div class="main-middle-button" :class="{button_active:isActiveStyle=='S'}"  @click="detail('S')">
         <p class="main-middle-button-text">南部</p>
       </div>
-      <div class="main-middle-button">
+   
+      <div class="main-middle-button" :class="{button_active:isActiveStyle=='W'}"  @click="detail('W')">
         <p class="main-middle-button-text">西部</p>
       </div>
-      <div class="main-middle-button">
+      <div class="main-middle-button"  :class="{button_active:isActiveStyle=='N'}"  @click="detail('N')">
         <p class="main-middle-button-text">北部</p>
       </div>
-      <div class="main-middle-button">
+      <div class="main-middle-button" :class="{button_active:isActiveStyle=='C'}"  @click="detail('C')">
         <p class="main-middle-button-text">中部</p>
       </div>
     </div>
@@ -27,7 +33,7 @@
 
     <div class="main-right">
       <right-one class="right-style" />
-       <right-two class="right-two-style" />
+      <right-two class="right-two-style" />
     </div>
   </div>
 </template>
@@ -59,6 +65,7 @@ export default {
     return {
       // activeIndex: '1',
       // activeIndex2: '1',
+
       activeIndex: '/testpage',
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
@@ -69,7 +76,8 @@ export default {
       titleRightUrl: TitleRightImg,
       blackUrl: BlankImg,
       // mainLeftBtnUrl: MainLeftBtnImg,
-      search_text: ''
+      search_text: '',
+      isActiveStyle: 'A'
     };
   },
   // 检测路由变化
@@ -78,7 +86,15 @@ export default {
     //   this.setCurrentRoute();
     // }
   },
+  // computed: {
+  //   isActiveStyle: function() {
+  //     return this.isActiveStyles;
+  //   }
+  // },
   methods: {
+    detail: function(msg) {
+      this.isActiveStyle = msg;
+    }
     // setCurrentRoute() {
     //   this.activeIndex = this.$route.path; // 通过他就可以监听到当前路由状态并激活当前菜单
     // },
@@ -100,6 +116,9 @@ export default {
 @font-face {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../assets/font/Zhongheijian.ttf");
+}
+ .button_active {
+  background-image: url("../assets/main-content-btn-active.png") !important;
 }
 .right-two-style {
   background-image: url("../assets/echarts-bg.png");
@@ -538,16 +557,16 @@ html {
   flex-direction: row;
   margin-left: 120px;
 }
-.main-middle-content{
-    /* z-index: -10; */
-        top: 110px;
-   position: absolute;
-    text-align: center;
-    width: 4320px;
-    height: 1360px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+.main-middle-content {
+  /* z-index: -10; */
+  top: 110px;
+  position: absolute;
+  text-align: center;
+  width: 4320px;
+  height: 1360px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 /* .main-middle-content {
   text-align: center;

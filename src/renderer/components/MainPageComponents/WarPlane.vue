@@ -1,22 +1,46 @@
 <template>
   <div class="main-context">
-        <div class="main-middle-content">
-      <div class="main-middle-button">
+ <div class="main-middle-content">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'A' }"
+        @click="detail('A')"
+      >
         <p class="main-middle-button-text">全国</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'E' }"
+        @click="detail('E')"
+      >
         <p class="main-middle-button-text">东部</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'S' }"
+        @click="detail('S')"
+      >
         <p class="main-middle-button-text">南部</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'W' }"
+        @click="detail('W')"
+      >
         <p class="main-middle-button-text">西部</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'N' }"
+        @click="detail('N')"
+      >
         <p class="main-middle-button-text">北部</p>
       </div>
-      <div class="main-middle-button">
+      <div
+        class="main-middle-button"
+        :class="{ button_active: isActiveStyle == 'C' }"
+        @click="detail('C')"
+      >
         <p class="main-middle-button-text">中部</p>
       </div>
     </div>
@@ -51,7 +75,7 @@ export default {
   },
   data() {
     return {
-
+      isActiveStyle: 'A',
       taskUrl: TaskImg,
       equipmentUrl: EquipmentImg,
       reportUrl: ReportImg,
@@ -69,7 +93,9 @@ export default {
 
   },
   methods: {
-
+    detail: function(msg) {
+      this.isActiveStyle = msg;
+    }
   },
   created() {
 
@@ -84,6 +110,9 @@ export default {
 @font-face {
   font-family: "Zhongheijian"; /* 这个名字可以自己定义 */
   src: url("../../assets/font/Zhongheijian.ttf");
+}
+.button_active{
+  background-image: url("../../assets/main-content-btn-active.png") !important;
 }
 .footer-left-search {
   width: 230px;

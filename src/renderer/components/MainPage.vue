@@ -2,30 +2,31 @@
   <div class="main-context">
     <div class="main-middle-content">
       <router-link :to="{ path: '/useddetail/radar' }">
-        <div class="main-middle-button">
-          <p class="main-middle-button-text">全国</p>
+        <div class="main-middle-button" :class="{button_active:isActiveStyle=='A'}" @click="detail('A')">
+          <p class="main-middle-button-text" >全国</p>
         </div>
       </router-link>
        <router-link :to="{ path: '/useddetail/groundmissile' }">
-      <div class="main-middle-button">
+      <div class="main-middle-button" :class="{button_active:isActiveStyle=='E'}" @click="detail('E')">
         <p class="main-middle-button-text">东部</p>
       </div>
        </router-link>
          <router-link :to="{ path: '/useddetail/warplane' }">
-      <div class="main-middle-button">
+      <div class="main-middle-button" :class="{button_active:isActiveStyle=='S'}"  @click="detail('S')">
         <p class="main-middle-button-text">南部</p>
       </div>
        </router-link>
-      <div class="main-middle-button">
+      <div class="main-middle-button" :class="{button_active:isActiveStyle=='W'}"  @click="detail('W')">
         <p class="main-middle-button-text">西部</p>
       </div>
-      <div class="main-middle-button">
+      <div class="main-middle-button"  :class="{button_active:isActiveStyle=='N'}"  @click="detail('N')">
         <p class="main-middle-button-text">北部</p>
       </div>
-      <div class="main-middle-button">
+      <div class="main-middle-button" :class="{button_active:isActiveStyle=='C'}"  @click="detail('C')">
         <p class="main-middle-button-text">中部</p>
       </div>
     </div>
+    <!-- <router-view /> -->
     <div class="main-left">
       <left-one class="left-one-style" />
       <left-two class="left-two-style" v-if="true" />
@@ -73,7 +74,8 @@ export default {
       titleRightUrl: TitleRightImg,
       blackUrl: BlankImg,
       // mainLeftBtnUrl: MainLeftBtnImg,
-      search_text: ''
+      search_text: '',
+      isActiveStyle: 'A'
     };
   },
   // 检测路由变化
@@ -83,6 +85,9 @@ export default {
     // }
   },
   methods: {
+    detail: function(msg) {
+      this.isActiveStyle = msg;
+    }
     // setCurrentRoute() {
     //   this.activeIndex = this.$route.path; // 通过他就可以监听到当前路由状态并激活当前菜单
     // },
@@ -471,6 +476,10 @@ html {
   background-image: url("../assets/main-content-btn-active.png");
   background-size: 100% 100%;
 }
+.button_active{
+  background-image: url("../assets/main-content-btn-active.png") !important;
+}
+
 .main-middle-button-text {
   user-select: none;
   font-family: "Zhongheijian";
