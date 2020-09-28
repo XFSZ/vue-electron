@@ -2,11 +2,10 @@
   <div class="titlemain">
     <div class="title-left">
       <img :src="blockImg" class="block-img" />
-      <p class="titlename">{{ leftTitle }}</p>
+      <p ref="words" class="titlename">{{ leftTitle }}</p>
     </div>
     <div class="hr">
       <hr />
-      <!-- <el-divider></el-divider> -->
       <div class="deom_hr"></div>
       <hr />
     </div>
@@ -52,15 +51,16 @@
 </template>
 
 <script>
-import { TweenLite } from 'gsap';
+import { TweenMax, TimelineMax} from 'gsap';
+import SplitText from '../../Common/splittext';
 import BlankImg from '../../../assets/block.png';
 export default {
   name: 'titlemoudle',
   data() {
     return {
       // leftTitle: '飞机',
-      blankUrl: BlankImg
-
+      blankUrl: BlankImg,
+      words: []
     };
   },
   props: ['leftTitle', 'blockImg', 'fromNum', 'toNum'],
@@ -74,18 +74,33 @@ export default {
     changeStandNumber() {
       return this.fromNum[2].value.toFixed(0);
     }
+    // titleAnimation() {
+    //   return this.words;
+    // }
   },
   mounted() {
     this.set();
+    this.wordsAnimation();
   },
   methods: {
+    wordsAnimation() {
+      const {words} = this.$refs;
+      const timeline = new TimelineMax();
+      const	split = new SplitText(words, {type: 'chars'});
+      timeline.from(split.chars, {opacity: 0, x: 50, ease: 'back(0)', stagger: {
+        from: 'start',
+        each: 0.5
+      }});
+
+    },
+
     set() {
       for (let i = 0; i < this.toNum.length; i++) {
         this.setLite(this.fromNum[i], this.toNum[i].value);
       }
     },
     setLite(obj, val) {
-      TweenLite.to(obj, 2, {
+      TweenMax.to(obj, 2, {
         value: val
       });
     }
@@ -149,14 +164,8 @@ export default {
   width: 6px;
   height: 6px;
 
-  /* margin-top: 10px; */
 }
-.left-img {
-  /* margin-left: 22px; */
-}
-/* .right-img{
 
- } */
 .title-table-head-main {
   display: flex;
   margin-top: 8px;
