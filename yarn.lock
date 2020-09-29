@@ -12,6 +12,11 @@
   resolved "https://registry.npm.taobao.org/7zip/download/7zip-0.0.6.tgz#9cafb171af82329490353b4816f03347aa150a30"
   integrity sha1-nK+xca+CMpSQNTtIFvAzR6oVCjA=
 
+"@amap/amap-jsapi-loader@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.npm.taobao.org/@amap/amap-jsapi-loader/download/@amap/amap-jsapi-loader-0.0.1.tgz#c35d60f057b7fc429fc7a60e5acecbedd556cb15"
+  integrity sha1-w11g8Fe3/EKfx6YOWs7L7dVWyxU=
+
 "@babel/code-frame@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.npm.taobao.org/@babel/code-frame/download/@babel/code-frame-7.0.0-beta.44.tgz#2a02643368de80916162be70865c97774f3adbd9"
@@ -848,6 +853,14 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
+"@babel/runtime-corejs2@^7.7.2":
+  version "7.11.2"
+  resolved "https://registry.npm.taobao.org/@babel/runtime-corejs2/download/@babel/runtime-corejs2-7.11.2.tgz?cache=0&sync_timestamp=1596637734824&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime-corejs2%2Fdownload%2F%40babel%2Fruntime-corejs2-7.11.2.tgz#700a03945ebad0d31ba6690fc8a6bcc9040faa47"
+  integrity sha1-cAoDlF660NMbpmkPyKa8yQQPqkc=
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.8.4":
   version "7.11.2"
   resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.11.2.tgz?cache=0&sync_timestamp=1596637803941&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
@@ -923,6 +936,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@sakitam-gis/kriging@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.npm.taobao.org/@sakitam-gis/kriging/download/@sakitam-gis/kriging-0.1.0.tgz#15c11ae5976ccb07afc81c1b06ddaa00a761eddb"
+  integrity sha1-FcEa5ZdsywevyBwbBt2qAKdh7ds=
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.npm.taobao.org/@sindresorhus/is/download/@sindresorhus/is-0.14.0.tgz?cache=0&sync_timestamp=1598049645019&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40sindresorhus%2Fis%2Fdownload%2F%40sindresorhus%2Fis-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -934,6 +952,90 @@
   integrity sha1-sWZeLEYaLNkvTBu/UNVFTeDUtCE=
   dependencies:
     defer-to-connect "^1.0.1"
+
+"@turf/area@^5.1.5":
+  version "5.1.5"
+  resolved "https://registry.npm.taobao.org/@turf/area/download/@turf/area-5.1.5.tgz#efd899bfd260cdbd1541b2a3c155f8a5d2eefa1d"
+  integrity sha1-79iZv9Jgzb0VQbKjwVX4pdLu+h0=
+  dependencies:
+    "@turf/helpers" "^5.1.5"
+    "@turf/meta" "^5.1.5"
+
+"@turf/area@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.npm.taobao.org/@turf/area/download/@turf/area-6.0.1.tgz#50ed63c70ef2bdb72952384f1594319d94f3b051"
+  integrity sha1-UO1jxw7yvbcpUjhPFZQxnZTzsFE=
+  dependencies:
+    "@turf/helpers" "6.x"
+    "@turf/meta" "6.x"
+
+"@turf/bbox@^5.1.5":
+  version "5.1.5"
+  resolved "https://registry.npm.taobao.org/@turf/bbox/download/@turf/bbox-5.1.5.tgz#3051df514ad4c50f4a4f9b8a2d15fd8b6840eda3"
+  integrity sha1-MFHfUUrUxQ9KT5uKLRX9i2hA7aM=
+  dependencies:
+    "@turf/helpers" "^5.1.5"
+    "@turf/meta" "^5.1.5"
+
+"@turf/boolean-point-in-polygon@^5.1.5":
+  version "5.1.5"
+  resolved "https://registry.npm.taobao.org/@turf/boolean-point-in-polygon/download/@turf/boolean-point-in-polygon-5.1.5.tgz#f01cc194d1e030a548bfda981cba43cfd62941b7"
+  integrity sha1-8BzBlNHgMKVIv9qYHLpDz9YpQbc=
+  dependencies:
+    "@turf/helpers" "^5.1.5"
+    "@turf/invariant" "^5.1.5"
+
+"@turf/explode@^5.1.5":
+  version "5.1.5"
+  resolved "https://registry.npm.taobao.org/@turf/explode/download/@turf/explode-5.1.5.tgz#b12b2f774004a1b48f62ba95b20a1c655a3de118"
+  integrity sha1-sSsvd0AEobSPYrqVsgocZVo94Rg=
+  dependencies:
+    "@turf/helpers" "^5.1.5"
+    "@turf/meta" "^5.1.5"
+
+"@turf/helpers@6.x", "@turf/helpers@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.npm.taobao.org/@turf/helpers/download/@turf/helpers-6.1.4.tgz#d6fd7ebe6782dd9c87dca5559bda5c48ae4c3836"
+  integrity sha1-1v1+vmeC3ZyH3KVVm9pcSK5MODY=
+
+"@turf/helpers@^5.1.5":
+  version "5.1.5"
+  resolved "https://registry.npm.taobao.org/@turf/helpers/download/@turf/helpers-5.1.5.tgz#153405227ab933d004a5bb9641a9ed999fcbe0cf"
+  integrity sha1-FTQFInq5M9AEpbuWQantmZ/L4M8=
+
+"@turf/invariant@^5.1.5":
+  version "5.2.0"
+  resolved "https://registry.npm.taobao.org/@turf/invariant/download/@turf/invariant-5.2.0.tgz#f0150ff7290b38577b73d088b7932c1ee0aa90a7"
+  integrity sha1-8BUP9ykLOFd7c9CIt5MsHuCqkKc=
+  dependencies:
+    "@turf/helpers" "^5.1.5"
+
+"@turf/isobands@^5.1.5":
+  version "5.1.5"
+  resolved "https://registry.npm.taobao.org/@turf/isobands/download/@turf/isobands-5.1.5.tgz#6b44cef584d551a31304187af23b4a1582e3f08d"
+  integrity sha1-a0TO9YTVUaMTBBh68jtKFYLj8I0=
+  dependencies:
+    "@turf/area" "^5.1.5"
+    "@turf/bbox" "^5.1.5"
+    "@turf/boolean-point-in-polygon" "^5.1.5"
+    "@turf/explode" "^5.1.5"
+    "@turf/helpers" "^5.1.5"
+    "@turf/invariant" "^5.1.5"
+    "@turf/meta" "^5.1.5"
+
+"@turf/meta@6.x":
+  version "6.0.2"
+  resolved "https://registry.npm.taobao.org/@turf/meta/download/@turf/meta-6.0.2.tgz#eb92951126d24a613ac1b7b99d733fcc20fd30cf"
+  integrity sha1-65KVESbSSmE6wbe5nXM/zCD9MM8=
+  dependencies:
+    "@turf/helpers" "6.x"
+
+"@turf/meta@^5.1.5":
+  version "5.2.0"
+  resolved "https://registry.npm.taobao.org/@turf/meta/download/@turf/meta-5.2.0.tgz#3b1ad485ee0c3b0b1775132a32c384d53e4ba53d"
+  integrity sha1-OxrUhe4MOwsXdRMqMsOE1T5LpT0=
+  dependencies:
+    "@turf/helpers" "^5.1.5"
 
 "@tweenjs/tween.js@^18.6.0":
   version "18.6.0"
@@ -3909,7 +4011,7 @@ core-js-compat@^3.6.2:
     browserslist "^4.8.5"
     semver "7.0.0"
 
-core-js@^2.2.0, core-js@^2.4.0, core-js@^2.5.0:
+core-js@^2.2.0, core-js@^2.4.0, core-js@^2.5.0, core-js@^2.6.5:
   version "2.6.11"
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha1-OIMUafmSK97Y7iHJ3EaYXgOZMIw=
@@ -6388,6 +6490,11 @@ header-case@^1.0.0:
     no-case "^2.2.0"
     upper-case "^1.1.3"
 
+heatmap.js@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npm.taobao.org/heatmap.js/download/heatmap.js-2.0.5.tgz#466d3b86513f5d49112a49d25700ab2730149153"
+  integrity sha1-Rm07hlE/XUkRKknSVwCrJzAUkVM=
+
 highlight.js@^9.3.0:
   version "9.18.3"
   resolved "https://registry.npm.taobao.org/highlight.js/download/highlight.js-9.18.3.tgz#a1a0a2028d5e3149e2380f8a865ee8516703d634"
@@ -7625,6 +7732,11 @@ lazystream@^1.0.0:
   dependencies:
     readable-stream "^2.0.5"
 
+leaflet@^1.6.0:
+  version "1.7.1"
+  resolved "https://registry.npm.taobao.org/leaflet/download/leaflet-1.7.1.tgz?cache=0&sync_timestamp=1599126573163&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fleaflet%2Fdownload%2Fleaflet-1.7.1.tgz#10d684916edfe1bf41d688a3b97127c0322a2a19"
+  integrity sha1-ENaEkW7f4b9B1oijuXEnwDIqKhk=
+
 leven@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npm.taobao.org/leven/download/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"
@@ -7818,6 +7930,11 @@ lodash.clonedeep@^3.0.2:
   dependencies:
     lodash._baseclone "^3.0.0"
     lodash._bindcallback "^3.0.0"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.npm.taobao.org/lodash.debounce/download/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
 lodash.isarguments@^3.0.0:
   version "3.1.0"
@@ -8166,6 +8283,11 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/methods/download/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
+
+mgrs@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/mgrs/download/mgrs-1.0.0.tgz#fb91588e78c90025672395cb40b25f7cd6ad1829"
+  integrity sha1-+5FYjnjJACVnI5XLQLJffNatGCk=
 
 micromatch@^2.3.11:
   version "2.3.11"
@@ -9719,6 +9841,14 @@ progress@^2.0.0:
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/progress/download/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha1-foz42PW48jnBvGi+tOt4Vn1XLvg=
+
+proj4@^2.6.0:
+  version "2.6.2"
+  resolved "https://registry.npm.taobao.org/proj4/download/proj4-2.6.2.tgz#4665d7cbc30fd356375007c2fed53b07dbda1d67"
+  integrity sha1-RmXXy8MP01Y3UAfC/tU7B9vaHWc=
+  dependencies:
+    mgrs "1.0.0"
+    wkt-parser "^1.2.4"
 
 promise-inflight@^1.0.1:
   version "1.0.1"
@@ -12064,6 +12194,22 @@ void-elements@^2.0.0:
   resolved "https://registry.npm.taobao.org/void-elements/download/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
+vue-cesium@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.npm.taobao.org/vue-cesium/download/vue-cesium-2.1.6.tgz#a4b2d00a40e130ee44e625dfc48306159f745292"
+  integrity sha1-pLLQCkDhMO5E5iXfxIMGFZ90UpI=
+  dependencies:
+    "@amap/amap-jsapi-loader" "0.0.1"
+    "@babel/runtime-corejs2" "^7.7.2"
+    "@sakitam-gis/kriging" "^0.1.0"
+    "@turf/area" "^6.0.1"
+    "@turf/helpers" "^6.1.4"
+    "@turf/isobands" "^5.1.5"
+    heatmap.js "^2.0.5"
+    leaflet "^1.6.0"
+    lodash.debounce "^4.0.8"
+    proj4 "^2.6.0"
+
 vue-electron@^1.0.6:
   version "1.0.6"
   resolved "https://registry.npm.taobao.org/vue-electron/download/vue-electron-1.0.6.tgz#e798e03180b8933539defe31f92e53b9242b9406"
@@ -12429,6 +12575,11 @@ with-callback@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/with-callback/download/with-callback-1.0.2.tgz#a09629b9a920028d721404fb435bdcff5c91bc21"
   integrity sha1-oJYpuakgAo1yFAT7Q1vc/1yRvCE=
+
+wkt-parser@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.npm.taobao.org/wkt-parser/download/wkt-parser-1.2.4.tgz#e42ba7b96f13aef82a2da9056e2d87da0fec5393"
+  integrity sha1-5CunuW8TrvgqLakFbi2H2g/sU5M=
 
 word-wrap@~1.2.3:
   version "1.2.3"
