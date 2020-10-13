@@ -4,9 +4,9 @@
       <img ref="blockImg" :src="blockImg" class="block-img" />
       <p ref="words" class="titlename">{{ leftTitle }}</p>
     </div>
-    <div class="hr">
+    <div  class="hr">
       <hr />
-      <div class="deom_hr"></div>
+      <div ref="hr" class="deom_hr"></div>
       <hr />
     </div>
     <div ref="bgbox" class="table-head">
@@ -83,6 +83,7 @@ export default {
     this.wordsAnimation();
     this.boxAnimation();
     this.blockImgAnimation();
+    this.hrAnimation();
     //  this.bgboxAnimation();
   },
   methods: {
@@ -97,6 +98,15 @@ export default {
         stagger: {
           from: 'start',
           each: 0.5
+        }
+      });
+    },
+    hrAnimation() {
+      const { hr } = this.$refs;
+      TweenMax.from(hr, 1.5, {
+        css: {
+          transformOrigin: 'left',
+          scale: 0
         }
       });
     },

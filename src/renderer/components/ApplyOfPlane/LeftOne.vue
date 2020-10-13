@@ -1,5 +1,7 @@
 <template>
   <div class="main">
+
+    
     <title-moudle
       :blockImg="flyUrl"
       :leftTitle="leftTitle1"
@@ -11,6 +13,7 @@
       id="myChart"
       :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px' ,marginRight: '60px'}"
     ></div>
+
     <title-moudle
       :blockImg="logisticsUrl"
       :leftTitle="leftTitle2"
@@ -21,6 +24,8 @@
       id="myChart1"
       :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px',marginRight: '60px'}"
     ></div>
+
+
     <title-moudle
       :blockImg="flyUrl"
       :leftTitle="leftTitle3"
@@ -37,7 +42,6 @@
           :goodNumber="googNumber1"
           :totalNumber="totalNumber1"
         />
-        <div></div>
       </div>
       <div class="circle-title">
         <div
@@ -48,7 +52,7 @@
           :goodNumber="googNumber2"
           :totalNumber="totalNumber2"
         />
-        <div></div>
+     
       </div>
       <div class="circle-title">
         <div
@@ -59,7 +63,7 @@
           :goodNumber="googNumber3"
           :totalNumber="totalNumber3"
         />
-        <div></div>
+      
       </div>
     </div>
   </div>
@@ -207,16 +211,16 @@ export default {
   },
   methods: {
     echartsAinmation() {
-      // const { echarts1 } = this.$refs;
+      const { echarts1 } = this.$refs;
       // console.log('this is echarts : ', echarts1);
       // console.log('this is echartsAnimation1 : ', this.echartsAnimation1);
 
-      // TweenMax.from(echarts1, 0.6, {
-      //   css: {
-      //     transformOrigin: 'right top',
-      //     scale: 0
-      //   }
-      // });
+      TweenMax.from(echarts1, 0.6, {
+        css: {
+          transformOrigin: 'left',
+          scaleX: 0
+        }
+      });
     },
     drawLine() {
       var that = this;
