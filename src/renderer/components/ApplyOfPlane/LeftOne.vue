@@ -7,6 +7,7 @@
       :toNum="toNum1"
     />
     <div
+    ref="echarts1"
       id="myChart"
       :style="{ width: '500px', height: '368px', marginTop: '-38px' ,    marginLeft: '30px' ,marginRight: '60px'}"
     ></div>
@@ -66,6 +67,7 @@
 
 <script>
 // import { TweenLite } from 'gsap';
+import { TweenMax } from 'gsap';
 import TitleMoudle from './LeftOneChild/TitleMoudle';
 import TitleMoudleBottom from './LeftOneChild/TitileMoudleBottom';
 import FlyImg from '../../assets/fly.png';
@@ -99,6 +101,7 @@ export default {
       leftTitle1: '飞机',
       leftTitle2: '弹药',
       leftTitle3: '吊舱',
+      echartsAnimation1: null,
       flyUrl: FlyImg,
       logisticsUrl: LogisticsImg,
       googNumber1: 15784,
@@ -200,12 +203,26 @@ export default {
   computed: {},
   mounted() {
     this.drawLine();
+    this.echartsAinmation();
   },
   methods: {
+    echartsAinmation() {
+      // const { echarts1 } = this.$refs;
+      // console.log('this is echarts : ', echarts1);
+      // console.log('this is echartsAnimation1 : ', this.echartsAnimation1);
+      // this.echartsAnimation1.clear();
+      // TweenMax.from(echarts1, 0.6, {
+      //   css: {
+      //     transformOrigin: 'right top',
+      //     scale: 0
+      //   }
+      // });
+    },
     drawLine() {
       var that = this;
       // 基于准备好的dom，初始化echarts实例
       let myChart = this.$echarts.init(document.getElementById('myChart'));
+      this.echartsAnimation1 = myChart;
       // 绘制图表
       myChart.resize;
       myChart.setOption({
