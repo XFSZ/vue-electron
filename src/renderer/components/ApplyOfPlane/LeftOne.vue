@@ -210,7 +210,7 @@ export default {
       // const { echarts1 } = this.$refs;
       // console.log('this is echarts : ', echarts1);
       // console.log('this is echartsAnimation1 : ', this.echartsAnimation1);
-      // this.echartsAnimation1.clear();
+
       // TweenMax.from(echarts1, 0.6, {
       //   css: {
       //     transformOrigin: 'right top',
