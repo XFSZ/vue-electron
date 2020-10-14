@@ -23,13 +23,18 @@
         :fromNum="fromNum2"
         :toNum="toNum2"
       />
-
-      <title-moudle-bottom
-        :goodNumber="googNumber1"
-        :totalNumber="totalNumber1"
-        :titleName="titleNameOfCircle1"
-        echartIndex="a"
-      />
+      <div class="mycarousel">
+        <el-carousel :interval=carouselTimeOut trigger="click">
+          <el-carousel-item v-for="(item, index) in 2" :key="item">
+            <title-moudle-bottom
+              :goodNumber="googNumber1"
+              :totalNumber="totalNumber1"
+              :titleName="titleNameOfCircle1"
+              :echartIndex="`a_${index}`"
+            />
+          </el-carousel-item>
+        </el-carousel>
+      </div>
     </div>
 
     <div>
@@ -82,6 +87,7 @@ export default {
   },
   data() {
     return {
+      carouselTimeOut: 5000,
       titleNameOfCircle1: '一代',
       leftTitle1: '飞机',
       leftTitle2: '地导',
@@ -464,6 +470,18 @@ export default {
 </script>
 
 <style scoped>
+.mycarousel{
+  margin-left: 30px;
+  margin-right: 30px;
+  /* pointer-events: none; */
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
+}
+.mycarousel .el-carousel--horizontal{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 .circle-title {
   display: flex;
   flex-direction: column;
