@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import LeftOne from './ComprehensiveSituation/LeftOne';
-import LeftTwo from './ComprehensiveSituation/LeftTwo';
-import RightOne from './ComprehensiveSituation/RightOne';
-import RightTwo from './ComprehensiveSituation/RightTwo';
+import LeftOne from './ComprehensiveSituationV2/LeftOne';
+import LeftTwo from './ComprehensiveSituationV2/LeftTwo';
+import RightOne from './ComprehensiveSituationV2/RightOne';
+import RightTwo from './ComprehensiveSituationV2/RightTwo';
 import TaskImg from '../assets/task.png';
 import EquipmentImg from '../assets/equipment.png';
 import ReportImg from '../assets/report.png';
