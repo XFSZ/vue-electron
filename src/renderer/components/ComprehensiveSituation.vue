@@ -33,7 +33,7 @@
 
     <div class="main-right">
       <right-one class="right-style" />
-      <right-two class="right-two-style" />
+      <!-- <right-two class="right-two-style" /> -->
     </div>
   </div>
 </template>
@@ -42,7 +42,7 @@
 import LeftOne from './ComprehensiveSituationV2/LeftOne';
 import LeftTwo from './ComprehensiveSituationV2/LeftTwo';
 import RightOne from './ComprehensiveSituationV2/RightOne';
-import RightTwo from './ComprehensiveSituationV2/RightTwo';
+// import RightTwo from './ComprehensiveSituationV2/RightTwo';
 import TaskImg from '../assets/task.png';
 import EquipmentImg from '../assets/equipment.png';
 import ReportImg from '../assets/report.png';
@@ -58,8 +58,8 @@ export default {
   components: {
     LeftOne,
     LeftTwo,
-    RightOne,
-    RightTwo
+    RightOne
+    // RightTwo
   },
   data() {
     return {

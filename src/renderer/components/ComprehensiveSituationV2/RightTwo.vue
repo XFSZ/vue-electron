@@ -1,58 +1,32 @@
 <template>
   <div class="mainr">
-    <top-title :imgUrl="logisticsUrl" :titleName="toptitleName0" />
+    <div class="text-table">
+      <div>
+        <div class="title-left">
+          <img :src="logisticsUrl" class="block-img" />
+          <p class="titlename">科研试飞</p>
+          <!-- <p class="titlename">{{ leftTitle }}</p> -->
+        </div>
 
-    <div
-      id="right_two_chart_1"
-      :style="{
-        width: '540px',
-        height: '276px',
-         marginTop:'20px',
-         marginBottom:'20px'
-      }"
-    ></div>
-    <div class="hr">
-      <hr />
-      <div class="deom_hr"></div>
-      <hr />
-    </div>
-    <div
-      id="right_two_chart_2"
-      :style="{
-        width: '540px',
-        height: '276px',
-         marginTop:'20px',
-         marginBottom:'20px'
-      }"
-    ></div>
         <div class="hr">
-      <hr />
-      <div class="deom_hr"></div>
-      <hr />
-    </div>
-    <div
-      id="right_two_chart_3"
-      :style="{
-        width: '540px',
-        height: '276px',
-      marginTop:'20px',
-      marginBottom:'20px'
-      }"
-    ></div>
-        <div class="hr">
-      <hr />
-      <div class="deom_hr"></div>
-      <hr />
-    </div>
-    <div
-      id="right_two_chart_4"
-      :style="{
-        width: '540px',
-        height: '276px',
-         marginTop:'20px'
+          <hr />
+          <!-- <el-divider></el-divider> -->
+          <div class="deom_hr"></div>
+          <hr />
+        </div>
+      </div>
 
-      }"
-    ></div>
+      <div class="right-text-table-one">
+        <div class="title-table-head-main">
+          <img :src="blankUrl" class="blank-img left-blank-img" />
+          <p class="title-child">当日试飞总架次</p>
+          <img :src="blankUrl" class="blank-img right-blank-img" />
+        </div>
+
+        <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
+      </div>
+      <div><right-child-moudle :listItemsData="fromNum8" :circleData="circleData"/></div>
+    </div>
   </div>
 </template>
 

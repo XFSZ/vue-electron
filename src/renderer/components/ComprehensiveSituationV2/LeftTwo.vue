@@ -9,40 +9,31 @@
       />
     </div>
     <div
+      id="myChart_right"
+      :style="{
+        width: '500px',
+        height: '368px',
+        marginTop: '-38px',
+        marginLeft: '30px',
+        marginRight: '60px',
+      }"
+    ></div>
+    <div>
+      <title-moudle
+        :blockImg="flyUrl"
+        :leftTitle="leftTitle2"
+        :fromNum="fromNum"
+        :toNum="toNum"
+      />
+    </div>
+    <!-- <div
       id="myChart_rose1"
       :style="{
         width: '580px',
         height: '468px',
        
       }"
-    ></div>
-    <div class="text-table">
-      <div>
-        <div class="title-left">
-          <img :src="logisticsUrl" class="block-img" />
-          <p class="titlename">科研试飞</p>
-          <!-- <p class="titlename">{{ leftTitle }}</p> -->
-        </div>
-
-        <div class="hr">
-          <hr />
-          <!-- <el-divider></el-divider> -->
-          <div class="deom_hr"></div>
-          <hr />
-        </div>
-      </div>
-
-      <div class="right-text-table-one">
-        <div class="title-table-head-main">
-          <img :src="blankUrl" class="blank-img left-blank-img" />
-          <p class="title-child">当日试飞总架次</p>
-          <img :src="blankUrl" class="blank-img right-blank-img" />
-        </div>
-
-        <p class="title-child-num">{{ changeTotalNumberOfModels }}</p>
-      </div>
-      <div><right-child-moudle :listItemsData="fromNum8" :circleData="circleData"/></div>
-    </div>
+    ></div> -->
   </div>
 </template>
 
@@ -53,17 +44,19 @@ import TitleMoudle from './LeftOneChild/TitleMoudle';
 import FlyImg from '../../assets/fly.png';
 import LogisticsImg from '../../assets/logistics.png';
 import RightChildMoudle from './RightChild/RightChildMoudle';
+import TopTitle from './TopTitle/TopTitle';
 export default {
   name: 'rightlabel',
   components: {
     RightChildMoudle,
-    TitleMoudle
+    TitleMoudle,
+    TopTitle
   },
   data() {
     return {
       leftTitle1: '动用使用',
-      leftTitle2: '弹药',
-      leftTitle3: '吊舱',
+      leftTitle3: '弹药',
+      leftTitle2: '吊舱',
       flyUrl: FlyImg,
       logisticsUrl: LogisticsImg,
       blankUrl: BlankImg,
@@ -110,15 +103,10 @@ export default {
           }
         }
       ],
-      roseData: [
-        { value: 127, name: '作战备战' },
-        { value: 59, name: '非战争军事行动' },
-        { value: 67, name: '演练演习' },
-        { value: 87, name: '激动转场' },
-        { value: 111, name: '日常训练' }
-      ].sort(function(a, b) {
-        return a.value - b.value;
-      })
+      barchart: {
+        xdata: [62.7, 30, 62.7, 17.2],
+        ydata: ['空空导弹', '空地导弹', '制导炸弹', '普通炸弹']
+      }
     };
   },
   computed: {
@@ -148,107 +136,146 @@ export default {
       });
     },
     drawLine() {
+      var that = this;
       // 基于准备好的dom，初始化echarts实例
-      let myChart6 = this.$echarts.init(
-        document.getElementById('myChart_rose1')
+      let myChart = this.$echarts.init(
+        document.getElementById('myChart_right')
       );
-
       // 绘制图表
-      myChart6.setOption({
-        tooltip: {
-          trigger: 'item',
-          formatter: '{a} <br/>{b} : {c} ({d}%)'
+      // myChart.resize;
+      myChart.setOption({
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
         },
+        xAxis: {
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontFamily: 'opposans',
+              color: 'rgba(170,170,170,0.5)'
+            }
+          },
+          type: 'value',
+          boundaryGap: [0, 0.01],
+          max: 100,
+          min: 0,
+          maxInterval: 100,
+          minInterval: 0,
+          interval: 20,
+          splitLine: {
+            // 网格线
+            show: false
+          }
+        },
+        yAxis: {
+          type: 'category',
 
-        visualMap: {
-          show: false,
-          //   min: 80,
-          //   max: 600,
-          inRange: {
-            colorLightness: [0, 1]
+          data: this.barchart.ydata,
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#ffffff',
+              fontSize: 17,
+              fontFamily: 'Zhongheijian'
+            }
+          },
+          axisTick: {
+            // y轴刻度线
+            show: false
           }
         },
         series: [
           {
-            name: '访问来源',
-            type: 'pie',
-            radius: '40%',
-            center: ['50%', '50%'],
-            data: this.roseData,
-            roseType: 'radius',
+            name: '完好率',
+            barWidth: 8,
+            type: 'bar',
             label: {
-              // color: 'rgba(255, 255, 255, 1)',
-              // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c} \n {per|{d}%}  ',  //label 的内容
-              // padding: [-24, -80],
-              padding: [10, -84, 0, -84],
-              formatter: '{a|{b}}{abg|}\n{hr|}\n  {b|' + '动用次数' + '：} {n|{c}} \n {per|' + '占比：' + '{d}%}  ',
-              rich: {// 定义不同地方的文字的字体大小和颜色
-                a: {
-                  color: '#ffffff',
-                  fontSize: 17,
-                  fontFamily: 'Zhongheijian',
-                  // color: '#999',
-                  lineHeight: 22,
-                  align: 'left',
-                  padding: [2, 4]
-                },
-                hr: {
-                  borderColor: '#aaa',
-                  width: '100%',
-                  borderWidth: 0.5,
-                  height: 0
-                },
-                n: {
-                  color: 'aqua',
-                  fontFamily: 'opposans',
-                  fontSize: 14
-                },
-                b: {
-                  color: 'white', // 字体颜色
-                  // fontSize: 10, // 字体大小
-                  fontFamily: 'opposans',
-                  fontSize: 14,
-                  lineHeight: 20
-                },
-                per: {
-                  color: 'white', // 字体颜色
-                  // fontSize: 10, // 字体大小
-                  fontFamily: 'opposans',
-                  align: 'center',
-                  width: '45%'
-                  // color: '#eee',
-                  // backgroundColor: '#334455',
-                  // padding: [2, -20]
-                  // borderRadius: 2
-                }
+              show: true, // 开启显示
+              position: [340, 10],
+              formatter: '完好率  {c}%', // 显示百分号
+              textStyle: {
+                // 数值样式
+                color: 'white', // 字体颜色
+                fontSize: 10, // 字体大小
+                fontFamily: 'opposans'
               }
-
             },
-            labelLine: {
-              lineStyle: {
-                color: 'rgba(255, 255, 255, 0.3)'
-              },
-              // smooth: 0.2,
-              length: 20,
-              length2: 80
-            },
+            showBackground: true,
+            // itemStyle: {
+            //   normal: {
+            //     color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+            //       { offset: 0, color: '#000' },
+            //       { offset: 0.3, color: '#888' },
+            //       { offset: 1, color: '#ddd' }
+            //     ])
+            //   }},
             itemStyle: {
-              color: '#001234',
-              shadowBlur: 200,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
-            },
+              normal: {
+                // 每个柱子的颜色即为colorList数组里的每一项,如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                color: function(params) {
+                  // 我这边就两个柱子，大体就两个柱子颜色渐变，所以数组只有两个值，多个颜色就多个值
+                  var colorList = [
+                    [
+                      'rgba(248,204,4,1)',
+                      'rgba(248,204,4,0.5)',
+                      'rgba(248,204,4,0.2)'
+                    ],
+                    [
+                      'rgba(244,34,4,1)',
+                      'rgba(244,34,4,0.5)',
+                      'rgba(244,34,4,0.2)'
+                    ],
+                    [
+                      'rgba(0,210,254,1)',
+                      'rgba(0,210,254,0.5)',
+                      'rgba(0,210,254,0.2)'
+                    ],
+                    [
+                      'rgba(0,210,254,1)',
+                      'rgba(0,210,254,0.5)',
+                      'rgba(0,210,254,0.2)'
+                    ],
+                    [
+                      'rgba(0,210,254,1)',
+                      'rgba(0,210,254,0.5)',
+                      'rgba(0,210,254,0.2)'
+                    ]
+                  ];
 
-            animationType: 'scale',
-            hoverAnimation: false,
-            // animationEasing: 'elasticOut',
-            // animationDelay: function(idx) {
-            //   return idx * 100;
-            // },
-            animationDuration: 2000
-            // animationDuration: function(idx) {
-            //   // 越往后的数据延迟越大
-            //   return idx * 100;
-            // }
+                  var index = params.dataIndex;
+                  if (params.dataIndex >= colorList.length) {
+                    index = params.dataIndex - colorList.length;
+                  }
+                  var colors = new that.$echarts.graphic.LinearGradient(
+                    1,
+                    0,
+                    0,
+                    0,
+                    [
+                      { offset: 0, color: colorList[index][0] },
+                      { offset: 0.5, color: colorList[index][1] },
+                      { offset: 1, color: colorList[index][2] }
+                    ]
+                  );
+                  return colors;
+                }
+                // barBorderRadius: 5 // 柱状角成椭圆形
+              }
+            },
+            backgroundStyle: {
+              color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                { offset: 0, color: 'rgba(172,172,172,1)' },
+                { offset: 0.2, color: 'rgba(172,172,172,0.5)' },
+                { offset: 1, color: 'rgba(0,0,0,0.5)' }
+              ])
+              // color: 'rgba(0, 220, 220, 0.8)'
+              // shadowOffsetX: 50,
+              // shadowOffsetY: 20
+            },
+            data: this.barchart.xdata
           }
         ]
       });
@@ -264,8 +291,7 @@ export default {
 .title-table-head-main {
   display: flex;
   flex-direction: row;
-  align-items: center
-
+  align-items: center;
 }
 .blank-img {
   width: 6px;
