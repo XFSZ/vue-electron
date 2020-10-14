@@ -24,7 +24,7 @@
         :toNum="toNum2"
       />
       <div class="mycarousel">
-        <el-carousel :interval=carouselTimeOut trigger="click">
+        <el-carousel :interval="carouselTimeOut" trigger="click">
           <el-carousel-item v-for="(item, index) in 2" :key="item">
             <title-moudle-bottom
               :goodNumber="googNumber1"
@@ -44,12 +44,18 @@
         :fromNum="fromNum3"
         :toNum="toNum3"
       />
-      <title-moudle-bottom
-        :goodNumber="googNumber1"
-        :totalNumber="totalNumber1"
-        :titleName="titleNameOfCircle1"
-        echartIndex="b"
-      />
+      <div class="mycarousel">
+        <el-carousel :interval="carouselTimeOut" trigger="click">
+          <el-carousel-item v-for="(item, index) in 2" :key="item">
+            <title-moudle-bottom
+              :goodNumber="googNumber1"
+              :totalNumber="totalNumber1"
+              :titleName="titleNameOfCircle1"
+              :echartIndex="`b_${index}`"
+            />
+          </el-carousel-item>
+        </el-carousel>
+      </div>
     </div>
   </div>
 </template>
@@ -469,8 +475,8 @@ export default {
 };
 </script>
 
-<style scoped>
-.mycarousel{
+<style lang="scss" scoped>
+.mycarousel {
   margin-left: 30px;
   margin-right: 30px;
   /* pointer-events: none; */
@@ -478,10 +484,31 @@ export default {
   flex-direction: row;
   justify-content: center; */
 }
-.mycarousel .el-carousel--horizontal{
+
+.mycarousel .el-carousel--horizontal {
   overflow-x: hidden;
   overflow-y: hidden;
+  height: 248px;
 }
+/deep/ .el-carousel__indicator--horizontal{
+    display: inline-block;
+    padding: 12px 14px;
+}
+/deep/ .el-carousel__button {
+  display: block;
+  opacity: 0.48;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .circle-title {
   display: flex;
   flex-direction: column;
